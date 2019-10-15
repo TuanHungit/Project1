@@ -9,9 +9,9 @@ namespace Cafe_Management.Data
 {
     public class CaPheContext:DbContext
     {
-        public CaPheContext():base("name=CaPheContext")
+        public CaPheContext():base("CaPheContext")
         {
-
+           // Database.SetInitializer<CaPheContext>(new CreateDatabaseIfNotExists<CaPheContext>());
         }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
@@ -22,11 +22,6 @@ namespace Cafe_Management.Data
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<Ban> Bans { get; set; }
 
-        protected override void OnModelCreating (DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<NhanVien>()
-                .HasRequired(n => n.CMND);
-                
-        }
+      
     }
 }
