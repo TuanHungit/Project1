@@ -1,6 +1,0 @@
-D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csprojAssemblyReference.cache
-D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Form1.resources
-D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.frLogin.resources
-D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Properties.Resources.resources
-D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csproj.GenerateResource.cache
-D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.exe.licenses
