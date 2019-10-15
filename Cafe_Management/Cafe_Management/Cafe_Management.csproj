@@ -182,10 +182,6 @@
     <Compile Include="Migrations\201910150759520_CapNhatSoLuong.designer.cs">
       <DependentUpon>201910150759520_CapNhatSoLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910150837499_CapNhatSoLuong1.cs" />
-    <Compile Include="Migrations\201910150837499_CapNhatSoLuong1.designer.cs">
-      <DependentUpon>201910150837499_CapNhatSoLuong1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -206,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910150759520_CapNhatSoLuong.resx">
       <DependentUpon>201910150759520_CapNhatSoLuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910150837499_CapNhatSoLuong1.resx">
-      <DependentUpon>201910150837499_CapNhatSoLuong1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
