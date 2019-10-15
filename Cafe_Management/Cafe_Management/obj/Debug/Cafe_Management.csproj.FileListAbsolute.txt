@@ -48,7 +48,6 @@ C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Managemen
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\ja\DevExpress.Sparkline.v19.1.Core.resources.dll
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\ru\DevExpress.Sparkline.v19.1.Core.resources.dll
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csprojAssemblyReference.cache
-C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Form1.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.frLogin.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Properties.Resources.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csproj.GenerateResource.cache
@@ -106,3 +105,10 @@ C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Managemen
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\System.ValueTuple.xml
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.CafeContext.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\DevExpress.XtraBars.v19.1.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\DevExpress.XtraBars.v19.1.xml
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\de\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\es\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\ja\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\ru\DevExpress.XtraBars.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.GUI.frMain.resources
