@@ -1,0 +1,14 @@
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\Cafe_Management.exe.config
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\Cafe_Management.exe
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\Cafe_Management.pdb
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\EntityFramework.dll
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\EntityFramework.xml
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csprojAssemblyReference.cache
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csproj.CopyComplete
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.exe
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.pdb
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.TaoDatabase.resources
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.csproj.GenerateResource.cache
+D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.CapNhatSoLuong.resources
