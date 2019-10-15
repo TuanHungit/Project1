@@ -13,8 +13,6 @@
             AddColumn("dbo.NhaCungCapHangHoas", "SoLuong", c => c.Int(nullable: false));
             AddColumn("dbo.NhaCungCapHangHoas", "DonGia", c => c.Double(nullable: false));
 
-
-
         }
 
         public override void Down()
