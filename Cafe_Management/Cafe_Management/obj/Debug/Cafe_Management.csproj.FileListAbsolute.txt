@@ -204,3 +204,4 @@ D:\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Mig
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.UpdateCMNDNhanVien.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.CapNhatNhanVien.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.CapNhatSoLuong.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\Cafe_Management\Cafe_Management\obj\Debug\Cafe_Management.Migrations.CapNhatSoLuong1.resources
