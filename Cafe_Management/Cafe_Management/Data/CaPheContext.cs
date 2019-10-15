@@ -11,7 +11,7 @@ namespace Cafe_Management.Data
     {
         public CaPheContext():base("CaPheContext")
         {
-           // Database.SetInitializer<CaPheContext>(new CreateDatabaseIfNotExists<CaPheContext>());
+
         }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
