@@ -113,14 +113,15 @@
                 .ForeignKey("dbo.HangHoas", t => t.HangHoa_HangHoaId, cascadeDelete: true)
                 .Index(t => t.NhaCungCap_NhaCungCapId)
                 .Index(t => t.HangHoa_HangHoaId);
-            
+
             CreateTable(
                 "dbo.SanPhamHoaDons",
                 c => new
-                    {
-                        SanPham_SanPhamId = c.Int(nullable: false),
-                        HoaDon_HoaDonId = c.Int(nullable: false),
-                    })
+                {
+                    SanPham_SanPhamId = c.Int(nullable: false),
+                    HoaDon_HoaDonId = c.Int(nullable: false),
+                    SoLuong = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => new { t.SanPham_SanPhamId, t.HoaDon_HoaDonId })
                 .ForeignKey("dbo.SanPhams", t => t.SanPham_SanPhamId, cascadeDelete: true)
                 .ForeignKey("dbo.HoaDons", t => t.HoaDon_HoaDonId, cascadeDelete: true)

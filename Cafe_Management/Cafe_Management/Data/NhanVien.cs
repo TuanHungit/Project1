@@ -16,11 +16,12 @@ namespace Cafe_Management.Data
         public string HoTenNV { get; set; }
         public int NhanVienId { get; set; }
         public string SDT_NV { get; set; }
-        public string CMND { get; set; }
+        public int CMND { get; set; }
         public DateTime NgaySinh { get; set; }
         public DateTime NgayVaoLam { get; set; }
          public ICollection<HoaDon> HoaDons { get; set; }
 
+      
         public ICollection<PhieuNhap> PhieuNhaps { get; set; }
 
     }

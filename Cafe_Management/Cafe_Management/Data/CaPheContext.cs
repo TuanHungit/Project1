@@ -7,9 +7,9 @@ using System.Data.Entity;
 
 namespace Cafe_Management.Data
 {
-    public class CaPheContext:DbContext
+    public class CaPheContext : DbContext
     {
-        public CaPheContext():base("CaPheContext")
+        public CaPheContext() : base("CaPheContext")
         {
 
         }
@@ -22,6 +22,14 @@ namespace Cafe_Management.Data
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<Ban> Bans { get; set; }
 
-      
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<NhanVien>()
+                 .Property(nv => nv.CMND)
+                 .IsRequired();
+           
+                
+                
+        }
     }
 }

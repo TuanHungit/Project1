@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Cafe_Management.GUI;
+
 namespace Cafe_Management
 {
     static class Program
@@ -16,7 +16,7 @@ namespace Cafe_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frMain());
+            Application.Run(new Form1());
         }
     }
 }
