@@ -59,11 +59,11 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsTextDate);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 558);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 729);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1173, 34);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1174, 34);
             // 
             // bsTextDate
             // 
@@ -100,7 +100,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
-            this.ribbon.Size = new System.Drawing.Size(1173, 176);
+            this.ribbon.Size = new System.Drawing.Size(1174, 176);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
@@ -146,6 +146,7 @@
             this.btnViewTable.LargeWidth = 75;
             this.btnViewTable.Name = "btnViewTable";
             this.btnViewTable.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnViewTable.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewTable_ItemClick);
             // 
             // btnAccountInfo
             // 
@@ -281,13 +282,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 592);
+            this.ClientSize = new System.Drawing.Size(1174, 763);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
             this.Name = "frMain";
-            this.Text = "frMain";
-      
+            this.Text = "Màn hình chính";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
