@@ -112,6 +112,7 @@
             this.btnShowForm.LargeWidth = 75;
             this.btnShowForm.Name = "btnShowForm";
             this.btnShowForm.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnShowForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShowForm_ItemClick);
             // 
             // barSubItem1
             // 
@@ -283,6 +284,7 @@
             this.ClientSize = new System.Drawing.Size(1173, 592);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "frMain";
             this.Text = "frMain";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();

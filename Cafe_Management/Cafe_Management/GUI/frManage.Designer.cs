@@ -48,6 +48,7 @@
             this.lkedPickCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickFood = new DevExpress.XtraEditors.LookUpEdit();
             this.flpListTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.weekDaysEdit1 = new DevExpress.XtraScheduler.UI.WeekDaysEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).BeginInit();
@@ -55,12 +56,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickFood.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weekDaysEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.weekDaysEdit1);
             this.panel1.Controls.Add(this.btnMergeTable);
             this.panel1.Controls.Add(this.lsvBill);
             this.panel1.Controls.Add(this.labelControl3);
@@ -334,6 +337,15 @@
             this.flpListTable.Size = new System.Drawing.Size(440, 588);
             this.flpListTable.TabIndex = 32;
             // 
+            // weekDaysEdit1
+            // 
+            this.weekDaysEdit1.Location = new System.Drawing.Point(606, 384);
+            this.weekDaysEdit1.Name = "weekDaysEdit1";
+            this.weekDaysEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.weekDaysEdit1.Size = new System.Drawing.Size(125, 22);
+            this.weekDaysEdit1.TabIndex = 44;
+            // 
             // frManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -343,6 +355,7 @@
             this.Controls.Add(this.flpListTable);
             this.Name = "frManage";
             this.Text = "frManage";
+            this.Load += new System.EventHandler(this.frManage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).EndInit();
@@ -351,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickFood.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weekDaysEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +391,6 @@
         private DevExpress.XtraEditors.LookUpEdit lkedPickCategory;
         private DevExpress.XtraEditors.LookUpEdit lkedPickFood;
         private System.Windows.Forms.FlowLayoutPanel flpListTable;
+        private DevExpress.XtraScheduler.UI.WeekDaysEdit weekDaysEdit1;
     }
 }
