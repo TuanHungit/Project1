@@ -35,16 +35,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gcBan = new DevExpress.XtraGrid.GridControl();
-            this.gvTable = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvBan = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcBan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTable)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -122,6 +122,30 @@
             this.panelControl1.Size = new System.Drawing.Size(848, 532);
             this.panelControl1.TabIndex = 3;
             // 
+            // gcBan
+            // 
+            this.gcBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcBan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gcBan.Location = new System.Drawing.Point(0, 63);
+            this.gcBan.MainView = this.gvBan;
+            this.gcBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gcBan.Name = "gcBan";
+            this.gcBan.Size = new System.Drawing.Size(848, 463);
+            this.gcBan.TabIndex = 2;
+            this.gcBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvBan});
+            // 
+            // gvBan
+            // 
+            this.gvBan.DetailHeight = 431;
+            this.gvBan.GridControl = this.gcBan;
+            this.gvBan.Name = "gvBan";
+            this.gvBan.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvBan.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gvBan.OptionsView.ShowFooter = true;
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.btnXoa);
@@ -133,29 +157,6 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(267, 532);
             this.panelControl2.TabIndex = 4;
-            // 
-            // gcBan
-            // 
-            this.gcBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcBan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gcBan.Location = new System.Drawing.Point(19, 61);
-            this.gcBan.MainView = this.gvTable;
-            this.gcBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gcBan.Name = "gcBan";
-            this.gcBan.Size = new System.Drawing.Size(810, 410);
-            this.gcBan.TabIndex = 2;
-            this.gcBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvTable});
-            // 
-            // gvTable
-            // 
-            this.gvTable.DetailHeight = 431;
-            this.gvTable.GridControl = this.gcBan;
-            this.gvTable.Name = "gvTable";
-            this.gvTable.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gvTable.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             // 
             // frBan
             // 
@@ -171,11 +172,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcBan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +191,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gcBan;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvTable;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvBan;
     }
 }

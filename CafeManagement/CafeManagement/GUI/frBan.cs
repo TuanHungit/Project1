@@ -27,10 +27,12 @@ namespace CafeManagement.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-          
-            if (txtBan.Text.Replace(" ", "") != "") {
+
+            if (txtBan.Text.Replace(" ", "") != "")
+            {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm bàn này chứ!", "Thêm bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes) {
+                if (dialogResult == DialogResult.Yes)
+                {
                     using (CaPheContext caPheContext = new CaPheContext())
                     {
                         Ban ban = new Ban()
@@ -42,7 +44,9 @@ namespace CafeManagement.GUI
                         Load_Ban();
                     }
                 }
-            
+            }
+            else {
+                MessageBox.Show("Bạn chưa nhập Số bàn!", "Thêm bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void Load_Ban()

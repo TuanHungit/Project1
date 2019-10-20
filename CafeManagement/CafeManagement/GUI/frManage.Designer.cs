@@ -47,7 +47,7 @@
             this.btnAddFood = new DevExpress.XtraEditors.SimpleButton();
             this.lkedPickCategory = new DevExpress.XtraEditors.LookUpEdit();
             this.lkedPickFood = new DevExpress.XtraEditors.LookUpEdit();
-            this.flpListTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelListTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).BeginInit();
@@ -322,17 +322,17 @@
             this.lkedPickFood.Size = new System.Drawing.Size(220, 30);
             this.lkedPickFood.TabIndex = 32;
             // 
-            // flpListTable
+            // panelListTable
             // 
-            this.flpListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelListTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpListTable.AutoScroll = true;
-            this.flpListTable.Location = new System.Drawing.Point(12, 10);
-            this.flpListTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flpListTable.Name = "flpListTable";
-            this.flpListTable.Size = new System.Drawing.Size(440, 588);
-            this.flpListTable.TabIndex = 32;
+            this.panelListTable.AutoScroll = true;
+            this.panelListTable.Location = new System.Drawing.Point(29, 30);
+            this.panelListTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelListTable.Name = "panelListTable";
+            this.panelListTable.Size = new System.Drawing.Size(409, 547);
+            this.panelListTable.TabIndex = 32;
             // 
             // frManage
             // 
@@ -340,7 +340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1113, 611);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flpListTable);
+            this.Controls.Add(this.panelListTable);
             this.Name = "frManage";
             this.Text = "frManage";
             this.Load += new System.EventHandler(this.frManage_Load);
@@ -377,7 +377,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAddFood;
         private DevExpress.XtraEditors.LookUpEdit lkedPickCategory;
         private DevExpress.XtraEditors.LookUpEdit lkedPickFood;
-        private System.Windows.Forms.FlowLayoutPanel flpListTable;
+        private System.Windows.Forms.FlowLayoutPanel panelListTable;
        
     }
 }
