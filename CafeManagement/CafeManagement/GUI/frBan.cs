@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CafeManagement.Data;
+using CafeManagement.LinQ;
 namespace CafeManagement.GUI
 {
     public partial class frBan : DevExpress.XtraEditors.XtraForm
@@ -33,15 +34,20 @@ namespace CafeManagement.GUI
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm bàn này chứ!", "Thêm bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
+
+                    int soBan = Convert.ToInt32(txtBan.Text);
+                    var addBan = new Query_Ban();
                     using (CaPheContext caPheContext = new CaPheContext())
                     {
-                        Ban ban = new Ban()
+                        if (addBan.Add_Ban(soBan, caPheContext))
                         {
-                            BanId = Convert.ToInt16(txtBan.Text)
-                        };
-                        caPheContext.Bans.Add(ban);
-                        caPheContext.SaveChanges();
-                        Load_Ban();
+                            MessageBox.Show("Them ban thanh cong!");
+                            Load_Ban();
+                        }
+                        else
+                        {
+                            MessageBox.Show("So ban da ton tai xin nhap so khac");
+                        }
                     }
                 }
             }
@@ -51,11 +57,37 @@ namespace CafeManagement.GUI
         }
         private void Load_Ban()
         {
-            using (CaPheContext caPheContext = new CaPheContext()) {
-                gcBan.DataSource = (from Ban in caPheContext.Bans
-                            select new { Số_Bàn = Ban.BanId }).ToList();
-                 
-            }        
+            var loadban = new Query_Ban();
+            using (CaPheContext caPheContext = new CaPheContext())
+            {
+                if (loadban.DemSoLuongBan(caPheContext))
+                {
+                    MessageBox.Show("Khong co ban");
+                }
+                else
+                {
+                    gcBan.DataSource = loadban.load_Ban(caPheContext);
+                }
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            var Ban = new Query_Ban();
+            int soBan = Convert.ToInt32(txtBan.Text);
+            using (CaPheContext context = new CaPheContext())
+            {
+                if (Ban.xoaBan(context, soBan))
+                {
+                    MessageBox.Show("Da xoa Ban");
+                   
+                    Load_Ban();
+                }
+                else
+                {
+                    MessageBox.Show("Ban Khong ton tai");
+                }
+            }
         }
     }
 }

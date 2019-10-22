@@ -58,6 +58,7 @@
             this.btnXoa.Size = new System.Drawing.Size(113, 48);
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtBan
             // 

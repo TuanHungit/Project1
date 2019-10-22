@@ -116,9 +116,14 @@
     <Compile Include="GUI\frManage.Designer.cs">
       <DependentUpon>frManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="LinQ\Query_Ban.cs" />
     <Compile Include="Migrations\201910211531032_CapNhatDB.cs" />
     <Compile Include="Migrations\201910211531032_CapNhatDB.designer.cs">
       <DependentUpon>201910211531032_CapNhatDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910220838163_CapNhatCacBang.cs" />
+    <Compile Include="Migrations\201910220838163_CapNhatCacBang.designer.cs">
+      <DependentUpon>201910220838163_CapNhatCacBang.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -140,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910211531032_CapNhatDB.resx">
       <DependentUpon>201910211531032_CapNhatDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910220838163_CapNhatCacBang.resx">
+      <DependentUpon>201910220838163_CapNhatCacBang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
