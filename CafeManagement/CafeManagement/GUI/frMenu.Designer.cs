@@ -50,11 +50,17 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.txtTen = new DevExpress.XtraEditors.TextEdit();
+            this.txtGia = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // bar5
@@ -196,18 +202,21 @@
             this.barButtonThem.Caption = "Thêm";
             this.barButtonThem.Id = 0;
             this.barButtonThem.Name = "barButtonThem";
+            this.barButtonThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonThem_ItemClick);
             // 
             // barButtonXoa
             // 
             this.barButtonXoa.Caption = "Xóa";
             this.barButtonXoa.Id = 1;
             this.barButtonXoa.Name = "barButtonXoa";
+            this.barButtonXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXoa_ItemClick);
             // 
             // barButtonSua
             // 
             this.barButtonSua.Caption = "Sửa";
             this.barButtonSua.Id = 2;
             this.barButtonSua.Name = "barButtonSua";
+            this.barButtonSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonSua_ItemClick);
             // 
             // bar4
             // 
@@ -253,11 +262,61 @@
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 434);
             // 
+            // txtTen
+            // 
+            this.txtTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTen.EditValue = "";
+            this.txtTen.Location = new System.Drawing.Point(31, 96);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Properties.Appearance.Options.UseFont = true;
+            this.txtTen.Properties.NullText = "-- Tìm tên món ăn --";
+            this.txtTen.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
+            this.txtTen.Size = new System.Drawing.Size(210, 30);
+            this.txtTen.TabIndex = 37;
+            // 
+            // txtGia
+            // 
+            this.txtGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGia.EditValue = "";
+            this.txtGia.Location = new System.Drawing.Point(31, 160);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Properties.Appearance.Options.UseFont = true;
+            this.txtGia.Properties.NullText = "-- Tìm tên món ăn --";
+            this.txtGia.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
+            this.txtGia.Size = new System.Drawing.Size(210, 30);
+            this.txtGia.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(271, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Ten";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(271, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Don Gia";
+            // 
             // frMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 487);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtGia);
+            this.Controls.Add(this.txtTen);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchCategory);
             this.Controls.Add(this.gcDanhMuc);
@@ -277,6 +336,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +366,9 @@
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.TextEdit txtGia;
+        private DevExpress.XtraEditors.TextEdit txtTen;
     }
 }

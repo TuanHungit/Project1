@@ -13,7 +13,8 @@
                     {
                         BanId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.BanId);
+        
+               .PrimaryKey(t => t.BanId);
             
             CreateTable(
                 "dbo.HoaDons",
