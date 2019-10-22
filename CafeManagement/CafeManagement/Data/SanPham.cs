@@ -13,7 +13,7 @@ namespace CafeManagement.Data
         {
             HoaDons = new HashSet<HoaDon>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    
         public int SanPhamId { get; set; }
         public string TenSanPham { get; set; }
         public double DonGia { get; set; }

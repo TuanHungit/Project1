@@ -13,7 +13,7 @@ namespace CafeManagement.Data
         {
             HangHoas = new HashSet<HangHoa>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+      
         public int PhieuNhapId { get; set; }
         public DateTime NgayLap { get; set; }
         public int NhanVienId { get; set; }

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TaoDataBase : DbMigration
+    public partial class CapNhatDB : DbMigration
     {
         public override void Up()
         {
@@ -19,7 +19,7 @@
                 "dbo.HoaDons",
                 c => new
                     {
-                        HoaDonId = c.Int(nullable: false),
+                        HoaDonId = c.Int(nullable: false, identity: true),
                         NgayLap = c.DateTime(nullable: false),
                         NhanVienId = c.Int(nullable: false),
                         Ban_BanId = c.Int(),
@@ -34,7 +34,7 @@
                 "dbo.NhanViens",
                 c => new
                     {
-                        NhanVienId = c.Int(nullable: false),
+                        NhanVienId = c.Int(nullable: false, identity: true),
                         HoTenNV = c.String(),
                         ChucVu = c.String(),
                         SDT_NV = c.String(),
@@ -48,7 +48,7 @@
                 "dbo.PhieuNhaps",
                 c => new
                     {
-                        PhieuNhapId = c.Int(nullable: false),
+                        PhieuNhapId = c.Int(nullable: false, identity: true),
                         NgayLap = c.DateTime(nullable: false),
                         NhanVienId = c.Int(nullable: false),
                     })
@@ -60,7 +60,7 @@
                 "dbo.HangHoas",
                 c => new
                     {
-                        HangHoaId = c.Int(nullable: false),
+                        HangHoaId = c.Int(nullable: false, identity: true),
                         TenHangHoa = c.String(),
                         DonGia = c.Double(nullable: false),
                     })
@@ -70,7 +70,7 @@
                 "dbo.NhaCungCaps",
                 c => new
                     {
-                        NhaCungCapId = c.Int(nullable: false),
+                        NhaCungCapId = c.Int(nullable: false, identity: true),
                         TenNhaCungCap = c.String(),
                         SDT = c.String(),
                         DiaChi = c.String(),
@@ -81,7 +81,7 @@
                 "dbo.SanPhams",
                 c => new
                     {
-                        SanPhamId = c.Int(nullable: false),
+                        SanPhamId = c.Int(nullable: false, identity: true),
                         TenSanPham = c.String(),
                         DonGia = c.Double(nullable: false),
                         LoaiSanPhamId = c.Int(nullable: false),
@@ -94,7 +94,7 @@
                 "dbo.LoaiSanPhams",
                 c => new
                     {
-                        LoaiSanPhamId = c.Int(nullable: false),
+                        LoaiSanPhamId = c.Int(nullable: false, identity: true),
                         TenLoaiSanPham = c.String(),
                     })
                 .PrimaryKey(t => t.LoaiSanPhamId);

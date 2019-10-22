@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.txtSearchCategory = new DevExpress.XtraEditors.TextEdit();
+            this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.barButtonThem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
             this.bar6 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -46,12 +48,13 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.gvDanhMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcDanhMuc = new DevExpress.XtraGrid.GridControl();
-            this.barButtonXoa = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).BeginInit();
+            this.txtTenDanhMuc = new DevExpress.XtraEditors.TextEdit();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -60,26 +63,27 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(228, 31);
+            this.btnSearch.Location = new System.Drawing.Point(254, 47);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 43);
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "Tìm";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtSearchCategory
+            // txtID
             // 
-            this.txtSearchCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchCategory.EditValue = "";
-            this.txtSearchCategory.Location = new System.Drawing.Point(12, 44);
-            this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCategory.Properties.Appearance.Options.UseFont = true;
-            this.txtSearchCategory.Properties.NullText = "-- Tìm tên món ăn --";
-            this.txtSearchCategory.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
-            this.txtSearchCategory.Size = new System.Drawing.Size(210, 30);
-            this.txtSearchCategory.TabIndex = 24;
+            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtID.EditValue = "";
+            this.txtID.Location = new System.Drawing.Point(12, 44);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Properties.Appearance.Options.UseFont = true;
+            this.txtID.Properties.NullText = "-- Tìm tên món ăn --";
+            this.txtID.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
+            this.txtID.Size = new System.Drawing.Size(210, 30);
+            this.txtID.TabIndex = 24;
             // 
             // bar2
             // 
@@ -126,9 +130,10 @@
             this.barButtonItem1,
             this.barButtonThem,
             this.barButtonXoa,
-            this.barButtonSua});
+            this.barButtonSua,
+            this.barButtonItem2});
             this.barManager1.MainMenu = this.bar5;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 6;
             this.barManager1.StatusBar = this.bar6;
             // 
             // bar5
@@ -140,7 +145,8 @@
             this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonXoa),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonSua)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonSua),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.bar5.OptionsBar.MultiLine = true;
             this.bar5.OptionsBar.UseWholeRow = true;
             this.bar5.Text = "Main menu";
@@ -153,6 +159,19 @@
             this.barButtonThem.Name = "barButtonThem";
             this.barButtonThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXoa_ItemClick);
+            // 
+            // barButtonXoa
+            // 
+            this.barButtonXoa.Caption = "Xóa";
+            this.barButtonXoa.Id = 3;
+            this.barButtonXoa.Name = "barButtonXoa";
+            this.barButtonXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXoa_ItemClick_1);
+            // 
+            // barButtonSua
+            // 
+            this.barButtonSua.Caption = "Sửa";
+            this.barButtonSua.Id = 4;
+            this.barButtonSua.Name = "barButtonSua";
             // 
             // bar6
             // 
@@ -221,33 +240,44 @@
             // 
             // gcDanhMuc
             // 
-            this.gcDanhMuc.Location = new System.Drawing.Point(12, 81);
+            this.gcDanhMuc.Location = new System.Drawing.Point(12, 153);
             this.gcDanhMuc.MainView = this.gvDanhMuc;
             this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 386);
+            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 314);
             this.gcDanhMuc.TabIndex = 0;
             this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhMuc});
             // 
-            // barButtonXoa
+            // txtTenDanhMuc
             // 
-            this.barButtonXoa.Caption = "Xóa";
-            this.barButtonXoa.Id = 3;
-            this.barButtonXoa.Name = "barButtonXoa";
+            this.txtTenDanhMuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenDanhMuc.EditValue = "";
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(12, 99);
+            this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenDanhMuc.Name = "txtTenDanhMuc";
+            this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDanhMuc.Properties.Appearance.Options.UseFont = true;
+            this.txtTenDanhMuc.Properties.NullText = "-- Tìm tên món ăn --";
+            this.txtTenDanhMuc.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(210, 30);
+            this.txtTenDanhMuc.TabIndex = 30;
+            this.txtTenDanhMuc.EditValueChanged += new System.EventHandler(this.txtTenDanhMuc_EditValueChanged);
             // 
-            // barButtonSua
+            // barButtonItem2
             // 
-            this.barButtonSua.Caption = "Sửa";
-            this.barButtonSua.Id = 4;
-            this.barButtonSua.Name = "barButtonSua";
+            this.barButtonItem2.Caption = "Reset ";
+            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // frDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 502);
+            this.Controls.Add(this.txtTenDanhMuc);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearchCategory);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.gcDanhMuc);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -256,10 +286,11 @@
             this.Name = "frDanhMuc";
             this.Text = "frDanhMuc";
             this.Load += new System.EventHandler(this.frDanhMuc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,7 +298,7 @@
 
         #endregion
         private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private DevExpress.XtraEditors.TextEdit txtSearchCategory;
+        private DevExpress.XtraEditors.TextEdit txtID;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar3;
@@ -285,5 +316,7 @@
         private DevExpress.XtraGrid.GridControl gcDanhMuc;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhMuc;
         private DevExpress.XtraBars.BarButtonItem barButtonSua;
+        private DevExpress.XtraEditors.TextEdit txtTenDanhMuc;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

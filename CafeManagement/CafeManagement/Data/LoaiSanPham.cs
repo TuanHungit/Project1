@@ -14,7 +14,7 @@ namespace CafeManagement.Data
             SanPhams = new HashSet<SanPham>();
 
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+       
         public int LoaiSanPhamId { get; set; }
         public string TenLoaiSanPham { get; set; }
         public ICollection<SanPham> SanPhams { get; set; }

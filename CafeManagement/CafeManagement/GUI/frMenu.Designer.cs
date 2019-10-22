@@ -41,15 +41,15 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barButtonThem = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
+            this.bar4 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bar4 = new DevExpress.XtraBars.Bar();
-            this.barButtonThem = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonXoa = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
@@ -83,7 +83,7 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(228, 23);
+            this.btnSearch.Location = new System.Drawing.Point(262, 28);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 43);
@@ -94,7 +94,7 @@
             // 
             this.txtSearchCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchCategory.EditValue = "";
-            this.txtSearchCategory.Location = new System.Drawing.Point(6, 36);
+            this.txtSearchCategory.Location = new System.Drawing.Point(31, 36);
             this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,10 +106,10 @@
             // 
             // gcDanhMuc
             // 
-            this.gcDanhMuc.Location = new System.Drawing.Point(6, 73);
+            this.gcDanhMuc.Location = new System.Drawing.Point(6, 241);
             this.gcDanhMuc.MainView = this.gvDanhMuc;
             this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 386);
+            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 246);
             this.gcDanhMuc.TabIndex = 26;
             this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhMuc});
@@ -177,6 +177,50 @@
             this.barManager2.MaxItemId = 3;
             this.barManager2.StatusBar = this.bar4;
             // 
+            // bar3
+            // 
+            this.bar3.BarName = "Main menu";
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonThem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonXoa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonSua)});
+            this.bar3.OptionsBar.MultiLine = true;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Main menu";
+            // 
+            // barButtonThem
+            // 
+            this.barButtonThem.Caption = "Thêm";
+            this.barButtonThem.Id = 0;
+            this.barButtonThem.Name = "barButtonThem";
+            // 
+            // barButtonXoa
+            // 
+            this.barButtonXoa.Caption = "Xóa";
+            this.barButtonXoa.Id = 1;
+            this.barButtonXoa.Name = "barButtonXoa";
+            // 
+            // barButtonSua
+            // 
+            this.barButtonSua.Caption = "Sửa";
+            this.barButtonSua.Id = 2;
+            this.barButtonSua.Name = "barButtonSua";
+            // 
+            // bar4
+            // 
+            this.bar4.BarName = "Status bar";
+            this.bar4.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 0;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar4.OptionsBar.AllowQuickCustomization = false;
+            this.bar4.OptionsBar.DrawDragBorder = false;
+            this.bar4.OptionsBar.UseWholeRow = true;
+            this.bar4.Text = "Status bar";
+            // 
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
@@ -208,48 +252,6 @@
             this.barDockControl4.Location = new System.Drawing.Point(1098, 29);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 434);
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Main menu";
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonThem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonXoa),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonSua)});
-            this.bar3.OptionsBar.MultiLine = true;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Main menu";
-            // 
-            // bar4
-            // 
-            this.bar4.BarName = "Status bar";
-            this.bar4.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar4.DockCol = 0;
-            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar4.OptionsBar.AllowQuickCustomization = false;
-            this.bar4.OptionsBar.DrawDragBorder = false;
-            this.bar4.OptionsBar.UseWholeRow = true;
-            this.bar4.Text = "Status bar";
-            // 
-            // barButtonThem
-            // 
-            this.barButtonThem.Caption = "Thêm";
-            this.barButtonThem.Id = 0;
-            this.barButtonThem.Name = "barButtonThem";
-            // 
-            // barButtonXoa
-            // 
-            this.barButtonXoa.Caption = "Xóa";
-            this.barButtonXoa.Id = 1;
-            this.barButtonXoa.Name = "barButtonXoa";
-            // 
-            // barButtonSua
-            // 
-            this.barButtonSua.Caption = "Sửa";
-            this.barButtonSua.Id = 2;
-            this.barButtonSua.Name = "barButtonSua";
             // 
             // frMenu
             // 

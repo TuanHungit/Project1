@@ -123,13 +123,11 @@
       <DependentUpon>frMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="LinQ\Query_Ban.cs" />
-    <Compile Include="Migrations\201910220918419_TaoDataBase.cs" />
-    <Compile Include="Migrations\201910220918419_TaoDataBase.designer.cs">
-      <DependentUpon>201910220918419_TaoDataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910220938023_CapNhatSoLuong.cs" />
-    <Compile Include="Migrations\201910220938023_CapNhatSoLuong.designer.cs">
-      <DependentUpon>201910220938023_CapNhatSoLuong.cs</DependentUpon>
+    <Compile Include="LinQ\Query_DanhMuc.cs" />
+    <Compile Include="LinQ\Query_SanPham.cs" />
+    <Compile Include="Migrations\201910221211587_CapNhatDB.cs" />
+    <Compile Include="Migrations\201910221211587_CapNhatDB.designer.cs">
+      <DependentUpon>201910221211587_CapNhatDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -152,11 +150,8 @@
     <EmbeddedResource Include="GUI\frMenu.resx">
       <DependentUpon>frMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910220918419_TaoDataBase.resx">
-      <DependentUpon>201910220918419_TaoDataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910220938023_CapNhatSoLuong.resx">
-      <DependentUpon>201910220938023_CapNhatSoLuong.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910221211587_CapNhatDB.resx">
+      <DependentUpon>201910221211587_CapNhatDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

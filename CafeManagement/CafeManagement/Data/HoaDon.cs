@@ -13,7 +13,7 @@ namespace CafeManagement.Data
         {
             SanPhams = new HashSet<SanPham>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+      
         public int HoaDonId { get; set; }
         public DateTime NgayLap { get; set; }
         public int NhanVienId { get; set; }

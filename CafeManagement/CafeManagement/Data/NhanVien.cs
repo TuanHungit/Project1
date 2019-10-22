@@ -14,7 +14,7 @@ namespace CafeManagement.Data
             HoaDons = new HashSet<HoaDon>();
             PhieuNhaps = new HashSet<PhieuNhap>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+     
         public int NhanVienId { get; set; }
         public string HoTenNV { get; set; }
         public string ChucVu { get; set; }
