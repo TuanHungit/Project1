@@ -7,13 +7,13 @@ namespace CafeManagement.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class CapNhatCacBang : IMigrationMetadata
+    public sealed partial class TaoDataBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CapNhatCacBang));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TaoDataBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910220838163_CapNhatCacBang"; }
+            get { return "201910220918419_TaoDataBase"; }
         }
         
         string IMigrationMetadata.Source

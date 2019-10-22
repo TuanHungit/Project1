@@ -133,6 +133,7 @@
             this.btnViewFood.LargeWidth = 75;
             this.btnViewFood.Name = "btnViewFood";
             this.btnViewFood.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnViewFood.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewFood_ItemClick);
             // 
             // btnViewCategoryFood
             // 

@@ -29,43 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gcDanhMuc = new DevExpress.XtraGrid.GridControl();
-            this.gvDanhMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearchCategory = new DevExpress.XtraEditors.TextEdit();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barbtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.bar5 = new DevExpress.XtraBars.Bar();
+            this.barButtonThem = new DevExpress.XtraBars.BarButtonItem();
             this.bar6 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barbtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.gvDanhMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDanhMuc = new DevExpress.XtraGrid.GridControl();
             this.barButtonXoa = new DevExpress.XtraBars.BarButtonItem();
-            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
+            this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gcDanhMuc
-            // 
-            this.gcDanhMuc.Location = new System.Drawing.Point(12, 55);
-            this.gcDanhMuc.MainView = this.gvDanhMuc;
-            this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 417);
-            this.gcDanhMuc.TabIndex = 0;
-            this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDanhMuc});
-            // 
-            // gvDanhMuc
-            // 
-            this.gvDanhMuc.GridControl = this.gcDanhMuc;
-            this.gvDanhMuc.Name = "gvDanhMuc";
             // 
             // btnSearch
             // 
@@ -73,7 +60,7 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(983, 5);
+            this.btnSearch.Location = new System.Drawing.Point(228, 31);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 43);
@@ -84,7 +71,7 @@
             // 
             this.txtSearchCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchCategory.EditValue = "";
-            this.txtSearchCategory.Location = new System.Drawing.Point(745, 13);
+            this.txtSearchCategory.Location = new System.Drawing.Point(12, 44);
             this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,20 +124,12 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barbtnXoa,
             this.barButtonItem1,
-            this.barButtonXoa});
+            this.barButtonThem,
+            this.barButtonXoa,
+            this.barButtonSua});
             this.barManager1.MainMenu = this.bar5;
-            this.barManager1.MaxItemId = 3;
+            this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar6;
-            // 
-            // barbtnXoa
-            // 
-            this.barbtnXoa.Caption = "Xóa";
-            this.barbtnXoa.Id = 0;
-            this.barbtnXoa.ImageOptions.Image = global::CafeManagement.Properties.Resources.Close_2_icon;
-            this.barbtnXoa.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
-            this.barbtnXoa.Name = "barbtnXoa";
-            this.barbtnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barbtnXoa.Size = new System.Drawing.Size(70, 0);
             // 
             // bar5
             // 
@@ -159,10 +138,21 @@
             this.bar5.DockRow = 0;
             this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonXoa)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonThem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonXoa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonSua)});
             this.bar5.OptionsBar.MultiLine = true;
             this.bar5.OptionsBar.UseWholeRow = true;
             this.bar5.Text = "Main menu";
+            // 
+            // barButtonThem
+            // 
+            this.barButtonThem.Caption = "Thêm";
+            this.barButtonThem.Id = 2;
+            this.barButtonThem.ImageOptions.Image = global::CafeManagement.Properties.Resources.Close_2_icon;
+            this.barButtonThem.Name = "barButtonThem";
+            this.barButtonThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXoa_ItemClick);
             // 
             // bar6
             // 
@@ -208,19 +198,48 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
             // 
+            // barbtnXoa
+            // 
+            this.barbtnXoa.Caption = "Xóa";
+            this.barbtnXoa.Id = 0;
+            this.barbtnXoa.ImageOptions.Image = global::CafeManagement.Properties.Resources.Close_2_icon;
+            this.barbtnXoa.ImageToTextAlignment = DevExpress.XtraBars.BarItemImageToTextAlignment.AfterText;
+            this.barbtnXoa.Name = "barbtnXoa";
+            this.barbtnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barbtnXoa.Size = new System.Drawing.Size(70, 0);
+            // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "barButtonItem1";
             this.barButtonItem1.Id = 1;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // gvDanhMuc
+            // 
+            this.gvDanhMuc.GridControl = this.gcDanhMuc;
+            this.gvDanhMuc.Name = "gvDanhMuc";
+            // 
+            // gcDanhMuc
+            // 
+            this.gcDanhMuc.Location = new System.Drawing.Point(12, 81);
+            this.gcDanhMuc.MainView = this.gvDanhMuc;
+            this.gcDanhMuc.Name = "gcDanhMuc";
+            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 386);
+            this.gcDanhMuc.TabIndex = 0;
+            this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDanhMuc});
+            // 
             // barButtonXoa
             // 
             this.barButtonXoa.Caption = "Xóa";
-            this.barButtonXoa.Id = 2;
-            this.barButtonXoa.ImageOptions.Image = global::CafeManagement.Properties.Resources.Close_2_icon;
+            this.barButtonXoa.Id = 3;
             this.barButtonXoa.Name = "barButtonXoa";
-            this.barButtonXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonSua
+            // 
+            this.barButtonSua.Caption = "Sửa";
+            this.barButtonSua.Id = 4;
+            this.barButtonSua.Name = "barButtonSua";
             // 
             // frDanhMuc
             // 
@@ -237,19 +256,16 @@
             this.Name = "frDanhMuc";
             this.Text = "frDanhMuc";
             this.Load += new System.EventHandler(this.frDanhMuc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchCategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gcDanhMuc;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhMuc;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.TextEdit txtSearchCategory;
         private DevExpress.XtraBars.Bar bar2;
@@ -264,6 +280,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonThem;
         private DevExpress.XtraBars.BarButtonItem barButtonXoa;
+        private DevExpress.XtraGrid.GridControl gcDanhMuc;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhMuc;
+        private DevExpress.XtraBars.BarButtonItem barButtonSua;
     }
 }

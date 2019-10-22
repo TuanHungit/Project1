@@ -3,11 +3,10 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CapNhatCacBang : DbMigration
+    public partial class CapNhatSoLuong : DbMigration
     {
         public override void Up()
         {
-
             AddColumn("dbo.HangHoaPhieuNhaps", "SoLuong", c => c.Int(nullable: false));
             AddColumn("dbo.HangHoaPhieuNhaps", "DonGia", c => c.Double(nullable: false));
             AddColumn("dbo.SanPhamHoaDons", "SoLuong", c => c.Int(nullable: false));

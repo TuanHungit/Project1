@@ -67,27 +67,34 @@ namespace CafeManagement.GUI
                 else
                 {
                     gcBan.DataSource = loadban.load_Ban(caPheContext);
+                    gvBan.Columns[0].Caption = "Mã số bàn";
                 }
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            var Ban = new Query_Ban();
-            int soBan = Convert.ToInt32(txtBan.Text);
-            using (CaPheContext context = new CaPheContext())
+
+            if (txtBan.Text.Replace(" ", "") != "")
             {
-                if (Ban.xoaBan(context, soBan))
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bàn này chứ!", "Xóa bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var Ban = new Query_Ban();
+                int soBan = Convert.ToInt32(txtBan.Text);
+                using (CaPheContext context = new CaPheContext())
                 {
-                    MessageBox.Show("Da xoa Ban");
-                   
-                    Load_Ban();
-                }
-                else
-                {
-                    MessageBox.Show("Ban Khong ton tai");
+                    if (Ban.xoaBan(context, soBan))
+                    {
+                        MessageBox.Show("Da xoa Ban");
+
+                        Load_Ban();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ban Khong ton tai");
+                    }
                 }
             }
+            else MessageBox.Show("Bạn chưa nhập Số bàn!", "Xóa bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

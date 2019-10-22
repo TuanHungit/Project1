@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CapNhatDB : DbMigration
+    public partial class TaoDataBase : DbMigration
     {
         public override void Up()
         {

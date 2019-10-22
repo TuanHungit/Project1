@@ -11,21 +11,16 @@ using DevExpress.XtraEditors;
 
 namespace CafeManagement.GUI
 {
-    public partial class frDanhMuc : DevExpress.XtraEditors.XtraForm
+    public partial class frMenu : DevExpress.XtraEditors.XtraForm
     {
-        public frDanhMuc()
+        public frMenu()
         {
             InitializeComponent();
         }
 
-        private void frDanhMuc_Load(object sender, EventArgs e)
+        private void frMenu_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void barButtonXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
         }
     }
 }
