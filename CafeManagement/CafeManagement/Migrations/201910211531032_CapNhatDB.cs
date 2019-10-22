@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CafeContext : DbMigration
+    public partial class CapNhatDB : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@
                 "dbo.Bans",
                 c => new
                     {
-                        BanId = c.Int(nullable: false, identity: true),
+                        BanId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.BanId);
             
@@ -19,7 +19,7 @@
                 "dbo.HoaDons",
                 c => new
                     {
-                        HoaDonId = c.Int(nullable: false, identity: true),
+                        HoaDonId = c.Int(nullable: false),
                         NgayLap = c.DateTime(nullable: false),
                         NhanVienId = c.Int(nullable: false),
                         Ban_BanId = c.Int(),
@@ -34,8 +34,9 @@
                 "dbo.NhanViens",
                 c => new
                     {
-                        NhanVienId = c.Int(nullable: false, identity: true),
+                        NhanVienId = c.Int(nullable: false),
                         HoTenNV = c.String(),
+                        ChucVu = c.String(),
                         SDT_NV = c.String(),
                         CMND = c.Int(nullable: false),
                         NgaySinh = c.DateTime(nullable: false),
@@ -47,7 +48,7 @@
                 "dbo.PhieuNhaps",
                 c => new
                     {
-                        PhieuNhapId = c.Int(nullable: false, identity: true),
+                        PhieuNhapId = c.Int(nullable: false),
                         NgayLap = c.DateTime(nullable: false),
                         NhanVienId = c.Int(nullable: false),
                     })
@@ -59,7 +60,7 @@
                 "dbo.HangHoas",
                 c => new
                     {
-                        HangHoaId = c.Int(nullable: false, identity: true),
+                        HangHoaId = c.Int(nullable: false),
                         TenHangHoa = c.String(),
                         DonGia = c.Double(nullable: false),
                     })
@@ -69,7 +70,7 @@
                 "dbo.NhaCungCaps",
                 c => new
                     {
-                        NhaCungCapId = c.Int(nullable: false, identity: true),
+                        NhaCungCapId = c.Int(nullable: false),
                         TenNhaCungCap = c.String(),
                         SDT = c.String(),
                         DiaChi = c.String(),
@@ -80,7 +81,7 @@
                 "dbo.SanPhams",
                 c => new
                     {
-                        SanPhamId = c.Int(nullable: false, identity: true),
+                        SanPhamId = c.Int(nullable: false),
                         TenSanPham = c.String(),
                         DonGia = c.Double(nullable: false),
                         LoaiSanPhamId = c.Int(nullable: false),
@@ -93,7 +94,7 @@
                 "dbo.LoaiSanPhams",
                 c => new
                     {
-                        LoaiSanPhamId = c.Int(nullable: false, identity: true),
+                        LoaiSanPhamId = c.Int(nullable: false),
                         TenLoaiSanPham = c.String(),
                     })
                 .PrimaryKey(t => t.LoaiSanPhamId);

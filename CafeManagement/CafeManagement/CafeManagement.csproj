@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
@@ -91,6 +92,12 @@
     <Compile Include="GUI\frBan.Designer.cs">
       <DependentUpon>frBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frDanhMuc.Designer.cs">
+      <DependentUpon>frDanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,23 +116,18 @@
     <Compile Include="GUI\frManage.Designer.cs">
       <DependentUpon>frManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910201433164_CafeContext.cs" />
-    <Compile Include="Migrations\201910201433164_CafeContext.designer.cs">
-      <DependentUpon>201910201433164_CafeContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910201441461_CapNhatSoLuong.cs" />
-    <Compile Include="Migrations\201910201441461_CapNhatSoLuong.designer.cs">
-      <DependentUpon>201910201441461_CapNhatSoLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910201446365_CapNhatNhanVien.cs" />
-    <Compile Include="Migrations\201910201446365_CapNhatNhanVien.designer.cs">
-      <DependentUpon>201910201446365_CapNhatNhanVien.cs</DependentUpon>
+    <Compile Include="Migrations\201910211531032_CapNhatDB.cs" />
+    <Compile Include="Migrations\201910211531032_CapNhatDB.designer.cs">
+      <DependentUpon>201910211531032_CapNhatDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\frBan.resx">
       <DependentUpon>frBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frDanhMuc.resx">
+      <DependentUpon>frDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>
@@ -136,14 +138,8 @@
     <EmbeddedResource Include="GUI\frManage.resx">
       <DependentUpon>frManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910201433164_CafeContext.resx">
-      <DependentUpon>201910201433164_CafeContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910201441461_CapNhatSoLuong.resx">
-      <DependentUpon>201910201441461_CapNhatSoLuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910201446365_CapNhatNhanVien.resx">
-      <DependentUpon>201910201446365_CapNhatNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910211531032_CapNhatDB.resx">
+      <DependentUpon>201910211531032_CapNhatDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

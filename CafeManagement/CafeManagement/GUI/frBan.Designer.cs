@@ -74,8 +74,9 @@
             // 
             this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.BackgroundImage = global::CafeManagement.Properties.Resources.add_icon;
             this.btnThem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnThem.Location = new System.Drawing.Point(10, 105);
+            this.btnThem.Location = new System.Drawing.Point(5, 105);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(113, 48);

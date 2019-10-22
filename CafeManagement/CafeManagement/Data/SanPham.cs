@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace CafeManagement.Data
         {
             HoaDons = new HashSet<HoaDon>();
         }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SanPhamId { get; set; }
         public string TenSanPham { get; set; }
         public double DonGia { get; set; }

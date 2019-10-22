@@ -22,7 +22,7 @@ namespace CafeManagement.GUI
         {
        
     
-            this.FormBorderStyle = FormBorderStyle.None;
+            
             this.WindowState = FormWindowState.Maximized;
             Load_Table();
 

@@ -21,9 +21,6 @@ C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\EntityFramework.xml
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CafeContext.resources
-C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatSoLuong.resources
-C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatNhanVien.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frBan.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frLogin.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraGrid.v19.1.dll
@@ -63,3 +60,11 @@ C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Office.v19.1.Core.resources.dll
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Office.v19.1.Core.resources.dll
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Office.v19.1.Core.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatDB.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraNavBar.v19.1.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraNavBar.v19.1.xml
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\de\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.XtraNavBar.v19.1.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frDanhMuc.resources

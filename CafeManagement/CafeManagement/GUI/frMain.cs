@@ -55,5 +55,20 @@ namespace CafeManagement.GUI
                 fr.Show();
             }
         }
+
+        private void btnViewCategoryFood_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = this.CheckFormExist(typeof(frDanhMuc));
+            if (form != null)
+            {
+                form.Activate();
+            }
+            else
+            {
+                frDanhMuc fr = new frDanhMuc();
+                fr.MdiParent = this;
+                fr.Show();
+            }
+        }
     }
 }

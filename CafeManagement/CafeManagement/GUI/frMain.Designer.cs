@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.bsTextDate = new DevExpress.XtraBars.BarStaticItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -46,6 +47,8 @@
             this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.btnLog = new DevExpress.XtraBars.BarButtonItem();
             this.btnSendMail = new DevExpress.XtraBars.BarButtonItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -92,10 +95,12 @@
             this.btnBackup,
             this.btnRestore,
             this.btnLog,
-            this.btnSendMail});
+            this.btnSendMail,
+            this.skinPaletteDropDownButtonItem1,
+            this.skinRibbonGalleryBarItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
@@ -137,6 +142,7 @@
             this.btnViewCategoryFood.LargeWidth = 75;
             this.btnViewCategoryFood.Name = "btnViewCategoryFood";
             this.btnViewCategoryFood.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnViewCategoryFood.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewCategoryFood_ItemClick);
             // 
             // btnViewTable
             // 
@@ -226,6 +232,18 @@
             this.btnSendMail.LargeWidth = 75;
             this.btnSendMail.Name = "btnSendMail";
             // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Enabled = false;
+            this.skinPaletteDropDownButtonItem1.Id = 18;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 19;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -250,7 +268,7 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.ribbonGalleryBarItem1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Giao diện";
             // 
@@ -321,5 +339,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageManager;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupCateogry;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupStatictis;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
     }
 }

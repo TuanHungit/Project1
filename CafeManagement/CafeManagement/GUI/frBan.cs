@@ -20,7 +20,7 @@ namespace CafeManagement.GUI
 
         private void frBan_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.None;
+           
             this.WindowState = FormWindowState.Maximized;
             Load_Ban();
         }
