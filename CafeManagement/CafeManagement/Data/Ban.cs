@@ -24,7 +24,6 @@ namespace CafeManagement.Data
            return (from item in caPheContext.Bans
              select item).ToList();
         }
-        public int soluong { get; set; }
-    
+
     }
 }
