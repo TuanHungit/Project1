@@ -41,11 +41,13 @@ namespace CafeManagement.LinQ
         {
             if (KiemTraDanhMuc(TenDanhMuc))
             {
-                var id = (from item in caPheContext.LoaiSanPhams
-                          where item.TenLoaiSanPham.Contains(TenDanhMuc)
-                          select item.LoaiSanPhamId).SingleOrDefault();
-                LoaiSanPham loaiSanPham = new LoaiSanPham() { LoaiSanPhamId = Convert.ToInt32(id) };
-                caPheContext.Entry(loaiSanPham).State = EntityState.Deleted;
+                var sp = (from item in caPheContext.LoaiSanPhams
+                          where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
+                          select item).ToList();
+                foreach (var author in sp)
+                {
+                    caPheContext.LoaiSanPhams.Remove(author);
+                }
                 caPheContext.SaveChanges();
                 return true;
             }
@@ -57,6 +59,13 @@ namespace CafeManagement.LinQ
             return (from item in caPheContext.LoaiSanPhams
                     where item.TenLoaiSanPham.StartsWith(Ten)
                     select item).ToList();
+        }
+        public List<LoaiSanPham> LayIdDanhMuc(string TenDanhMuc)
+        {
+            var sp = (from item in caPheContext.LoaiSanPhams
+                      where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
+                      select item).ToList();
+            return sp;
         }
     }
 }

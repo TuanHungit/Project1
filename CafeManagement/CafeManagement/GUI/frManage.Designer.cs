@@ -342,7 +342,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelListTable);
             this.Name = "frManage";
-            this.Text = "frManage";
+            this.Text = "e";
             this.Load += new System.EventHandler(this.frManage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

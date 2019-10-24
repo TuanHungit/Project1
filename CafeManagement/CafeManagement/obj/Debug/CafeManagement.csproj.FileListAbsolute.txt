@@ -141,3 +141,4 @@ C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatDB.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatSoLuong.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatSoLuong.resources

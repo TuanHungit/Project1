@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CafeManagement.Data;
 using CafeManagement.LinQ;
+using DevExpress.XtraGrid.Views.Grid;
+
 namespace CafeManagement.GUI
 {
     public partial class frDanhMuc : DevExpress.XtraEditors.XtraForm
@@ -26,9 +28,11 @@ namespace CafeManagement.GUI
         }
         CaPheContext caPheContext = new CaPheContext();
         Query_DanhMuc danhmuc = new Query_DanhMuc();
+      
         private void barButtonXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (txtTenDanhMuc.Text.Replace(" ", "") != "")
+           
+            if (txtTenDanhMuc.Text.Replace(" ", "") != "" &&txtTenDanhMuc.EditValue!=null)
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -52,6 +56,7 @@ namespace CafeManagement.GUI
             else
             {
                 MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Thêm danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
             }
         }
        
@@ -61,15 +66,13 @@ namespace CafeManagement.GUI
                                     select new { item.LoaiSanPhamId, item.TenLoaiSanPham }).ToList();
             gvDanhMuc.Columns[0].Caption = "Mã danh mục";
             gvDanhMuc.Columns[1].Caption = "Tên danh mục";
+         
         }
 
-        private void txtTenDanhMuc_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+    
         private void barButtonXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+          
             if (txtTenDanhMuc.Text.Replace(" ", "") != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -93,6 +96,7 @@ namespace CafeManagement.GUI
             else
             {
                 MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
             }
         }
 
@@ -100,7 +104,7 @@ namespace CafeManagement.GUI
         {
          
             string TenDanhMuc = txtTenDanhMuc.Text;
-            if (txtID.Text.Replace(" ", "") != "" || txtTenDanhMuc.Text.Replace(" ", "") != "")
+            if (txtTenDanhMuc.Text.Replace(" ", "") != "")
             {
                 int x = danhmuc.FindDanhMuc(TenDanhMuc).Count();
                 if (x>0)
@@ -112,12 +116,24 @@ namespace CafeManagement.GUI
             else
             {
                 MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Load_DanhMuc();
+        }
+        private void gvDanhMuc_Click(object sender, EventArgs e)
+        {
+            if (gvDanhMuc.RowCount > 0)
+                txtTenDanhMuc.Text = gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[1]).ToString();
+        }
+
+        
+        private void gvDanhMuc_DoubleClick(object sender, EventArgs e)
+        {
+         
         }
     }
 }

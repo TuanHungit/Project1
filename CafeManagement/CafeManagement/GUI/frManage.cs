@@ -20,9 +20,6 @@ namespace CafeManagement.GUI
 
         private void frManage_Load(object sender, EventArgs e)
         {
-       
-    
-            
             this.WindowState = FormWindowState.Maximized;
             Load_Table();
 

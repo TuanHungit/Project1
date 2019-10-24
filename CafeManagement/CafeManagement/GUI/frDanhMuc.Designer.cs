@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -39,6 +38,7 @@
             this.barButtonThem = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonSua = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bar6 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -46,15 +46,16 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barbtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.gvDanhMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcDanhMuc = new DevExpress.XtraGrid.GridControl();
             this.txtTenDanhMuc = new DevExpress.XtraEditors.TextEdit();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gcDanhMuc = new DevExpress.XtraGrid.GridControl();
+            this.gvDanhMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -63,27 +64,13 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(254, 47);
+            this.btnSearch.Location = new System.Drawing.Point(1035, 3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(88, 43);
+            this.btnSearch.Size = new System.Drawing.Size(88, 33);
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtID
-            // 
-            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtID.EditValue = "";
-            this.txtID.Location = new System.Drawing.Point(12, 44);
-            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtID.Name = "txtID";
-            this.txtID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Properties.Appearance.Options.UseFont = true;
-            this.txtID.Properties.NullText = "-- Tìm tên món ăn --";
-            this.txtID.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
-            this.txtID.Size = new System.Drawing.Size(210, 30);
-            this.txtID.TabIndex = 24;
             // 
             // bar2
             // 
@@ -142,6 +129,7 @@
             this.bar5.DockCol = 0;
             this.bar5.DockRow = 0;
             this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar5.FloatLocation = new System.Drawing.Point(352, 160);
             this.bar5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonXoa),
@@ -155,7 +143,7 @@
             // 
             this.barButtonThem.Caption = "Thêm";
             this.barButtonThem.Id = 2;
-            this.barButtonThem.ImageOptions.Image = global::CafeManagement.Properties.Resources.Close_2_icon;
+            this.barButtonThem.ImageOptions.Image = global::CafeManagement.Properties.Resources.add_icon;
             this.barButtonThem.Name = "barButtonThem";
             this.barButtonThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXoa_ItemClick);
@@ -164,14 +152,27 @@
             // 
             this.barButtonXoa.Caption = "Xóa";
             this.barButtonXoa.Id = 3;
+            this.barButtonXoa.ImageOptions.Image = global::CafeManagement.Properties.Resources.Close_2_icon;
             this.barButtonXoa.Name = "barButtonXoa";
+            this.barButtonXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXoa_ItemClick_1);
             // 
             // barButtonSua
             // 
             this.barButtonSua.Caption = "Sửa";
             this.barButtonSua.Id = 4;
+            this.barButtonSua.ImageOptions.Image = global::CafeManagement.Properties.Resources.Reset_icon;
             this.barButtonSua.Name = "barButtonSua";
+            this.barButtonSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Reset ";
+            this.barButtonItem2.Id = 5;
+            this.barButtonItem2.ImageOptions.Image = global::CafeManagement.Properties.Resources.Button_Refresh_icon;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // bar6
             // 
@@ -191,15 +192,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1104, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1164, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 478);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 518);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1104, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1164, 24);
             // 
             // barDockControlLeft
             // 
@@ -207,15 +208,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 438);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 478);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1104, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1164, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
             // 
             // barbtnXoa
             // 
@@ -233,64 +234,72 @@
             this.barButtonItem1.Id = 1;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // gvDanhMuc
-            // 
-            this.gvDanhMuc.GridControl = this.gcDanhMuc;
-            this.gvDanhMuc.Name = "gvDanhMuc";
-            // 
-            // gcDanhMuc
-            // 
-            this.gcDanhMuc.Location = new System.Drawing.Point(12, 153);
-            this.gcDanhMuc.MainView = this.gvDanhMuc;
-            this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1080, 314);
-            this.gcDanhMuc.TabIndex = 0;
-            this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDanhMuc});
-            // 
             // txtTenDanhMuc
             // 
             this.txtTenDanhMuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenDanhMuc.EditValue = "";
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(12, 99);
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(819, 5);
             this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDanhMuc.Properties.Appearance.Options.UseFont = true;
-            this.txtTenDanhMuc.Properties.NullText = "-- Tìm tên món ăn --";
-            this.txtTenDanhMuc.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
+            this.txtTenDanhMuc.Properties.NullText = "   -- Tên Danh Mục --";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(210, 30);
             this.txtTenDanhMuc.TabIndex = 30;
-            this.txtTenDanhMuc.EditValueChanged += new System.EventHandler(this.txtTenDanhMuc_EditValueChanged);
             // 
-            // barButtonItem2
+            // panelControl1
             // 
-            this.barButtonItem2.Caption = "Reset ";
-            this.barButtonItem2.Id = 5;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.panelControl1.Controls.Add(this.gcDanhMuc);
+            this.panelControl1.Location = new System.Drawing.Point(0, 39);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1164, 503);
+            this.panelControl1.TabIndex = 40;
+            // 
+            // gcDanhMuc
+            // 
+            this.gcDanhMuc.Location = new System.Drawing.Point(5, 5);
+            this.gcDanhMuc.MainView = this.gvDanhMuc;
+            this.gcDanhMuc.MenuManager = this.barManager1;
+            this.gcDanhMuc.Name = "gcDanhMuc";
+            this.gcDanhMuc.Size = new System.Drawing.Size(1154, 493);
+            this.gcDanhMuc.TabIndex = 35;
+            this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDanhMuc});
+            // 
+            // gvDanhMuc
+            // 
+            this.gvDanhMuc.GridControl = this.gcDanhMuc;
+            this.gvDanhMuc.Name = "gvDanhMuc";
+            this.gvDanhMuc.OptionsBehavior.AlignGroupSummaryInGroupRow = DevExpress.Utils.DefaultBoolean.True;
+            this.gvDanhMuc.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvDanhMuc.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvDanhMuc.OptionsBehavior.AllowFixedGroups = DevExpress.Utils.DefaultBoolean.True;
+            this.gvDanhMuc.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.Inplace;
+            this.gvDanhMuc.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseUp;
+            this.gvDanhMuc.Click += new System.EventHandler(this.gvDanhMuc_Click);
+            this.gvDanhMuc.DoubleClick += new System.EventHandler(this.gvDanhMuc_DoubleClick);
             // 
             // frDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 502);
-            this.Controls.Add(this.txtTenDanhMuc);
+            this.ClientSize = new System.Drawing.Size(1164, 542);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.gcDanhMuc);
+            this.Controls.Add(this.txtTenDanhMuc);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frDanhMuc";
-            this.Text = "frDanhMuc";
+            this.Text = "Danh mục";
             this.Load += new System.EventHandler(this.frDanhMuc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcDanhMuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +307,6 @@
 
         #endregion
         private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private DevExpress.XtraEditors.TextEdit txtID;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar3;
@@ -313,10 +321,11 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonThem;
         private DevExpress.XtraBars.BarButtonItem barButtonXoa;
-        private DevExpress.XtraGrid.GridControl gcDanhMuc;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhMuc;
         private DevExpress.XtraBars.BarButtonItem barButtonSua;
         private DevExpress.XtraEditors.TextEdit txtTenDanhMuc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraGrid.GridControl gcDanhMuc;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDanhMuc;
     }
 }
