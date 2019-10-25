@@ -64,7 +64,7 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(1035, 3);
+            this.btnSearch.Location = new System.Drawing.Point(1043, 3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 33);
@@ -192,7 +192,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1164, 40);
+            this.barDockControlTop.Size = new System.Drawing.Size(1172, 40);
             // 
             // barDockControlBottom
             // 
@@ -200,7 +200,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 518);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1164, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1172, 24);
             // 
             // barDockControlLeft
             // 
@@ -214,7 +214,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1164, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1172, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
             // 
@@ -238,7 +238,7 @@
             // 
             this.txtTenDanhMuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenDanhMuc.EditValue = "";
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(819, 5);
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(827, 5);
             this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -257,6 +257,8 @@
             // 
             // gcDanhMuc
             // 
+            this.gcDanhMuc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gcDanhMuc.Location = new System.Drawing.Point(5, 5);
             this.gcDanhMuc.MainView = this.gvDanhMuc;
             this.gcDanhMuc.MenuManager = this.barManager1;
@@ -283,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 542);
+            this.ClientSize = new System.Drawing.Size(1172, 542);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtTenDanhMuc);
             this.Controls.Add(this.panelControl1);

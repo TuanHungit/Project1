@@ -17,6 +17,7 @@ namespace CafeManagement.Data
         public int HoaDonId { get; set; }
         public DateTime NgayLap { get; set; }
         public int NhanVienId { get; set; }
+        
         public virtual NhanVien NhanVien { get; set; }
         public ICollection<SanPham> SanPhams { get; set; }
     }

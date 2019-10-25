@@ -67,5 +67,13 @@ namespace CafeManagement.LinQ
                       select item).ToList();
             return sp;
         }
+
+        public int GetIdDanhMuc(string TenDanhMuc ,CaPheContext caPheContext)
+        {
+            int sp = (from item in caPheContext.LoaiSanPhams
+                      where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
+                      select item.LoaiSanPhamId).SingleOrDefault();
+            return sp;
+        }
     }
 }

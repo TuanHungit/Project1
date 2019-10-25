@@ -117,9 +117,11 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.gcBan);
             this.panelControl1.Controls.Add(this.label3);
-            this.panelControl1.Location = new System.Drawing.Point(285, 12);
+            this.panelControl1.Location = new System.Drawing.Point(281, 12);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(848, 532);
             this.panelControl1.TabIndex = 3;
@@ -150,21 +152,24 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.btnXoa);
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Controls.Add(this.txtBan);
             this.panelControl2.Controls.Add(this.btnThem);
-            this.panelControl2.Location = new System.Drawing.Point(12, 12);
+            this.panelControl2.Location = new System.Drawing.Point(6, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(267, 532);
+            this.panelControl2.Size = new System.Drawing.Size(267, 533);
             this.panelControl2.TabIndex = 4;
             // 
             // frBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 553);
+            this.ClientSize = new System.Drawing.Size(1139, 554);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "frBan";

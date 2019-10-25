@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnMergeTable = new DevExpress.XtraEditors.SimpleButton();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,41 +44,18 @@
             this.btnChangeTable = new DevExpress.XtraEditors.SimpleButton();
             this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddFood = new DevExpress.XtraEditors.SimpleButton();
-            this.lkedPickCategory = new DevExpress.XtraEditors.LookUpEdit();
-            this.lkedPickFood = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbDanhMuc = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbSanPham = new DevExpress.XtraEditors.LookUpEdit();
             this.panelListTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkedPickCategory.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkedPickFood.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSanPham.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnMergeTable);
-            this.panel1.Controls.Add(this.lsvBill);
-            this.panel1.Controls.Add(this.labelControl3);
-            this.panel1.Controls.Add(this.labelControl2);
-            this.panel1.Controls.Add(this.labelControl1);
-            this.panel1.Controls.Add(this.txtTotalPrice);
-            this.panel1.Controls.Add(this.lkedPickTable);
-            this.panel1.Controls.Add(this.spDiscount);
-            this.panel1.Controls.Add(this.spAmount);
-            this.panel1.Controls.Add(this.btnChangeTable);
-            this.panel1.Controls.Add(this.btnCheck);
-            this.panel1.Controls.Add(this.btnAddFood);
-            this.panel1.Controls.Add(this.lkedPickCategory);
-            this.panel1.Controls.Add(this.lkedPickFood);
-            this.panel1.Location = new System.Drawing.Point(458, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 588);
-            this.panel1.TabIndex = 31;
             // 
             // btnMergeTable
             // 
@@ -108,7 +84,7 @@
             this.lsvBill.Location = new System.Drawing.Point(16, 113);
             this.lsvBill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(614, 380);
+            this.lsvBill.Size = new System.Drawing.Size(614, 402);
             this.lsvBill.TabIndex = 42;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -140,7 +116,7 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseImage = true;
             this.labelControl3.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl3.Location = new System.Drawing.Point(16, 501);
+            this.labelControl3.Location = new System.Drawing.Point(16, 523);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 23);
@@ -154,7 +130,7 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseImage = true;
             this.labelControl2.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.labelControl2.Location = new System.Drawing.Point(16, 544);
+            this.labelControl2.Location = new System.Drawing.Point(16, 566);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(75, 23);
@@ -166,7 +142,7 @@
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(159, 528);
+            this.labelControl1.Location = new System.Drawing.Point(159, 550);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 23);
@@ -177,7 +153,7 @@
             // 
             this.txtTotalPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalPrice.Enabled = false;
-            this.txtTotalPrice.Location = new System.Drawing.Point(328, 520);
+            this.txtTotalPrice.Location = new System.Drawing.Point(328, 542);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,7 +183,7 @@
             0,
             0,
             0});
-            this.spDiscount.Location = new System.Drawing.Point(231, 524);
+            this.spDiscount.Location = new System.Drawing.Point(231, 546);
             this.spDiscount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.spDiscount.Name = "spDiscount";
             this.spDiscount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,7 +249,7 @@
             this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCheck.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.Appearance.Options.UseFont = true;
-            this.btnCheck.Location = new System.Drawing.Point(525, 499);
+            this.btnCheck.Location = new System.Drawing.Point(525, 521);
             this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(105, 79);
@@ -292,35 +268,36 @@
             this.btnAddFood.TabIndex = 35;
             this.btnAddFood.Text = "Thêm món";
             // 
-            // lkedPickCategory
+            // cbDanhMuc
             // 
-            this.lkedPickCategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbDanhMuc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkedPickCategory.Location = new System.Drawing.Point(16, 17);
-            this.lkedPickCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lkedPickCategory.Name = "lkedPickCategory";
-            this.lkedPickCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkedPickCategory.Properties.Appearance.Options.UseFont = true;
-            this.lkedPickCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbDanhMuc.Location = new System.Drawing.Point(16, 17);
+            this.cbDanhMuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbDanhMuc.Name = "cbDanhMuc";
+            this.cbDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDanhMuc.Properties.Appearance.Options.UseFont = true;
+            this.cbDanhMuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkedPickCategory.Properties.NullText = "-- Chọn danh mục --";
-            this.lkedPickCategory.Size = new System.Drawing.Size(220, 30);
-            this.lkedPickCategory.TabIndex = 31;
+            this.cbDanhMuc.Properties.NullText = "-- Chọn danh mục --";
+            this.cbDanhMuc.Size = new System.Drawing.Size(220, 30);
+            this.cbDanhMuc.TabIndex = 31;
+            this.cbDanhMuc.EditValueChanged += new System.EventHandler(this.cbDanhMuc_EditValueChanged_1);
             // 
-            // lkedPickFood
+            // cbSanPham
             // 
-            this.lkedPickFood.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lkedPickFood.Location = new System.Drawing.Point(16, 65);
-            this.lkedPickFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lkedPickFood.Name = "lkedPickFood";
-            this.lkedPickFood.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkedPickFood.Properties.Appearance.Options.UseFont = true;
-            this.lkedPickFood.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbSanPham.Location = new System.Drawing.Point(16, 65);
+            this.cbSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbSanPham.Name = "cbSanPham";
+            this.cbSanPham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSanPham.Properties.Appearance.Options.UseFont = true;
+            this.cbSanPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkedPickFood.Properties.NullText = "-- Chọn món --";
-            this.lkedPickFood.Size = new System.Drawing.Size(220, 30);
-            this.lkedPickFood.TabIndex = 32;
+            this.cbSanPham.Properties.NullText = "-- Chọn món --";
+            this.cbSanPham.Size = new System.Drawing.Size(220, 30);
+            this.cbSanPham.TabIndex = 32;
             // 
             // panelListTable
             // 
@@ -331,34 +308,56 @@
             this.panelListTable.Location = new System.Drawing.Point(29, 30);
             this.panelListTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelListTable.Name = "panelListTable";
-            this.panelListTable.Size = new System.Drawing.Size(409, 547);
+            this.panelListTable.Size = new System.Drawing.Size(486, 569);
             this.panelListTable.TabIndex = 32;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnMergeTable);
+            this.panel1.Controls.Add(this.lsvBill);
+            this.panel1.Controls.Add(this.labelControl3);
+            this.panel1.Controls.Add(this.labelControl2);
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Controls.Add(this.txtTotalPrice);
+            this.panel1.Controls.Add(this.lkedPickTable);
+            this.panel1.Controls.Add(this.spDiscount);
+            this.panel1.Controls.Add(this.spAmount);
+            this.panel1.Controls.Add(this.btnChangeTable);
+            this.panel1.Controls.Add(this.btnCheck);
+            this.panel1.Controls.Add(this.btnAddFood);
+            this.panel1.Controls.Add(this.cbDanhMuc);
+            this.panel1.Controls.Add(this.cbSanPham);
+            this.panel1.Location = new System.Drawing.Point(535, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(643, 610);
+            this.panel1.TabIndex = 31;
             // 
             // frManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 611);
+            this.ClientSize = new System.Drawing.Size(1190, 633);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelListTable);
             this.Name = "frManage";
-            this.Text = "e";
+            this.Text = "Trang bán hàng";
             this.Load += new System.EventHandler(this.frManage_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkedPickCategory.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkedPickFood.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSanPham.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton btnMergeTable;
         private System.Windows.Forms.ListView lsvBill;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -375,9 +374,9 @@
         private DevExpress.XtraEditors.SimpleButton btnChangeTable;
         private DevExpress.XtraEditors.SimpleButton btnCheck;
         private DevExpress.XtraEditors.SimpleButton btnAddFood;
-        private DevExpress.XtraEditors.LookUpEdit lkedPickCategory;
-        private DevExpress.XtraEditors.LookUpEdit lkedPickFood;
+        private DevExpress.XtraEditors.LookUpEdit cbDanhMuc;
+        private DevExpress.XtraEditors.LookUpEdit cbSanPham;
         private System.Windows.Forms.FlowLayoutPanel panelListTable;
-       
+        private System.Windows.Forms.Panel panel1;
     }
 }

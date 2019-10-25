@@ -7,10 +7,11 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CafeManagement.Data;
 using System.Data.Entity;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace CafeManagement.LinQ
 {
-    public class Query_SanPham
+    public  class Query_SanPham
     {
         public bool KiemTraMon(string tenMon, CaPheContext context)
         {
@@ -67,10 +68,12 @@ namespace CafeManagement.LinQ
         }
         public int LayIdDanhMuc(string tenMon, CaPheContext context)
         {
-            var sp = (from sanpham in context.SanPhams
+            int sp = (from sanpham in context.SanPhams
                       where sanpham.TenSanPham.ToUpper().Trim().Contains(tenMon.ToUpper())
                       select sanpham.LoaiSanPhamId).SingleOrDefault();
             return sp;
         }
+
+       
     }
 }

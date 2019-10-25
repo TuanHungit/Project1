@@ -274,21 +274,21 @@
             // 
             this.txtTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTen.EditValue = "";
-            this.txtTen.Location = new System.Drawing.Point(301, 11);
+            this.txtTen.Location = new System.Drawing.Point(312, 11);
             this.txtTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Properties.Appearance.Options.UseFont = true;
             this.txtTen.Properties.NullText = "-- Tìm tên món ăn --";
             this.txtTen.Properties.NullValuePrompt = "-- Tìm tên món ăn --";
-            this.txtTen.Size = new System.Drawing.Size(286, 30);
+            this.txtTen.Size = new System.Drawing.Size(282, 30);
             this.txtTen.TabIndex = 37;
             // 
             // txtGia
             // 
             this.txtGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGia.EditValue = "";
-            this.txtGia.Location = new System.Drawing.Point(588, 11);
+            this.txtGia.Location = new System.Drawing.Point(594, 11);
             this.txtGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGia.Name = "txtGia";
             this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -325,7 +325,7 @@
             // 
             this.cbMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMenu.Location = new System.Drawing.Point(873, 11);
+            this.cbMenu.Location = new System.Drawing.Point(879, 11);
             this.cbMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMenu.Name = "cbMenu";
             this.cbMenu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,7 +333,7 @@
             this.cbMenu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMenu.Properties.NullText = "-- Chọn danh mục --";
-            this.cbMenu.Size = new System.Drawing.Size(290, 30);
+            this.cbMenu.Size = new System.Drawing.Size(284, 30);
             this.cbMenu.TabIndex = 49;
             // 
             // panel1
