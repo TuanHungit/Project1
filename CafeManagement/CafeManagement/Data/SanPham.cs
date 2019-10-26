@@ -9,16 +9,12 @@ namespace CafeManagement.Data
 {
     public class SanPham
     {
-        public SanPham()
-        {
-            HoaDons = new HashSet<HoaDon>();
-        }
-    
+       
         public int SanPhamId { get; set; }
         public string TenSanPham { get; set; }
         public double DonGia { get; set; }
         public int LoaiSanPhamId { get; set; }
         public virtual LoaiSanPham LoaiSanPham { get; set; }
-        public ICollection<HoaDon> HoaDons { get; set; }
+        public ICollection<ChiTietHoaDon> chiTietHoaDons { get; set; }
     }
 }

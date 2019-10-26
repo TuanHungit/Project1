@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.UserSkins;
+using DevExpress.LookAndFeel;
 
 namespace CafeManagement.GUI
 {
@@ -16,6 +18,7 @@ namespace CafeManagement.GUI
         public frMain()
         {
             InitializeComponent();
+            Load_UI();
         }
         private Form CheckFormExist(Type fType)
         {
@@ -84,6 +87,13 @@ namespace CafeManagement.GUI
                 fr.MdiParent = this;
                 fr.Show();
             }
+        }
+        DefaultLookAndFeel defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+        private void Load_UI()
+        {
+            BonusSkins.Register();
+            DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(ribbonGalleryBarItem1, true);
+            defaultLookAndFeel.LookAndFeel.SetSkinStyle("McSkin");
         }
     }
 }

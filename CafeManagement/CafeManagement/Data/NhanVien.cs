@@ -9,11 +9,7 @@ namespace CafeManagement.Data
 {
     public class NhanVien
     {
-        public NhanVien()
-        {
-            HoaDons = new HashSet<HoaDon>();
-            PhieuNhaps = new HashSet<PhieuNhap>();
-        }
+        
      
         public int NhanVienId { get; set; }
         public string HoTenNV { get; set; }
@@ -24,8 +20,7 @@ namespace CafeManagement.Data
         public DateTime NgaySinh { get; set; }
         public DateTime NgayVaoLam { get; set; }
         public ICollection<HoaDon> HoaDons { get; set; }
-
-
         public ICollection<PhieuNhap> PhieuNhaps { get; set; }
+        
     }
 }

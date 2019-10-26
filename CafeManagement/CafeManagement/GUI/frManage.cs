@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CafeManagement.Data;
 using CafeManagement.LinQ;
+using System.Data.Linq;
+using DevExpress.SpreadsheetSource.Implementation;
+using CafeManagement.LinQ;
 namespace CafeManagement.GUI
 {
     public partial class frManage : DevExpress.XtraEditors.XtraForm
@@ -29,7 +32,7 @@ namespace CafeManagement.GUI
         }
         Ban ban = new Ban();
         Query_DanhMuc danhMuc = new Query_DanhMuc();
-        
+        private SimpleButton currentClickButton = new SimpleButton();
         private void Load_Table() 
         {
             panelListTable.Controls.Clear();
@@ -40,8 +43,10 @@ namespace CafeManagement.GUI
                 button.Text = item.BanId.ToString();
                 button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
                 button.ImageOptions.Location = ImageLocation.TopCenter;
+                button.Tag = item;
                 panelListTable.Controls.Add(button);
                
+
             }
         }
         private void Load_cbDanhMuc()
@@ -68,6 +73,53 @@ namespace CafeManagement.GUI
         {
             int DanhMucID = int.Parse(cbDanhMuc.EditValue.ToString());
             Load_cbSanPham(DanhMucID);
+        }
+
+        private void btnThemMon_Click(object sender, EventArgs e)
+        {
+            Ban table = lsvBill.Tag as Ban;
+            Query_HoaDon hoaDon = new Query_HoaDon();
+           
+            if (table == null)
+            {
+                XtraMessageBox.Show("Xin hãy chọn bàn!");
+                return;
+            }
+            if (spSoLuong.Value == 0)
+                return;
+            int soluong = (int)spSoLuong.Value;
+            int HoaDonID = hoaDon.LayHoaDonChuaThanhToan(table.BanId);
+            if (cbSanPham.EditValue == null)
+            {
+                XtraMessageBox.Show("Xin hãy chọn món!");
+                return;
+            }
+            if (HoaDonID == 0)
+            { 
+                
+            }
+            
+        }
+        void btn_Click(object sender, EventArgs e)
+        {
+          //  if ((sender as SimpleButton) != currentClickButton)
+          //  {
+          //      if (currentClickButton != null)
+          //      {
+          //          if ((currentClickButton.Tag as Ban).TinhTrang == "Có người")
+          //              currentClickButton.ImageIndex = 0;
+          //          else
+          //              currentClickButton.ImageIndex = -1;
+          //      }
+          //  }
+
+          //(sender as SimpleButton).ImageIndex = 1;
+          //  int tableID = ((sender as SimpleButton).Tag as Ban).BanId;
+          //  lsvBill.Tag = (sender as SimpleButton).Tag;
+            
+          //  currentClickButton = sender as SimpleButton;
+          //  btnChangeTable.Enabled = true;
+          //  btnMergeTable.Enabled = true;
         }
     }
 }

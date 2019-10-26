@@ -40,10 +40,10 @@
             this.txtTotalPrice = new DevExpress.XtraEditors.TextEdit();
             this.lkedPickTable = new DevExpress.XtraEditors.LookUpEdit();
             this.spDiscount = new DevExpress.XtraEditors.SpinEdit();
-            this.spAmount = new DevExpress.XtraEditors.SpinEdit();
+            this.spSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.btnChangeTable = new DevExpress.XtraEditors.SimpleButton();
             this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddFood = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThemMon = new DevExpress.XtraEditors.SimpleButton();
             this.cbDanhMuc = new DevExpress.XtraEditors.LookUpEdit();
             this.cbSanPham = new DevExpress.XtraEditors.LookUpEdit();
             this.panelListTable = new System.Windows.Forms.FlowLayoutPanel();
@@ -51,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSanPham.Properties)).BeginInit();
             this.panel1.SuspendLayout();
@@ -203,34 +203,34 @@
             this.spDiscount.Size = new System.Drawing.Size(79, 30);
             this.spDiscount.TabIndex = 36;
             // 
-            // spAmount
+            // spSoLuong
             // 
-            this.spAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.spSoLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.spAmount.EditValue = new decimal(new int[] {
+            this.spSoLuong.EditValue = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.spAmount.Location = new System.Drawing.Point(390, 38);
-            this.spAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.spAmount.Name = "spAmount";
-            this.spAmount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spAmount.Properties.Appearance.Options.UseFont = true;
-            this.spAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spSoLuong.Location = new System.Drawing.Point(390, 38);
+            this.spSoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.spSoLuong.Name = "spSoLuong";
+            this.spSoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spSoLuong.Properties.Appearance.Options.UseFont = true;
+            this.spSoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spAmount.Properties.MaxValue = new decimal(new int[] {
+            this.spSoLuong.Properties.MaxValue = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.spAmount.Properties.MinValue = new decimal(new int[] {
+            this.spSoLuong.Properties.MinValue = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.spAmount.Size = new System.Drawing.Size(57, 30);
-            this.spAmount.TabIndex = 37;
+            this.spSoLuong.Size = new System.Drawing.Size(57, 30);
+            this.spSoLuong.TabIndex = 37;
             // 
             // btnChangeTable
             // 
@@ -256,17 +256,18 @@
             this.btnCheck.TabIndex = 34;
             this.btnCheck.Text = "Thanh toán";
             // 
-            // btnAddFood
+            // btnThemMon
             // 
-            this.btnAddFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddFood.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFood.Appearance.Options.UseFont = true;
-            this.btnAddFood.Location = new System.Drawing.Point(250, 26);
-            this.btnAddFood.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(133, 53);
-            this.btnAddFood.TabIndex = 35;
-            this.btnAddFood.Text = "Thêm món";
+            this.btnThemMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemMon.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemMon.Appearance.Options.UseFont = true;
+            this.btnThemMon.Location = new System.Drawing.Point(250, 26);
+            this.btnThemMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThemMon.Name = "btnThemMon";
+            this.btnThemMon.Size = new System.Drawing.Size(133, 53);
+            this.btnThemMon.TabIndex = 35;
+            this.btnThemMon.Text = "Thêm món";
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // cbDanhMuc
             // 
@@ -323,10 +324,10 @@
             this.panel1.Controls.Add(this.txtTotalPrice);
             this.panel1.Controls.Add(this.lkedPickTable);
             this.panel1.Controls.Add(this.spDiscount);
-            this.panel1.Controls.Add(this.spAmount);
+            this.panel1.Controls.Add(this.spSoLuong);
             this.panel1.Controls.Add(this.btnChangeTable);
             this.panel1.Controls.Add(this.btnCheck);
-            this.panel1.Controls.Add(this.btnAddFood);
+            this.panel1.Controls.Add(this.btnThemMon);
             this.panel1.Controls.Add(this.cbDanhMuc);
             this.panel1.Controls.Add(this.cbSanPham);
             this.panel1.Location = new System.Drawing.Point(535, 10);
@@ -348,7 +349,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkedPickTable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSanPham.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -370,10 +371,10 @@
         private DevExpress.XtraEditors.TextEdit txtTotalPrice;
         private DevExpress.XtraEditors.LookUpEdit lkedPickTable;
         private DevExpress.XtraEditors.SpinEdit spDiscount;
-        private DevExpress.XtraEditors.SpinEdit spAmount;
+        private DevExpress.XtraEditors.SpinEdit spSoLuong;
         private DevExpress.XtraEditors.SimpleButton btnChangeTable;
         private DevExpress.XtraEditors.SimpleButton btnCheck;
-        private DevExpress.XtraEditors.SimpleButton btnAddFood;
+        private DevExpress.XtraEditors.SimpleButton btnThemMon;
         private DevExpress.XtraEditors.LookUpEdit cbDanhMuc;
         private DevExpress.XtraEditors.LookUpEdit cbSanPham;
         private System.Windows.Forms.FlowLayoutPanel panelListTable;

@@ -138,7 +138,6 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.csproj
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.exe
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.pdb
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
-C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatDB.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatSoLuong.resources
-C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatSoLuong.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.IniDB.resources

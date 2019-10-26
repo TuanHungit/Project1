@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Data\Ban.cs" />
     <Compile Include="Data\CaPheContext.cs" />
+    <Compile Include="Data\ChiTietHoaDon.cs" />
     <Compile Include="Data\HangHoa.cs" />
     <Compile Include="Data\HoaDon.cs" />
     <Compile Include="Data\LoaiSanPham.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Data\NhanVien.cs" />
     <Compile Include="Data\PhieuNhap.cs" />
     <Compile Include="Data\SanPham.cs" />
+    <Compile Include="Data\TaiKhoan.cs" />
     <Compile Include="GUI\frBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,14 +126,11 @@
     </Compile>
     <Compile Include="LinQ\Query_Ban.cs" />
     <Compile Include="LinQ\Query_DanhMuc.cs" />
+    <Compile Include="LinQ\Query_HoaDon.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
-    <Compile Include="Migrations\201910221211587_CapNhatDB.cs" />
-    <Compile Include="Migrations\201910221211587_CapNhatDB.designer.cs">
-      <DependentUpon>201910221211587_CapNhatDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910221312157_CapNhatSoLuong.cs" />
-    <Compile Include="Migrations\201910221312157_CapNhatSoLuong.designer.cs">
-      <DependentUpon>201910221312157_CapNhatSoLuong.cs</DependentUpon>
+    <Compile Include="Migrations\201910261536216_IniDB.cs" />
+    <Compile Include="Migrations\201910261536216_IniDB.designer.cs">
+      <DependentUpon>201910261536216_IniDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -154,11 +153,8 @@
     <EmbeddedResource Include="GUI\frMenu.resx">
       <DependentUpon>frMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910221211587_CapNhatDB.resx">
-      <DependentUpon>201910221211587_CapNhatDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910221312157_CapNhatSoLuong.resx">
-      <DependentUpon>201910221312157_CapNhatSoLuong.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910261536216_IniDB.resx">
+      <DependentUpon>201910261536216_IniDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

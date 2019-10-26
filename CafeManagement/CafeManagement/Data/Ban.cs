@@ -17,8 +17,10 @@ namespace CafeManagement.Data
         }
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int BanId { get; set; }
+        public string TinhTrang { get; set; }
         public ICollection<HoaDon> HoaDons { get; set; }
         CaPheContext caPheContext = new CaPheContext();
+
         public List<Ban> GetAllTable()
         {
            return (from item in caPheContext.Bans
