@@ -109,6 +109,7 @@
             this.gcMenu.TabIndex = 26;
             this.gcMenu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenu});
+            this.gcMenu.Click += new System.EventHandler(this.gcMenu_Click);
             // 
             // gvMenu
             // 

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class IniDB : DbMigration
+    public partial class UpdateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -77,7 +77,7 @@
                         HoTenNV = c.String(),
                         ChucVu = c.String(),
                         SDT_NV = c.String(),
-                        CMND = c.Int(nullable: false),
+                        CMND = c.String(nullable: false),
                         NgaySinh = c.DateTime(nullable: false),
                         NgayVaoLam = c.DateTime(nullable: false),
                     })

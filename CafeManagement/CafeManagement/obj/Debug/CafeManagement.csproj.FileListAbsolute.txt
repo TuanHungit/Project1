@@ -130,7 +130,6 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.fr
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frLogin.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMain.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frManage.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatDB.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Properties.Resources.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.csproj.GenerateResource.cache
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.exe.licenses
@@ -139,5 +138,6 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.exe
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.pdb
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CapNhatSoLuong.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.IniDB.resources
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhanVien.resources
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.UpdateDatabase.resources

@@ -15,7 +15,7 @@ namespace CafeManagement.Data
         public string HoTenNV { get; set; }
         public string ChucVu { get; set; }
         public string SDT_NV { get; set; }
-        public int CMND { get; set; }
+        public string CMND { get; set; }
       
         public DateTime NgaySinh { get; set; }
         public DateTime NgayVaoLam { get; set; }

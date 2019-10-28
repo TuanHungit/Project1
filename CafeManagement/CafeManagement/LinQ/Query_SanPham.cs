@@ -18,7 +18,7 @@ namespace CafeManagement.LinQ
             var sp = (from sanpham in context.SanPhams
                       where sanpham.TenSanPham.ToUpper().Contains(tenMon.ToUpper())
                       select sanpham).Count();
-            if (sp==0)
+            if (sp == 0)
                 return true;
             return false;
         }

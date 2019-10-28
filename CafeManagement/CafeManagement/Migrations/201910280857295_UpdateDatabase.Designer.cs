@@ -7,13 +7,13 @@ namespace CafeManagement.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class IniDB : IMigrationMetadata
+    public sealed partial class UpdateDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(IniDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910261536216_IniDB"; }
+            get { return "201910280857295_UpdateDatabase"; }
         }
         
         string IMigrationMetadata.Source

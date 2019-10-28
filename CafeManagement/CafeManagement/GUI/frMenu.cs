@@ -140,5 +140,10 @@ namespace CafeManagement.GUI
             //txtGia.Text = gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[2]).ToString();
             //cbMenu.Text = gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[3]).ToString();
         }
+
+        private void gcMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
