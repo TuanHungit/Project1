@@ -13,7 +13,6 @@ namespace CafeManagement.Data
         [Key]
         [Column(Order = 1)]
         public int HoaDonID { get; set; }
-
         [Key]
         [Column(Order = 2)]
         public int SanPhamID { get; set; }

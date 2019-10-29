@@ -93,7 +93,22 @@ namespace CafeManagement.GUI
         {
             BonusSkins.Register();
             DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(ribbonGalleryBarItem1, true);
-            defaultLookAndFeel.LookAndFeel.SetSkinStyle("McSkin");
+            defaultLookAndFeel.LookAndFeel.SetSkinStyle("Glass Oceans");
+        }
+
+        private void btnViewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = this.CheckFormExist(typeof(frNhanVien));
+            if (form != null)
+            {
+                form.Activate();
+            }
+            else
+            {
+               frNhanVien fr = new frNhanVien();
+                fr.MdiParent = this;
+                fr.Show();
+            }
         }
     }
 }

@@ -49,7 +49,7 @@ namespace CafeManagement.LinQ
                 context.Entry(nhanvien).State = EntityState.Deleted;
                 context.SaveChanges();
                 return true;
-            }
+            } 
             return false;
         }
         public bool Update_NV(CaPheContext context, string hoten, string chucvu, string cmnd, string sdt, DateTime ngaysinh, DateTime ngayvaolam)

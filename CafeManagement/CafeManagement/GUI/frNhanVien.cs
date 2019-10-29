@@ -17,6 +17,7 @@ namespace CafeManagement.GUI
         public frNhanVien()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void bttThem_Click(object sender, EventArgs e)

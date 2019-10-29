@@ -15,7 +15,7 @@ namespace CafeManagement.LinQ
         {
             if (!KiemTraBan(soBan, context))
             {
-                var ban = new Ban() { BanId = Convert.ToInt32(soBan) };
+                var ban = new Ban() { BanId = Convert.ToInt32(soBan) , TinhTrang = "Trống"};
                 context.Bans.Add(ban);
                 context.SaveChanges();
                 return true;

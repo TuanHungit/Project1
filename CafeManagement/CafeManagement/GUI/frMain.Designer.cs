@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.bsTextDate = new DevExpress.XtraBars.BarStaticItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -177,12 +176,13 @@
             // 
             // btnViewAccount
             // 
-            this.btnViewAccount.Caption = "Tài khoản";
+            this.btnViewAccount.Caption = "Nhân viên";
             this.btnViewAccount.Id = 9;
             this.btnViewAccount.ImageOptions.Image = global::CafeManagement.Properties.Resources.User_Group_icon;
             this.btnViewAccount.LargeWidth = 75;
             this.btnViewAccount.Name = "btnViewAccount";
             this.btnViewAccount.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnViewAccount.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewAccount_ItemClick);
             // 
             // btnViewBill
             // 
