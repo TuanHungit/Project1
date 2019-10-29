@@ -60,5 +60,33 @@ namespace CafeManagement.LinQ
             return false;
 
         }
+        public void Update_Ban(CaPheContext context, int id_ban)
+        {
+            var ban = (from Ban in context.Bans
+                       where Ban.BanId == id_ban
+                       select Ban).ToList();
+            foreach( var b in ban)
+            {
+                b.TinhTrang = "Có người";
+                context.Entry(b).State = EntityState.Modified;
+                context.SaveChanges();
+                
+            }
+           
+        }
+        public void Update_Ban1(CaPheContext context, int id_ban)
+        {
+            var ban = (from Ban in context.Bans
+                       where Ban.BanId == id_ban
+                       select Ban).ToList();
+            foreach (var b in ban)
+            {
+                b.TinhTrang = "Trống";
+                context.Entry(b).State = EntityState.Modified;
+                context.SaveChanges();
+
+            }
+
+        }
     }
 }

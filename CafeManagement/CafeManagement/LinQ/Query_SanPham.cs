@@ -73,7 +73,12 @@ namespace CafeManagement.LinQ
                       select sanpham.LoaiSanPhamId).SingleOrDefault();
             return sp;
         }
-
-       
+        public double LayGiaSanPham(int idsp, CaPheContext context)
+        {
+            return (from sp in context.SanPhams
+                    where sp.SanPhamId == idsp
+                    select sp.DonGia).SingleOrDefault();
+        }
+      
     }
 }

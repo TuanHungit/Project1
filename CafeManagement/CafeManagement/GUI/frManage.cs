@@ -45,7 +45,7 @@ namespace CafeManagement.GUI
             {
                 SimpleButton button = new SimpleButton() { Width = 80, Height = 80 };
                 button.Text = item.BanId.ToString() + " "+item.TinhTrang.ToString();
-                button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
+                button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"D:\GitHub\Project1\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
                 button.ImageOptions.Location = ImageLocation.TopCenter;
                 button.Tag = item;
 
@@ -54,6 +54,7 @@ namespace CafeManagement.GUI
                 switch (item.TinhTrang.ToString())
                 {
                     case "Có người":
+
                         break;
                     default:
                         break;
@@ -89,7 +90,8 @@ namespace CafeManagement.GUI
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
-
+            var ban = new Query_Ban();
+            var context = new CaPheContext();
             if (cbSanPham.EditValue == null|| cbDanhMuc.EditValue == null)
             {
                 XtraMessageBox.Show("Hãy chọn món");
@@ -113,10 +115,10 @@ namespace CafeManagement.GUI
             else
             {
                 hoaDon.AddChiTietHoaDon(BillID, SanphamID, SoLuong);
-
             }
+            ban.Update_Ban(context, BanID);
             ShowBill(BanID);
-            
+            Load_Table();
         }
         void button_Click(object sender, EventArgs e)
         {
@@ -125,23 +127,25 @@ namespace CafeManagement.GUI
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
-        {
+        { 
+            var context = new CaPheContext();
+            var hoadon1 = new Query_HoaDon();
+            var sp = new Query_SanPham();
+            var ban = new Query_Ban();
             if (BanID == 0)
             {
                 XtraMessageBox.Show("Xin hãy chọn bàn để thanh toán!");
                 return;
             }
             int HoaDonID = hoaDon.LayHoaDonChuaThanhToan(BanID);
-            var quer = (from sanpham in caPheContext.SanPhams
-                        join chitiethoadon in caPheContext.ChiTietHoaDons on sanpham.SanPhamId equals chitiethoadon.SanPhamID
-                        join hoadon in caPheContext.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
-                        orderby hoadon.HoaDonId
-                        where hoadon.TinhTrang.Equals(0) && hoadon.HoaDonId.Equals(HoaDonID)
-                        select new { TenMon = sanpham.TenSanPham, SoLuong = chitiethoadon.SoLuong, DonGia = sanpham.DonGia, ThanhTien = chitiethoadon.SoLuong * sanpham.DonGia }
-                        ).ToList();
 
+            var quer = (from chitiethoadon in context.ChiTietHoaDons
+                        join sanpham in context.SanPhams on chitiethoadon.SanPhamID equals sanpham.SanPhamId
+                        where chitiethoadon.HoaDonID == HoaDonID
+                        select new {TenMon= sanpham.TenSanPham, chitiethoadon.SoLuong, sanpham.DonGia, ThanhTien = chitiethoadon.SoLuong * sanpham.DonGia }).ToList();
+           // double totalPrice = hoadon.TinhTien(context, HoaD onID);
             int discount = (int)spDiscount.Value;
-            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;
+           double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;
             double finalPrice = totalPrice - (totalPrice / 100) * discount;
             if (HoaDonID != 0)
             {
@@ -156,8 +160,11 @@ namespace CafeManagement.GUI
                     report.Parameters["TotalPrice"].Value = finalPrice;
                     ReportPrintTool tool = new ReportPrintTool(report);
                     tool.ShowPreview();
+                    hoadon1.CapNhatTrangThaiHoaDon(HoaDonID, context,finalPrice );
+                    ban.Update_Ban1(context, BanID);
                 }
             }
+            Load_Table();
         }
         void ShowBill(int BanID)
         {
@@ -168,7 +175,7 @@ namespace CafeManagement.GUI
                         join chitiethoadon in caPheContext.ChiTietHoaDons on sanpham.SanPhamId equals chitiethoadon.SanPhamID
                         join hoadon in caPheContext.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
                         orderby hoadon.HoaDonId
-                        where hoadon.TinhTrang.Equals(0) && hoadon.HoaDonId.Equals(HoaDonID) 
+                        where hoadon.TinhTrang.Equals(0) && hoadon.HoaDonId.Equals(HoaDonID)
                         select new { sanpham.TenSanPham, chitiethoadon.SoLuong, sanpham.DonGia, TongGia = chitiethoadon.SoLuong * sanpham.DonGia }
                         ).ToList();
             gcBill.DataSource = quer;

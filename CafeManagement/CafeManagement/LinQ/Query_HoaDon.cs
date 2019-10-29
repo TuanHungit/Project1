@@ -16,7 +16,7 @@ namespace CafeManagement.LinQ
                     where item.BanID.Equals(BanID) && item.TinhTrang.Equals(0)
                     select item.HoaDonId).SingleOrDefault();
 
-        }
+        } 
         public List<ChiTietHoaDon> LayDanhSachChiTietHoaDon(int HoaDonID)
         {
             var query = (from item in caPheContext.ChiTietHoaDons
@@ -106,5 +106,21 @@ namespace CafeManagement.LinQ
             caPheContext.SaveChanges();
             
         }
+         public void CapNhatTrangThaiHoaDon(int ID_HoaDon , CaPheContext context, double tongtien)
+        {
+            var hd = (from hoadon in context.HoaDons
+                      where hoadon.HoaDonId == ID_HoaDon
+                      select hoadon).ToList();
+         
+            foreach(var hoadon in hd)
+            {
+                hoadon.TongGia = tongtien;
+                hoadon.TinhTrang = 1;
+                context.Entry(hoadon).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+           
+        }
+        
     }
 }
