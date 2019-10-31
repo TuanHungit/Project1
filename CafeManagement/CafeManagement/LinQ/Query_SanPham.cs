@@ -79,6 +79,6 @@ namespace CafeManagement.LinQ
                     where sp.SanPhamId == idsp
                     select sp.DonGia).SingleOrDefault();
         }
-      
+        
     }
 }

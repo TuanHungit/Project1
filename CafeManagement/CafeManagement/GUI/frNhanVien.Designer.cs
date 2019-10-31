@@ -42,8 +42,8 @@
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.bttThem = new System.Windows.Forms.Button();
-            this.bttSua = new System.Windows.Forms.Button();
             this.bttXoa = new System.Windows.Forms.Button();
+            this.bttSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,16 +168,6 @@
             this.bttThem.UseVisualStyleBackColor = true;
             this.bttThem.Click += new System.EventHandler(this.bttThem_Click);
             // 
-            // bttSua
-            // 
-            this.bttSua.Location = new System.Drawing.Point(530, 228);
-            this.bttSua.Name = "bttSua";
-            this.bttSua.Size = new System.Drawing.Size(128, 53);
-            this.bttSua.TabIndex = 19;
-            this.bttSua.Text = "Sua";
-            this.bttSua.UseVisualStyleBackColor = true;
-            this.bttSua.Click += new System.EventHandler(this.bttSua_Click);
-            // 
             // bttXoa
             // 
             this.bttXoa.Location = new System.Drawing.Point(317, 228);
@@ -188,11 +178,22 @@
             this.bttXoa.UseVisualStyleBackColor = true;
             this.bttXoa.Click += new System.EventHandler(this.bttXoa_Click);
             // 
+            // bttSua
+            // 
+            this.bttSua.BackgroundImage = global::CafeManagement.Properties.Resources.user;
+            this.bttSua.Location = new System.Drawing.Point(530, 228);
+            this.bttSua.Name = "bttSua";
+            this.bttSua.Size = new System.Drawing.Size(128, 53);
+            this.bttSua.TabIndex = 19;
+            this.bttSua.Text = "Sua";
+            this.bttSua.UseVisualStyleBackColor = true;
+            this.bttSua.Click += new System.EventHandler(this.bttSua_Click);
+            // 
             // frNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 577);
+            this.ClientSize = new System.Drawing.Size(867, 577);
             this.Controls.Add(this.bttXoa);
             this.Controls.Add(this.bttSua);
             this.Controls.Add(this.bttThem);

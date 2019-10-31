@@ -30,7 +30,7 @@ namespace CafeManagement.LinQ
             {
                 HoaDon hoaDon = new HoaDon()
                 {
-                    NhanVienId = 3,
+                    NhanVienId = 5,
                     NgayLap = DateTime.Now,
                     BanID = BanID,
                     TinhTrang = 0
@@ -121,6 +121,12 @@ namespace CafeManagement.LinQ
             }
            
         }
-        
+        public void XoaHoaDon(int HoaDonID)
+        {
+            var hoadon = new HoaDon() { HoaDonId = HoaDonID };
+            caPheContext.Entry(hoadon).State = EntityState.Deleted;
+            caPheContext.SaveChanges();
+            
+        }
     }
 }

@@ -15,6 +15,7 @@ using DevExpress.SpreadsheetSource.Implementation;
 using CafeManagement.LinQ;
 using System.Globalization;
 using DevExpress.XtraReports.UI;
+using DevExpress.LookAndFeel;
 
 namespace CafeManagement.GUI
 {
@@ -31,21 +32,29 @@ namespace CafeManagement.GUI
             this.WindowState = FormWindowState.Maximized;
             Load_Table();
             Load_cbDanhMuc();
+            load_cbChonBan();
           
         }
-        Ban ban = new Ban();
-        Query_DanhMuc danhMuc = new Query_DanhMuc();
-        private SimpleButton currentClickButton = new SimpleButton();
+        Query_Ban ban = new Query_Ban();
+        Query_SanPham sanPham = new Query_SanPham();
+       CaPheContext context = new CaPheContext();
+     
         Query_HoaDon hoaDon = new Query_HoaDon();
+        int SanphamID = 0;
+        double totalPrice;
+        double finalPrice;
+        CultureInfo culture = new CultureInfo("vi-VN");
         private void Load_Table() 
         {
-            panelListTable.Controls.Clear();
-            List<Ban> danhsachban = ban.GetAllTable();
+           panelBan.Controls.Clear();
+           
+            List<Ban> danhsachban = new List<Ban>(); 
+            danhsachban=ban.GetAllTable(context);
             foreach (Ban item in danhsachban)
             {
                 SimpleButton button = new SimpleButton() { Width = 80, Height = 80 };
                 button.Text = item.BanId.ToString() + " "+item.TinhTrang.ToString();
-                button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"D:\GitHub\Project1\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
+                button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
                 button.ImageOptions.Location = ImageLocation.TopCenter;
                 button.Tag = item;
 
@@ -54,12 +63,17 @@ namespace CafeManagement.GUI
                 switch (item.TinhTrang.ToString())
                 {
                     case "Có người":
-
+                        button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\Resources\user.png");
+                        button.ImageOptions.Location = ImageLocation.TopCenter;
+                        button.LookAndFeel.UseDefaultLookAndFeel = false;
+                        button.Appearance.BackColor = Color.Aqua;
+                        button.Appearance.Options.UseBackColor = true;
                         break;
                     default:
+                     
                         break;
                 }
-                panelListTable.Controls.Add(button);
+                panelBan.Controls.Add(button);
             }
         }
         private void Load_cbDanhMuc()
@@ -69,48 +83,52 @@ namespace CafeManagement.GUI
            cbDanhMuc.Properties.DisplayMember = "TenLoaiSanPham";
            cbDanhMuc.Properties.ValueMember = "LoaiSanPhamId";
         }
-        private void Load_cbSanPham(int DanhmucID)
+        private void Load_listviewMenu(int DanhmucID)
         {
 
-            if (cbDanhMuc.Text != "-- Chọn danh mục --")
-            {
-                cbSanPham.Properties.DataSource = (from item in caPheContext.SanPhams
+            listviewMenu.Items.Clear();
+            var Menu = (from item in caPheContext.SanPhams
                                                    where item.LoaiSanPhamId.Equals(DanhmucID)
                                                    select new { item.SanPhamId, item.TenSanPham, item.DonGia }).ToList();
-                cbSanPham.Properties.DisplayMember = "TenSanPham";
-                cbSanPham.Properties.ValueMember = "SanPhamId";
+            foreach (var item in Menu)
+            {
+                ListViewItem listViewItem = new ListViewItem(item.TenSanPham.ToString());
+                listViewItem.SubItems.Add(item.DonGia.ToString()+ " VND");
+                listviewMenu.Items.Add(listViewItem);
             }
+                
         }
 
         private void cbDanhMuc_EditValueChanged_1(object sender, EventArgs e)
         {
             int DanhMucID = int.Parse(cbDanhMuc.EditValue.ToString());
-            Load_cbSanPham(DanhMucID);
+      
+            Load_listviewMenu(DanhMucID);
         }
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
-            var ban = new Query_Ban();
-            var context = new CaPheContext();
-            if (cbSanPham.EditValue == null|| cbDanhMuc.EditValue == null)
+   
+           
+            if (SanphamID == 0||cbDanhMuc.EditValue==null)
             {
                 XtraMessageBox.Show("Hãy chọn món");
                 return;
             }
+           
             if (BanID == 0)
             {
                 XtraMessageBox.Show("Hãy chọn bàn");
                 return;
             }
             int BillID = hoaDon.LayHoaDonChuaThanhToan(BanID);
-                int SanphamID = int.Parse(cbSanPham.EditValue.ToString());
+              
                 int SoLuong = int.Parse(spSoLuong.Value.ToString());
             if (BillID == 0)
             {
-                
-                    hoaDon.AddHoaDon(BanID);
-                    hoaDon.AddChiTietHoaDon(hoaDon.GetMaxBill(), SanphamID, SoLuong);
-                
+
+                hoaDon.AddHoaDon(BanID);
+                hoaDon.AddChiTietHoaDon(hoaDon.GetMaxBill(), SanphamID, SoLuong);
             }
             else
             {
@@ -123,15 +141,16 @@ namespace CafeManagement.GUI
         void button_Click(object sender, EventArgs e)
         {
             BanID = ((sender as SimpleButton).Tag as Ban).BanId;
+            labelBan.Text ="Bàn " +BanID.ToString();
+            panelCheckBan.BackgroundImage = Properties.Resources.check_1_icon;
             ShowBill(BanID);
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         { 
-            var context = new CaPheContext();
-            var hoadon1 = new Query_HoaDon();
-            var sp = new Query_SanPham();
-            var ban = new Query_Ban();
+          
+          
+          
             if (BanID == 0)
             {
                 XtraMessageBox.Show("Xin hãy chọn bàn để thanh toán!");
@@ -145,7 +164,7 @@ namespace CafeManagement.GUI
                         select new {TenMon= sanpham.TenSanPham, chitiethoadon.SoLuong, sanpham.DonGia, ThanhTien = chitiethoadon.SoLuong * sanpham.DonGia }).ToList();
            // double totalPrice = hoadon.TinhTien(context, HoaD onID);
             int discount = (int)spDiscount.Value;
-           double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]) * 1000;
+           double totalPrice = Convert.ToDouble(txtThanhTien.Text.Split(',')[0]) * 1000;
             double finalPrice = totalPrice - (totalPrice / 100) * discount;
             if (HoaDonID != 0)
             {
@@ -160,7 +179,7 @@ namespace CafeManagement.GUI
                     report.Parameters["TotalPrice"].Value = finalPrice;
                     ReportPrintTool tool = new ReportPrintTool(report);
                     tool.ShowPreview();
-                    hoadon1.CapNhatTrangThaiHoaDon(HoaDonID, context,finalPrice );
+                    hoaDon.CapNhatTrangThaiHoaDon(HoaDonID, context,finalPrice );
                     ban.Update_Ban1(context, BanID);
                 }
             }
@@ -187,8 +206,57 @@ namespace CafeManagement.GUI
             {
                 ThanhTien += item.TongGia;
             }
-            CultureInfo culture = new CultureInfo("vi-VN");
-            txtTotalPrice.Text = ThanhTien.ToString("c", culture);
+          
+            txtThanhTien.Text = ThanhTien.ToString("c", culture);
+            totalPrice = Convert.ToDouble(txtThanhTien.Text.Split(',')[0]) * 1000;
+            finalPrice = totalPrice - (totalPrice / 100) * ((int)spDiscount.Value);
+            txtTongCong.Text = finalPrice.ToString("c", culture);
+        }
+     
+       
+
+        private void spDiscount_EditValueChanged(object sender, EventArgs e)
+        {
+            finalPrice = totalPrice - (totalPrice / 100) * ((int)spDiscount.Value);
+            txtTongCong.Text = finalPrice.ToString("c", culture);
+        }
+
+        private void listviewMenu_Click(object sender, EventArgs e)
+        {
+            listviewMenu.FullRowSelect = true;
+            SanphamID = sanPham.LayIdSanPham(listviewMenu.SelectedItems[0].ToString(), caPheContext);
+            foreach (ListViewItem items in listviewMenu.SelectedItems)
+            {
+                SanphamID = sanPham.LayIdSanPham(items.SubItems[0].Text, caPheContext);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Load_Table();
+        }
+
+        private void btnGopBan_Click(object sender, EventArgs e)
+        {
+            if (cbChonBan.EditValue == null)
+            {
+                XtraMessageBox.Show("Hãy chọn bàn cần gộp hay chuyển!");
+                return;
+            }
+     
+            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp {1} sang {0}?",
+                BanID, cbChonBan.Text), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                ban.GopBan(BanID, int.Parse(cbChonBan.EditValue.ToString()));
+            }
+            Load_Table();
+        }
+        private void load_cbChonBan()
+        {
+            cbChonBan.Properties.DataSource = (from item in context.Bans
+                                               select new { item.BanId }).ToList() ;
+            cbChonBan.Properties.DisplayMember = "BanId";
+            cbChonBan.Properties.ValueMember = "BanId";
         }
     }
 }

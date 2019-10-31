@@ -348,3 +348,15 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Diagram
 D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.resources.dll
 D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.XtraReport.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraCharts.v19.1.UI.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraCharts.v19.1.UI.xml
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.Chart.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.Map.v19.1.Core.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraMap.v19.1.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.Map.v19.1.Core.xml
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraMap.v19.1.xml
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\de\DevExpress.Map.v19.1.Core.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Map.v19.1.Core.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Map.v19.1.Core.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Map.v19.1.Core.resources.dll
+C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frDanhThu.resources

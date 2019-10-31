@@ -21,11 +21,7 @@ namespace CafeManagement.Data
         public ICollection<HoaDon> HoaDons { get; set; }
         CaPheContext caPheContext = new CaPheContext();
 
-        public List<Ban> GetAllTable()
-        {
-           return (from item in caPheContext.Bans
-             select item).ToList();
-        }
+       
 
     }
 }

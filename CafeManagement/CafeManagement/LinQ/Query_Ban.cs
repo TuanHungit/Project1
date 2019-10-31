@@ -70,7 +70,6 @@ namespace CafeManagement.LinQ
                 b.TinhTrang = "Có người";
                 context.Entry(b).State = EntityState.Modified;
                 context.SaveChanges();
-                
             }
            
         }
@@ -84,9 +83,38 @@ namespace CafeManagement.LinQ
                 b.TinhTrang = "Trống";
                 context.Entry(b).State = EntityState.Modified;
                 context.SaveChanges();
-
             }
 
+        }
+        public List<Ban> GetAllTable(CaPheContext context)
+        {
+            return (from item in context.Bans
+                    select item).ToList();
+        }
+
+        public void GopBan(int BanID1, int BanID2)
+        {
+            Query_HoaDon hoaDon = new Query_HoaDon();
+            CaPheContext caPheContext = new CaPheContext();
+            int BillID1, BillID2;
+            BillID1 = hoaDon.LayHoaDonChuaThanhToan(BanID1);
+            BillID2 = hoaDon.LayHoaDonChuaThanhToan(BanID2);
+            if (BillID1 != 0 && BillID2 != 0)
+            {
+                foreach (var item in caPheContext.ChiTietHoaDons)
+                {
+                    if (item.HoaDonID == BillID2)
+                    {
+                        item.HoaDonID = BillID1;
+                     
+                    
+                        hoaDon.XoaHoaDon(BillID2);
+                        Update_Ban1(caPheContext, BanID2);
+                    }
+                    caPheContext.SaveChanges();
+                }
+            }
+        
         }
     }
 }
