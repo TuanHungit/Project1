@@ -12,7 +12,6 @@ using CafeManagement.Data;
 using CafeManagement.LinQ;
 using System.Data.Linq;
 using DevExpress.SpreadsheetSource.Implementation;
-using CafeManagement.LinQ;
 using System.Globalization;
 using DevExpress.XtraReports.UI;
 using DevExpress.LookAndFeel;

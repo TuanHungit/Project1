@@ -171,6 +171,7 @@
     <Compile Include="LinQ\Query_HoaDon.cs" />
     <Compile Include="LinQ\Query_NhanVien.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
+    <Compile Include="LinQ\Query_DanhThu.cs" />
     <Compile Include="Migrations\201910280857295_UpdateDatabase.cs" />
     <Compile Include="Migrations\201910280857295_UpdateDatabase.designer.cs">
       <DependentUpon>201910280857295_UpdateDatabase.cs</DependentUpon>
