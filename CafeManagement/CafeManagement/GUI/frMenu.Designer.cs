@@ -93,7 +93,7 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(1067, 3);
+            this.btnSearch.Location = new System.Drawing.Point(1078, 3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(88, 33);
@@ -102,10 +102,13 @@
             // 
             // gcMenu
             // 
+            this.gcMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gcMenu.Location = new System.Drawing.Point(6, 9);
             this.gcMenu.MainView = this.gvMenu;
             this.gcMenu.Name = "gcMenu";
-            this.gcMenu.Size = new System.Drawing.Size(1162, 438);
+            this.gcMenu.Size = new System.Drawing.Size(1154, 438);
             this.gcMenu.TabIndex = 26;
             this.gcMenu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenu});
@@ -131,7 +134,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 40);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1168, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1179, 0);
             // 
             // barDockControlBottom
             // 
@@ -139,7 +142,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 463);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1168, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1179, 0);
             // 
             // barDockControlLeft
             // 
@@ -153,7 +156,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1168, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1179, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 423);
             // 
@@ -245,7 +248,7 @@
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
             this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(1168, 40);
+            this.barDockControl1.Size = new System.Drawing.Size(1179, 40);
             // 
             // barDockControl2
             // 
@@ -253,7 +256,7 @@
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControl2.Location = new System.Drawing.Point(0, 463);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1168, 24);
+            this.barDockControl2.Size = new System.Drawing.Size(1179, 24);
             // 
             // barDockControl3
             // 
@@ -267,7 +270,7 @@
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1168, 40);
+            this.barDockControl4.Location = new System.Drawing.Point(1179, 40);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 423);
             // 
@@ -275,7 +278,7 @@
             // 
             this.txtTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTen.EditValue = "";
-            this.txtTen.Location = new System.Drawing.Point(312, 11);
+            this.txtTen.Location = new System.Drawing.Point(322, 11);
             this.txtTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,7 +292,7 @@
             // 
             this.txtGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGia.EditValue = "";
-            this.txtGia.Location = new System.Drawing.Point(594, 11);
+            this.txtGia.Location = new System.Drawing.Point(604, 11);
             this.txtGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGia.Name = "txtGia";
             this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,7 +315,7 @@
             // 
             this.txtSearchCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchCategory.EditValue = "";
-            this.txtSearchCategory.Location = new System.Drawing.Point(873, 5);
+            this.txtSearchCategory.Location = new System.Drawing.Point(884, 5);
             this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,7 +329,7 @@
             // 
             this.cbMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMenu.Location = new System.Drawing.Point(879, 11);
+            this.cbMenu.Location = new System.Drawing.Point(889, 11);
             this.cbMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMenu.Name = "cbMenu";
             this.cbMenu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -334,25 +337,28 @@
             this.cbMenu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMenu.Properties.NullText = "-- Chọn danh mục --";
-            this.cbMenu.Size = new System.Drawing.Size(284, 30);
+            this.cbMenu.Size = new System.Drawing.Size(281, 30);
             this.cbMenu.TabIndex = 49;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.cbMenu);
             this.panel1.Controls.Add(this.txtTen);
             this.panel1.Controls.Add(this.txtGia);
             this.panel1.Controls.Add(this.gcMenu);
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1163, 447);
+            this.panel1.Size = new System.Drawing.Size(1173, 447);
             this.panel1.TabIndex = 50;
             // 
             // frMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 487);
+            this.ClientSize = new System.Drawing.Size(1179, 487);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearch);

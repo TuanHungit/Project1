@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.bsTextDate = new DevExpress.XtraBars.BarStaticItem();
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::CafeManagement.SplashScreen1), true, true);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnShowForm = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
@@ -43,6 +41,7 @@
             this.btnViewAccount = new DevExpress.XtraBars.BarButtonItem();
             this.btnViewBill = new DevExpress.XtraBars.BarButtonItem();
             this.btnStatistic = new DevExpress.XtraBars.BarButtonItem();
+            this.bsTextDate = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.btnBackup = new DevExpress.XtraBars.BarButtonItem();
             this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
@@ -57,25 +56,12 @@
             this.ribbonPageManager = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupCateogry = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupStatictis = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribbonStatusBar
+            // splashScreenManager1
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsTextDate);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 957);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1542, 34);
-            // 
-            // bsTextDate
-            // 
-            this.bsTextDate.Caption = "barStaticItem1";
-            this.bsTextDate.Id = 12;
-            this.bsTextDate.Name = "bsTextDate";
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // ribbon
             // 
@@ -108,8 +94,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
-            this.ribbon.Size = new System.Drawing.Size(1542, 176);
-            this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.ribbon.Size = new System.Drawing.Size(1681, 176);
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // btnShowForm
@@ -193,6 +178,7 @@
             this.btnViewBill.LargeWidth = 75;
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnViewBill.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewBill_ItemClick);
             // 
             // btnStatistic
             // 
@@ -202,6 +188,12 @@
             this.btnStatistic.LargeWidth = 75;
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // bsTextDate
+            // 
+            this.bsTextDate.Caption = "barStaticItem1";
+            this.bsTextDate.Id = 12;
+            this.bsTextDate.Name = "bsTextDate";
             // 
             // ribbonGalleryBarItem1
             // 
@@ -301,24 +293,16 @@
             this.ribbonPageGroupStatictis.Name = "ribbonPageGroupStatictis";
             this.ribbonPageGroupStatictis.Text = "Thống kê";
             // 
-            // xtraTabbedMdiManager1
-            // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
             // frMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1542, 991);
-            this.Controls.Add(this.ribbonStatusBar);
+            this.ClientSize = new System.Drawing.Size(1681, 905);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
-            this.KeyPreview = true;
             this.Name = "frMain";
             this.Text = "Quản lý";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,8 +310,6 @@
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarStaticItem bsTextDate;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.BarButtonItem btnShowForm;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
@@ -339,11 +321,14 @@
         private DevExpress.XtraBars.BarButtonItem btnViewAccount;
         private DevExpress.XtraBars.BarButtonItem btnViewBill;
         private DevExpress.XtraBars.BarButtonItem btnStatistic;
+        private DevExpress.XtraBars.BarStaticItem bsTextDate;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarButtonItem btnBackup;
         private DevExpress.XtraBars.BarButtonItem btnRestore;
         private DevExpress.XtraBars.BarButtonItem btnLog;
         private DevExpress.XtraBars.BarButtonItem btnSendMail;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupSystem;
@@ -351,8 +336,5 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageManager;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupCateogry;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupStatictis;
-        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
-        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
-        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }

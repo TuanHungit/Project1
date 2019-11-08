@@ -3,39 +3,88 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using System.IO;
 using CafeManagement.Data;
 using CafeManagement.LinQ;
 
-namespace CafeManagement.GUI
+namespace CafeManagement
 {
-    public partial class frNhanVien : Form
+    public partial class frNhanvien : DevExpress.XtraEditors.XtraForm
     {
-        public frNhanVien()
+        public frNhanvien()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
-        private void bttThem_Click(object sender, EventArgs e)
+        private void frNhanvien_Load(object sender, EventArgs e)
         {
-            var context = new CaPheContext();
+            Load_NV();
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+        string hoten;
+        string quequan ;
+        string chucvu ;
+        string sdt ;
+        string cmnd ;
+        DateTime ngaysinh;
+        DateTime ngayvaolam ;
+        byte[] hinh = null;
+        Query_TaiKhoan taiKhoan = new Query_TaiKhoan();
+       Query_NhanVien nv = new Query_NhanVien();
+        CaPheContext context = new CaPheContext();
+        #region NhanVien
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OPF = new OpenFileDialog();
+            OPF.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if ((OPF.ShowDialog() == DialogResult.OK))
+            {
+               picImage.Image = Image.FromFile(OPF.FileName);
+            }
+        }
+        byte[] ConvertImageToBinary(Image img)
+        {
+           
+           
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+            
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+         
+            //if (picImage.Image == null)
+            //{
+            //    XtraMessageBox.Show("Bạn chưa UpLoad hình!");
+            //    return;
+            //}
             if (txtHoTen.Text.Replace(" ", "") != "" && txtSDT.Text.Replace(" ", "") != "" && txtCMND.Text.Replace(" ", "") != "" && txtChucVu.Text.Replace(" ", "") != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm nhân viên  này chứ!", "Thêm nhân viên ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    var hoten = txtHoTen.Text;
-                    var chucvu = txtChucVu.Text;
-                    var sdt = txtSDT.Text;
-                    var cmnd = txtCMND.Text;
-                    DateTime ngaysinh = Convert.ToDateTime(dtpNgaySinh.Value);
-                    DateTime ngayvaolam = Convert.ToDateTime(dtpNgayVaoLam.Value);
-                    var nv = new Query_NhanVien();
-                    if (nv.Add_NV(context, hoten, chucvu, cmnd, sdt, ngaysinh, ngayvaolam))
+                     hoten = txtHoTen.Text;
+                    quequan = txtQueQuan.Text;
+                    chucvu = txtChucVu.Text;
+                     sdt = txtSDT.Text;
+                   cmnd = txtCMND.Text;
+                   
+                   ngaysinh = Convert.ToDateTime(dtpNgaySinh.Value);
+                     ngayvaolam = Convert.ToDateTime(dtpNgayVaoLam.Value);
+                    //hinh = ConvertImageToBinary(picImage.Image);
+                   
+                    if (nv.Add_NV(context, hoten,quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam,hinh))
                     {
                         MessageBox.Show("Da them nhan vien");
                     }
@@ -43,6 +92,8 @@ namespace CafeManagement.GUI
                         MessageBox.Show("Nhan Vien chua duoc them vao");
                 }
                 Load_NV();
+                ClearInfo();
+                clearTaiKhoanInfor();
             }
             else
             {
@@ -50,29 +101,55 @@ namespace CafeManagement.GUI
 
             }
         }
-
-        private void bttXoa_Click(object sender, EventArgs e)
+        public void Load_NV()
         {
-            var context = new CaPheContext();
+            pnlTaiKhoan.Enabled = false;
+            btnSuaTK.Enabled = false;
+            btnUpload.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            var nhanViens = (from nhanvien in context.NhanViens
+                             select new
+                             {
+                                 nhanvien.HoTenNV,
+                                 nhanvien.QueQuan,
+                                 nhanvien.ChucVu,
+                                 nhanvien.SDT_NV,
+                                 nhanvien.CMND,
+                                 nhanvien.NgaySinh,
+                                 nhanvien.NgayVaoLam
+                             }).ToList();
+            gcNhanVien.DataSource = nhanViens;
+            gvNhanVien.Columns[0].Caption = "Họ tên";
+            gvNhanVien.Columns[1].Caption = "Quê quán";
+            gvNhanVien.Columns[2].Caption = "Chức vụ";
+            gvNhanVien.Columns[3].Caption = "Số điện thoại";
+            gvNhanVien.Columns[4].Caption = "CMND";
+            gvNhanVien.Columns[5].Caption = "Ngày sinh";
+            gvNhanVien.Columns[6].Caption = "Ngày vào làm";
+         
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
             if (txtHoTen.Text.Replace(" ", "") != "" && txtSDT.Text.Replace(" ", "") != "" && txtCMND.Text.Replace(" ", "") != "" && txtChucVu.Text.Replace(" ", "") != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa nhân viên  này chứ!", "Xóa nhân viên ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    var hoten = txtHoTen.Text;
-                    var chucvu = txtChucVu.Text;
-                    var sdt = txtSDT.Text;
-                    var cmnd = txtCMND.Text;
                    
-                    var nv = new Query_NhanVien();
-                    if (nv.Delete_NV(context,hoten,chucvu,cmnd,sdt))
+                    cmnd = txtCMND.Text;
+                    if (nv.Delete_NV(context,cmnd))
                     {
+                       
                         MessageBox.Show("Da xoa nhan vien");
                     }
                     else
                         MessageBox.Show("Nhan Vien chua duoc xoa vao");
                 }
                 Load_NV();
+                ClearInfo();
+                clearTaiKhoanInfor();
             }
             else
             {
@@ -81,56 +158,28 @@ namespace CafeManagement.GUI
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-           
-        }
-        public void Load_NV()
-        {
-            var context = new CaPheContext();
-            var nhanViens = (from nhanvien in context.NhanViens
-                             select new { 
-                               nhanvien.HoTenNV,
-                               nhanvien.ChucVu,
-                               nhanvien.SDT_NV,
-                               nhanvien.CMND,
-                               nhanvien.NgaySinh,
-                               nhanvien.NgayVaoLam}).ToList();
-            dgvNhanVien.DataSource = nhanViens;
-            foreach (var nv in nhanViens)
-            {
-                for(int i = 0; i < nhanViens.Count; i++)
-                {
-                    dgvNhanVien.Rows[i].Cells[0].Value = nv.HoTenNV.ToString();
-                    dgvNhanVien.Rows[i].Cells[1].Value = nv.ChucVu.ToString();
-                    dgvNhanVien.Rows[i].Cells[2].Value = nv.SDT_NV.ToString();
-                    dgvNhanVien.Rows[i].Cells[3].Value = nv.CMND.ToString();
-                    dgvNhanVien.Rows[i].Cells[4].Value = nv.NgaySinh.ToString();
-                    dgvNhanVien.Rows[i].Cells[5].Value = nv.NgayVaoLam.ToString();
-                }               
-            }
-        }
-        private void frNhanVien_Load(object sender, EventArgs e)
-        {
-            Load_NV();
-        }
-
-        private void bttSua_Click(object sender, EventArgs e)
-        {
-            var context = new CaPheContext();
+            //if (picImage.Image == null)
+            //{
+            //    XtraMessageBox.Show("Bạn chưa UpLoad hình!");
+            //    return;
+            //}
+            var contextt = new CaPheContext();
             if (txtHoTen.Text.Replace(" ", "") != "" && txtSDT.Text.Replace(" ", "") != "" && txtCMND.Text.Replace(" ", "") != "" && txtChucVu.Text.Replace(" ", "") != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật nhân viên  này chứ!", "Cập nhật nhân viên ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    var hoten = txtHoTen.Text;
-                    var chucvu = txtChucVu.Text;
-                    var sdt = txtSDT.Text;
-                    var cmnd = txtCMND.Text;
-                    DateTime ngaysinh = Convert.ToDateTime(dtpNgaySinh.Value);
-                    DateTime ngayvaolam = Convert.ToDateTime(dtpNgayVaoLam.Value);
-                    var nv = new Query_NhanVien();
-                    if (nv.Update_NV(context, hoten, chucvu, cmnd, sdt,ngaysinh,ngayvaolam))
+                    hoten = txtHoTen.Text;
+                     quequan = txtQueQuan.Text;
+                   chucvu = txtChucVu.Text;
+                     sdt = txtSDT.Text;
+                    cmnd = txtCMND.Text;
+                    ngaysinh = Convert.ToDateTime(dtpNgaySinh.Value);
+                   ngayvaolam = Convert.ToDateTime(dtpNgayVaoLam.Value);
+                   // hinh = ConvertImageToBinary(picImage.Image);
+                    if (nv.Update_NV(contextt, hoten,quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam,hinh))
                     {
                         MessageBox.Show("Da cap nhat nhan vien");
                     }
@@ -138,6 +187,8 @@ namespace CafeManagement.GUI
                         MessageBox.Show("Nhan Vien chua duoc cap nhat vao");
                 }
                 Load_NV();
+                ClearInfo();
+                clearTaiKhoanInfor();
             }
             else
             {
@@ -145,5 +196,122 @@ namespace CafeManagement.GUI
 
             }
         }
+        Image ConvertBinaryToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+        private void ClearInfo()
+        {
+            txtHoTen.EditValue = "";
+            txtQueQuan.EditValue = "";
+            txtChucVu.EditValue = "";
+            txtSDT.EditValue ="";
+            txtCMND.EditValue ="";
+            dtpNgaySinh.Value = DateTime.Now;
+            dtpNgayVaoLam.Value = DateTime.Now;
+  
+            Load_NV();
+        }
+        #endregion
+        private void gvNhanVien_Click(object sender, EventArgs e)
+        {
+            if (gvNhanVien.RowCount > 0)
+            {
+                txtHoTen.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[0]).ToString();
+                txtQueQuan.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[1]).ToString();
+                txtChucVu.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[2]).ToString();
+                txtSDT.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[3]).ToString();
+                txtCMND.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[4]).ToString();
+                dtpNgaySinh.Value = DateTime.Parse(gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[5]).ToString());
+                dtpNgayVaoLam.Value = DateTime.Parse(gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[6]).ToString());
+                //byte[] pic = (byte[])(gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[7]));
+                //picImage.Image = ConvertBinaryToImage(pic);
+
+                pnlTaiKhoan.Enabled = true;
+                btnSuaTK.Enabled = true;
+                btnXoa.Enabled =true;
+                btnSua.Enabled = true;
+
+               var taikhoanInfor = taiKhoan.GetTaiKhoan(nv.LayNhanVienIDbyCMND(context, txtCMND.Text));
+                foreach (var item in taikhoanInfor)
+                {
+                    txtTenTaiKhoan.Text = item.username;
+                    txtMatKhau.Text = item.password;
+                   cbLoaiTaiKhoan.Text = item.LoaiTaiKhoan;
+                }
+            }              
+        }
+
+        #region TaiKhoan
+        string TenTaiKhoan;
+        string MatKhau;
+        string LoaiTaiKhoan;
+        private void btnThemTK_Click(object sender, EventArgs e)
+        {
+            if (txtTenTaiKhoan.EditValue!=null&&txtMatKhau.EditValue!=null&&cbLoaiTaiKhoan.EditValue!=null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm tài khoản cho nhân viên  này chứ!", "Thêm tài khoản", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    TenTaiKhoan = txtTenTaiKhoan.Text;
+                    MatKhau = txtMatKhau.Text;
+                    LoaiTaiKhoan = cbLoaiTaiKhoan.Text;
+                    if (taiKhoan.ThemTaiKhoan(nv.LayNhanVienIDbyCMND(context,txtCMND.Text),TenTaiKhoan,MatKhau,LoaiTaiKhoan))
+                    {
+                        XtraMessageBox.Show("Đã thêm tài khoản");
+                    }
+                    else
+                        XtraMessageBox.Show("Tài khoản đã tồn tại");
+                }
+                Load_NV();
+                clearTaiKhoanInfor();
+                ClearInfo();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền hết thông thin", "Thêm tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnSuaTK_Click(object sender, EventArgs e)
+        {
+            if (txtTenTaiKhoan.EditValue != null && txtMatKhau.EditValue != null && cbLoaiTaiKhoan.EditValue != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm tài khoản cho nhân viên  này chứ!", "Thêm tài khoản", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    TenTaiKhoan = txtTenTaiKhoan.Text;
+                    MatKhau = txtMatKhau.Text;
+                    LoaiTaiKhoan = cbLoaiTaiKhoan.Text;
+                    if (taiKhoan.SuaTaiKhoan(nv.LayNhanVienIDbyCMND(context, txtCMND.Text), TenTaiKhoan, MatKhau, LoaiTaiKhoan))
+                    {
+                        XtraMessageBox.Show("Đã sửa tài khoản");
+                    }
+                    
+                }
+                Load_NV();
+                clearTaiKhoanInfor();
+                ClearInfo();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền hết thông thin", "Thêm tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void clearTaiKhoanInfor()
+        {
+            txtTenTaiKhoan.Text ="";
+            txtMatKhau.Text ="";
+            cbLoaiTaiKhoan.Text = "";
+        }
+
+
+
+        #endregion
+
+    
     }
 }

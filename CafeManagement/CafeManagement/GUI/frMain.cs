@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.UserSkins;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraSplashScreen;
 
 namespace CafeManagement.GUI
 {
@@ -18,6 +19,7 @@ namespace CafeManagement.GUI
         public frMain()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
             Load_UI();
         }
         private Form CheckFormExist(Type fType)
@@ -29,64 +31,82 @@ namespace CafeManagement.GUI
             }
             return null;
         }
-      
+
         private void btnShowForm_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+          
             Form frm = this.CheckFormExist(typeof(frManage));
             if (frm != null)
             {
+             
                 frm.Activate();
             }
             else
             {
+                
                 frManage f = new frManage();
                 f.MdiParent = this;
                 f.Show();
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void btnViewTable_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form form = this.CheckFormExist(typeof(frBan));
-            if (form != null)
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form frm = this.CheckFormExist(typeof(frBan));
+            if (frm != null)
             {
-                form.Activate();
+              
+                frm.Activate();
             }
-            else {
-                frBan fr = new frBan();
-                fr.MdiParent = this;
-                fr.Show();
+            else
+            {
+           
+                frBan f = new frBan();
+                f.MdiParent = this;
+                f.Show();
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void btnViewCategoryFood_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
             Form form = this.CheckFormExist(typeof(frDanhMuc));
             if (form != null)
             {
+               
                 form.Activate();
             }
             else
             {
+               
                 frDanhMuc fr = new frDanhMuc();
                 fr.MdiParent = this;
                 fr.Show();
             }
+            SplashScreenManager.CloseForm();
         }
 
         private void btnViewFood_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
             Form form = this.CheckFormExist(typeof(frMenu));
             if (form != null)
             {
+               
                 form.Activate();
             }
             else
             {
+              
                 frMenu fr = new frMenu();
                 fr.MdiParent = this;
                 fr.Show();
             }
+            SplashScreenManager.CloseForm();
         }
         DefaultLookAndFeel defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel();
         private void Load_UI()
@@ -98,17 +118,42 @@ namespace CafeManagement.GUI
 
         private void btnViewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form form = this.CheckFormExist(typeof(frNhanVien));
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form form = this.CheckFormExist(typeof(frNhanvien));
             if (form != null)
             {
+              
                 form.Activate();
             }
             else
             {
-               frNhanVien fr = new frNhanVien();
+               
+                frNhanvien fr = new frNhanvien();
                 fr.MdiParent = this;
                 fr.Show();
             }
+            SplashScreenManager.CloseForm();
         }
+
+        private void btnViewBill_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+              SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form form = this.CheckFormExist(typeof(frDanhThu));
+            if (form != null)
+            {
+             
+                form.Activate();
+            }
+            else
+            {
+              
+                frDanhThu fr = new frDanhThu();
+                fr.MdiParent = this;
+                fr.Show();
+            }
+            SplashScreenManager.CloseForm();
+        }
+
+      
     }
 }

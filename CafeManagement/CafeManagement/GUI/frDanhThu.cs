@@ -19,10 +19,11 @@ namespace CafeManagement.GUI
         public frDanhThu()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
-
         CaPheContext context = new CaPheContext();
         Query_DanhThu danhthu = new Query_DanhThu();
+     
         private void btnXem_Click(object sender, EventArgs e)
         {
             double doanhthu = 0;
@@ -57,7 +58,7 @@ namespace CafeManagement.GUI
         {
             gridControl1.DataSource = (from hoadon in context.HoaDons
                                        join nhanvien in context.NhanViens on hoadon.NhanVienId equals nhanvien.NhanVienId
-                                       where DbFunctions.TruncateTime(hoadon.NgayLap)>=date1.Date && DbFunctions.TruncateTime(hoadon.NgayLap) <= date2.Date
+                                       where DbFunctions.TruncateTime(hoadon.NgayLap) >= date1.Date && DbFunctions.TruncateTime(hoadon.NgayLap) <= date2.Date
                                              && hoadon.TinhTrang.Equals(1)
                                        select new
                                        {
@@ -78,5 +79,9 @@ namespace CafeManagement.GUI
             gridView1.Columns[3].Caption = "Số Bàn";
             gridView1.Columns[4].Caption = "Tổng Giá";
         }
+
+        
+
+       
     }
 }

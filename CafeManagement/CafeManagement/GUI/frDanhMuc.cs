@@ -29,37 +29,7 @@ namespace CafeManagement.GUI
         CaPheContext caPheContext = new CaPheContext();
         Query_DanhMuc danhmuc = new Query_DanhMuc();
       
-        private void barButtonXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           
-            if (txtTenDanhMuc.Text.Replace(" ", "") != "" &&txtTenDanhMuc.EditValue!=null)
-            {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-
-                  
-                    string TenDanhMuc = txtTenDanhMuc.Text;
-                 
-                        if (danhmuc.AddDanhMuc(TenDanhMuc))
-                        {
-                            MessageBox.Show("Thêm danh mục thành công!","Thêm danh mục",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        Load_DanhMuc();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Danh mục này đã tồn tại","Thêm danh mục",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
-                        }
-                    
-                }
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Thêm danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             
-            }
-        }
-       
+     
         private void Load_DanhMuc()
         {
             gcDanhMuc.DataSource = (from item in caPheContext.LoaiSanPhams
@@ -70,41 +40,13 @@ namespace CafeManagement.GUI
         }
 
     
-        private void barButtonXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-          
-            if (txtTenDanhMuc.Text.Replace(" ", "") != "")
-            {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-
-                    
-                    string TenDanhMuc = txtTenDanhMuc.Text;
-                    if (danhmuc.DeleteDanhMuc(TenDanhMuc))
-                    {
-                        MessageBox.Show("Xóa danh mục thành công!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Load_DanhMuc();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Danh mục này không đã tồn tại", "Xóa danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                    }
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
-            }
-        }
+     
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
          
-            string TenDanhMuc = txtTenDanhMuc.Text;
-            if (txtTenDanhMuc.Text.Replace(" ", "") != "")
+            string TenDanhMuc = (string)txtTenDanhMuc.EditValue;
+            if (txtTenDanhMuc.EditValue != null)
             {
                 int x = danhmuc.FindDanhMuc(TenDanhMuc).Count();
                 if (x>0)
@@ -122,18 +64,87 @@ namespace CafeManagement.GUI
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Load_DanhMuc();
+           
         }
         private void gvDanhMuc_Click(object sender, EventArgs e)
         {
             if (gvDanhMuc.RowCount > 0)
-                txtTenDanhMuc.Text = gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[1]).ToString();
+                txtTenDanhMuc.EditValue = gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[1]).ToString();
         }
 
-        
-        private void gvDanhMuc_DoubleClick(object sender, EventArgs e)
+        private void txtTenDanhMuc_Click(object sender, EventArgs e)
         {
-         
+            txtTenDanhMuc.EditValue = null;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (txtTenDanhMuc.Text != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+
+
+                    string TenDanhMuc = (string)txtTenDanhMuc.Text;
+
+                    if (danhmuc.AddDanhMuc(TenDanhMuc))
+                    {
+                        MessageBox.Show("Thêm danh mục thành công!", "Thêm danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Load_DanhMuc();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Danh mục này đã tồn tại", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Thêm danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            if (txtTenDanhMuc.Text != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+
+
+                    string TenDanhMuc = (string)txtTenDanhMuc.Text;
+                    if (danhmuc.DeleteDanhMuc(TenDanhMuc))
+                    {
+                        MessageBox.Show("Xóa danh mục thành công!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Load_DanhMuc();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Danh mục này không đã tồn tại", "Xóa danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Load_DanhMuc();
         }
     }
 }

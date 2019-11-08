@@ -22,6 +22,7 @@ namespace CafeManagement.Data
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons {get;set;}
+        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NhanVien>()

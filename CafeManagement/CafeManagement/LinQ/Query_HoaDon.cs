@@ -114,6 +114,7 @@ namespace CafeManagement.LinQ
          
             foreach(var hoadon in hd)
             {
+                
                 hoadon.TongGia = tongtien;
                 hoadon.TinhTrang = 1;
                 context.Entry(hoadon).State = EntityState.Modified;
@@ -123,10 +124,21 @@ namespace CafeManagement.LinQ
         }
         public void XoaHoaDon(int HoaDonID)
         {
-            var hoadon = new HoaDon() { HoaDonId = HoaDonID };
+            HoaDon hoadon = new HoaDon() { HoaDonId = HoaDonID };
             caPheContext.Entry(hoadon).State = EntityState.Deleted;
             caPheContext.SaveChanges();
             
+        }
+        public void CapNhatChiTietHoaDon(int HoaDonID1,int HoaDonID2)
+        {
+            var query = (from item in caPheContext.ChiTietHoaDons
+                         where item.HoaDonID.Equals(HoaDonID2)
+                         select item).ToList();
+            foreach (var item in query) {
+                item.HoaDonID = HoaDonID1;
+                caPheContext.Entry(item).State = EntityState.Modified;
+                caPheContext.SaveChanges();
+            }
         }
     }
 }

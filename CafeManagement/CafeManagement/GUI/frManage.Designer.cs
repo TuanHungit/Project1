@@ -46,7 +46,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.txtTenDanhMuc = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenSanPham = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbChonBan = new DevExpress.XtraEditors.LookUpEdit();
@@ -74,7 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenSanPham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChonBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThanhTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).BeginInit();
@@ -172,7 +172,7 @@
             this.pnlBan.Controls.Add(this.panelBan);
             this.pnlBan.Location = new System.Drawing.Point(12, 10);
             this.pnlBan.Name = "pnlBan";
-            this.pnlBan.Size = new System.Drawing.Size(451, 676);
+            this.pnlBan.Size = new System.Drawing.Size(457, 676);
             this.pnlBan.TabIndex = 1;
             // 
             // panelBan
@@ -184,7 +184,7 @@
             this.panelBan.Location = new System.Drawing.Point(14, 16);
             this.panelBan.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.panelBan.Name = "panelBan";
-            this.panelBan.Size = new System.Drawing.Size(424, 650);
+            this.panelBan.Size = new System.Drawing.Size(430, 650);
             this.panelBan.TabIndex = 31;
             // 
             // label1
@@ -202,7 +202,7 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.panel1);
-            this.panelControl1.Location = new System.Drawing.Point(996, 10);
+            this.panelControl1.Location = new System.Drawing.Point(1002, 10);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(520, 676);
             this.panelControl1.TabIndex = 1;
@@ -214,7 +214,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.panelControl2.Controls.Add(this.panel2);
-            this.panelControl2.Location = new System.Drawing.Point(473, 10);
+            this.panelControl2.Location = new System.Drawing.Point(479, 10);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(517, 448);
             this.panelControl2.TabIndex = 1;
@@ -225,7 +225,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.listviewMenu);
             this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.txtTenDanhMuc);
+            this.panel2.Controls.Add(this.txtTenSanPham);
             this.panel2.Controls.Add(this.cbDanhMuc);
             this.panel2.Location = new System.Drawing.Point(6, 14);
             this.panel2.Name = "panel2";
@@ -279,19 +279,20 @@
             this.btnSearch.Size = new System.Drawing.Size(88, 33);
             this.btnSearch.TabIndex = 34;
             this.btnSearch.Text = "Tìm";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtTenDanhMuc
+            // txtTenSanPham
             // 
-            this.txtTenDanhMuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenDanhMuc.EditValue = "";
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(188, 9);
-            this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDanhMuc.Properties.Appearance.Options.UseFont = true;
-            this.txtTenDanhMuc.Properties.NullText = "   -- Tên Danh Mục --";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(218, 30);
-            this.txtTenDanhMuc.TabIndex = 35;
+            this.txtTenSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenSanPham.Location = new System.Drawing.Point(188, 9);
+            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSanPham.Properties.Appearance.Options.UseFont = true;
+            this.txtTenSanPham.Properties.NullText = "   -- Tên Sản Phẩm --";
+            this.txtTenSanPham.Size = new System.Drawing.Size(218, 30);
+            this.txtTenSanPham.TabIndex = 35;
+            this.txtTenSanPham.Click += new System.EventHandler(this.txtTenSanPham_Click);
             // 
             // label2
             // 
@@ -299,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.Location = new System.Drawing.Point(1007, -1);
+            this.label2.Location = new System.Drawing.Point(1013, -1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 21);
             this.label2.TabIndex = 46;
@@ -311,7 +312,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.Location = new System.Drawing.Point(488, -1);
+            this.label4.Location = new System.Drawing.Point(494, -1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 21);
             this.label4.TabIndex = 47;
@@ -331,6 +332,7 @@
             this.cbChonBan.Properties.NullText = "-- Chọn bàn --";
             this.cbChonBan.Size = new System.Drawing.Size(164, 29);
             this.cbChonBan.TabIndex = 38;
+            this.cbChonBan.EditValueChanged += new System.EventHandler(this.cbChonBan_EditValueChanged);
             // 
             // txtThanhTien
             // 
@@ -453,7 +455,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(265, 55);
@@ -532,7 +534,7 @@
             this.panelControl3.Controls.Add(this.spDiscount);
             this.panelControl3.Controls.Add(this.txtThanhTien);
             this.panelControl3.Controls.Add(this.cbChonBan);
-            this.panelControl3.Location = new System.Drawing.Point(473, 467);
+            this.panelControl3.Location = new System.Drawing.Point(479, 467);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(517, 219);
             this.panelControl3.TabIndex = 48;
@@ -542,7 +544,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.Location = new System.Drawing.Point(480, 461);
+            this.label3.Location = new System.Drawing.Point(486, 461);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 21);
             this.label3.TabIndex = 49;
@@ -552,7 +554,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 695);
+            this.ClientSize = new System.Drawing.Size(1529, 695);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.label4);
@@ -576,7 +578,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenSanPham.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChonBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThanhTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spDiscount.Properties)).EndInit();
@@ -604,7 +606,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private DevExpress.XtraEditors.TextEdit txtTenDanhMuc;
         private DevExpress.XtraEditors.LookUpEdit cbChonBan;
         private DevExpress.XtraEditors.TextEdit txtThanhTien;
         private DevExpress.XtraEditors.SpinEdit spDiscount;
@@ -626,5 +627,6 @@
         private System.Windows.Forms.Label labelBan;
         private System.Windows.Forms.Panel panelCheckBan;
         private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.TextEdit txtTenSanPham;
     }
 }

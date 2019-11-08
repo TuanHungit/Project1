@@ -50,6 +50,7 @@
             this.btnExit.Size = new System.Drawing.Size(175, 48);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
@@ -61,6 +62,7 @@
             this.btnLogin.Size = new System.Drawing.Size(175, 48);
             this.btnLogin.TabIndex = 8;
             this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // labelControl2
             // 
@@ -86,7 +88,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.EditValue = "";
+            this.txtPassword.EditValue = "123456";
             this.txtPassword.Location = new System.Drawing.Point(193, 118);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
@@ -98,7 +100,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.EditValue = "";
+            this.txtUserName.EditValue = "hung";
             this.txtUserName.Location = new System.Drawing.Point(193, 73);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUserName.Name = "txtUserName";
@@ -122,6 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(436, 234);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnExit);

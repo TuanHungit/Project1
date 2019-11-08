@@ -101,20 +101,11 @@ namespace CafeManagement.LinQ
             BillID2 = hoaDon.LayHoaDonChuaThanhToan(BanID2);
             if (BillID1 != 0 && BillID2 != 0)
             {
-                foreach (var item in caPheContext.ChiTietHoaDons)
-                {
-                    if (item.HoaDonID == BillID2)
-                    {
-                        item.HoaDonID = BillID1;
-                     
-                    
-                        hoaDon.XoaHoaDon(BillID2);
-                        Update_Ban1(caPheContext, BanID2);
-                    }
-                    caPheContext.SaveChanges();
-                }
+                hoaDon.CapNhatChiTietHoaDon(BillID1, BillID2);
+                hoaDon.XoaHoaDon(BillID2);
+                caPheContext.SaveChanges();
             }
-        
+
         }
     }
 }

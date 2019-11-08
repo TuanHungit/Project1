@@ -79,6 +79,12 @@ namespace CafeManagement.LinQ
                     where sp.SanPhamId == idsp
                     select sp.DonGia).SingleOrDefault();
         }
-        
+        public List<SanPham> TimSanPham(string Ten,CaPheContext caPheContext)
+        {
+            return (from item in caPheContext.SanPhams
+                    where item.TenSanPham.StartsWith(Ten)
+                    select item).ToList();
+
+        }
     }
 }

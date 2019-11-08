@@ -29,24 +29,24 @@ namespace CafeManagement.GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
 
-            if (txtBan.Text.Replace(" ", "") != "")
+            if (txtBan.EditValue!=null)
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm bàn này chứ!", "Thêm bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
 
-                    int soBan = Convert.ToInt32(txtBan.Text);
+                    int soBan = Convert.ToInt32(txtBan.EditValue);
                     var addBan = new Query_Ban();
                     using (CaPheContext caPheContext = new CaPheContext())
                     {
                         if (addBan.Add_Ban(soBan, caPheContext))
                         {
-                            MessageBox.Show("Them ban thanh cong!");
+                            MessageBox.Show("Thêm bàn thành công!");
                             Load_Ban();
                         }
                         else
                         {
-                            MessageBox.Show("So ban da ton tai xin nhap so khac");
+                            MessageBox.Show("Số bàn đã tồn tại xin nhập số khác!");
                         }
                     }
                 }
@@ -62,7 +62,7 @@ namespace CafeManagement.GUI
             {
                 if (loadban.DemSoLuongBan(caPheContext))
                 {
-                    MessageBox.Show("Khong co ban");
+                    XtraMessageBox.Show("Không có bàn");
                 }
                 else
                 {
@@ -71,30 +71,34 @@ namespace CafeManagement.GUI
                 }
             }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
-            if (txtBan.Text.Replace(" ", "") != "")
+            if (txtBan.EditValue != null)
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bàn này chứ!", "Xóa bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 var Ban = new Query_Ban();
-                int soBan = Convert.ToInt32(txtBan.Text);
+                int soBan = Convert.ToInt32(txtBan.EditValue);
                 using (CaPheContext context = new CaPheContext())
                 {
                     if (Ban.xoaBan(context, soBan))
                     {
-                        MessageBox.Show("Da xoa Ban");
+                        XtraMessageBox.Show("Đã xóa bàn!");
 
                         Load_Ban();
                     }
                     else
                     {
-                        MessageBox.Show("Ban Khong ton tai");
+                       XtraMessageBox.Show("Bàn không tồn tại!");
                     }
                 }
             }
             else MessageBox.Show("Bạn chưa nhập Số bàn!", "Xóa bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtBan_Click(object sender, EventArgs e)
+        {
+            txtBan.Text = null;
         }
     }
 }

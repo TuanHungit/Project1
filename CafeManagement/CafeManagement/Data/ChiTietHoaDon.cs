@@ -10,11 +10,9 @@ namespace CafeManagement.Data
 {
     public class ChiTietHoaDon
     {
-        [Key]
-        [Column(Order = 1)]
+        public int Id { get; set; }
         public int HoaDonID { get; set; }
-        [Key]
-        [Column(Order = 2)]
+       
         public int SanPhamID { get; set; }
         public int SoLuong { get; set; }
         public virtual HoaDon HoaDon { get; set; }

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using CafeManagement.Data;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CafeManagement.Data;
-using System.Data.Entity;
 
 namespace CafeManagement.LinQ
 {
@@ -27,7 +27,7 @@ namespace CafeManagement.LinQ
         public bool KiemTraNgay(CaPheContext context, DateTime date)
         {
             var query = (from hoadon in context.HoaDons
-                         where DbFunctions.TruncateTime(hoadon.NgayLap)==date
+                         where DbFunctions.TruncateTime(hoadon.NgayLap) == date
                          select hoadon).ToList();
             if (query.Count > 0)
                 return true;
