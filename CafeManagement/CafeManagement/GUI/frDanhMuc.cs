@@ -33,7 +33,7 @@ namespace CafeManagement.GUI
         private void Load_DanhMuc()
         {
 
-            txtTen.Text= "";
+            txtTen1.Text= "";
             gcDanhMuc.DataSource = (from item in caPheContext.LoaiSanPhams
                                     select new { item.LoaiSanPhamId, item.TenLoaiSanPham }).ToList();
             gvDanhMuc.Columns[0].Caption = "Mã danh mục";
@@ -71,7 +71,7 @@ namespace CafeManagement.GUI
         private void gvDanhMuc_Click(object sender, EventArgs e)
         {
             if (gvDanhMuc.RowCount > 0)
-                txtTen.Text = gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[1]).ToString();
+                txtTen1.Text = gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[1]).ToString();
         }
 
         private void txtTenDanhMuc_Click(object sender, EventArgs e)
@@ -81,14 +81,14 @@ namespace CafeManagement.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtTen.Text != null)
+            if (txtTen1.Text != null)
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
 
 
-                    string TenDanhMuc = (string)txtTen.Text;
+                    string TenDanhMuc = (string)txtTen1.Text;
 
                     if (danhmuc.AddDanhMuc(TenDanhMuc))
                     {
@@ -112,14 +112,14 @@ namespace CafeManagement.GUI
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
-            if (txtTen.Text != null)
+            if (txtTen1.Text != null)
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
 
 
-                    string TenDanhMuc = (string)txtTen.Text;
+                    string TenDanhMuc = (string)txtTen1.Text;
                     if (danhmuc.DeleteDanhMuc(TenDanhMuc))
                     {
                         MessageBox.Show("Xóa danh mục thành công!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,6 +147,11 @@ namespace CafeManagement.GUI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Load_DanhMuc();
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

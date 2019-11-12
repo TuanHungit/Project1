@@ -18,5 +18,6 @@ namespace CafeManagement.Data
         public string password { get; set; }
         public string LoaiTaiKhoan { get; set; }
         public virtual NhanVien NhanVien { get; set; }
+
     }
 }

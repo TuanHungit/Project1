@@ -16,5 +16,6 @@ namespace CafeManagement.Data
         public int LoaiSanPhamId { get; set; }
         public virtual LoaiSanPham LoaiSanPham { get; set; }
         public ICollection<ChiTietHoaDon> chiTietHoaDons { get; set; }
+
     }
 }

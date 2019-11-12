@@ -17,5 +17,6 @@ namespace CafeManagement.Data
         public int SoLuong { get; set; }
         public virtual HoaDon HoaDon { get; set; }
         public virtual SanPham SanPham {get;set;}
+
     }
 }

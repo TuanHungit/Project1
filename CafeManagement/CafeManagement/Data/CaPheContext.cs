@@ -28,6 +28,7 @@ namespace CafeManagement.Data
             modelBuilder.Entity<NhanVien>()
                  .Property(nv => nv.CMND)
                  .IsRequired();
+
         }
     }
 }

@@ -18,5 +18,6 @@ namespace CafeManagement.Data
         public virtual NhanVien NhanVien { get; set; }
         public virtual Ban Ban { get; set; }
         public ICollection<ChiTietHoaDon> chiTietHoaDons { get; set; }
+
     }
 }

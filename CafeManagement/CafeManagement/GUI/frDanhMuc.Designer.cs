@@ -51,12 +51,23 @@
             this.gvDanhMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.txtTen1 = new System.Windows.Forms.TextBox();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -65,6 +76,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhMuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
+            this.accordionControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -73,7 +88,7 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(1138, 6);
+            this.btnSearch.Location = new System.Drawing.Point(815, 6);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 33);
@@ -148,15 +163,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1454, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1540, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 463);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 513);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1454, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1540, 24);
             // 
             // barDockControlLeft
             // 
@@ -164,15 +179,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 463);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 513);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1454, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1540, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 463);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 513);
             // 
             // barbtnXoa
             // 
@@ -234,7 +249,7 @@
             this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDanhMuc.Properties.Appearance.Options.UseFont = true;
             this.txtTenDanhMuc.Properties.NullText = "   --Tìm Tên Danh Mục --";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(243, 30);
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(0, 30);
             this.txtTenDanhMuc.TabIndex = 30;
             this.txtTenDanhMuc.Click += new System.EventHandler(this.txtTenDanhMuc_Click);
             // 
@@ -246,9 +261,9 @@
             this.panelControl1.Controls.Add(this.gcDanhMuc);
             this.panelControl1.Controls.Add(this.btnSearch);
             this.panelControl1.Controls.Add(this.txtTenDanhMuc);
-            this.panelControl1.Location = new System.Drawing.Point(183, 23);
+            this.panelControl1.Location = new System.Drawing.Point(592, 23);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1259, 435);
+            this.panelControl1.Size = new System.Drawing.Size(936, 485);
             this.panelControl1.TabIndex = 40;
             // 
             // gcDanhMuc
@@ -260,7 +275,7 @@
             this.gcDanhMuc.MainView = this.gvDanhMuc;
             this.gcDanhMuc.MenuManager = this.barManager1;
             this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1245, 384);
+            this.gcDanhMuc.Size = new System.Drawing.Size(922, 434);
             this.gcDanhMuc.TabIndex = 35;
             this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhMuc});
@@ -285,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.Location = new System.Drawing.Point(216, 9);
+            this.label1.Location = new System.Drawing.Point(225, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 21);
             this.label1.TabIndex = 45;
@@ -295,15 +310,22 @@
             // 
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelControl2.Controls.Add(this.txtTen);
+            this.panelControl2.Controls.Add(this.txtTen1);
             this.panelControl2.Controls.Add(this.btnRefresh);
             this.panelControl2.Controls.Add(this.btnSua);
             this.panelControl2.Controls.Add(this.btnXoa);
             this.panelControl2.Controls.Add(this.btnThem);
             this.panelControl2.Location = new System.Drawing.Point(12, 23);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(165, 435);
+            this.panelControl2.Size = new System.Drawing.Size(165, 454);
             this.panelControl2.TabIndex = 46;
+            // 
+            // txtTen1
+            // 
+            this.txtTen1.Location = new System.Drawing.Point(16, 18);
+            this.txtTen1.Name = "txtTen1";
+            this.txtTen1.Size = new System.Drawing.Size(134, 23);
+            this.txtTen1.TabIndex = 35;
             // 
             // btnRefresh
             // 
@@ -365,18 +387,100 @@
             this.label2.TabIndex = 47;
             this.label2.Text = "Danh sách tác vụ";
             // 
-            // txtTen
+            // accordionControl1
             // 
-            this.txtTen.Location = new System.Drawing.Point(16, 18);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(134, 23);
-            this.txtTen.TabIndex = 35;
+            this.accordionControl1.Controls.Add(this.textEdit1);
+            this.accordionControl1.Controls.Add(this.simpleButton1);
+            this.accordionControl1.Controls.Add(this.simpleButton2);
+            this.accordionControl1.Controls.Add(this.simpleButton3);
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement1,
+            this.accordionControlElement2,
+            this.accordionControlElement4,
+            this.accordionControlElement5,
+            this.accordionControlElement6});
+            this.accordionControl1.Location = new System.Drawing.Point(267, 138);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.Size = new System.Drawing.Size(202, 324);
+            this.accordionControl1.TabIndex = 52;
+            this.accordionControl1.Text = "accordionControl1";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(16, 74);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(118, 22);
+            this.textEdit1.TabIndex = 1;
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.Name = "accordionControlElement1";
+            this.accordionControlElement1.Text = "Tác vụ";
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Expanded = true;
+            this.accordionControlElement2.HeaderControl = this.textEdit1;
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.HeaderControl = this.simpleButton1;
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.HeaderControl = this.simpleButton2;
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.HeaderControl = this.simpleButton3;
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            // 
+            // stackPanel1
+            // 
+            this.stackPanel1.Location = new System.Drawing.Point(134, 165);
+            this.stackPanel1.Name = "stackPanel1";
+            this.stackPanel1.Size = new System.Drawing.Size(8, 8);
+            this.stackPanel1.TabIndex = 53;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(16, 130);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(118, 29);
+            this.simpleButton1.TabIndex = 7;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(16, 190);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(118, 29);
+            this.simpleButton2.TabIndex = 8;
+            this.simpleButton2.Text = "simpleButton2";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(16, 250);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(118, 29);
+            this.simpleButton3.TabIndex = 9;
+            this.simpleButton3.Text = "simpleButton3";
             // 
             // frDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 487);
+            this.ClientSize = new System.Drawing.Size(1540, 537);
+            this.Controls.Add(this.stackPanel1);
+            this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.label1);
@@ -397,6 +501,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            this.accordionControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,6 +538,17 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.TextBox txtTen1;
+        private DevExpress.Utils.Layout.StackPanel stackPanel1;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }

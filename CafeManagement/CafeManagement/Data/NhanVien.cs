@@ -25,5 +25,6 @@ namespace CafeManagement.Data
         public ICollection<HoaDon> HoaDons { get; set; }
         public ICollection<PhieuNhap> PhieuNhaps { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
+
     }
 }
