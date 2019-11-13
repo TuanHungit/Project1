@@ -114,7 +114,7 @@ namespace CafeManagement.GUI
 
             if (txtTen1.Text != null)
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ! Xoá danh mục tất cả các sản phẩm trong danh mục sẽ bị xóa hết!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
 

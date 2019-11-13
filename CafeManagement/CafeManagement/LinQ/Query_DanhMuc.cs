@@ -15,9 +15,9 @@ namespace CafeManagement.LinQ
 
             var has = (from item in caPheContext.LoaiSanPhams
                        where item.TenLoaiSanPham.Contains(TenDanhMuc)
-                        select item).Count();
+                       select item).Count();
 
-            if (Convert.ToInt32(has)>0)
+            if (Convert.ToInt32(has) > 0)
                 return true;
             return false;
         }
@@ -27,7 +27,7 @@ namespace CafeManagement.LinQ
             {
                 LoaiSanPham loaiSanPham = new LoaiSanPham()
                 {
-                  
+
                     TenLoaiSanPham = Ten
                 };
                 caPheContext.LoaiSanPhams.Add(loaiSanPham);
@@ -41,13 +41,15 @@ namespace CafeManagement.LinQ
         {
             if (KiemTraDanhMuc(TenDanhMuc))
             {
-                var sp = (from item in caPheContext.LoaiSanPhams
-                          where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
-                          select item).ToList();
-                foreach (var author in sp)
+                var danhmuc = new LoaiSanPham() { LoaiSanPhamId = GetIdDanhMuc(TenDanhMuc, caPheContext) };
+                List<SanPham> sanphams = GetAllSanPham(danhmuc.LoaiSanPhamId);
+                foreach (var sp in sanphams)
                 {
-                    caPheContext.LoaiSanPhams.Remove(author);
+                    var s = new SanPham() { SanPhamId = sp.SanPhamId };
+                    caPheContext.Entry(sp).State = EntityState.Deleted;
+                    caPheContext.SaveChanges();
                 }
+                caPheContext.Entry(danhmuc).State = EntityState.Deleted;
                 caPheContext.SaveChanges();
                 return true;
             }
@@ -68,12 +70,19 @@ namespace CafeManagement.LinQ
             return sp;
         }
 
-        public int GetIdDanhMuc(string TenDanhMuc ,CaPheContext caPheContext)
+        public int GetIdDanhMuc(string TenDanhMuc, CaPheContext caPheContext)
         {
-            int sp = (from item in caPheContext.LoaiSanPhams
+            var sp = (from item in caPheContext.LoaiSanPhams
                       where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
                       select item.LoaiSanPhamId).SingleOrDefault();
             return sp;
+        }
+        public List<SanPham> GetAllSanPham(int danhmucid)
+        {
+            var sanphams = (from Sanpham in caPheContext.SanPhams
+                            where Sanpham.LoaiSanPhamId == danhmucid
+                            select Sanpham).ToList();
+            return sanphams;
         }
     }
 }

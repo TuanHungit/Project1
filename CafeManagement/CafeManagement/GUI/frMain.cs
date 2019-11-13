@@ -159,11 +159,16 @@ namespace CafeManagement.GUI
 
         private void frMain_Load(object sender, EventArgs e)
         {
-           
-            if(Global.LoaiTaiKhoan=="Nhânviên")
+
+
+            if (Global.LoaiTaiKhoan == "NhanVien")
             {
 
-                ribbonPageManager.Visible =false;
+                ribbonPageManager.Visible = false;
+            }
+            if (Global.LoaiTaiKhoan == "Quản lý")
+            {
+                ribbonPageManager.Visible = true;
             }
         }
     }
