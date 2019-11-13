@@ -153,6 +153,7 @@
             this.btnAccountInfo.LargeWidth = 75;
             this.btnAccountInfo.Name = "btnAccountInfo";
             this.btnAccountInfo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAccountInfo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAccountInfo_ItemClick);
             // 
             // btnLogOut
             // 

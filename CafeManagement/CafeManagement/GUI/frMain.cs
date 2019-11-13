@@ -171,5 +171,11 @@ namespace CafeManagement.GUI
                 ribbonPageManager.Visible = true;
             }
         }
+
+        private void btnAccountInfo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frThongTinTaiKhoan frThongTinTaiKhoan = new frThongTinTaiKhoan();
+            frThongTinTaiKhoan.ShowDialog();
+        }
     }
 }
