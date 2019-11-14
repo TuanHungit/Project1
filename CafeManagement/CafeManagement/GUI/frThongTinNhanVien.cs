@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace CafeManagement.GUI
+namespace CafeManagement
 {
-    public partial class frThongTinTaiKhoan : DevExpress.XtraEditors.XtraForm
+    public partial class frThongTinNhanVien : DevExpress.XtraEditors.XtraForm
     {
-        public frThongTinTaiKhoan()
+        public frThongTinNhanVien()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

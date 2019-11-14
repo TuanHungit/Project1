@@ -54,7 +54,6 @@ namespace CafeManagement.LinQ
         }
         public bool SuaTaiKhoan(int NhanvienID, string Username, string Password, string LoaiTaiKhoan)
         {
-
             if (KiemTraTaiKhoan(NhanvienID) && KiemTraUser(Username))
             {
                 var nhanviens = (from nv in context.TaiKhoans

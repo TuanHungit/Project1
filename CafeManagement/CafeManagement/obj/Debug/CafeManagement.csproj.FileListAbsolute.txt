@@ -125,6 +125,7 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Office.
 D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Office.v19.1.Core.resources.dll
 D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Office.v19.1.Core.resources.dll
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.csprojAssemblyReference.cache
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frBan.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frDanhMuc.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frLogin.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMain.resources
@@ -137,6 +138,8 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.exe
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.pdb
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhanVien.resources
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.UpdateDatabase.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhanVien.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.UpdateDatabase.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.Charts.v19.1.Core.dll
@@ -922,7 +925,6 @@ C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeM
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.frBan.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMain.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.frNhanvien.resources
-C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.Chart.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frDanhMuc.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frDanhThu.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frLogin.resources
@@ -930,7 +932,6 @@ C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeM
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frMenu.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.WaitForm1.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.XtraReport.resources
-C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Properties.Resources.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.SplashScreen1.resources
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.csproj.GenerateResource.cache
@@ -938,29 +939,10 @@ C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeM
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.csproj.CopyComplete
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.exe
 C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.pdb
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.Dialogs.v19.1.Core.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.Map.v19.1.Core.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraCharts.v19.1.UI.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraDialogs.v19.1.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraMap.v19.1.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.Map.v19.1.Core.xml
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraCharts.v19.1.UI.xml
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraDialogs.v19.1.xml
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\DevExpress.XtraMap.v19.1.xml
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\de\DevExpress.Dialogs.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Dialogs.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Dialogs.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Dialogs.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\de\DevExpress.Map.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Map.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Map.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Map.v19.1.Core.resources.dll
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.frBan.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.frNhanvien.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.Chart.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frDanhThu.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.WaitForm1.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.SplashScreen1.resources
-C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frThongTinTaiKhoan.resources
-D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frThongTinTaiKhoan.resources
+C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frChuyenBan.resources
+C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frChuyenBan.resources
+C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frChonMon.resources
+C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.reportBaoCaoDanhThu.resources
+C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.frThongTinNhanVien.resources
+C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhaCungCap.resources
+C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources

@@ -19,10 +19,14 @@ namespace CafeManagement.Data
         public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<HangHoa> HangHoas { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
-        public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<Ban> Bans { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons {get;set;}
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<PhieuNhap> DonDatHangs { get; set; }
+        public virtual DbSet<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
+        public virtual DbSet<PhieuXuat> PhieuXuats { get; set; }
+        public virtual DbSet<ChiTietPhieuXuat> ChiTietPhieuXuats { get; set; }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NhanVien>()

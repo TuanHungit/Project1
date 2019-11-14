@@ -23,6 +23,7 @@ namespace CafeManagement.Data
         public DateTime NgayVaoLam { get; set; }
         public byte[] Picture { get; set; }
         public ICollection<HoaDon> HoaDons { get; set; }
+        public ICollection<PhieuXuat> PhieuXuats { get; set; }
         public ICollection<PhieuNhap> PhieuNhaps { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
 

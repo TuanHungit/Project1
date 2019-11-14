@@ -129,7 +129,7 @@ namespace CafeManagement.LinQ
             caPheContext.SaveChanges();
             
         }
-        public void CapNhatChiTietHoaDon(int HoaDonID1,int HoaDonID2)
+        public void CapNhatChiTietHoaDonKhiGopBan(int HoaDonID1,int HoaDonID2)
         {
             var query = (from item in caPheContext.ChiTietHoaDons
                          where item.HoaDonID.Equals(HoaDonID2)
@@ -140,5 +140,13 @@ namespace CafeManagement.LinQ
                 caPheContext.SaveChanges();
             }
         }
+     
+        public int LayHoaDonIDByBanID(int BanID) 
+        {
+           return (from item in caPheContext.HoaDons
+                         where item.BanID.Equals(BanID)
+                         select item.HoaDonId).FirstOrDefault();
+        }
+       
     }
 }

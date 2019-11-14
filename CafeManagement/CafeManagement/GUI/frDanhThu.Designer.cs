@@ -42,6 +42,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnXuatBaoCao = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -58,6 +59,7 @@
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelControl1.Controls.Add(this.btnXuatBaoCao);
             this.panelControl1.Controls.Add(this.labelDanhThu);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.btnXoa);
@@ -75,7 +77,7 @@
             // 
             this.labelDanhThu.AutoSize = true;
             this.labelDanhThu.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelDanhThu.Location = new System.Drawing.Point(116, 160);
+            this.labelDanhThu.Location = new System.Drawing.Point(130, 209);
             this.labelDanhThu.Name = "labelDanhThu";
             this.labelDanhThu.Size = new System.Drawing.Size(0, 24);
             this.labelDanhThu.TabIndex = 12;
@@ -86,7 +88,7 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(14, 160);
+            this.labelControl3.Location = new System.Drawing.Point(13, 209);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(96, 23);
@@ -227,6 +229,19 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Danh sách hóa đơn";
             // 
+            // btnXuatBaoCao
+            // 
+            this.btnXuatBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXuatBaoCao.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatBaoCao.Appearance.Options.UseFont = true;
+            this.btnXuatBaoCao.Location = new System.Drawing.Point(13, 151);
+            this.btnXuatBaoCao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnXuatBaoCao.Name = "btnXuatBaoCao";
+            this.btnXuatBaoCao.Size = new System.Drawing.Size(267, 41);
+            this.btnXuatBaoCao.TabIndex = 13;
+            this.btnXuatBaoCao.Text = "Xuất báo cáo/Thống kê";
+            this.btnXuatBaoCao.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
+            // 
             // frDanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -270,5 +285,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton btnXuatBaoCao;
     }
 }

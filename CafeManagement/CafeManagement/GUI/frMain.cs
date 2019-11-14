@@ -159,23 +159,36 @@ namespace CafeManagement.GUI
 
         private void frMain_Load(object sender, EventArgs e)
         {
-
-
-            if (Global.LoaiTaiKhoan == "NhanVien")
+           
+            if(Global.LoaiTaiKhoan=="Nhânviên")
             {
 
-                ribbonPageManager.Visible = false;
-            }
-            if (Global.LoaiTaiKhoan == "Quản lý")
-            {
-                ribbonPageManager.Visible = true;
+                ribbonPageManager.Visible =false;
             }
         }
 
-        private void btnAccountInfo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnLogOut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frThongTinTaiKhoan frThongTinTaiKhoan = new frThongTinTaiKhoan();
-            frThongTinTaiKhoan.ShowDialog();
+            Close();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form form = this.CheckFormExist(typeof(frNhaCungCap));
+            if (form != null)
+            {
+
+                form.Activate();
+            }
+            else
+            {
+
+                frNhaCungCap fr = new frNhaCungCap();
+                fr.MdiParent = this;
+                fr.Show();
+            }
+            SplashScreenManager.CloseForm();
         }
     }
 }

@@ -15,9 +15,9 @@ namespace CafeManagement.LinQ
 
             var has = (from item in caPheContext.LoaiSanPhams
                        where item.TenLoaiSanPham.Contains(TenDanhMuc)
-                       select item).Count();
+                        select item).Count();
 
-            if (Convert.ToInt32(has) > 0)
+            if (Convert.ToInt32(has)>0)
                 return true;
             return false;
         }
@@ -27,7 +27,7 @@ namespace CafeManagement.LinQ
             {
                 LoaiSanPham loaiSanPham = new LoaiSanPham()
                 {
-
+                  
                     TenLoaiSanPham = Ten
                 };
                 caPheContext.LoaiSanPhams.Add(loaiSanPham);
@@ -70,9 +70,9 @@ namespace CafeManagement.LinQ
             return sp;
         }
 
-        public int GetIdDanhMuc(string TenDanhMuc, CaPheContext caPheContext)
+        public int GetIdDanhMuc(string TenDanhMuc ,CaPheContext caPheContext)
         {
-            var sp = (from item in caPheContext.LoaiSanPhams
+            int sp = (from item in caPheContext.LoaiSanPhams
                       where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
                       select item.LoaiSanPhamId).SingleOrDefault();
             return sp;

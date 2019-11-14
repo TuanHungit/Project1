@@ -13,7 +13,7 @@ namespace CafeManagement.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201911071710373_InitDB"; }
+            get { return "201911141635304_InitDB"; }
         }
         
         string IMigrationMetadata.Source

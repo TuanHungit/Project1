@@ -106,8 +106,10 @@ namespace CafeManagement
                 }
                 else
                 {
-                    gcBan.DataSource = loadban.load_Ban(caPheContext);
+                    gcBan.DataSource = (from item in caPheContext.Bans
+                                        select new { item.BanId,item.TinhTrang}).ToList();
                     gvBan.Columns[0].Caption = "Mã số bàn";
+                    gvBan.Columns[1].Caption = "Tình trạng";
                 }
             }
         }

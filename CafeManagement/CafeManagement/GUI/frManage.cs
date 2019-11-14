@@ -19,7 +19,7 @@ using DevExpress.LookAndFeel;
 
 namespace CafeManagement.GUI
 {
-    public partial class frManage : DevExpress.XtraEditors.XtraForm
+    public  partial class frManage : DevExpress.XtraEditors.XtraForm
     {
         int BanID = 0;
         int SanphamID = 0;
@@ -30,6 +30,7 @@ namespace CafeManagement.GUI
         CaPheContext context = new CaPheContext();
         Query_HoaDon hoaDon = new Query_HoaDon();
         CultureInfo culture = new CultureInfo("vi-VN");
+        
         public frManage()
         {
             InitializeComponent();
@@ -39,10 +40,9 @@ namespace CafeManagement.GUI
             this.WindowState = FormWindowState.Maximized;
             Load_Table();
             Load_cbDanhMuc();
-            load_cbChonBan();
-            btnGopBan.Enabled = false;
-            btnChuyenBan.Enabled = false;
-        }             
+       
+        }
+       
         private void Load_Table() 
         {
            panelBan.Controls.Clear();          
@@ -52,14 +52,14 @@ namespace CafeManagement.GUI
             {
                 SimpleButton button = new SimpleButton() { Width = 85, Height = 85 };
                 button.Text = item.BanId.ToString() + " "+item.TinhTrang.ToString();
-                button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
+              button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
                 button.ImageOptions.Location = ImageLocation.TopCenter;
                 button.Tag = item;             
                 button.Click += button_Click;               
                 switch (item.TinhTrang.ToString())
                 {
                     case "Có người":
-                        button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\Resources\user.png");
+          //              button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\Resources\user.png");
                         button.ImageOptions.Location = ImageLocation.TopCenter;
                         button.LookAndFeel.UseDefaultLookAndFeel = false;
                         button.Appearance.BackColor = Color.Aqua;
@@ -110,16 +110,15 @@ namespace CafeManagement.GUI
                 return;
             }
             int BillID = hoaDon.LayHoaDonChuaThanhToan(BanID);
-              
-                int SoLuong = int.Parse(spSoLuong.Value.ToString());
+
             if (BillID == 0)
             {
                 hoaDon.AddHoaDon(BanID);
-                hoaDon.AddChiTietHoaDon(hoaDon.GetMaxBill(), SanphamID, SoLuong);
+                hoaDon.AddChiTietHoaDon(hoaDon.GetMaxBill(), SanphamID, 1);
             }
             else
             {
-                hoaDon.AddChiTietHoaDon(BillID, SanphamID, SoLuong);
+                hoaDon.AddChiTietHoaDon(BillID, SanphamID, 1);
             }
             ban.Update_Ban(context, BanID);
             ShowBill(BanID);
@@ -165,7 +164,6 @@ namespace CafeManagement.GUI
                     ban.Update_Ban1(context, BanID);
                     Load_Table();
                 }
-              
             }
             ShowBill(BanID);
            
@@ -213,39 +211,8 @@ namespace CafeManagement.GUI
             }
         }
       
-        private void btnGopBan_Click(object sender, EventArgs e)
-        {
-           
-            if (cbChonBan.EditValue == null||BanID==0)
-            {
-                XtraMessageBox.Show("Hãy chọn bàn cần gộp hay chuyển!");
-                return;
-            }
-            int ChonBanID = (int)cbChonBan.EditValue;
-            if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp {1} sang {0}?",
-                BanID, cbChonBan.Text), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                ban.GopBan(BanID, ChonBanID);
-                ban.Update_Ban1(context, ChonBanID);
-                Load_Table();
-            }
-            ShowBill(ChonBanID);
-        }
-        private void load_cbChonBan()
-        {
-          
-            cbChonBan.Properties.DataSource = (from item in  context.Bans
-                                               select new {SốBàn = item.BanId, TìnhTrạng = item.TinhTrang }).ToList() ;
-            cbChonBan.Properties.DisplayMember = "SốBàn";
-            cbChonBan.Properties.ValueMember = "SốBàn";
-        }
-
-        private void cbChonBan_EditValueChanged(object sender, EventArgs e)
-        {
-            btnChuyenBan.Enabled = true;
-            btnGopBan.Enabled = true;
-        }
-
+ 
+     
         private void btnSearch_Click(object sender, EventArgs e)
         {
             listviewMenu.Items.Clear();
@@ -269,5 +236,25 @@ namespace CafeManagement.GUI
         {
             txtTenSanPham.Text = null;
         }
+
+        private void btnChuyenBan_Click(object sender, EventArgs e)
+        {
+            frChuyenBan frChuyenBan = new frChuyenBan();
+            frChuyenBan.ShowDialog();
+        }
+
+        private void gcBill_Click(object sender, EventArgs e)
+        {
+            if (gvBill.RowCount > 0)
+            {
+                Global.TenSanPham = gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[0]).ToString();
+                Global.Gia = gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[1]).ToString();
+                Global.BanID = BanID;
+                frChonMon fr = new frChonMon();
+                fr.ShowDialog();
+            }
+        }
+
+       
     }
 }

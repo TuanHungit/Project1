@@ -9,18 +9,12 @@ namespace CafeManagement.Data
 {
     public class HangHoa
     {
-
-        public HangHoa()
-        {
-            NhaCungCaps = new HashSet<NhaCungCap>();
-            PhieuNhaps = new HashSet<PhieuNhap>();
-        }
-       
         public int HangHoaId { get; set; }
         public string TenHangHoa { get; set; }
+        public string DonViTinh { get; set; }
         public double DonGia { get; set; }
-        public ICollection<NhaCungCap> NhaCungCaps { get; set; }
-
-        public ICollection<PhieuNhap> PhieuNhaps { get; set; }
+        public int SoLuongTon { get; set; }
+        public ICollection<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
+        public ICollection<ChiTietPhieuXuat> ChiTietPhieuXuats { get; set; }
     }
 }

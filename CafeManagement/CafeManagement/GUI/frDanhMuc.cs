@@ -64,10 +64,7 @@ namespace CafeManagement.GUI
             }
         }
 
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           
-        }
+       
         private void gvDanhMuc_Click(object sender, EventArgs e)
         {
             if (gvDanhMuc.RowCount > 0)
@@ -79,9 +76,13 @@ namespace CafeManagement.GUI
             txtTenDanhMuc.EditValue = null;
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+    
+
+     
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtTen1.Text != null)
+            if (txtTen1.EditValue!= null)
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -109,12 +110,11 @@ namespace CafeManagement.GUI
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            if (txtTen1.Text != null)
+            if (txtTen1.EditValue != null)
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ! Xoá danh mục tất cả các sản phẩm trong danh mục sẽ bị xóa hết!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
 
@@ -139,19 +139,14 @@ namespace CafeManagement.GUI
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefesh_Click(object sender, EventArgs e)
         {
             Load_DanhMuc();
-        }
-
-        private void accordionControlElement3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

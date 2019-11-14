@@ -115,21 +115,48 @@
   <ItemGroup>
     <Compile Include="Data\Ban.cs" />
     <Compile Include="Data\CaPheContext.cs" />
+    <Compile Include="Data\ChiTietPhieuNhap.cs" />
     <Compile Include="Data\ChiTietHoaDon.cs" />
+    <Compile Include="Data\ChiTietPhieuXuat.cs" />
+    <Compile Include="Data\PhieuNhap.cs" />
     <Compile Include="Data\Global.cs" />
     <Compile Include="Data\HangHoa.cs" />
     <Compile Include="Data\HoaDon.cs" />
     <Compile Include="Data\LoaiSanPham.cs" />
     <Compile Include="Data\NhaCungCap.cs" />
     <Compile Include="Data\NhanVien.cs" />
-    <Compile Include="Data\PhieuNhap.cs" />
+    <Compile Include="Data\PhieuXuat.cs" />
     <Compile Include="Data\SanPham.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
+    <Compile Include="GUI\frNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frNhaCungCap.Designer.cs">
+      <DependentUpon>frNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frThongTinNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frThongTinNhanVien.Designer.cs">
+      <DependentUpon>frThongTinNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frBan.Designer.cs">
       <DependentUpon>frBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frChonMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frChonMon.Designer.cs">
+      <DependentUpon>frChonMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frChuyenBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frChuyenBan.Designer.cs">
+      <DependentUpon>frChuyenBan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frMain.cs">
       <SubType>Form</SubType>
@@ -142,12 +169,6 @@
     </Compile>
     <Compile Include="GUI\frNhanVien.Designer.cs">
       <DependentUpon>frNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Chart.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Chart.Designer.cs">
-      <DependentUpon>Chart.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frDanhMuc.cs">
       <SubType>Form</SubType>
@@ -179,11 +200,11 @@
     <Compile Include="GUI\frMenu.Designer.cs">
       <DependentUpon>frMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frThongTinTaiKhoan.cs">
-      <SubType>Form</SubType>
+    <Compile Include="GUI\reportBaoCaoDanhThu.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\frThongTinTaiKhoan.Designer.cs">
-      <DependentUpon>frThongTinTaiKhoan.cs</DependentUpon>
+    <Compile Include="GUI\reportBaoCaoDanhThu.Designer.cs">
+      <DependentUpon>reportBaoCaoDanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -202,12 +223,13 @@
     <Compile Include="LinQ\Query_Danhthu.cs" />
     <Compile Include="LinQ\Query_HoaDon.cs" />
     <Compile Include="LinQ\Query_Login.cs" />
+    <Compile Include="LinQ\Query_NhaCungCap.cs" />
     <Compile Include="LinQ\Query_NhanVien.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
     <Compile Include="LinQ\Query_TaiKhoan.cs" />
-    <Compile Include="Migrations\201911071710373_InitDB.cs" />
-    <Compile Include="Migrations\201911071710373_InitDB.designer.cs">
-      <DependentUpon>201911071710373_InitDB.cs</DependentUpon>
+    <Compile Include="Migrations\201911141635304_InitDB.cs" />
+    <Compile Include="Migrations\201911141635304_InitDB.designer.cs">
+      <DependentUpon>201911141635304_InitDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -218,17 +240,26 @@
     <Compile Include="SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\frNhaCungCap.resx">
+      <DependentUpon>frNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frThongTinNhanVien.resx">
+      <DependentUpon>frThongTinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frBan.resx">
       <DependentUpon>frBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frChonMon.resx">
+      <DependentUpon>frChonMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frChuyenBan.resx">
+      <DependentUpon>frChuyenBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frMain.resx">
       <DependentUpon>frMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frNhanVien.resx">
       <DependentUpon>frNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Chart.resx">
-      <DependentUpon>Chart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frDanhMuc.resx">
       <DependentUpon>frDanhMuc.cs</DependentUpon>
@@ -245,8 +276,8 @@
     <EmbeddedResource Include="GUI\frMenu.resx">
       <DependentUpon>frMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frThongTinTaiKhoan.resx">
-      <DependentUpon>frThongTinTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\reportBaoCaoDanhThu.resx">
+      <DependentUpon>reportBaoCaoDanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
@@ -254,8 +285,8 @@
     <EmbeddedResource Include="GUI\XtraReport.resx">
       <DependentUpon>XtraReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911071710373_InitDB.resx">
-      <DependentUpon>201911071710373_InitDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911141635304_InitDB.resx">
+      <DependentUpon>201911141635304_InitDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -441,6 +472,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mansion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
