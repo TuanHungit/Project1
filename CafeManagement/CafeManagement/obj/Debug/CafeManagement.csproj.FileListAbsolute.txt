@@ -963,3 +963,4 @@ D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.Wa
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources
 D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.SplashScreen1.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frThongTinTaiKhoan.resources
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frThongTinTaiKhoan.resources

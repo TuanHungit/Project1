@@ -54,16 +54,17 @@ namespace CafeManagement.LinQ
         }
         public bool SuaTaiKhoan(int NhanvienID, string Username, string Password, string LoaiTaiKhoan)
         {
-            if (!KiemTraTaiKhoan(NhanvienID)&&!KiemTraUser(Username))
+
+            if (KiemTraTaiKhoan(NhanvienID) && KiemTraUser(Username))
             {
-                var taikhoan = new TaiKhoan()
-                {
-                    NhanVienID = NhanvienID,
-                    username = Username,
-                    password = Password,
-                    LoaiTaiKhoan = LoaiTaiKhoan
-                };
-                context.Entry(taikhoan).State = EntityState.Modified;
+                var nhanviens = (from nv in context.TaiKhoans
+                                 where nv.NhanVienID == NhanvienID
+                                 select nv).FirstOrDefault();
+
+                nhanviens.username = Username;
+                nhanviens.password = Password;
+                nhanviens.LoaiTaiKhoan = LoaiTaiKhoan;
+                context.Entry(nhanviens).State = EntityState.Modified;
                 context.SaveChanges();
                 return true;
             }
