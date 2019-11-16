@@ -190,5 +190,11 @@ namespace CafeManagement.GUI
             }
             SplashScreenManager.CloseForm();
         }
+
+        private void btnAccountInfo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frThongTinNhanVien fr = new frThongTinNhanVien();
+            fr.Show();
+        }
     }
 }

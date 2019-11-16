@@ -128,6 +128,12 @@
     <Compile Include="Data\PhieuXuat.cs" />
     <Compile Include="Data\SanPham.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
+    <Compile Include="GUI\frChinhSuaNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frChinhSuaNV.Designer.cs">
+      <DependentUpon>frChinhSuaNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,9 +233,9 @@
     <Compile Include="LinQ\Query_NhanVien.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
     <Compile Include="LinQ\Query_TaiKhoan.cs" />
-    <Compile Include="Migrations\201911141635304_InitDB.cs" />
-    <Compile Include="Migrations\201911141635304_InitDB.designer.cs">
-      <DependentUpon>201911141635304_InitDB.cs</DependentUpon>
+    <Compile Include="Migrations\201911160906544_CreateDatabase.cs" />
+    <Compile Include="Migrations\201911160906544_CreateDatabase.designer.cs">
+      <DependentUpon>201911160906544_CreateDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -240,6 +246,9 @@
     <Compile Include="SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\frChinhSuaNV.resx">
+      <DependentUpon>frChinhSuaNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frNhaCungCap.resx">
       <DependentUpon>frNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,8 +294,8 @@
     <EmbeddedResource Include="GUI\XtraReport.resx">
       <DependentUpon>XtraReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911141635304_InitDB.resx">
-      <DependentUpon>201911141635304_InitDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911160906544_CreateDatabase.resx">
+      <DependentUpon>201911160906544_CreateDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

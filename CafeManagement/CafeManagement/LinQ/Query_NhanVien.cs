@@ -11,6 +11,7 @@ namespace CafeManagement.LinQ
 {
    public class Query_NhanVien
     {
+        Query_Login login = new Query_Login();
         public bool Add_NV( CaPheContext context, string hoten, string quequan,string chucvu, string cmnd, string sdt,DateTime ngaysinh, DateTime ngayvaolam , byte[] image)
         {
             
@@ -88,6 +89,35 @@ namespace CafeManagement.LinQ
                      select item.NhanVienId).SingleOrDefault();
         }
    
-        
+        public NhanVien GetNhanVien(CaPheContext context)
+        {
+            var nv = (from nhanvien in context.NhanViens
+                      where nhanvien.NhanVienId.Equals(Global.NhanVienID)
+                      select nhanvien).FirstOrDefault();        
+            return nv;        
+        }
+        public bool CapNhat_NV(CaPheContext context, string hoten, string quequan, string chucvu, string cmnd, string sdt, DateTime ngaysinh, DateTime ngayvaolam, byte[] image)
+        {
+            int id = Global.NhanVienID;
+            if (id != 0)
+            {
+                var nhanvien = new NhanVien()
+                {
+                    NhanVienId = id,
+                    QueQuan = quequan,
+                    HoTenNV = hoten,
+                    ChucVu = chucvu,
+                    SDT_NV = sdt,
+                    CMND = cmnd,
+                    NgaySinh = ngaysinh,
+                    NgayVaoLam = ngayvaolam,
+                    Picture = image
+                };
+                context.Entry(nhanvien).State = EntityState.Modified;
+                context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -108,7 +108,7 @@
             this.panelControl1.Controls.Add(this.txtChucVu);
             this.panelControl1.Location = new System.Drawing.Point(12, 18);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(309, 385);
+            this.panelControl1.Size = new System.Drawing.Size(319, 385);
             this.panelControl1.TabIndex = 0;
             // 
             // label6
@@ -358,7 +358,7 @@
             // btnThem
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.Location = new System.Drawing.Point(10, 10);
+            this.btnThem.Location = new System.Drawing.Point(6, 10);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(94, 48);
             this.btnThem.TabIndex = 3;
@@ -368,7 +368,7 @@
             // btnXoa
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.Location = new System.Drawing.Point(10, 64);
+            this.btnXoa.Location = new System.Drawing.Point(6, 64);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 48);
             this.btnXoa.TabIndex = 4;
@@ -378,7 +378,7 @@
             // btnSua
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSua.Location = new System.Drawing.Point(10, 118);
+            this.btnSua.Location = new System.Drawing.Point(6, 118);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 48);
             this.btnSua.TabIndex = 5;
@@ -420,7 +420,7 @@
             // btnSuaTK
             // 
             this.btnSuaTK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSuaTK.Location = new System.Drawing.Point(10, 405);
+            this.btnSuaTK.Location = new System.Drawing.Point(6, 405);
             this.btnSuaTK.Name = "btnSuaTK";
             this.btnSuaTK.Size = new System.Drawing.Size(94, 48);
             this.btnSuaTK.TabIndex = 29;
@@ -430,7 +430,7 @@
             // btnThemTK
             // 
             this.btnThemTK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnThemTK.Location = new System.Drawing.Point(10, 455);
+            this.btnThemTK.Location = new System.Drawing.Point(6, 455);
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.Size = new System.Drawing.Size(94, 48);
             this.btnThemTK.TabIndex = 27;
@@ -446,9 +446,9 @@
             this.panelControl3.Controls.Add(this.btnXoa);
             this.panelControl3.Controls.Add(this.btnThem);
             this.panelControl3.Controls.Add(this.btnSua);
-            this.panelControl3.Location = new System.Drawing.Point(329, 19);
+            this.panelControl3.Location = new System.Drawing.Point(337, 19);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(114, 510);
+            this.panelControl3.Size = new System.Drawing.Size(106, 510);
             this.panelControl3.TabIndex = 30;
             // 
             // label13
