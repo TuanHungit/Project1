@@ -134,11 +134,23 @@
     <Compile Include="GUI\frChinhSuaNV.Designer.cs">
       <DependentUpon>frChinhSuaNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frKho.Designer.cs">
+      <DependentUpon>frKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frNhaCungCap.Designer.cs">
       <DependentUpon>frNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frNhapKho.Designer.cs">
+      <DependentUpon>frNhapKho.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frThongTinNhanVien.cs">
       <SubType>Form</SubType>
@@ -206,6 +218,12 @@
     <Compile Include="GUI\frMenu.Designer.cs">
       <DependentUpon>frMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frXuatKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frXuatKho.Designer.cs">
+      <DependentUpon>frXuatKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\reportBaoCaoDanhThu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -249,8 +267,14 @@
     <EmbeddedResource Include="GUI\frChinhSuaNV.resx">
       <DependentUpon>frChinhSuaNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frKho.resx">
+      <DependentUpon>frKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frNhaCungCap.resx">
       <DependentUpon>frNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frNhapKho.resx">
+      <DependentUpon>frNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frThongTinNhanVien.resx">
       <DependentUpon>frThongTinNhanVien.cs</DependentUpon>
@@ -284,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frMenu.resx">
       <DependentUpon>frMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frXuatKho.resx">
+      <DependentUpon>frXuatKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\reportBaoCaoDanhThu.resx">
       <DependentUpon>reportBaoCaoDanhThu.cs</DependentUpon>

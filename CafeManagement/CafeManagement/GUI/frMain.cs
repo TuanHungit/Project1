@@ -196,5 +196,62 @@ namespace CafeManagement.GUI
             frThongTinNhanVien fr = new frThongTinNhanVien();
             fr.Show();
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form form = this.CheckFormExist(typeof(frKho));
+            if (form != null)
+            {
+
+                form.Activate();
+            }
+            else
+            {
+
+                frKho fr = new frKho();
+                fr.MdiParent = this;
+                fr.Show();
+            }
+            SplashScreenManager.CloseForm();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form form = this.CheckFormExist(typeof(frNhapKho));
+            if (form != null)
+            {
+
+                form.Activate();
+            }
+            else
+            {
+
+                frNhapKho fr = new frNhapKho();
+                fr.MdiParent = this;
+                fr.Show();
+            }
+            SplashScreenManager.CloseForm();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form form = this.CheckFormExist(typeof(frXuatKho));
+            if (form != null)
+            {
+
+                form.Activate();
+            }
+            else
+            {
+
+                frXuatKho fr = new frXuatKho();
+                fr.MdiParent = this;
+                fr.Show();
+            }
+            SplashScreenManager.CloseForm();
+        }
     }
 }

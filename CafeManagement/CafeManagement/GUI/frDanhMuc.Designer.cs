@@ -424,7 +424,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frDanhMuc";
-            this.Text = "Danh mục";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frDanhMuc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).EndInit();

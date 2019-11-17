@@ -117,6 +117,7 @@
             this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 6;
             this.label3.Text = "Địa chỉ:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -152,6 +153,7 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(170, 23);
             this.txtDiaChi.TabIndex = 2;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // txtSDT
             // 
@@ -175,7 +177,7 @@
             this.panelControl2.Controls.Add(this.gcNCC);
             this.panelControl2.Location = new System.Drawing.Point(371, 18);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(749, 414);
+            this.panelControl2.Size = new System.Drawing.Size(749, 451);
             this.panelControl2.TabIndex = 1;
             // 
             // gcNCC
@@ -186,10 +188,11 @@
             this.gcNCC.Location = new System.Drawing.Point(6, 13);
             this.gcNCC.MainView = this.gvNCC;
             this.gcNCC.Name = "gcNCC";
-            this.gcNCC.Size = new System.Drawing.Size(738, 396);
+            this.gcNCC.Size = new System.Drawing.Size(738, 433);
             this.gcNCC.TabIndex = 0;
             this.gcNCC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNCC});
+            this.gcNCC.Click += new System.EventHandler(this.gcNCC_Click);
             // 
             // gvNCC
             // 
@@ -225,13 +228,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 443);
+            this.ClientSize = new System.Drawing.Size(1125, 480);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "frNhaCungCap";
             this.Text = "Nhà cung cấp";
+            this.Load += new System.EventHandler(this.frNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

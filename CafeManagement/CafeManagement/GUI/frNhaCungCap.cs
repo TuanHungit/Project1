@@ -119,5 +119,25 @@ namespace CafeManagement.GUI
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
         }
+
+        private void gcNCC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frNhaCungCap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
