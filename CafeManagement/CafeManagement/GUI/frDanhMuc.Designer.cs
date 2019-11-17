@@ -79,7 +79,7 @@
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
             this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
-            this.btnSearch.Location = new System.Drawing.Point(1069, 6);
+            this.btnSearch.Location = new System.Drawing.Point(1129, 6);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 33);
@@ -236,10 +236,10 @@
             this.txtTenDanhMuc.Location = new System.Drawing.Point(809, 9);
             this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDanhMuc.Properties.Appearance.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDanhMuc.Properties.Appearance.Options.UseFont = true;
             this.txtTenDanhMuc.Properties.NullText = "   --Tìm Tên Danh Mục --";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(254, 30);
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(314, 32);
             this.txtTenDanhMuc.TabIndex = 30;
             this.txtTenDanhMuc.Click += new System.EventHandler(this.txtTenDanhMuc_Click);
             // 
@@ -251,9 +251,9 @@
             this.panelControl1.Controls.Add(this.gcDanhMuc);
             this.panelControl1.Controls.Add(this.btnSearch);
             this.panelControl1.Controls.Add(this.txtTenDanhMuc);
-            this.panelControl1.Location = new System.Drawing.Point(338, 23);
+            this.panelControl1.Location = new System.Drawing.Point(278, 23);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1190, 484);
+            this.panelControl1.Size = new System.Drawing.Size(1250, 484);
             this.panelControl1.TabIndex = 40;
             // 
             // gcDanhMuc
@@ -265,7 +265,7 @@
             this.gcDanhMuc.MainView = this.gvDanhMuc;
             this.gcDanhMuc.MenuManager = this.barManager1;
             this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1180, 433);
+            this.gcDanhMuc.Size = new System.Drawing.Size(1276, 433);
             this.gcDanhMuc.TabIndex = 35;
             this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhMuc});
@@ -290,7 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.Location = new System.Drawing.Point(351, 9);
+            this.label1.Location = new System.Drawing.Point(291, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 21);
             this.label1.TabIndex = 45;
@@ -307,7 +307,7 @@
             this.accordionControlElement1});
             this.accordionControl1.Location = new System.Drawing.Point(0, 1);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(332, 506);
+            this.accordionControl1.Size = new System.Drawing.Size(272, 506);
             this.accordionControl1.TabIndex = 52;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -315,9 +315,9 @@
             // 
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Location = new System.Drawing.Point(137, 102);
+            this.btnAdd.Location = new System.Drawing.Point(96, 102);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(159, 37);
+            this.btnAdd.Size = new System.Drawing.Size(140, 37);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -326,9 +326,9 @@
             // 
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Location = new System.Drawing.Point(137, 159);
+            this.btnDelete.Location = new System.Drawing.Point(96, 159);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(159, 34);
+            this.btnDelete.Size = new System.Drawing.Size(140, 34);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -337,9 +337,9 @@
             // 
             this.btn.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btn.Appearance.Options.UseFont = true;
-            this.btn.Location = new System.Drawing.Point(137, 213);
+            this.btn.Location = new System.Drawing.Point(96, 213);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(159, 38);
+            this.btn.Size = new System.Drawing.Size(140, 38);
             this.btn.TabIndex = 4;
             this.btn.Text = "Sửa";
             this.btn.Click += new System.EventHandler(this.btn_Click);
@@ -348,19 +348,19 @@
             // 
             this.btnRefesh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnRefesh.Appearance.Options.UseFont = true;
-            this.btnRefesh.Location = new System.Drawing.Point(137, 271);
+            this.btnRefesh.Location = new System.Drawing.Point(96, 271);
             this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.Size = new System.Drawing.Size(159, 34);
+            this.btnRefesh.Size = new System.Drawing.Size(140, 34);
             this.btnRefesh.TabIndex = 5;
             this.btnRefesh.Text = "Refesh";
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // txtTen1
             // 
-            this.txtTen1.Location = new System.Drawing.Point(38, 60);
+            this.txtTen1.Location = new System.Drawing.Point(115, 60);
             this.txtTen1.MenuManager = this.barManager1;
             this.txtTen1.Name = "txtTen1";
-            this.txtTen1.Size = new System.Drawing.Size(159, 22);
+            this.txtTen1.Size = new System.Drawing.Size(121, 22);
             this.txtTen1.TabIndex = 7;
             // 
             // accordionControlElement1
@@ -379,10 +379,10 @@
             // 
             this.accordionControlElement3.HeaderControl = this.txtTen1;
             this.accordionControlElement3.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons, DevExpress.XtraBars.Navigation.HeaderElementAlignment.Left),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl),
-            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text, DevExpress.XtraBars.Navigation.HeaderElementAlignment.Right)});
+            new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl)});
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "Tên danh mục:";
@@ -424,7 +424,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frDanhMuc";
-            this.Text = " ";
+            this.Text = "Danh mục";
             this.Load += new System.EventHandler(this.frDanhMuc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).EndInit();

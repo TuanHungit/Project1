@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using CafeManagement.Data;
 namespace CafeManagement.GUI
 {
     public partial class frKho : DevExpress.XtraEditors.XtraForm
@@ -18,7 +18,7 @@ namespace CafeManagement.GUI
             InitializeComponent();
             this.WindowState = FormWindowState.Minimized;
         }
-
+        CaPheContext capheContext = new CaPheContext();
       
         private void frKho_Load(object sender, EventArgs e)
         {
@@ -28,11 +28,33 @@ namespace CafeManagement.GUI
             txtDonGia.Enabled = false;
             txtDonViTinh.Enabled = false;
             //load_btn();
+            Load_gvKho();
         }
         private void load_btn()
         {
             btnThoat.Enabled = false;
             btnXoa.Enabled = false;
+        }
+        private void Load_gvKho()
+        {
+            gcKho.DataSource = (from hanghoa in capheContext.HangHoas          
+                                    select new
+                                    {
+                                        hanghoa.TenHangHoa,
+                                       hanghoa.SoLuongTon,
+                                        hanghoa.DonGia,
+                                        hanghoa.DonViTinh               
+                                    }).ToList();
+            gvKho.Columns[0].Caption = "Tên hàng hóa";
+            gvKho.Columns[1].Caption = "Số lượng nhập";
+            gvKho.Columns[2].Caption = "Đơn giá";
+            gvKho.Columns[3].Caption = "Đơn vị tính";
+   
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

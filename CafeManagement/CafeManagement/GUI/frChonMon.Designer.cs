@@ -30,18 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.lbTenSenPham = new System.Windows.Forms.Label();
-            this.lbGia = new System.Windows.Forms.Label();
-            this.lbThanhTien = new System.Windows.Forms.Label();
             this.cbSoLuong = new DevExpress.XtraEditors.SpinEdit();
+            this.lbThanhTien = new System.Windows.Forms.Label();
+            this.lbGia = new System.Windows.Forms.Label();
+            this.lbTenSenPham = new System.Windows.Forms.Label();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbSoLuong.Properties)).BeginInit();
@@ -74,111 +74,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(365, 204);
             this.panelControl1.TabIndex = 1;
-            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Thông tin sản phẩm trong danh mục order";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.Location = new System.Drawing.Point(44, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Tên sản phẩm: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label4.Location = new System.Drawing.Point(124, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Giá:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label5.Location = new System.Drawing.Point(68, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 21);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Thành tiền:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label6.Location = new System.Drawing.Point(84, 120);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Số lượng:";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 155);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(94, 29);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Lưu lại";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(128, 155);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(94, 29);
-            this.simpleButton2.TabIndex = 9;
-            this.simpleButton2.Text = "Hủy món";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Location = new System.Drawing.Point(251, 155);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(94, 29);
-            this.simpleButton3.TabIndex = 10;
-            this.simpleButton3.Text = "Thoát";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // lbTenSenPham
-            // 
-            this.lbTenSenPham.AutoSize = true;
-            this.lbTenSenPham.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lbTenSenPham.Location = new System.Drawing.Point(177, 17);
-            this.lbTenSenPham.Name = "lbTenSenPham";
-            this.lbTenSenPham.Size = new System.Drawing.Size(0, 21);
-            this.lbTenSenPham.TabIndex = 11;
-            // 
-            // lbGia
-            // 
-            this.lbGia.AutoSize = true;
-            this.lbGia.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lbGia.Location = new System.Drawing.Point(177, 51);
-            this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(0, 21);
-            this.lbGia.TabIndex = 12;
-            // 
-            // lbThanhTien
-            // 
-            this.lbThanhTien.AutoSize = true;
-            this.lbThanhTien.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lbThanhTien.Location = new System.Drawing.Point(177, 83);
-            this.lbThanhTien.Name = "lbThanhTien";
-            this.lbThanhTien.Size = new System.Drawing.Size(0, 21);
-            this.lbThanhTien.TabIndex = 13;
             // 
             // cbSoLuong
             // 
@@ -209,6 +104,110 @@
             this.cbSoLuong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbSoLuong.Size = new System.Drawing.Size(111, 27);
             this.cbSoLuong.TabIndex = 38;
+            this.cbSoLuong.EditValueChanged += new System.EventHandler(this.cbSoLuong_EditValueChanged);
+            // 
+            // lbThanhTien
+            // 
+            this.lbThanhTien.AutoSize = true;
+            this.lbThanhTien.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lbThanhTien.Location = new System.Drawing.Point(177, 83);
+            this.lbThanhTien.Name = "lbThanhTien";
+            this.lbThanhTien.Size = new System.Drawing.Size(0, 21);
+            this.lbThanhTien.TabIndex = 13;
+            // 
+            // lbGia
+            // 
+            this.lbGia.AutoSize = true;
+            this.lbGia.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lbGia.Location = new System.Drawing.Point(177, 51);
+            this.lbGia.Name = "lbGia";
+            this.lbGia.Size = new System.Drawing.Size(0, 21);
+            this.lbGia.TabIndex = 12;
+            // 
+            // lbTenSenPham
+            // 
+            this.lbTenSenPham.AutoSize = true;
+            this.lbTenSenPham.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lbTenSenPham.Location = new System.Drawing.Point(177, 17);
+            this.lbTenSenPham.Name = "lbTenSenPham";
+            this.lbTenSenPham.Size = new System.Drawing.Size(0, 21);
+            this.lbTenSenPham.TabIndex = 11;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(251, 155);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton3.TabIndex = 10;
+            this.simpleButton3.Text = "Thoát";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(128, 155);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton2.TabIndex = 9;
+            this.simpleButton2.Text = "Hủy món";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(12, 155);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton1.TabIndex = 8;
+            this.simpleButton1.Text = "Lưu lại";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label6.Location = new System.Drawing.Point(84, 120);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Số lượng:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label5.Location = new System.Drawing.Point(68, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 21);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Thành tiền:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label4.Location = new System.Drawing.Point(124, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 21);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Giá:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label3.Location = new System.Drawing.Point(44, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Tên sản phẩm: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(272, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Thông tin sản phẩm trong danh mục order";
             // 
             // frChonMon
             // 

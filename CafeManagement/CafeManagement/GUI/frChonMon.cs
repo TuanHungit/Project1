@@ -20,6 +20,7 @@ namespace CafeManagement.GUI
 
         public frChonMon()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
         Query_HoaDon hoaDon = new Query_HoaDon();
@@ -28,16 +29,7 @@ namespace CafeManagement.GUI
         
         Query_Ban ban = new Query_Ban();
 
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             int BillID = hoaDon.LayHoaDonChuaThanhToan(Global.BanID);
@@ -51,7 +43,7 @@ namespace CafeManagement.GUI
 
         private void frChonMon_Load(object sender, EventArgs e)
         {
-            StartPosition = FormStartPosition.CenterScreen;
+           
             LoadInfor();
            
          }
@@ -60,7 +52,7 @@ namespace CafeManagement.GUI
             lbTenSenPham.Text = Global.TenSanPham;
             lbGia.Text = Global.Gia + " VND";
             int SoLuong = int.Parse(cbSoLuong.Text);
-            lbThanhTien.Text = ((int.Parse(Global.Gia)) * SoLuong).ToString() + " VND";
+            lbThanhTien.Text = (Global.Gia * SoLuong).ToString() + " VND";
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -85,6 +77,12 @@ namespace CafeManagement.GUI
 
         private void frChonMon_FormClosed(object sender, FormClosedEventArgs e)
         {
+        }
+
+        private void cbSoLuong_EditValueChanged(object sender, EventArgs e)
+        {
+            int SoLuong = int.Parse(cbSoLuong.Text);
+            lbThanhTien.Text = (Global.Gia * SoLuong).ToString() + " VND";
         }
     }
 }

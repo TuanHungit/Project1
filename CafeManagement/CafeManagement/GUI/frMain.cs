@@ -246,7 +246,6 @@ namespace CafeManagement.GUI
             }
             else
             {
-
                 frXuatKho fr = new frXuatKho();
                 fr.MdiParent = this;
                 fr.Show();

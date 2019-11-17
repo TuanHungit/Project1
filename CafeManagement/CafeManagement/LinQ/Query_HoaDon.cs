@@ -15,7 +15,6 @@ namespace CafeManagement.LinQ
             return (from item in caPheContext.HoaDons
                     where item.BanID.Equals(BanID) && item.TinhTrang.Equals(0)
                     select item.HoaDonId).SingleOrDefault();
-
         } 
         public List<ChiTietHoaDon> LayDanhSachChiTietHoaDon(int HoaDonID)
         {
@@ -85,7 +84,6 @@ namespace CafeManagement.LinQ
             {
                 return 1;
             }
-
         }
         public bool KiemTraBillTonTai(int HoadonID, int SanphamID, int Soluong)
         {
@@ -140,13 +138,12 @@ namespace CafeManagement.LinQ
                 caPheContext.SaveChanges();
             }
         }
-     
+
         public int LayHoaDonIDByBanID(int BanID) 
         {
            return (from item in caPheContext.HoaDons
                          where item.BanID.Equals(BanID)
                          select item.HoaDonId).FirstOrDefault();
         }
-       
     }
 }

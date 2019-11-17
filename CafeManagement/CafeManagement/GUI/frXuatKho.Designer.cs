@@ -40,6 +40,7 @@
             this.gcXuatKho = new DevExpress.XtraGrid.GridControl();
             this.gvXuatKho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbTenHangHoa = new DevExpress.XtraEditors.LookUpEdit();
             this.cbNCC = new DevExpress.XtraEditors.LookUpEdit();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuuLai = new DevExpress.XtraEditors.SimpleButton();
@@ -51,7 +52,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbTenHangHoa = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditTimKiem.Properties.CalendarTimeProperties)).BeginInit();
@@ -62,8 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvXuatKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenHangHoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNCC.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -84,9 +84,9 @@
             this.panelControl3.Controls.Add(this.dateEditTimKiem);
             this.panelControl3.Controls.Add(this.btnTimKiem);
             this.panelControl3.Controls.Add(this.label8);
-            this.panelControl3.Location = new System.Drawing.Point(12, 308);
+            this.panelControl3.Location = new System.Drawing.Point(12, 309);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(325, 271);
+            this.panelControl3.Size = new System.Drawing.Size(325, 270);
             this.panelControl3.TabIndex = 16;
             // 
             // btnXuatPhieuNhap
@@ -208,6 +208,16 @@
             this.panelControl1.Size = new System.Drawing.Size(325, 280);
             this.panelControl1.TabIndex = 11;
             // 
+            // cbTenHangHoa
+            // 
+            this.cbTenHangHoa.Location = new System.Drawing.Point(137, 24);
+            this.cbTenHangHoa.Name = "cbTenHangHoa";
+            this.cbTenHangHoa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbTenHangHoa.Properties.NullText = "";
+            this.cbTenHangHoa.Size = new System.Drawing.Size(167, 22);
+            this.cbTenHangHoa.TabIndex = 18;
+            // 
             // cbNCC
             // 
             this.cbNCC.Location = new System.Drawing.Point(140, 185);
@@ -221,11 +231,12 @@
             // btnThoat
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThoat.Location = new System.Drawing.Point(172, 230);
+            this.btnThoat.Location = new System.Drawing.Point(175, 230);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(129, 35);
             this.btnThoat.TabIndex = 16;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuuLai
             // 
@@ -307,16 +318,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên hàng hóa:";
             // 
-            // cbTenHangHoa
-            // 
-            this.cbTenHangHoa.Location = new System.Drawing.Point(137, 24);
-            this.cbTenHangHoa.Name = "cbTenHangHoa";
-            this.cbTenHangHoa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTenHangHoa.Properties.NullText = "";
-            this.cbTenHangHoa.Size = new System.Drawing.Size(167, 22);
-            this.cbTenHangHoa.TabIndex = 18;
-            // 
             // frXuatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -343,8 +344,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenHangHoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNCC.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

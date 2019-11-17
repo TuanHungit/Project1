@@ -212,7 +212,7 @@ namespace CafeManagement
             txtCMND.EditValue ="";
             dtpNgaySinh.Value = DateTime.Now;
             dtpNgayVaoLam.Value = DateTime.Now;
-  
+            clearTaiKhoanInfor();
             Load_NV();
         }
         #endregion

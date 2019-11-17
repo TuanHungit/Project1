@@ -38,7 +38,7 @@
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuuLai = new DevExpress.XtraEditors.SimpleButton();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.txtSoLuongTon = new System.Windows.Forms.TextBox();
+            this.txtSoLuongNhap = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -113,6 +113,7 @@
             this.gcNhapKho.TabIndex = 0;
             this.gcNhapKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhapKho});
+            this.gcNhapKho.Click += new System.EventHandler(this.gcNhapKho_Click);
             // 
             // gvNhapKho
             // 
@@ -126,7 +127,7 @@
             this.panelControl1.Controls.Add(this.btnThoat);
             this.panelControl1.Controls.Add(this.btnLuuLai);
             this.panelControl1.Controls.Add(this.txtDonGia);
-            this.panelControl1.Controls.Add(this.txtSoLuongTon);
+            this.panelControl1.Controls.Add(this.txtSoLuongNhap);
             this.panelControl1.Controls.Add(this.txtDonViTinh);
             this.panelControl1.Controls.Add(this.txtTenSanPham);
             this.panelControl1.Controls.Add(this.label7);
@@ -157,6 +158,7 @@
             this.btnThoat.Size = new System.Drawing.Size(129, 35);
             this.btnThoat.TabIndex = 16;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuuLai
             // 
@@ -166,6 +168,7 @@
             this.btnLuuLai.Size = new System.Drawing.Size(129, 35);
             this.btnLuuLai.TabIndex = 15;
             this.btnLuuLai.Text = "Lưu lại";
+            this.btnLuuLai.Click += new System.EventHandler(this.btnLuuLai_Click);
             // 
             // txtDonGia
             // 
@@ -174,12 +177,12 @@
             this.txtDonGia.Size = new System.Drawing.Size(164, 23);
             this.txtDonGia.TabIndex = 13;
             // 
-            // txtSoLuongTon
+            // txtSoLuongNhap
             // 
-            this.txtSoLuongTon.Location = new System.Drawing.Point(140, 142);
-            this.txtSoLuongTon.Name = "txtSoLuongTon";
-            this.txtSoLuongTon.Size = new System.Drawing.Size(164, 23);
-            this.txtSoLuongTon.TabIndex = 12;
+            this.txtSoLuongNhap.Location = new System.Drawing.Point(140, 142);
+            this.txtSoLuongNhap.Name = "txtSoLuongNhap";
+            this.txtSoLuongNhap.Size = new System.Drawing.Size(164, 23);
+            this.txtSoLuongNhap.TabIndex = 12;
             // 
             // txtDonViTinh
             // 
@@ -264,6 +267,7 @@
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(61, 35);
             this.btnTimKiem.TabIndex = 19;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // panelControl3
             // 
@@ -277,6 +281,7 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(325, 284);
             this.panelControl3.TabIndex = 10;
+            this.panelControl3.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl3_Paint);
             // 
             // btnXuatPhieuNhap
             // 
@@ -286,6 +291,7 @@
             this.btnXuatPhieuNhap.Size = new System.Drawing.Size(235, 35);
             this.btnXuatPhieuNhap.TabIndex = 21;
             this.btnXuatPhieuNhap.Text = "Xuất phiếu nhập";
+            this.btnXuatPhieuNhap.Click += new System.EventHandler(this.btnXuatPhieuNhap_Click);
             // 
             // dateEditTimKiem
             // 
@@ -326,6 +332,7 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frNhapKho";
             this.Text = "Nhập kho";
+            this.Load += new System.EventHandler(this.frNhapKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcNhapKho)).EndInit();
@@ -355,7 +362,7 @@
         private DevExpress.XtraEditors.SimpleButton btnThoat;
         private DevExpress.XtraEditors.SimpleButton btnLuuLai;
         private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.TextBox txtSoLuongTon;
+        private System.Windows.Forms.TextBox txtSoLuongNhap;
         private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.Label label7;

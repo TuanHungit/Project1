@@ -248,7 +248,7 @@ namespace CafeManagement.GUI
             if (gvBill.RowCount > 0)
             {
                 Global.TenSanPham = gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[0]).ToString();
-                Global.Gia = gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[1]).ToString();
+                Global.Gia =double.Parse(gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[2]).ToString());
                 Global.BanID = BanID;
                 frChonMon fr = new frChonMon();
                 fr.ShowDialog();

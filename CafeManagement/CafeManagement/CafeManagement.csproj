@@ -230,6 +230,12 @@
     <Compile Include="GUI\reportBaoCaoDanhThu.Designer.cs">
       <DependentUpon>reportBaoCaoDanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\reportPhieuNhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\reportPhieuNhap.Designer.cs">
+      <DependentUpon>reportPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\WaitForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,17 +249,20 @@
       <DependentUpon>XtraReport.cs</DependentUpon>
     </Compile>
     <Compile Include="LinQ\Query_Ban.cs" />
+    <Compile Include="LinQ\Query_ChiTietPhieuNhap.cs" />
     <Compile Include="LinQ\Query_DanhMuc.cs" />
     <Compile Include="LinQ\Query_Danhthu.cs" />
+    <Compile Include="LinQ\Query_HangHoa.cs" />
     <Compile Include="LinQ\Query_HoaDon.cs" />
     <Compile Include="LinQ\Query_Login.cs" />
     <Compile Include="LinQ\Query_NhaCungCap.cs" />
     <Compile Include="LinQ\Query_NhanVien.cs" />
+    <Compile Include="LinQ\Query_PhieuNhap.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
     <Compile Include="LinQ\Query_TaiKhoan.cs" />
-    <Compile Include="Migrations\201911160906544_CreateDatabase.cs" />
-    <Compile Include="Migrations\201911160906544_CreateDatabase.designer.cs">
-      <DependentUpon>201911160906544_CreateDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201911171329506_InitDB.cs" />
+    <Compile Include="Migrations\201911171329506_InitDB.designer.cs">
+      <DependentUpon>201911171329506_InitDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -315,14 +324,17 @@
     <EmbeddedResource Include="GUI\reportBaoCaoDanhThu.resx">
       <DependentUpon>reportBaoCaoDanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\reportPhieuNhap.resx">
+      <DependentUpon>reportPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\XtraReport.resx">
       <DependentUpon>XtraReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911160906544_CreateDatabase.resx">
-      <DependentUpon>201911160906544_CreateDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911171329506_InitDB.resx">
+      <DependentUpon>201911171329506_InitDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

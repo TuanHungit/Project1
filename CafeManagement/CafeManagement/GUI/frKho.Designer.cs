@@ -92,6 +92,7 @@
             this.btnXoa.Size = new System.Drawing.Size(105, 35);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa hàng hóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtNCC
             // 
