@@ -250,6 +250,7 @@
     </Compile>
     <Compile Include="LinQ\Query_Ban.cs" />
     <Compile Include="LinQ\Query_ChiTietPhieuNhap.cs" />
+    <Compile Include="LinQ\Query_ChiTietPhieuXuat.cs" />
     <Compile Include="LinQ\Query_DanhMuc.cs" />
     <Compile Include="LinQ\Query_Danhthu.cs" />
     <Compile Include="LinQ\Query_HangHoa.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="LinQ\Query_NhaCungCap.cs" />
     <Compile Include="LinQ\Query_NhanVien.cs" />
     <Compile Include="LinQ\Query_PhieuNhap.cs" />
+    <Compile Include="LinQ\Query_PhieuXuat.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
     <Compile Include="LinQ\Query_TaiKhoan.cs" />
     <Compile Include="Migrations\201911171329506_InitDB.cs" />

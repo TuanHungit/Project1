@@ -58,8 +58,8 @@
             this.txtTongCong = new DevExpress.XtraEditors.TextEdit();
             this.btnThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelBan = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
@@ -111,7 +111,7 @@
             this.gcBill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcBill.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gcBill.Location = new System.Drawing.Point(3, 3);
+            this.gcBill.Location = new System.Drawing.Point(-5, 8);
             this.gcBill.MainView = this.gvBill;
             this.gcBill.Name = "gcBill";
             this.gcBill.Size = new System.Drawing.Size(496, 642);
@@ -462,6 +462,13 @@
             this.panelControl3.Size = new System.Drawing.Size(517, 198);
             this.panelControl3.TabIndex = 48;
             // 
+            // labelBan
+            // 
+            this.labelBan.Location = new System.Drawing.Point(176, 38);
+            this.labelBan.Name = "labelBan";
+            this.labelBan.Size = new System.Drawing.Size(44, 23);
+            this.labelBan.TabIndex = 53;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -472,13 +479,6 @@
             this.label3.Size = new System.Drawing.Size(135, 21);
             this.label3.TabIndex = 49;
             this.label3.Text = "Danh mục tác vụ";
-            // 
-            // labelBan
-            // 
-            this.labelBan.Location = new System.Drawing.Point(176, 38);
-            this.labelBan.Name = "labelBan";
-            this.labelBan.Size = new System.Drawing.Size(44, 23);
-            this.labelBan.TabIndex = 53;
             // 
             // frManage
             // 

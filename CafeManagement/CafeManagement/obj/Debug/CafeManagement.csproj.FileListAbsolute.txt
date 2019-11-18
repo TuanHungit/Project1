@@ -1143,7 +1143,6 @@ C:\Users\Admin\Desktop\CafeManagement\CafeManagement\bin\Debug\es\DevExpress.Dia
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\bin\Debug\ja\DevExpress.Diagram.v19.1.Core.resources.dll
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\bin\Debug\ru\DevExpress.Diagram.v19.1.Core.resources.dll
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.csproj.CopyComplete
-C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.CreateDatabase.resources
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frChinhSuaNV.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frChinhSuaNV.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhaCungCap.resources
@@ -1155,3 +1154,8 @@ C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frXuatKho.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.reportPhieuNhap.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frKho.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhapKho.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frXuatKho.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.reportPhieuNhap.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources

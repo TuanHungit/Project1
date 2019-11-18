@@ -50,7 +50,6 @@ namespace CafeManagement.LinQ
             var query = (from item in caPheContext.PhieuNhaps
                          where DbFunctions.TruncateTime(item.NgayDatHang) == NgayLap.Date
                          select item.PhieuNhapId).SingleOrDefault();
-
             return query;
         }
         public bool KiemTraHangHoaTheoNgay(int HangHoaID, DateTime NgayLap)

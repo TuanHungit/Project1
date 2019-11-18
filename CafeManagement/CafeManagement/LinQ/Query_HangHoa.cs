@@ -11,6 +11,7 @@ namespace CafeManagement.LinQ
         CaPheContext caPheContext = new CaPheContext();
         HangHoa hangHoa = new HangHoa();
         Query_PhieuNhap phieuNhap = new Query_PhieuNhap();
+        Query_PhieuXuat phieuXuat = new Query_PhieuXuat();
         public bool KiemTraHangHoa(string TenHangHoa)
         {
             var query = (from item in caPheContext.HangHoas
@@ -72,6 +73,20 @@ namespace CafeManagement.LinQ
                 caPheContext.SaveChanges();
                 return true;
             }
+            return false;
+        }
+        public bool CapNhatSoLuongHangHoaKhiXuat(int HangHoaId, int SoLuong, DateTime NgayLap)
+        {
+            if (phieuXuat.KiemTraHangHoaTheoNgay(HangHoaId, NgayLap))
+            {
+                HangHoa hangHoa= (from item in caPheContext.HangHoas
+                               where item.HangHoaId.Equals(HangHoaId)
+                               select item).FirstOrDefault();
+                hangHoa.SoLuongTon = hangHoa.SoLuongTon - SoLuong;
+                caPheContext.SaveChanges();
+                return true;
+            }
+
             return false;
         }
     }
