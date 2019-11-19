@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frNhanvien));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label6 = new System.Windows.Forms.Label();
             this.btnUpload = new DevExpress.XtraEditors.SimpleButton();
@@ -122,9 +123,10 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(110, 343);
+            this.btnUpload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpload.ImageOptions.Image")));
+            this.btnUpload.Location = new System.Drawing.Point(157, 343);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(187, 29);
+            this.btnUpload.Size = new System.Drawing.Size(97, 37);
             this.btnUpload.TabIndex = 6;
             this.btnUpload.Text = "Upload";
             this.btnUpload.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -271,10 +273,11 @@
             this.gcNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcNhanVien.Location = new System.Drawing.Point(5, 11);
+            this.gcNhanVien.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gcNhanVien.Location = new System.Drawing.Point(8, 11);
             this.gcNhanVien.MainView = this.gvNhanVien;
             this.gcNhanVien.Name = "gcNhanVien";
-            this.gcNhanVien.Size = new System.Drawing.Size(1056, 493);
+            this.gcNhanVien.Size = new System.Drawing.Size(1100, 493);
             this.gcNhanVien.TabIndex = 0;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhanVien});
@@ -358,6 +361,7 @@
             // btnThem
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Location = new System.Drawing.Point(6, 10);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(94, 48);
@@ -368,6 +372,7 @@
             // btnXoa
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Location = new System.Drawing.Point(6, 64);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(94, 48);
@@ -378,6 +383,7 @@
             // btnSua
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Location = new System.Drawing.Point(6, 118);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(94, 48);
@@ -420,6 +426,7 @@
             // btnSuaTK
             // 
             this.btnSuaTK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSuaTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaTK.ImageOptions.Image")));
             this.btnSuaTK.Location = new System.Drawing.Point(6, 405);
             this.btnSuaTK.Name = "btnSuaTK";
             this.btnSuaTK.Size = new System.Drawing.Size(94, 48);
@@ -430,6 +437,7 @@
             // btnThemTK
             // 
             this.btnThemTK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnThemTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemTK.ImageOptions.Image")));
             this.btnThemTK.Location = new System.Drawing.Point(6, 455);
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.Size = new System.Drawing.Size(94, 48);

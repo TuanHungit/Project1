@@ -39,15 +39,19 @@ namespace CafeManagement.LinQ
 
         public bool DeleteDanhMuc(string TenDanhMuc)
         {
+            int DanhmucID = GetIdDanhMuc(TenDanhMuc, caPheContext);
             if (KiemTraDanhMuc(TenDanhMuc))
             {
-                var danhmuc = new LoaiSanPham() { LoaiSanPhamId = GetIdDanhMuc(TenDanhMuc, caPheContext) };
-                List<SanPham> sanphams = GetAllSanPham(danhmuc.LoaiSanPhamId);
-                foreach (var sp in sanphams)
+                var danhmuc = new LoaiSanPham() { LoaiSanPhamId = DanhmucID };
+                if (KiemTraSanPhamTrongDanhMuc(DanhmucID))
                 {
-                    var s = new SanPham() { SanPhamId = sp.SanPhamId };
-                    caPheContext.Entry(sp).State = EntityState.Deleted;
-                    caPheContext.SaveChanges();
+                 
+                    List<SanPham> sanphams = GetAllSanPham(danhmuc.LoaiSanPhamId);
+                    foreach (var sp in sanphams)
+                    {
+                        var s = new SanPham() { SanPhamId = sp.SanPhamId };
+                        caPheContext.Entry(sp).State = EntityState.Deleted;
+                    }
                 }
                 caPheContext.Entry(danhmuc).State = EntityState.Deleted;
                 caPheContext.SaveChanges();
@@ -83,6 +87,12 @@ namespace CafeManagement.LinQ
                             where Sanpham.LoaiSanPhamId == danhmucid
                             select Sanpham).ToList();
             return sanphams;
+        }
+        public bool KiemTraSanPhamTrongDanhMuc(int DanhMucID)
+        {
+            if (GetAllSanPham(DanhMucID).Count > 0)
+                return true;
+            return false;
         }
     }
 }

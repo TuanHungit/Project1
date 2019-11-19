@@ -30,7 +30,8 @@ namespace CafeManagement.LinQ
                     TenHangHoa = TenHangHoa,
                     DonViTinh = DonViTinh,
                     DonGia = DonGia,
-                    SoLuongTon = SoluongTon
+                    SoLuongTon = SoluongTon,
+                    TinhTrang ="Đang hoạt động"
                 };
                 caPheContext.HangHoas.Add(hangHoa);
                 caPheContext.SaveChanges();
@@ -54,7 +55,7 @@ namespace CafeManagement.LinQ
                              select item).ToList();
                 foreach (var item in query)
                 {
-                    caPheContext.HangHoas.Remove(item);
+                    item.TinhTrang = "Ngưng hoạt động";
                 }
                 caPheContext.SaveChanges();
                 return true;
@@ -77,7 +78,7 @@ namespace CafeManagement.LinQ
         }
         public bool CapNhatSoLuongHangHoaKhiXuat(int HangHoaId, int SoLuong, DateTime NgayLap)
         {
-            if (phieuXuat.KiemTraHangHoaTheoNgay(HangHoaId, NgayLap))
+            if (phieuXuat.KiemTraHangHoaTheoNgay(HangHoaId, NgayLap,caPheContext))
             {
                 HangHoa hangHoa= (from item in caPheContext.HangHoas
                                where item.HangHoaId.Equals(HangHoaId)

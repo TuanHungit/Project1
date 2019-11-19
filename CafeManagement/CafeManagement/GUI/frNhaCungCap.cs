@@ -21,7 +21,7 @@ namespace CafeManagement.GUI
             LoadData();
             ClearData();
         }
-        CaPheContext caPheContext = new CaPheContext();
+        CaPheContext caPheContext = Global.context;
         Query_NhaCungCap NhaCungCap = new Query_NhaCungCap();
         private void label2_Click(object sender, EventArgs e)
         {

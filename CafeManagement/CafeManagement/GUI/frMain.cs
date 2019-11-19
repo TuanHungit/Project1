@@ -14,16 +14,20 @@ using DevExpress.XtraSplashScreen;
 using CafeManagement.Data;
 using CafeManagement.LinQ;
 using System.Windows;
-
+using CafeManagement.LinQ;
 namespace CafeManagement.GUI
 {
     public partial class frMain : DevExpress.XtraEditors.XtraForm
     {
+        Query_NhanVien nhanvien = new Query_NhanVien();
+        CaPheContext context = Global.context;
+        
         public frMain()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             Load_UI();
+            txtCaption.Caption = "Chào "+nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID,context); 
         }
         private Form CheckFormExist(Type fType)
         {
@@ -85,8 +89,8 @@ namespace CafeManagement.GUI
             }
             else
             {
-               
-                frDanhMuc fr = new frDanhMuc();
+                frMenu frmenu = new frMenu();
+                frDanhMuc fr = new frDanhMuc(frmenu.Load_cbMenu);
                 fr.MdiParent = this;
                 fr.Show();
             }
@@ -160,7 +164,7 @@ namespace CafeManagement.GUI
         private void frMain_Load(object sender, EventArgs e)
         {
            
-            if(Global.LoaiTaiKhoan=="Nhânviên")
+            if(Global.LoaiTaiKhoan=="Nhân viên")
             {
 
                 ribbonPageManager.Visible =false;

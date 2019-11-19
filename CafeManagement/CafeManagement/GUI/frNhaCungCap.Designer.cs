@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frNhaCungCap));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -68,32 +69,35 @@
             this.panelControl1.Controls.Add(this.txtTenNCC);
             this.panelControl1.Location = new System.Drawing.Point(13, 18);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(350, 213);
+            this.panelControl1.Size = new System.Drawing.Size(350, 451);
             this.panelControl1.TabIndex = 0;
             // 
             // btnSua
             // 
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Location = new System.Drawing.Point(234, 165);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(94, 29);
+            this.btnSua.Size = new System.Drawing.Size(94, 43);
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Location = new System.Drawing.Point(123, 165);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(94, 29);
+            this.btnXoa.Size = new System.Drawing.Size(94, 43);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Location = new System.Drawing.Point(14, 165);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(94, 29);
+            this.btnThem.Size = new System.Drawing.Size(94, 43);
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -185,6 +189,7 @@
             this.gcNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcNCC.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gcNCC.Location = new System.Drawing.Point(6, 13);
             this.gcNCC.MainView = this.gvNCC;
             this.gcNCC.Name = "gcNCC";

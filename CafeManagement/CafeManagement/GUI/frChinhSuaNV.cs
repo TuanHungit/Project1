@@ -18,8 +18,9 @@ namespace CafeManagement.GUI
         public frChinhSuaNV()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
-        CaPheContext context = new CaPheContext();
+        CaPheContext context = Global.context;
         Query_NhanVien nv = new Query_NhanVien();
         private void bttCapNhat_Click(object sender, EventArgs e)
         {
@@ -52,15 +53,9 @@ namespace CafeManagement.GUI
             }
         }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void bttThoat_Click(object sender, EventArgs e)
         {
-            OpenFileDialog OPF = new OpenFileDialog();
-            OPF.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            if ((OPF.ShowDialog() == DialogResult.OK))
-            {
-                picImage.Image = Image.FromFile(OPF.FileName);
-            }
+            this.Close();
         }
-
     }
 }

@@ -19,7 +19,7 @@ namespace CafeManagement
         {
             InitializeComponent();
         }
-
+        CaPheContext context = Global.context;
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
 
@@ -40,9 +40,8 @@ namespace CafeManagement
 
                     int soBan = Convert.ToInt32(txtBanID.EditValue);
                     var addBan = new Query_Ban();
-                    using (CaPheContext caPheContext = new CaPheContext())
-                    {
-                        if (addBan.Add_Ban(soBan, caPheContext))
+                  
+                        if (addBan.Add_Ban(soBan))
                         {
                             MessageBox.Show("Thêm bàn thành công!");
                             Load_Ban();
@@ -51,7 +50,7 @@ namespace CafeManagement
                         {
                             MessageBox.Show("Số bàn đã tồn tại xin nhập số khác!");
                         }
-                    }
+                    
                 }
             }
             else
@@ -79,9 +78,8 @@ namespace CafeManagement
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bàn này chứ!", "Xóa bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 var Ban = new Query_Ban();
                 int soBan = Convert.ToInt32(txtBanID.EditValue);
-                using (CaPheContext context = new CaPheContext())
-                {
-                    if (Ban.xoaBan(context, soBan))
+            
+                    if (Ban.xoaBan( soBan))
                     {
                         XtraMessageBox.Show("Đã xóa bàn!");
 
@@ -90,28 +88,29 @@ namespace CafeManagement
                     else
                     {
                         XtraMessageBox.Show("Bàn không tồn tại!");
-                    }
-                }
+                   }
+                
             }
             else MessageBox.Show("Bạn chưa nhập Số bàn!", "Xóa bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void Load_Ban()
         {
             var loadban = new Query_Ban();
-            using (CaPheContext caPheContext = new CaPheContext())
-            {
-                if (loadban.DemSoLuongBan(caPheContext))
+           
+                if (loadban.DemSoLuongBan())
                 {
                     XtraMessageBox.Show("Không có bàn");
                 }
                 else
                 {
-                    gcBan.DataSource = (from item in caPheContext.Bans
-                                        select new { item.BanId,item.TinhTrang}).ToList();
+                    gcBan.DataSource = (from item in context.Bans
+                                        select new { item.BanId, item.TinhTrang }).ToList();
                     gvBan.Columns[0].Caption = "Mã số bàn";
                     gvBan.Columns[1].Caption = "Tình trạng";
                 }
-            }
+            
         }
+
+        
     }
 }

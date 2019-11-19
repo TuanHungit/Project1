@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::CafeManagement.SplashScreen1), true, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnShowForm = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
@@ -55,6 +56,7 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.txtCaption = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupSystem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -101,14 +103,16 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.txtCaption});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 25;
+            this.ribbon.MaxItemId = 26;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage,
             this.ribbonPageManager});
+            this.ribbon.QuickToolbarItemLinks.Add(this.txtCaption);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbon.Size = new System.Drawing.Size(1580, 176);
             this.ribbon.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
@@ -143,7 +147,7 @@
             // 
             this.btnViewCategoryFood.Caption = "Danh mục";
             this.btnViewCategoryFood.Id = 5;
-            this.btnViewCategoryFood.ImageOptions.Image = global::CafeManagement.Properties.Resources.maintenance;
+            this.btnViewCategoryFood.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewCategoryFood.ImageOptions.SvgImage")));
             this.btnViewCategoryFood.LargeWidth = 75;
             this.btnViewCategoryFood.Name = "btnViewCategoryFood";
             this.btnViewCategoryFood.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -153,7 +157,8 @@
             // 
             this.btnViewTable.Caption = "Bàn";
             this.btnViewTable.Id = 6;
-            this.btnViewTable.ImageOptions.Image = global::CafeManagement.Properties.Resources.meeting;
+            this.btnViewTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnViewTable.ImageOptions.Image")));
+            this.btnViewTable.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnViewTable.ImageOptions.LargeImage")));
             this.btnViewTable.LargeWidth = 75;
             this.btnViewTable.Name = "btnViewTable";
             this.btnViewTable.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -164,6 +169,7 @@
             this.btnAccountInfo.Caption = "Thông tin tài khoản";
             this.btnAccountInfo.Id = 7;
             this.btnAccountInfo.ImageOptions.Image = global::CafeManagement.Properties.Resources.user_info_icon;
+            this.btnAccountInfo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAccountInfo.ImageOptions.LargeImage")));
             this.btnAccountInfo.LargeWidth = 75;
             this.btnAccountInfo.Name = "btnAccountInfo";
             this.btnAccountInfo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -182,7 +188,8 @@
             // 
             this.btnViewAccount.Caption = "Nhân viên";
             this.btnViewAccount.Id = 9;
-            this.btnViewAccount.ImageOptions.Image = global::CafeManagement.Properties.Resources.User_Group_icon;
+            this.btnViewAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnViewAccount.ImageOptions.Image")));
+            this.btnViewAccount.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnViewAccount.ImageOptions.LargeImage")));
             this.btnViewAccount.LargeWidth = 75;
             this.btnViewAccount.Name = "btnViewAccount";
             this.btnViewAccount.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -306,6 +313,12 @@
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
+            // txtCaption
+            // 
+            this.txtCaption.Caption = "Chào Quản lý!";
+            this.txtCaption.Id = 25;
+            this.txtCaption.Name = "txtCaption";
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -382,11 +395,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1580, 784);
+            this.ClientSize = new System.Drawing.Size(1580, 891);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
             this.Name = "frMain";
-            this.Text = "Quản lý";
+            this.Text = "Trang chính";
             this.Load += new System.EventHandler(this.frMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -431,5 +444,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarStaticItem txtCaption;
     }
 }

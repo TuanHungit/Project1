@@ -14,6 +14,7 @@ namespace CafeManagement.Data
         public string DonViTinh { get; set; }
         public double DonGia { get; set; }
         public int SoLuongTon { get; set; }
+        public string TinhTrang { get; set; }
         public ICollection<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
         public ICollection<ChiTietPhieuXuat> ChiTietPhieuXuats { get; set; }
     }

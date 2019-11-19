@@ -22,11 +22,17 @@ namespace CafeManagement.GUI
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Minimized;
+            txtDonGia.Enabled = false;
+            txtDonViTinh.Enabled = false;
+            txtSoLuongTon.Enabled = false;
+            btnLuuLai.Enabled = false;
         }
-        CaPheContext capheContext = new CaPheContext();
+        CaPheContext capheContext = Global.context;
         Query_PhieuXuat phieuxuat = new Query_PhieuXuat();
         Query_HangHoa hanghoa = new Query_HangHoa();
         Query_ChiTietPhieuXuat chitietphieuxuat = new Query_ChiTietPhieuXuat();
+        Query_NhanVien nhanvien = new Query_NhanVien();
+        reportPhieuXuat report = new reportPhieuXuat();
          private void frXuatKho_Load(object sender, EventArgs e)
         {
             Load_CbHangHoa();
@@ -42,42 +48,53 @@ namespace CafeManagement.GUI
             if (XtraMessageBox.Show(string.Format("Bạn có chắc xuất báo cáo doanh thu này chứ?"),
                     "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                //ReportPrintTool tool = new ReportPrintTool(report);
-                //tool.ShowPreview();
+                ReportPrintTool tool = new ReportPrintTool(report);
+                tool.ShowPreview();
             }
         }
 
         private void btnLuuLai_Click(object sender, EventArgs e)
         {
             int SoLuong = 0;
-            if (txtSoLuongTon.Text != "")
-                SoLuong = int.Parse(txtSoLuongTon.Text);
+            int SoLuongTon = int.Parse(txtSoLuongTon.Text);
+            if (txtSoLuongXuat.Text != "")
+                SoLuong = int.Parse(txtSoLuongXuat.Text);
             string TenHangHoa = cbTenHangHoa.Text;
             DateTime NgayLap = DateTime.Now;
             string DonViTinh = txtDonViTinh.Text;
-            if (txtDonViTinh.Text != "" && txtSoLuongTon.Text != ""  && cbTenHangHoa != null)
+            if (txtDonViTinh.Text != "" && txtSoLuongXuat.Text != ""  && cbTenHangHoa != null)
             {
                 if (XtraMessageBox.Show("Bạn muốn lấy sản phẩm này từ kho chứ!", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    if (phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap) == 0)
+                    if (SoLuong > SoLuongTon)
                     {
-                        phieuxuat.ThemPhieuXuat( Global.NhanVienID,NgayLap);
+                        XtraMessageBox.Show("Kho không đủ số lượng để xuất!", "Thông báo");
                     }
-                    if (!phieuxuat.KiemTraHangHoaTheoNgay(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), NgayLap))
+                    else
                     {
-                        hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa),SoLuong,NgayLap);
-                        
-                        chitietphieuxuat.ThemChiTietPhieuXuat(phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap), hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong);
+                        if (phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap,capheContext) == 0)
+                        {
+                            phieuxuat.ThemPhieuXuat(Global.NhanVienID, NgayLap,capheContext);
+                        }
+                        if (!phieuxuat.KiemTraHangHoaTheoNgay(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), NgayLap,capheContext))
+                        {
+                            hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
+
+                            chitietphieuxuat.ThemChiTietPhieuXuat(phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap,capheContext), hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong);
+                        }
+                        else chitietphieuxuat.CapNhatChiTietPhieuXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
+                        hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
+                        Load_gvXuatKho(DateTime.Now);
                     }
-                    else chitietphieuxuat.CapNhatChiTietPhieuXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-                    hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-                    Load_gvXuatKho(DateTime.Now);
                 }
             }
             else XtraMessageBox.Show("Xin nhập thêm thông tin!", "Thông báo");
+            clearInfo();
+            Load_CbHangHoa();
         }
         private void Load_gvXuatKho(DateTime dateTime)
         {
+            double totalprice = 0;
             var query = (from hanghoa in capheContext.HangHoas
                          join chitietPhieuXuat in capheContext.ChiTietPhieuXuats on hanghoa.HangHoaId equals chitietPhieuXuat.HangHoaId
                          join phieuXuat in capheContext.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId
@@ -91,14 +108,19 @@ namespace CafeManagement.GUI
                              phieuXuat.NgayLap
                          }).ToList();
             gcXuatKho.DataSource = query;
-            //report.DataSource = query;
-            //report.Parameters["CreateDate"].Value = dateTime;
-            //report.Parameters["NguoiLap"].Value = Global.NhanVienID;
-            //report.Parameters["TotalPrice"].Value = totalprice;
+            foreach (var item in query)
+            {
+                totalprice += item.SoLuongXuat * item.DonGia;
+            }
+            report.DataSource = query;
+            report.Parameters["CreateDate"].Value = dateTime;
+            report.Parameters["NguoiLap"].Value = nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID, capheContext);
+            report.Parameters["TotalPrice"].Value = totalprice;
             gvXuatKho.Columns[0].Caption = "Tên hàng hóa";
             gvXuatKho.Columns[1].Caption = "Số lượng xuất";
-            gvXuatKho.Columns[2].Caption = "Đơn vị tính";
-            gvXuatKho.Columns[3].Caption = "Ngày xuất";
+            gvXuatKho.Columns[2].Caption = "Đơn giá";
+            gvXuatKho.Columns[3].Caption = "Đơn vị tính";
+            gvXuatKho.Columns[4].Caption = "Ngày xuất";
         }
         private void Load_CbHangHoa()
         {
@@ -111,13 +133,35 @@ namespace CafeManagement.GUI
 
             cbTenHangHoa.Properties.DisplayMember = "TenHangHoa";
             cbTenHangHoa.Properties.ValueMember = "HangHoaId";
+          
         }
 
-        private void gcXuatKho_Click(object sender, EventArgs e)
+
+        private void cbTenHangHoa_EditValueChanged(object sender, EventArgs e)
         {
-            //txtSoLuongTon.Text = "";
-            //txtDonViTinh.Text = gcXuatKho.GetRowCellValue(gcXuatKho.FocusedRowHandle, gcXuatKho.Columns[3]).ToString();
-            //cbTenHangHoa.Text = gcXuatKho.GetRowCellValue(gcXuatKho.FocusedRowHandle, gcXuatKho.Columns[4]).ToString();
+            Load_Info();
+        }
+        private void Load_Info()
+        {
+            btnLuuLai.Enabled = true;
+            var query = (from item in capheContext.HangHoas
+                         where item.HangHoaId == (int)cbTenHangHoa.EditValue
+                         select item).ToList();
+            foreach (var item in query)
+            {
+                txtDonGia.Text = item.DonGia.ToString();
+                txtDonViTinh.Text = item.DonViTinh;
+                txtSoLuongTon.Text = item.SoLuongTon.ToString();
+            }
+        }
+        private void clearInfo()
+        {
+            txtDonGia.Text = "";
+            txtDonViTinh.Text = "";
+            txtSoLuongTon.Text = "";
+            txtSoLuongXuat.Text = "";
+            cbTenHangHoa.Properties.DataSource = null;
+            Load_CbHangHoa();
         }
     }
 }

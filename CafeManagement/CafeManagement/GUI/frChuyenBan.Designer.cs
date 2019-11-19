@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frChuyenBan));
             this.btnChuyenAllMon1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,20 +54,24 @@
             // 
             // btnChuyenAllMon1
             // 
-            this.btnChuyenAllMon1.Location = new System.Drawing.Point(522, 89);
+            this.btnChuyenAllMon1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenAllMon1.ImageOptions.Image")));
+            this.btnChuyenAllMon1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnChuyenAllMon1.Location = new System.Drawing.Point(513, 142);
             this.btnChuyenAllMon1.Name = "btnChuyenAllMon1";
-            this.btnChuyenAllMon1.Size = new System.Drawing.Size(75, 29);
+            this.btnChuyenAllMon1.Size = new System.Drawing.Size(84, 47);
             this.btnChuyenAllMon1.TabIndex = 3;
             this.btnChuyenAllMon1.Text = ">>";
             this.btnChuyenAllMon1.Click += new System.EventHandler(this.btnChuyenAllMon1_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(522, 222);
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
+            this.btnExit.Location = new System.Drawing.Point(513, 244);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 29);
+            this.btnExit.Size = new System.Drawing.Size(84, 47);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label1
             // 
@@ -128,7 +133,7 @@
             this.gcBill1.Location = new System.Drawing.Point(11, 89);
             this.gcBill1.MainView = this.gvBill1;
             this.gcBill1.Name = "gcBill1";
-            this.gcBill1.Size = new System.Drawing.Size(496, 477);
+            this.gcBill1.Size = new System.Drawing.Size(496, 470);
             this.gcBill1.TabIndex = 45;
             this.gcBill1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBill1});
@@ -145,10 +150,10 @@
             this.gcBill2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gcBill2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gcBill2.Location = new System.Drawing.Point(612, 89);
+            this.gcBill2.Location = new System.Drawing.Point(603, 89);
             this.gcBill2.MainView = this.gvBill2;
             this.gcBill2.Name = "gcBill2";
-            this.gcBill2.Size = new System.Drawing.Size(496, 477);
+            this.gcBill2.Size = new System.Drawing.Size(496, 470);
             this.gcBill2.TabIndex = 46;
             this.gcBill2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBill2});
@@ -183,18 +188,19 @@
             // 
             // btnChuyenAllMon2
             // 
-            this.btnChuyenAllMon2.Location = new System.Drawing.Point(522, 124);
+            this.btnChuyenAllMon2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenAllMon2.ImageOptions.Image")));
+            this.btnChuyenAllMon2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnChuyenAllMon2.Location = new System.Drawing.Point(513, 89);
             this.btnChuyenAllMon2.Name = "btnChuyenAllMon2";
-            this.btnChuyenAllMon2.Size = new System.Drawing.Size(75, 29);
+            this.btnChuyenAllMon2.Size = new System.Drawing.Size(84, 47);
             this.btnChuyenAllMon2.TabIndex = 5;
-            this.btnChuyenAllMon2.Text = "<<";
             this.btnChuyenAllMon2.Click += new System.EventHandler(this.btnChuyenAllMon2_Click);
             // 
             // frChuyenBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 578);
+            this.ClientSize = new System.Drawing.Size(1108, 571);
             this.Controls.Add(this.cbBan2);
             this.Controls.Add(this.cbBan1);
             this.Controls.Add(this.gcBill2);

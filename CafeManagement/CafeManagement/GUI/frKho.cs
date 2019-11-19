@@ -18,7 +18,7 @@ namespace CafeManagement.GUI
             InitializeComponent();
             this.WindowState = FormWindowState.Minimized;
         }
-        CaPheContext capheContext = new CaPheContext();
+        CaPheContext capheContext = Global.context;
       
         private void frKho_Load(object sender, EventArgs e)
         {
@@ -46,15 +46,26 @@ namespace CafeManagement.GUI
                                         hanghoa.DonViTinh               
                                     }).ToList();
             gvKho.Columns[0].Caption = "Tên hàng hóa";
-            gvKho.Columns[1].Caption = "Số lượng nhập";
+            gvKho.Columns[1].Caption = "Số lượng tồn";
             gvKho.Columns[2].Caption = "Đơn giá";
             gvKho.Columns[3].Caption = "Đơn vị tính";
-   
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gcKho_Click(object sender, EventArgs e)
+        {
+            if (gvKho.RowCount > 0)
+            {
+                load_btn();
+                txtTenSanPham.Text = gvKho.GetRowCellValue(gvKho.FocusedRowHandle, gvKho.Columns[0]).ToString();
+                txtSoLuongTon.Text = gvKho.GetRowCellValue(gvKho.FocusedRowHandle, gvKho.Columns[1]).ToString();
+                txtDonGia.Text = gvKho.GetRowCellValue(gvKho.FocusedRowHandle, gvKho.Columns[2]).ToString();
+               txtDonViTinh.Text = gvKho.GetRowCellValue(gvKho.FocusedRowHandle, gvKho.Columns[3]).ToString();
+            }
         }
     }
 }

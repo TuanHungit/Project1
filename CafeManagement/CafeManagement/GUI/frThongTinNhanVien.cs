@@ -18,10 +18,11 @@ namespace CafeManagement
     public partial class frThongTinNhanVien : DevExpress.XtraEditors.XtraForm
     {
         Query_NhanVien nhanVien = new Query_NhanVien();
-        CaPheContext context = new CaPheContext();
+        CaPheContext context = Global.context;
         public frThongTinNhanVien()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         
         private void frThongTinNhanVien_Load(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace CafeManagement
         {
             frChinhSuaNV fr = new frChinhSuaNV();
             fr.Show();
+        }
+
+        private void bttThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

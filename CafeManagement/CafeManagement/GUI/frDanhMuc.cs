@@ -16,17 +16,23 @@ namespace CafeManagement.GUI
 {
     public partial class frDanhMuc : DevExpress.XtraEditors.XtraForm
     {
+        public Load_CbMenu load_CbMenu;
         public frDanhMuc()
         {
             InitializeComponent();
         }
-
+        public frDanhMuc(Load_CbMenu load_CbMenu)
+        {
+            InitializeComponent();
+            this.load_CbMenu = load_CbMenu;
+        }
         private void frDanhMuc_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            clearInfo();
             Load_DanhMuc();
         }
-        CaPheContext caPheContext = new CaPheContext();
+        CaPheContext caPheContext = Global.context;
         Query_DanhMuc danhmuc = new Query_DanhMuc();
       
      
@@ -68,7 +74,11 @@ namespace CafeManagement.GUI
         private void gvDanhMuc_Click(object sender, EventArgs e)
         {
             if (gvDanhMuc.RowCount > 0)
+            {
+                btnXóa.Enabled = true;
+                btnSua.Enabled = true;
                 txtTen1.Text = gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[1]).ToString();
+            }
         }
 
         private void txtTenDanhMuc_Click(object sender, EventArgs e)
@@ -76,13 +86,16 @@ namespace CafeManagement.GUI
             txtTenDanhMuc.EditValue = null;
         }
 
-    
-
-     
-
-        private void btnAdd_Click(object sender, EventArgs e)
+      
+  
+        private void btnRefesh_Click(object sender, EventArgs e)
         {
-            if (txtTen1.EditValue!= null)
+            Load_DanhMuc();
+        }
+
+        private void btnThêm_Click(object sender, EventArgs e)
+        {
+            if (txtTen1.Text != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn thêm danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -108,17 +121,22 @@ namespace CafeManagement.GUI
                 MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Thêm danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            this.load_CbMenu();
+            clearInfo();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            if (txtTen1.EditValue != null)
+
+        }
+
+        private void btnXóa_Click(object sender, EventArgs e)
+        {
+            if (txtTen1.Text != "")
             {
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa danh mục này chứ!", "Thêm danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-
-
                     string TenDanhMuc = (string)txtTen1.Text;
                     if (danhmuc.DeleteDanhMuc(TenDanhMuc))
                     {
@@ -129,7 +147,6 @@ namespace CafeManagement.GUI
                     {
                         MessageBox.Show("Danh mục này không đã tồn tại", "Xóa danh mục", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                     }
-
                 }
             }
             else
@@ -137,16 +154,19 @@ namespace CafeManagement.GUI
                 MessageBox.Show("Bạn chưa nhập Tên danh mục!", "Xóa danh mục", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            this.load_CbMenu();
+            clearInfo();
         }
 
-        private void btn_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-        private void btnRefesh_Click(object sender, EventArgs e)
+        private void clearInfo()
         {
-            Load_DanhMuc();
+            btnSua.Enabled = false;
+            btnXóa.Enabled = false;
+            txtTen1.Text = "";
         }
     }
 }

@@ -17,10 +17,11 @@ namespace CafeManagement.GUI
 {
     public partial class frNhapKho : DevExpress.XtraEditors.XtraForm
     {
-        CaPheContext capheContext = new CaPheContext();
+        CaPheContext capheContext = Global.context;
         Query_PhieuNhap phieunhap = new Query_PhieuNhap();
         Query_HangHoa hangHoa = new Query_HangHoa();
         Query_ChiTietPhieuNhap chitietphieunhap = new Query_ChiTietPhieuNhap();
+        Query_NhanVien nhanvien = new Query_NhanVien();
         reportPhieuNhap report = new reportPhieuNhap();
         public frNhapKho()
         {
@@ -108,7 +109,7 @@ namespace CafeManagement.GUI
             gcNhapKho.DataSource = query;
             report.DataSource = query;
             report.Parameters["CreateDate"].Value = dateTime;
-            report.Parameters["NguoiLap"].Value = Global.NhanVienID;
+            report.Parameters["NguoiLap"].Value =nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID,capheContext);
             report.Parameters["TotalPrice"].Value = totalprice;
             gvNhapKho.Columns[0].Caption = "Tên hàng hóa";
             gvNhapKho.Columns[1].Caption = "Số lượng nhập";
@@ -120,16 +121,23 @@ namespace CafeManagement.GUI
 
         private void gcNhapKho_Click(object sender, EventArgs e)
         {
-            txtTenSanPham.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[0]).ToString();
-            txtSoLuongNhap.Text = "";
-            txtDonGia.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[2]).ToString();
-            txtDonViTinh.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[3]).ToString();
-            cbNCC.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[4]).ToString();
+            if (gvNhapKho.RowCount > 0)
+            {
+                txtTenSanPham.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[0]).ToString();
+                txtSoLuongNhap.Text = "";
+                txtDonGia.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[2]).ToString();
+                txtDonViTinh.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[3]).ToString();
+                cbNCC.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[4]).ToString();
+            }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            btnLuuLai.Enabled = true;
             DateTime dateTime = DateTime.Parse(dateEditTimKiem.Text);
+            if (Convert.ToDateTime(dateEditTimKiem.Text).Date!=DateTime.Now.Date)
+                btnLuuLai.Enabled = false;
+     
             Load_gvNhapKho(dateTime);
         }
 

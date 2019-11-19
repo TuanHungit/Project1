@@ -14,6 +14,7 @@ namespace CafeManagement.Data
         public string TenSanPham { get; set; }
         public double DonGia { get; set; }
         public int LoaiSanPhamId { get; set; }
+        public string TinhTrang { get; set; }
         public virtual LoaiSanPham LoaiSanPham { get; set; }
         public ICollection<ChiTietHoaDon> chiTietHoaDons { get; set; }
 

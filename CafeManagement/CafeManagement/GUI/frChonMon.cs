@@ -15,17 +15,23 @@ namespace CafeManagement.GUI
 {
     public partial class frChonMon : DevExpress.XtraEditors.XtraForm
     {
-        public event EventHandler Button_Clicked;
-       
-
+        public LoadBill loadBill;
+        public LoadTable loadTable;
         public frChonMon()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
+        public frChonMon(LoadBill loadBill,LoadTable loadTable)
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.loadBill = loadBill;
+            this.loadTable = loadTable;
+        }
         Query_HoaDon hoaDon = new Query_HoaDon();
         Query_SanPham sanPham = new Query_SanPham();
-        CaPheContext context = new CaPheContext();
+        CaPheContext context =Global.context;
         
         Query_Ban ban = new Query_Ban();
 
@@ -37,6 +43,7 @@ namespace CafeManagement.GUI
             int SanPhamID = sanPham.LayIdSanPham(TenSanPham, context);
             int SoLuong = int.Parse(cbSoLuong.Text);
             hoaDon.AddChiTietHoaDon(BillID, SanPhamID, SoLuong);
+            this.loadBill(Global.BanID);
             Close();
           
         }
@@ -67,18 +74,15 @@ namespace CafeManagement.GUI
             int SanPhamID = sanPham.LayIdSanPham(TenSanPham, context);
           
             hoaDon.AddChiTietHoaDon(BillID, SanPhamID, -100);
-            if (!ban.KiemTraBanConMonKhong(Global.BanID,context))
+            if (!ban.KiemTraBanConMonKhong(Global.BanID))
             {
+                ban.Update_Ban1( Global.BanID);
                 hoaDon.XoaHoaDon(BillID);
-                ban.Update_Ban1(context, Global.BanID);
             }
+            this.loadBill(Global.BanID);
+            this.loadTable();
             Close();
-        }
-
-        private void frChonMon_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
-
+        }  
         private void cbSoLuong_EditValueChanged(object sender, EventArgs e)
         {
             int SoLuong = int.Parse(cbSoLuong.Text);

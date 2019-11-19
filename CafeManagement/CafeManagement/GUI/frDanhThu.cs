@@ -23,9 +23,9 @@ namespace CafeManagement.GUI
             this.WindowState = FormWindowState.Maximized;
             btnXuatBaoCao.Enabled = false;
         }
-        CaPheContext context = new CaPheContext();
+        CaPheContext context = Global.context;
         Query_DanhThu danhthu = new Query_DanhThu();
-
+        Query_NhanVien nhanvien = new Query_NhanVien();
         private void btnXem_Click(object sender, EventArgs e)
         {
             double doanhthu = 0;
@@ -38,7 +38,7 @@ namespace CafeManagement.GUI
                 if (deToDate.Text == "")
                 {
                     date2 = date1;
-                    labelDanhThu.Text = danhthu.TinhTongDoanhThu(context, doanhthu, date1, date2).ToString();
+                    labelDanhThu.Text = danhthu.TinhTongDoanhThu(context, doanhthu, date1, date2).ToString()+" VND";
                     Load(date1, date2);
                 }
                 else
@@ -50,7 +50,7 @@ namespace CafeManagement.GUI
                     }
                     else
                     {
-                        labelDanhThu.Text = danhthu.TinhTongDoanhThu(context, doanhthu, date1, date2).ToString();
+                        labelDanhThu.Text = danhthu.TinhTongDoanhThu(context, doanhthu, date1, date2).ToString() + " VND";
                         Load(date1, date2);
                     }
                 }
@@ -77,7 +77,7 @@ namespace CafeManagement.GUI
             report.DataSource = query;
             report.Parameters["FromDate"].Value = deFromDate.Text;
             report.Parameters["ToDate"].Value = deToDate.Text;
-            report.Parameters["NguoiLap"].Value = "NguyenTuanHung";
+            report.Parameters["NguoiLap"].Value = nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID,context);
 
             report.Parameters["CreateDate"].Value = DateTime.Now;
             report.Parameters["TotalPrice"].Value = labelDanhThu.Text;
@@ -98,8 +98,16 @@ namespace CafeManagement.GUI
             {
                 ReportPrintTool tool = new ReportPrintTool(report);
                 tool.ShowPreview();
+                ClearInfo();
             }
 
+        }
+
+     private void ClearInfo()
+        {
+            gridControl1.DataSource = null;
+            deToDate.Text = "";
+            deFromDate.Text = "";
         }
     }
 }

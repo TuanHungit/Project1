@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frNhapKho));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -106,6 +107,7 @@
             this.gcNhapKho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcNhapKho.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gcNhapKho.Location = new System.Drawing.Point(5, 15);
             this.gcNhapKho.MainView = this.gvNhapKho;
             this.gcNhapKho.Name = "gcNhapKho";
@@ -153,9 +155,10 @@
             // btnThoat
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThoat.Location = new System.Drawing.Point(172, 230);
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(172, 223);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(129, 35);
+            this.btnThoat.Size = new System.Drawing.Size(129, 45);
             this.btnThoat.TabIndex = 16;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -163,9 +166,10 @@
             // btnLuuLai
             // 
             this.btnLuuLai.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLuuLai.Location = new System.Drawing.Point(17, 230);
+            this.btnLuuLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuLai.ImageOptions.Image")));
+            this.btnLuuLai.Location = new System.Drawing.Point(17, 223);
             this.btnLuuLai.Name = "btnLuuLai";
-            this.btnLuuLai.Size = new System.Drawing.Size(129, 35);
+            this.btnLuuLai.Size = new System.Drawing.Size(129, 45);
             this.btnLuuLai.TabIndex = 15;
             this.btnLuuLai.Text = "Lưu lại";
             this.btnLuuLai.Click += new System.EventHandler(this.btnLuuLai_Click);
@@ -261,7 +265,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.ImageOptions.Image = global::CafeManagement.Properties.Resources.Search_icon;
+            this.btnTimKiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.ImageOptions.Image")));
             this.btnTimKiem.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnTimKiem.Location = new System.Drawing.Point(259, 17);
             this.btnTimKiem.Name = "btnTimKiem";
@@ -286,9 +290,10 @@
             // btnXuatPhieuNhap
             // 
             this.btnXuatPhieuNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuatPhieuNhap.Location = new System.Drawing.Point(51, 70);
+            this.btnXuatPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatPhieuNhap.ImageOptions.Image")));
+            this.btnXuatPhieuNhap.Location = new System.Drawing.Point(85, 57);
             this.btnXuatPhieuNhap.Name = "btnXuatPhieuNhap";
-            this.btnXuatPhieuNhap.Size = new System.Drawing.Size(235, 35);
+            this.btnXuatPhieuNhap.Size = new System.Drawing.Size(168, 45);
             this.btnXuatPhieuNhap.TabIndex = 21;
             this.btnXuatPhieuNhap.Text = "Xuất phiếu nhập";
             this.btnXuatPhieuNhap.Click += new System.EventHandler(this.btnXuatPhieuNhap_Click);

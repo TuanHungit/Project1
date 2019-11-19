@@ -119,5 +119,11 @@ namespace CafeManagement.LinQ
             }
             return false;
         }
+        public string LayTenNhanVienbyNhanVienID(int NhanVienID,CaPheContext caPheContext)
+        {
+            return (from item in caPheContext.NhanViens
+                         where item.NhanVienId.Equals(NhanVienID)
+                         select item.HoTenNV).SingleOrDefault();
+        }
     }
 }

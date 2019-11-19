@@ -8,7 +8,8 @@ namespace CafeManagement.Data
 {
     public static class Global
     {
-        public  static int NhanVienID;
+        public static CaPheContext context = new CaPheContext();
+        public static int NhanVienID;
         public static string LoaiTaiKhoan;
         public static string TenSanPham;
         public static double Gia;

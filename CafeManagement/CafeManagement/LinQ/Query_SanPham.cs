@@ -27,7 +27,7 @@ namespace CafeManagement.LinQ
             if(KiemTraMon(tenMon, context))
             {
     
-                var sanpham = new SanPham() { TenSanPham = tenMon,DonGia= dongia,LoaiSanPhamId=idDM};
+                var sanpham = new SanPham() { TenSanPham = tenMon,TinhTrang="Đang hoạt động",DonGia= dongia,LoaiSanPhamId=idDM};
                 context.SanPhams.Add(sanpham);
                
                 context.SaveChanges();
@@ -41,7 +41,7 @@ namespace CafeManagement.LinQ
             if (!KiemTraMon(tenMon, context))
             {
 
-                var sanpham = new SanPham() { SanPhamId = LayIdSanPham(tenMon, context) };
+                var sanpham = new SanPham() { SanPhamId = LayIdSanPham(tenMon, context)};
                 context.Entry(sanpham).State = EntityState.Deleted;
                 context.SaveChanges();
                 return true;
@@ -55,12 +55,19 @@ namespace CafeManagement.LinQ
                       select sanpham.SanPhamId).SingleOrDefault();
             return sp;
         }
-        public bool Update_Mon(string tenMon, CaPheContext context, double dongia)
+        public bool Update_Mon(int SanPhamId,string tenMon, CaPheContext context, double dongia,int loaisanphamId)
         {
-            if (!KiemTraMon(tenMon, context))
+            if (SanPhamId!=0)
             {
-                var sanpham = new SanPham() { SanPhamId = LayIdSanPham(tenMon, context), LoaiSanPhamId = LayIdDanhMuc(tenMon, context), TenSanPham = tenMon, DonGia = dongia };
-                context.Entry(sanpham).State = EntityState.Modified;
+                var query = (from item in context.SanPhams
+                             where item.SanPhamId.Equals(SanPhamId)
+                             select item).ToList();
+                foreach (var item in query)
+                {
+                    item.TenSanPham = tenMon;
+                    item.DonGia = dongia;
+                    item.LoaiSanPhamId = loaisanphamId;
+                }
                 context.SaveChanges();
                 return true;
             }

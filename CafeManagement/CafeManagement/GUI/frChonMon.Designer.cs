@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frChonMon));
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cbSoLuong = new DevExpress.XtraEditors.SpinEdit();
@@ -135,27 +136,30 @@
             // 
             // simpleButton3
             // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
             this.simpleButton3.Location = new System.Drawing.Point(251, 155);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton3.Size = new System.Drawing.Size(94, 44);
             this.simpleButton3.TabIndex = 10;
             this.simpleButton3.Text = "Thoát";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.Location = new System.Drawing.Point(128, 155);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton2.Size = new System.Drawing.Size(102, 44);
             this.simpleButton2.TabIndex = 9;
             this.simpleButton2.Text = "Hủy món";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(12, 155);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton1.Size = new System.Drawing.Size(94, 44);
             this.simpleButton1.TabIndex = 8;
             this.simpleButton1.Text = "Lưu lại";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -219,7 +223,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frChonMon";
             this.Text = "Thông tin sản phẩm yêu cầu";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frChonMon_FormClosed);
+//            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frChonMon_FormClosed);
             this.Load += new System.EventHandler(this.frChonMon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -9,7 +9,7 @@ namespace CafeManagement.LinQ
 {
     public class Query_HoaDon
     {
-        CaPheContext caPheContext = new CaPheContext();
+        CaPheContext caPheContext = Global.context;
         public int LayHoaDonChuaThanhToan(int BanID)
         {
             return (from item in caPheContext.HoaDons
@@ -122,8 +122,13 @@ namespace CafeManagement.LinQ
         }
         public void XoaHoaDon(int HoaDonID)
         {
-            HoaDon hoadon = new HoaDon() { HoaDonId = HoaDonID };
-            caPheContext.Entry(hoadon).State = EntityState.Deleted;
+            var query = (from item in caPheContext.HoaDons
+                         where item.HoaDonId.Equals(HoaDonID)
+                         select item).ToList();
+            foreach (var item in query)
+            {
+                caPheContext.HoaDons.Remove(item);
+            }
             caPheContext.SaveChanges();
             
         }

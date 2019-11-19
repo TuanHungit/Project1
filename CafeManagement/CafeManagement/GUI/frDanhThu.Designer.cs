@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frDanhThu));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnXuatBaoCao = new DevExpress.XtraEditors.SimpleButton();
             this.labelDanhThu = new System.Windows.Forms.Label();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnXem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.deToDate = new DevExpress.XtraEditors.DateEdit();
@@ -42,7 +43,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnXuatBaoCao = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deToDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -57,65 +57,69 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.btnXuatBaoCao);
             this.panelControl1.Controls.Add(this.labelDanhThu);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.btnXoa);
             this.panelControl1.Controls.Add(this.btnXem);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.deToDate);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.deFromDate);
-            this.panelControl1.Location = new System.Drawing.Point(13, 19);
+            this.panelControl1.Location = new System.Drawing.Point(12, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(285, 467);
+            this.panelControl1.Size = new System.Drawing.Size(1242, 118);
             this.panelControl1.TabIndex = 0;
+            // 
+            // btnXuatBaoCao
+            // 
+            this.btnXuatBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXuatBaoCao.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatBaoCao.Appearance.Options.UseFont = true;
+            this.btnXuatBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatBaoCao.ImageOptions.Image")));
+            this.btnXuatBaoCao.Location = new System.Drawing.Point(574, 59);
+            this.btnXuatBaoCao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnXuatBaoCao.Name = "btnXuatBaoCao";
+            this.btnXuatBaoCao.Size = new System.Drawing.Size(157, 41);
+            this.btnXuatBaoCao.TabIndex = 13;
+            this.btnXuatBaoCao.Text = "Xuất báo cáo";
+            this.btnXuatBaoCao.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
             // 
             // labelDanhThu
             // 
+            this.labelDanhThu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelDanhThu.AutoSize = true;
             this.labelDanhThu.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelDanhThu.Location = new System.Drawing.Point(130, 209);
+            this.labelDanhThu.Location = new System.Drawing.Point(612, 26);
             this.labelDanhThu.Name = "labelDanhThu";
             this.labelDanhThu.Size = new System.Drawing.Size(0, 24);
             this.labelDanhThu.TabIndex = 12;
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(13, 209);
+            this.labelControl3.Location = new System.Drawing.Point(491, 22);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(96, 23);
+            this.labelControl3.Size = new System.Drawing.Size(115, 28);
             this.labelControl3.TabIndex = 11;
             this.labelControl3.Text = "Doanh thu:";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Appearance.Options.UseFont = true;
-            this.btnXoa.Location = new System.Drawing.Point(153, 102);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(127, 41);
-            this.btnXoa.TabIndex = 9;
-            this.btnXoa.Text = "Xóa";
             // 
             // btnXem
             // 
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXem.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.Appearance.Options.UseFont = true;
-            this.btnXem.Location = new System.Drawing.Point(13, 102);
+            this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.Image")));
+            this.btnXem.Location = new System.Drawing.Point(464, 59);
             this.btnXem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(134, 41);
+            this.btnXem.Size = new System.Drawing.Size(104, 41);
             this.btnXem.TabIndex = 10;
             this.btnXem.Text = "Xem";
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
@@ -125,7 +129,7 @@
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(13, 71);
+            this.labelControl2.Location = new System.Drawing.Point(917, 27);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(81, 23);
@@ -136,7 +140,7 @@
             // 
             this.deToDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deToDate.EditValue = null;
-            this.deToDate.Location = new System.Drawing.Point(104, 64);
+            this.deToDate.Location = new System.Drawing.Point(1011, 26);
             this.deToDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.deToDate.Name = "deToDate";
             this.deToDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,7 +149,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deToDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deToDate.Size = new System.Drawing.Size(176, 30);
+            this.deToDate.Size = new System.Drawing.Size(207, 30);
             this.deToDate.TabIndex = 7;
             // 
             // labelControl1
@@ -171,7 +175,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deFromDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFromDate.Size = new System.Drawing.Size(176, 30);
+            this.deFromDate.Size = new System.Drawing.Size(218, 30);
             this.deFromDate.TabIndex = 5;
             // 
             // panelControl2
@@ -180,9 +184,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.gridControl1);
-            this.panelControl2.Location = new System.Drawing.Point(304, 19);
+            this.panelControl2.Location = new System.Drawing.Point(12, 144);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1058, 467);
+            this.panelControl2.Size = new System.Drawing.Size(1242, 354);
             this.panelControl2.TabIndex = 1;
             // 
             // gridControl1
@@ -190,10 +194,11 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gridControl1.Location = new System.Drawing.Point(6, 14);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1047, 448);
+            this.gridControl1.Size = new System.Drawing.Size(1231, 332);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -206,13 +211,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.Location = new System.Drawing.Point(23, 9);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label1.Location = new System.Drawing.Point(22, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 21);
+            this.label1.Size = new System.Drawing.Size(66, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tác vụ";
             // 
@@ -222,31 +225,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.Location = new System.Drawing.Point(319, 9);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label2.Location = new System.Drawing.Point(28, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 21);
+            this.label2.Size = new System.Drawing.Size(174, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Danh sách hóa đơn";
-            // 
-            // btnXuatBaoCao
-            // 
-            this.btnXuatBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuatBaoCao.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatBaoCao.Appearance.Options.UseFont = true;
-            this.btnXuatBaoCao.Location = new System.Drawing.Point(13, 151);
-            this.btnXuatBaoCao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXuatBaoCao.Name = "btnXuatBaoCao";
-            this.btnXuatBaoCao.Size = new System.Drawing.Size(267, 41);
-            this.btnXuatBaoCao.TabIndex = 13;
-            this.btnXuatBaoCao.Text = "Xuất báo cáo/Thống kê";
-            this.btnXuatBaoCao.Click += new System.EventHandler(this.btnXuatBaoCao_Click);
             // 
             // frDanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1372, 498);
+            this.ClientSize = new System.Drawing.Size(1266, 510);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelControl2);
@@ -273,7 +263,6 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnXem;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit deToDate;

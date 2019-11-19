@@ -19,15 +19,19 @@ using DevExpress.LookAndFeel;
 
 namespace CafeManagement.GUI
 {
+    public delegate void LoadBill(int value);
+    public delegate void LoadTable();
+  
     public  partial class frManage : DevExpress.XtraEditors.XtraForm
     {
         int BanID = 0;
         int SanphamID = 0;
         double totalPrice;
         double finalPrice;
+      
         Query_Ban ban = new Query_Ban();
         Query_SanPham sanPham = new Query_SanPham();
-        CaPheContext context = new CaPheContext();
+       
         Query_HoaDon hoaDon = new Query_HoaDon();
         CultureInfo culture = new CultureInfo("vi-VN");
         
@@ -47,19 +51,19 @@ namespace CafeManagement.GUI
         {
            panelBan.Controls.Clear();          
             List<Ban> danhsachban = new List<Ban>(); 
-            danhsachban=ban.GetAllTable(context);         
+            danhsachban=ban.GetAllTable();         
             foreach (Ban item in danhsachban)
             {
                 SimpleButton button = new SimpleButton() { Width = 85, Height = 85 };
                 button.Text = item.BanId.ToString() + " "+item.TinhTrang.ToString();
-              button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Máy tính\CafeManagement\CafeManagement\Resources\Household-Table-icon.png");
+              button.ImageOptions.Image = global::CafeManagement.Properties.Resources.Household_Table_icon;
                 button.ImageOptions.Location = ImageLocation.TopCenter;
                 button.Tag = item;             
                 button.Click += button_Click;               
                 switch (item.TinhTrang.ToString())
                 {
                     case "Có người":
-          //              button.ImageOptions.Image = System.Drawing.Bitmap.FromFile(@"C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\Resources\user.png");
+                        button.ImageOptions.Image = global::CafeManagement.Properties.Resources.user;
                         button.ImageOptions.Location = ImageLocation.TopCenter;
                         button.LookAndFeel.UseDefaultLookAndFeel = false;
                         button.Appearance.BackColor = Color.Aqua;
@@ -74,7 +78,7 @@ namespace CafeManagement.GUI
         }
         private void Load_cbDanhMuc()
         {
-           cbDanhMuc.Properties.DataSource = (from item in context.LoaiSanPhams
+           cbDanhMuc.Properties.DataSource = (from item in Global.context.LoaiSanPhams
                                                 select new { item.TenLoaiSanPham, item.LoaiSanPhamId }).ToList();
            cbDanhMuc.Properties.DisplayMember = "TenLoaiSanPham";
            cbDanhMuc.Properties.ValueMember = "LoaiSanPhamId";
@@ -82,7 +86,7 @@ namespace CafeManagement.GUI
         private void Load_listviewMenu(int DanhmucID)
         {
             listviewMenu.Items.Clear();
-            var Menu = (from item in context.SanPhams
+            var Menu = (from item in Global.context.SanPhams
                                                    where item.LoaiSanPhamId.Equals(DanhmucID)
                                                    select new { item.SanPhamId, item.TenSanPham, item.DonGia }).ToList();
             foreach (var item in Menu)
@@ -120,7 +124,7 @@ namespace CafeManagement.GUI
             {
                 hoaDon.AddChiTietHoaDon(BillID, SanphamID, 1);
             }
-            ban.Update_Ban(context, BanID);
+            ban.Update_Ban(BanID);
             ShowBill(BanID);
             Load_Table();
         }
@@ -139,8 +143,8 @@ namespace CafeManagement.GUI
                 return;
             }
             int HoaDonID = hoaDon.LayHoaDonChuaThanhToan(BanID);
-            var quer = (from chitiethoadon in context.ChiTietHoaDons
-                        join sanpham in context.SanPhams on chitiethoadon.SanPhamID equals sanpham.SanPhamId
+            var quer = (from chitiethoadon in Global.context.ChiTietHoaDons
+                        join sanpham in Global.context.SanPhams on chitiethoadon.SanPhamID equals sanpham.SanPhamId
                         where chitiethoadon.HoaDonID == HoaDonID
                         select new {TenMon= sanpham.TenSanPham, chitiethoadon.SoLuong, sanpham.DonGia, ThanhTien = chitiethoadon.SoLuong * sanpham.DonGia }).ToList();
            // double totalPrice = hoadon.TinhTien(context, HoaD onID);
@@ -160,8 +164,8 @@ namespace CafeManagement.GUI
                     report.Parameters["TotalPrice"].Value = finalPrice;
                     ReportPrintTool tool = new ReportPrintTool(report);
                     tool.ShowPreview();
-                    hoaDon.CapNhatTrangThaiHoaDon(HoaDonID, context,finalPrice );
-                    ban.Update_Ban1(context, BanID);
+                    hoaDon.CapNhatTrangThaiHoaDon(HoaDonID, Global.context, finalPrice );
+                    ban.Update_Ban1(BanID);
                     Load_Table();
                 }
             }
@@ -173,9 +177,9 @@ namespace CafeManagement.GUI
             gcBill.DataSource = null;
             double ThanhTien = 0;
             int HoaDonID = hoaDon.LayHoaDonChuaThanhToan(BanID);
-            var quer = (from sanpham in context.SanPhams
-                        join chitiethoadon in context.ChiTietHoaDons on sanpham.SanPhamId equals chitiethoadon.SanPhamID
-                        join hoadon in context.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
+            var quer = (from sanpham in Global.context.SanPhams
+                        join chitiethoadon in Global.context.ChiTietHoaDons on sanpham.SanPhamId equals chitiethoadon.SanPhamID
+                        join hoadon in Global.context.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
                         orderby hoadon.HoaDonId
                         where hoadon.TinhTrang.Equals(0) && hoadon.HoaDonId.Equals(HoaDonID)
                         select new { sanpham.TenSanPham, chitiethoadon.SoLuong, sanpham.DonGia, TongGia = chitiethoadon.SoLuong * sanpham.DonGia }
@@ -204,21 +208,19 @@ namespace CafeManagement.GUI
         private void listviewMenu_Click(object sender, EventArgs e)
         {
             listviewMenu.FullRowSelect = true;
-            SanphamID = sanPham.LayIdSanPham(listviewMenu.SelectedItems[0].ToString(), context);
+            SanphamID = sanPham.LayIdSanPham(listviewMenu.SelectedItems[0].ToString(), Global.context);
             foreach (ListViewItem items in listviewMenu.SelectedItems)
             {
-                SanphamID = sanPham.LayIdSanPham(items.SubItems[0].Text, context);
+                SanphamID = sanPham.LayIdSanPham(items.SubItems[0].Text, Global.context);
             }
         }
-      
  
-     
         private void btnSearch_Click(object sender, EventArgs e)
         {
             listviewMenu.Items.Clear();
 
             string TenSanPham = (string)txtTenSanPham.EditValue;
-            List<SanPham> sanPhams = sanPham.TimSanPham(TenSanPham,context);
+            List<SanPham> sanPhams = sanPham.TimSanPham(TenSanPham, Global.context);
             if (txtTenSanPham.EditValue == null)
             {
                 XtraMessageBox.Show("Bạn chưa nhập tên sản phẩm!");
@@ -239,7 +241,7 @@ namespace CafeManagement.GUI
 
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
-            frChuyenBan frChuyenBan = new frChuyenBan();
+            frChuyenBan frChuyenBan = new frChuyenBan(Load_Table);
             frChuyenBan.ShowDialog();
         }
 
@@ -250,7 +252,7 @@ namespace CafeManagement.GUI
                 Global.TenSanPham = gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[0]).ToString();
                 Global.Gia =double.Parse(gvBill.GetRowCellValue(gvBill.FocusedRowHandle, gvBill.Columns[2]).ToString());
                 Global.BanID = BanID;
-                frChonMon fr = new frChonMon();
+                frChonMon fr = new frChonMon(ShowBill,Load_Table);
                 fr.ShowDialog();
             }
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frKho));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -78,18 +79,20 @@
             // btnThoat
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThoat.Location = new System.Drawing.Point(140, 232);
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(159, 233);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(123, 35);
+            this.btnThoat.Size = new System.Drawing.Size(110, 43);
             this.btnThoat.TabIndex = 16;
             this.btnThoat.Text = "Thoát";
             // 
             // btnXoa
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.Location = new System.Drawing.Point(17, 232);
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(17, 233);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(105, 35);
+            this.btnXoa.Size = new System.Drawing.Size(129, 43);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa hàng hóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -195,6 +198,7 @@
             this.gcKho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcKho.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gcKho.Location = new System.Drawing.Point(5, 15);
             this.gcKho.MainView = this.gvKho;
             this.gcKho.Name = "gcKho";
@@ -202,6 +206,7 @@
             this.gcKho.TabIndex = 0;
             this.gcKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvKho});
+            this.gcKho.Click += new System.EventHandler(this.gcKho_Click);
             // 
             // gvKho
             // 

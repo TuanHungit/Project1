@@ -10,11 +10,11 @@ namespace CafeManagement.LinQ
 {
     public class Query_PhieuXuat
     {
-        CaPheContext caPheContext = new CaPheContext();
+     
         Query_ChiTietPhieuXuat chiTietPhieuXuat = new Query_ChiTietPhieuXuat();
-        public bool ThemPhieuXuat( int NhanVienId, DateTime NgayLap)
+        public bool ThemPhieuXuat( int NhanVienId, DateTime NgayLap,CaPheContext caPheContext)
         {
-            if (LayPhieuXuatIdTheoNgayNhap(NgayLap) == 0)
+            if (LayPhieuXuatIdTheoNgayNhap(NgayLap,caPheContext) == 0)
             {
                 PhieuXuat phieuXuat = new PhieuXuat()
                 {
@@ -27,7 +27,7 @@ namespace CafeManagement.LinQ
             }
             return false;
         }
-        public bool XoaPhieuXuat(int PhieuXuatId)
+        public bool XoaPhieuXuat(int PhieuXuatId, CaPheContext caPheContext)
         {
             if (PhieuXuatId != 0)
             {
@@ -44,14 +44,14 @@ namespace CafeManagement.LinQ
             }
             return false;
         }
-        public int LayPhieuXuatIdTheoNgayNhap(DateTime ngaylap)
+        public int LayPhieuXuatIdTheoNgayNhap(DateTime ngaylap, CaPheContext caPheContext)
         {
             var query = (from item in caPheContext.PhieuXuats
                          where DbFunctions.TruncateTime(item.NgayLap) == ngaylap.Date
                          select item.PhieuXuatId).SingleOrDefault();
             return query;
         }
-        public bool KiemTraHangHoaTheoNgay(int HangHoaID, DateTime NgayLap)
+        public bool KiemTraHangHoaTheoNgay(int HangHoaID, DateTime NgayLap, CaPheContext caPheContext)
         {
             var query = (from phieuxuat in caPheContext.PhieuXuats
                          join chitietphieuxuat in caPheContext.ChiTietPhieuXuats on phieuxuat.PhieuXuatId equals chitietphieuxuat.PhieuXuatId

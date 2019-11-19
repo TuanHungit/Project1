@@ -236,6 +236,12 @@
     <Compile Include="GUI\reportPhieuNhap.Designer.cs">
       <DependentUpon>reportPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\reportPhieuXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\reportPhieuXuat.Designer.cs">
+      <DependentUpon>reportPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\WaitForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,9 +268,9 @@
     <Compile Include="LinQ\Query_PhieuXuat.cs" />
     <Compile Include="LinQ\Query_SanPham.cs" />
     <Compile Include="LinQ\Query_TaiKhoan.cs" />
-    <Compile Include="Migrations\201911171329506_InitDB.cs" />
-    <Compile Include="Migrations\201911171329506_InitDB.designer.cs">
-      <DependentUpon>201911171329506_InitDB.cs</DependentUpon>
+    <Compile Include="Migrations\201911190847151_IntDB.cs" />
+    <Compile Include="Migrations\201911190847151_IntDB.designer.cs">
+      <DependentUpon>201911190847151_IntDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -329,14 +335,17 @@
     <EmbeddedResource Include="GUI\reportPhieuNhap.resx">
       <DependentUpon>reportPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\reportPhieuXuat.resx">
+      <DependentUpon>reportPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\XtraReport.resx">
       <DependentUpon>XtraReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911171329506_InitDB.resx">
-      <DependentUpon>201911171329506_InitDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911190847151_IntDB.resx">
+      <DependentUpon>201911190847151_IntDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

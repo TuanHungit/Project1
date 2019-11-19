@@ -12,9 +12,11 @@ namespace CafeManagement.LinQ
     public class Query_Ban
     {
         Query_HoaDon hoaDon = new Query_HoaDon();
-        public bool Add_Ban(int soBan, CaPheContext context)
+        CaPheContext context = Global.context;
+    
+        public bool Add_Ban(int soBan)
         {
-            if (!KiemTraBan(soBan, context))
+            if (!KiemTraBan(soBan))
             {
                 var ban = new Ban() { BanId = Convert.ToInt32(soBan), TinhTrang = "Trống" };
                 context.Bans.Add(ban);
@@ -23,7 +25,7 @@ namespace CafeManagement.LinQ
             }
             return false;
         }
-        public bool KiemTraBan(int soBan, CaPheContext context)
+        public bool KiemTraBan(int soBan)
         {
             var x = (from ban in context.Bans
                      where ban.BanId == soBan
@@ -32,16 +34,15 @@ namespace CafeManagement.LinQ
                 return true;
             return false;
         }
-        public List<int> load_Ban(CaPheContext context)
+        public List<int> load_Ban()
         {
 
             var listban = (from ban in context.Bans
                            select ban.BanId).ToList();
-
             return listban;
 
         }
-        public bool DemSoLuongBan(CaPheContext context)
+        public bool DemSoLuongBan()
         {
             var x = (from ban in context.Bans
                      select ban.BanId).Count();
@@ -49,9 +50,9 @@ namespace CafeManagement.LinQ
                 return true;
             return false;
         }
-        public bool xoaBan(CaPheContext context, int soBan)
+        public bool xoaBan(int soBan)
         {
-            if (KiemTraBan(soBan, context))
+            if (KiemTraBan(soBan))
             {
                 var ban = new Ban() { BanId = soBan };
                 context.Entry(ban).State = EntityState.Deleted;
@@ -61,20 +62,18 @@ namespace CafeManagement.LinQ
             return false;
 
         }
-        public void Update_Ban(CaPheContext context, int id_ban)
+        public void Update_Ban(int id_ban)
         {
             var ban = (from Ban in context.Bans
                        where Ban.BanId == id_ban
                        select Ban).ToList();
             foreach (var b in ban)
             {
-                b.TinhTrang = "Có người";
-                context.Entry(b).State = EntityState.Modified;
-                context.SaveChanges();
+                b.TinhTrang = "Có người"; 
             }
-
+            context.SaveChanges();
         }
-        public void Update_Ban1(CaPheContext context, int id_ban)
+        public void Update_Ban1( int id_ban)
         {
             var ban = (from Ban in context.Bans
                        where Ban.BanId == id_ban
@@ -82,18 +81,18 @@ namespace CafeManagement.LinQ
             foreach (var b in ban)
             {
                 b.TinhTrang = "Trống";
-                context.Entry(b).State = EntityState.Modified;
-                context.SaveChanges();
+                
             }
+            context.SaveChanges();
 
         }
-        public List<Ban> GetAllTable(CaPheContext context)
+        public List<Ban> GetAllTable()
         {
             return (from item in context.Bans
                     select item).ToList();
         }
 
-        public void GopBan(int BanID1, int BanID2,CaPheContext caPheContext)
+        public void GopBan(int BanID1, int BanID2)
         {
           
             int BillID1, BillID2;
@@ -103,7 +102,7 @@ namespace CafeManagement.LinQ
             {
                 hoaDon.CapNhatChiTietHoaDonKhiGopBan(BillID1, BillID2);
                 hoaDon.XoaHoaDon(BillID2);
-                Update_Ban1(caPheContext, BanID2);
+                Update_Ban1(BanID2);
 
             }
             else if (BillID1 == 0 && BillID2 != 0)
@@ -112,8 +111,8 @@ namespace CafeManagement.LinQ
                 int BillID = hoaDon.LayHoaDonChuaThanhToan(BanID1);
                 hoaDon.CapNhatChiTietHoaDonKhiGopBan(BillID,BillID2);
                 hoaDon.XoaHoaDon(BillID2);
-                Update_Ban(caPheContext, BanID1);
-                Update_Ban1(caPheContext, BanID2);
+                Update_Ban( BanID1);
+                Update_Ban1(BanID2);
             }
             else if(BillID1!=0&&BillID2==0)
             {
@@ -121,19 +120,19 @@ namespace CafeManagement.LinQ
                 int BillID = hoaDon.LayHoaDonChuaThanhToan(BanID2);
                 hoaDon.CapNhatChiTietHoaDonKhiGopBan(BillID2,BillID);
                 hoaDon.XoaHoaDon(BillID1);
-                Update_Ban(caPheContext, BanID2);
-                Update_Ban1(caPheContext, BanID1);
+                Update_Ban(BanID2);
+                Update_Ban1( BanID1);
             }
-            caPheContext.SaveChanges();
+           context.SaveChanges();
         }
-        public bool KiemTraBanConMonKhong(int BanID,CaPheContext caPheContext)
+        public bool KiemTraBanConMonKhong(int BanID)
         {
-            var query = (from chitiethoadon in caPheContext.ChiTietHoaDons
-                         join hoadon in caPheContext.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
-                         where hoadon.BanID.Equals(BanID)
-                         select hoadon
-                        ).ToList();
-            if (query.Count > 0)
+            var query = (from chitiethoadon in context.ChiTietHoaDons
+                         join hoadon in context.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
+                         where hoadon.BanID ==BanID
+                         select chitiethoadon
+                        ).Count();
+            if (query >0)
                 return true;
             return false;
         }

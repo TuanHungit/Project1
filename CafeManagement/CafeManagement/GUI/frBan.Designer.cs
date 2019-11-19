@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frBan));
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.label3 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -60,9 +61,9 @@
             this.fluentDesignFormContainer1.Controls.Add(this.label3);
             this.fluentDesignFormContainer1.Controls.Add(this.panelControl1);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(211, 30);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(198, 30);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1108, 621);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1121, 621);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // label3
@@ -86,7 +87,7 @@
             this.panelControl1.Controls.Add(this.gcBan);
             this.panelControl1.Location = new System.Drawing.Point(6, 6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1099, 615);
+            this.panelControl1.Size = new System.Drawing.Size(1112, 615);
             this.panelControl1.TabIndex = 2;
             // 
             // gcBan
@@ -99,7 +100,7 @@
             this.gcBan.MainView = this.gvBan;
             this.gcBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcBan.Name = "gcBan";
-            this.gcBan.Size = new System.Drawing.Size(1089, 594);
+            this.gcBan.Size = new System.Drawing.Size(1102, 594);
             this.gcBan.TabIndex = 2;
             this.gcBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBan});
@@ -125,30 +126,38 @@
             this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(211, 621);
+            this.accordionControl1.Size = new System.Drawing.Size(198, 621);
             this.accordionControl1.TabIndex = 1;
+//            this.accordionControl1.Click += new System.EventHandler(this.accordionControl1_Click);
             // 
             // txtBanID
             // 
-            this.txtBanID.Location = new System.Drawing.Point(63, 60);
+            this.txtBanID.Location = new System.Drawing.Point(50, 65);
             this.txtBanID.Name = "txtBanID";
             this.txtBanID.Size = new System.Drawing.Size(112, 22);
             this.txtBanID.TabIndex = 1;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(44, 102);
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(65, 112);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(131, 29);
+            this.btnThem.Size = new System.Drawing.Size(97, 43);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(44, 151);
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(65, 175);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(131, 29);
+            this.btnXoa.Size = new System.Drawing.Size(97, 43);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);

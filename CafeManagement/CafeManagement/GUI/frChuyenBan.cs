@@ -14,11 +14,14 @@ namespace CafeManagement.GUI
 {
     public partial class frChuyenBan : DevExpress.XtraEditors.XtraForm
     {
-        public frChuyenBan()
+        public LoadTable loadTable;
+        public frChuyenBan(LoadTable loadTable)
         {
             InitializeComponent();
+            this.loadTable = loadTable;
         }
-        CaPheContext context = new CaPheContext();
+
+        CaPheContext context = Global.context;
         Query_HoaDon query_hoaDon = new Query_HoaDon();
         Query_Ban query_Ban = new Query_Ban();
         Query_SanPham query_SanPham = new Query_SanPham();
@@ -101,18 +104,18 @@ namespace CafeManagement.GUI
             }
             int BanID1 = (int)cbBan1.EditValue;
             int BanID2 = (int)cbBan2.EditValue;
-            if (!query_Ban.KiemTraBanConMonKhong(BanID1, context) && !query_Ban.KiemTraBanConMonKhong(BanID2, context))
+            if (gvBill1.RowCount==0 && gvBill2.RowCount==0)
             {
                 XtraMessageBox.Show("Bàn bạn chọn không có món để chuyển!");
                 return;
             }
-            if (!query_Ban.KiemTraBanConMonKhong(BanID2, context))
+            if (gvBill2.RowCount == 0)
             {
                 XtraMessageBox.Show("Bàn bạn chọn không có món để chuyển!");
                 return;
             }
-          
-           
+
+
             if (BanID1 == BanID2)
             {
                 XtraMessageBox.Show("Bàn bàn chọn đã trùng! Xin chọn bàn khac!");
@@ -121,11 +124,12 @@ namespace CafeManagement.GUI
             if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp {1} sang {0}?",
                 BanID1, BanID2), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                query_Ban.GopBan(BanID1,BanID2,context);
-         
+                query_Ban.GopBan(BanID1, BanID2);
+
             }
-            ShowBill(BanID1,flag=false);
+            ShowBill(BanID1, flag = false);
             ShowBill(BanID2, flag = true);
+            this.loadTable();
         }
 
         private void btnChuyenAllMon1_Click(object sender, EventArgs e)
@@ -137,19 +141,18 @@ namespace CafeManagement.GUI
             }
             int BanID1 = (int)cbBan1.EditValue;
             int BanID2 = (int)cbBan2.EditValue;
-     
-            if (!query_Ban.KiemTraBanConMonKhong(BanID1, context)&&!query_Ban.KiemTraBanConMonKhong(BanID2,context))
+            if (gvBill1.RowCount == 0 && gvBill2.RowCount == 0)
             {
                 XtraMessageBox.Show("Bàn bạn chọn không có món để chuyển!");
                 return;
             }
-            if (!query_Ban.KiemTraBanConMonKhong(BanID1, context))
+            if (gvBill1.RowCount == 0)
             {
                 XtraMessageBox.Show("Bàn bạn chọn không có món để chuyển!");
                 return;
             }
-          
-         
+
+
             if (BanID1 == BanID2)
             {
                 XtraMessageBox.Show("Bàn bàn chọn đã trùng! Xin chọn bàn khac!");
@@ -158,11 +161,13 @@ namespace CafeManagement.GUI
             if (XtraMessageBox.Show(string.Format("Bạn có thật sự muốn gộp {1} sang {0}?",
                 BanID2, BanID1), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                query_Ban.GopBan(BanID2, BanID1,context);
+                query_Ban.GopBan(BanID2, BanID1);
             
             }
             ShowBill(BanID1, flag = false);
             ShowBill(BanID2, flag = true);
+            this.loadTable();
+           
         }
 
       
@@ -173,6 +178,9 @@ namespace CafeManagement.GUI
             SanPhamID = query_SanPham.LayIdSanPham(TenSanPham,context);
         }
 
-     
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

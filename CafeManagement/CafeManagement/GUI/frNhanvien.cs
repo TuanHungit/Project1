@@ -37,7 +37,7 @@ namespace CafeManagement
         byte[] hinh = null;
         Query_TaiKhoan taiKhoan = new Query_TaiKhoan();
        Query_NhanVien nv = new Query_NhanVien();
-        CaPheContext context = new CaPheContext();
+        CaPheContext context = Global.context;
         #region NhanVien
         private void simpleButton4_Click(object sender, EventArgs e)
         {
@@ -220,6 +220,7 @@ namespace CafeManagement
         {
             if (gvNhanVien.RowCount > 0)
             {
+                clearTaiKhoanInfor();
                 txtHoTen.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[0]).ToString();
                 txtQueQuan.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[1]).ToString();
                 txtChucVu.EditValue = gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[2]).ToString();

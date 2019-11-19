@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frManage));
             this.cbDanhMuc = new DevExpress.XtraEditors.LookUpEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gcBill = new DevExpress.XtraGrid.GridControl();
@@ -255,7 +256,7 @@
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Appearance.Options.UseFont = true;
-            this.btnSearch.ImageOptions.Image = global::CafeManagement.Properties.Resources.search_icon__1_;
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
             this.btnSearch.Location = new System.Drawing.Point(412, 8);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
@@ -349,7 +350,7 @@
             this.btnChuyenBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChuyenBan.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuyenBan.Appearance.Options.UseFont = true;
-            this.btnChuyenBan.ImageOptions.Image = global::CafeManagement.Properties.Resources._switch;
+            this.btnChuyenBan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenBan.ImageOptions.Image")));
             this.btnChuyenBan.Location = new System.Drawing.Point(224, 20);
             this.btnChuyenBan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChuyenBan.Name = "btnChuyenBan";
@@ -365,7 +366,7 @@
             this.btnThemMon.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btnThemMon.Appearance.Options.UseFont = true;
             this.btnThemMon.Appearance.Options.UseForeColor = true;
-            this.btnThemMon.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btnThemMon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.ImageOptions.Image")));
             this.btnThemMon.Location = new System.Drawing.Point(340, 20);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThemMon.Name = "btnThemMon";
