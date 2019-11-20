@@ -137,8 +137,21 @@ namespace CafeManagement.LinQ
             var query = (from item in caPheContext.ChiTietHoaDons
                          where item.HoaDonID.Equals(HoaDonID2)
                          select item).ToList();
+            var query2 = (from item2 in caPheContext.ChiTietHoaDons
+                          where item2.HoaDonID.Equals(HoaDonID1)
+                          select item2).ToList();
             foreach (var item in query) {
                 item.HoaDonID = HoaDonID1;
+                foreach (var item2 in query2)
+                {
+                    if (item2.SanPhamID == item.SanPhamID)
+                    {
+                        item.SoLuong += item2.SoLuong;
+                        caPheContext.ChiTietHoaDons.Remove(item2);
+
+                    }
+                    caPheContext.SaveChanges();
+                }
                 caPheContext.Entry(item).State = EntityState.Modified;
                 caPheContext.SaveChanges();
             }
@@ -148,7 +161,8 @@ namespace CafeManagement.LinQ
         {
            return (from item in caPheContext.HoaDons
                          where item.BanID.Equals(BanID)
-                         select item.HoaDonId).FirstOrDefault();
+                         select item.HoaDonId).FirstOrDefault();    
         }
+        
     }
 }

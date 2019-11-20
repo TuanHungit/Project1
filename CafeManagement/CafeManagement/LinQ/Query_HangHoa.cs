@@ -78,7 +78,7 @@ namespace CafeManagement.LinQ
         }
         public bool CapNhatSoLuongHangHoaKhiXuat(int HangHoaId, int SoLuong, DateTime NgayLap)
         {
-            if (phieuXuat.KiemTraHangHoaTheoNgay(HangHoaId, NgayLap,caPheContext))
+            if (phieuXuat.KiemTraHangHoaTheoNgay(HangHoaId, NgayLap))
             {
                 HangHoa hangHoa= (from item in caPheContext.HangHoas
                                where item.HangHoaId.Equals(HangHoaId)

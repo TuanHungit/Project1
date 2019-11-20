@@ -1157,6 +1157,7 @@ C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GU
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frNhapKho.resources
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frXuatKho.resources
 C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.reportPhieuNhap.resources
-C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.InitDB.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.reportPhieuXuat.resources
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.IntDB.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.reportPhieuXuat.resources
+C:\Users\Admin\Desktop\CafeManagement\CafeManagement\obj\Debug\CafeManagement.Migrations.IntDB.resources

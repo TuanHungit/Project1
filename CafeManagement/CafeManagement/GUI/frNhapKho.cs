@@ -17,7 +17,6 @@ namespace CafeManagement.GUI
 {
     public partial class frNhapKho : DevExpress.XtraEditors.XtraForm
     {
-        CaPheContext capheContext = Global.context;
         Query_PhieuNhap phieunhap = new Query_PhieuNhap();
         Query_HangHoa hangHoa = new Query_HangHoa();
         Query_ChiTietPhieuNhap chitietphieunhap = new Query_ChiTietPhieuNhap();
@@ -68,7 +67,7 @@ namespace CafeManagement.GUI
         }
         private void Load_CbNhaCungCap()
         {
-            cbNCC.Properties.DataSource = (from item in capheContext.NhaCungCaps
+            cbNCC.Properties.DataSource = (from item in Global.context.NhaCungCaps
                                            select new
                                            {
                                                item.NhaCungCapId,
@@ -88,10 +87,10 @@ namespace CafeManagement.GUI
         private void Load_gvNhapKho(DateTime dateTime)
         {
             int totalprice = 0;
-                var query = (from hanghoa in capheContext.HangHoas
-                                    join chitietPhieuNhap in capheContext.ChiTietPhieuNhaps on hanghoa.HangHoaId equals chitietPhieuNhap.HangHoaID
-                                    join phieuNhap in capheContext.PhieuNhaps on chitietPhieuNhap.PhieuNhapId equals phieuNhap.PhieuNhapId
-                                    join nhacungcap in capheContext.NhaCungCaps on phieuNhap.NhaCungCapId equals nhacungcap.NhaCungCapId
+                var query = (from hanghoa in Global.context.HangHoas
+                                    join chitietPhieuNhap in Global.context.ChiTietPhieuNhaps on hanghoa.HangHoaId equals chitietPhieuNhap.HangHoaID
+                                    join phieuNhap in Global.context.PhieuNhaps on chitietPhieuNhap.PhieuNhapId equals phieuNhap.PhieuNhapId
+                                    join nhacungcap in Global.context.NhaCungCaps on phieuNhap.NhaCungCapId equals nhacungcap.NhaCungCapId
                                     where DbFunctions.TruncateTime(phieuNhap.NgayDatHang) == dateTime.Date
                                     select new
                                     {
@@ -109,7 +108,7 @@ namespace CafeManagement.GUI
             gcNhapKho.DataSource = query;
             report.DataSource = query;
             report.Parameters["CreateDate"].Value = dateTime;
-            report.Parameters["NguoiLap"].Value =nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID,capheContext);
+            report.Parameters["NguoiLap"].Value =nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID,Global.context);
             report.Parameters["TotalPrice"].Value = totalprice;
             gvNhapKho.Columns[0].Caption = "Tên hàng hóa";
             gvNhapKho.Columns[1].Caption = "Số lượng nhập";

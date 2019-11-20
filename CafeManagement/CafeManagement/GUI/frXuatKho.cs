@@ -27,7 +27,6 @@ namespace CafeManagement.GUI
             txtSoLuongTon.Enabled = false;
             btnLuuLai.Enabled = false;
         }
-        CaPheContext capheContext = Global.context;
         Query_PhieuXuat phieuxuat = new Query_PhieuXuat();
         Query_HangHoa hanghoa = new Query_HangHoa();
         Query_ChiTietPhieuXuat chitietphieuxuat = new Query_ChiTietPhieuXuat();
@@ -72,15 +71,15 @@ namespace CafeManagement.GUI
                     }
                     else
                     {
-                        if (phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap,capheContext) == 0)
+                        if (phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap) == 0)
                         {
-                            phieuxuat.ThemPhieuXuat(Global.NhanVienID, NgayLap,capheContext);
+                            phieuxuat.ThemPhieuXuat(Global.NhanVienID, NgayLap);
                         }
-                        if (!phieuxuat.KiemTraHangHoaTheoNgay(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), NgayLap,capheContext))
+                        if (!phieuxuat.KiemTraHangHoaTheoNgay(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), NgayLap))
                         {
                             hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
 
-                            chitietphieuxuat.ThemChiTietPhieuXuat(phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap,capheContext), hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong);
+                            chitietphieuxuat.ThemChiTietPhieuXuat(phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap), hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong);
                         }
                         else chitietphieuxuat.CapNhatChiTietPhieuXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
                         hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
@@ -95,9 +94,9 @@ namespace CafeManagement.GUI
         private void Load_gvXuatKho(DateTime dateTime)
         {
             double totalprice = 0;
-            var query = (from hanghoa in capheContext.HangHoas
-                         join chitietPhieuXuat in capheContext.ChiTietPhieuXuats on hanghoa.HangHoaId equals chitietPhieuXuat.HangHoaId
-                         join phieuXuat in capheContext.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId
+            var query = (from hanghoa in Global.context.HangHoas
+                         join chitietPhieuXuat in Global.context.ChiTietPhieuXuats on hanghoa.HangHoaId equals chitietPhieuXuat.HangHoaId
+                         join phieuXuat in Global.context.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId
                          where DbFunctions.TruncateTime(phieuXuat.NgayLap) == dateTime.Date
                          select new
                          {
@@ -114,7 +113,7 @@ namespace CafeManagement.GUI
             }
             report.DataSource = query;
             report.Parameters["CreateDate"].Value = dateTime;
-            report.Parameters["NguoiLap"].Value = nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID, capheContext);
+            report.Parameters["NguoiLap"].Value = nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID, Global.context);
             report.Parameters["TotalPrice"].Value = totalprice;
             gvXuatKho.Columns[0].Caption = "Tên hàng hóa";
             gvXuatKho.Columns[1].Caption = "Số lượng xuất";
@@ -124,7 +123,7 @@ namespace CafeManagement.GUI
         }
         private void Load_CbHangHoa()
         {
-            cbTenHangHoa.Properties.DataSource = (from item in capheContext.HangHoas
+            cbTenHangHoa.Properties.DataSource = (from item in Global.context.HangHoas
                                            select new
                                            {
                                                item.HangHoaId,
@@ -144,7 +143,7 @@ namespace CafeManagement.GUI
         private void Load_Info()
         {
             btnLuuLai.Enabled = true;
-            var query = (from item in capheContext.HangHoas
+            var query = (from item in Global.context.HangHoas
                          where item.HangHoaId == (int)cbTenHangHoa.EditValue
                          select item).ToList();
             foreach (var item in query)

@@ -49,8 +49,7 @@ namespace CafeManagement.LinQ
                     List<SanPham> sanphams = GetAllSanPham(danhmuc.LoaiSanPhamId);
                     foreach (var sp in sanphams)
                     {
-                        var s = new SanPham() { SanPhamId = sp.SanPhamId };
-                        caPheContext.Entry(sp).State = EntityState.Deleted;
+                        caPheContext.SanPhams.Remove(sp);
                     }
                 }
                 caPheContext.Entry(danhmuc).State = EntityState.Deleted;

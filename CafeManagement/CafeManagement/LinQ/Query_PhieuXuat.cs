@@ -12,49 +12,49 @@ namespace CafeManagement.LinQ
     {
      
         Query_ChiTietPhieuXuat chiTietPhieuXuat = new Query_ChiTietPhieuXuat();
-        public bool ThemPhieuXuat( int NhanVienId, DateTime NgayLap,CaPheContext caPheContext)
+        public bool ThemPhieuXuat( int NhanVienId, DateTime NgayLap)
         {
-            if (LayPhieuXuatIdTheoNgayNhap(NgayLap,caPheContext) == 0)
+            if (LayPhieuXuatIdTheoNgayNhap(NgayLap) == 0)
             {
                 PhieuXuat phieuXuat = new PhieuXuat()
                 {
                     NhanVienId = NhanVienId,
                     NgayLap=NgayLap
                 };
-                caPheContext.PhieuXuats.Add(phieuXuat);
-                caPheContext.SaveChanges();
+                Global.context.PhieuXuats.Add(phieuXuat);
+                Global.context.SaveChanges();
                 return true;
             }
             return false;
         }
-        public bool XoaPhieuXuat(int PhieuXuatId, CaPheContext caPheContext)
+        public bool XoaPhieuXuat(int PhieuXuatId)
         {
             if (PhieuXuatId != 0)
             {
-                var query = (from item in caPheContext.PhieuXuats
+                var query = (from item in Global.context.PhieuXuats
                              where item.PhieuXuatId.Equals(PhieuXuatId)
                              select item).ToList();
                 foreach (var item in query)
                 {
-                    caPheContext.PhieuXuats.Remove(item);
+                    Global.context.PhieuXuats.Remove(item);
 
                 }
-                caPheContext.SaveChanges();
+                Global.context.SaveChanges();
                 return true;
             }
             return false;
         }
-        public int LayPhieuXuatIdTheoNgayNhap(DateTime ngaylap, CaPheContext caPheContext)
+        public int LayPhieuXuatIdTheoNgayNhap(DateTime ngaylap )
         {
-            var query = (from item in caPheContext.PhieuXuats
+            var query = (from item in Global.context.PhieuXuats
                          where DbFunctions.TruncateTime(item.NgayLap) == ngaylap.Date
                          select item.PhieuXuatId).SingleOrDefault();
             return query;
         }
-        public bool KiemTraHangHoaTheoNgay(int HangHoaID, DateTime NgayLap, CaPheContext caPheContext)
+        public bool KiemTraHangHoaTheoNgay(int HangHoaID, DateTime NgayLap)
         {
-            var query = (from phieuxuat in caPheContext.PhieuXuats
-                         join chitietphieuxuat in caPheContext.ChiTietPhieuXuats on phieuxuat.PhieuXuatId equals chitietphieuxuat.PhieuXuatId
+            var query = (from phieuxuat in Global.context.PhieuXuats
+                         join chitietphieuxuat in Global.context.ChiTietPhieuXuats on phieuxuat.PhieuXuatId equals chitietphieuxuat.PhieuXuatId
                          where chitietphieuxuat.HangHoaId.Equals(HangHoaID) && DbFunctions.TruncateTime(phieuxuat.NgayLap) == NgayLap.Date
                          select phieuxuat).Count();
             if (query > 0)
