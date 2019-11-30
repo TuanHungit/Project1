@@ -13,53 +13,54 @@ namespace CafeManagement.LinQ
 {
     public  class Query_SanPham
     {
-        public bool KiemTraMon(string tenMon, CaPheContext context)
+        CaPheContext caPheContext = Global.context;
+        public bool KiemTraMon(string tenMon)
         {
-            var sp = (from sanpham in context.SanPhams
+            var sp = (from sanpham in caPheContext.SanPhams
                       where sanpham.TenSanPham.ToUpper().Contains(tenMon.ToUpper())
                       select sanpham).Count();
             if (sp == 0)
                 return true;
             return false;
         }
-        public bool Add_Mon(string tenMon, CaPheContext context, double dongia, int idDM)
+        public bool Add_Mon(string tenMon, double dongia, int idDM)
         {
-            if(KiemTraMon(tenMon, context))
+            if(KiemTraMon(tenMon))
             {
     
                 var sanpham = new SanPham() { TenSanPham = tenMon,TinhTrang="Đang hoạt động",DonGia= dongia,LoaiSanPhamId=idDM};
-                context.SanPhams.Add(sanpham);
+                caPheContext.SanPhams.Add(sanpham);
                
-                context.SaveChanges();
+                caPheContext.SaveChanges();
                
                 return true;
             }
             return false;
         }
-        public bool Delete_Mon(string tenMon, CaPheContext context)
+        public bool Delete_Mon(string tenMon)
         {
-            if (!KiemTraMon(tenMon, context))
+            if (!KiemTraMon(tenMon))
             {
 
-                var sanpham = new SanPham() { SanPhamId = LayIdSanPham(tenMon, context)};
-                context.Entry(sanpham).State = EntityState.Deleted;
-                context.SaveChanges();
+                var sanpham = new SanPham() { SanPhamId = LayIdSanPham(tenMon)};
+                caPheContext.Entry(sanpham).State = EntityState.Deleted;
+                caPheContext.SaveChanges();
                 return true;
             }
             return false;
         }
-        public int LayIdSanPham(string tenMon, CaPheContext context)
+        public int LayIdSanPham(string tenMon)
         {
-            var sp = (from sanpham in context.SanPhams
+            var sp = (from sanpham in caPheContext.SanPhams
                       where sanpham.TenSanPham.ToUpper().Trim().Contains(tenMon.ToUpper())
                       select sanpham.SanPhamId).SingleOrDefault();
             return sp;
         }
-        public bool Update_Mon(int SanPhamId,string tenMon, CaPheContext context, double dongia,int loaisanphamId)
+        public bool Update_Mon(int SanPhamId,string tenMon, double dongia,int loaisanphamId)
         {
             if (SanPhamId!=0)
             {
-                var query = (from item in context.SanPhams
+                var query = (from item in caPheContext.SanPhams
                              where item.SanPhamId.Equals(SanPhamId)
                              select item).ToList();
                 foreach (var item in query)
@@ -68,30 +69,31 @@ namespace CafeManagement.LinQ
                     item.DonGia = dongia;
                     item.LoaiSanPhamId = loaisanphamId;
                 }
-                context.SaveChanges();
+                caPheContext.SaveChanges();
                 return true;
             }
             return false;
         }
-        public int LayIdDanhMuc(string tenMon, CaPheContext context)
+        public int LayIdDanhMuc(string tenMon)
         {
-            int sp = (from sanpham in context.SanPhams
+            int sp = (from sanpham in caPheContext.SanPhams
                       where sanpham.TenSanPham.ToUpper().Trim().Contains(tenMon.ToUpper())
                       select sanpham.LoaiSanPhamId).SingleOrDefault();
             return sp;
         }
-        public double LayGiaSanPham(int idsp, CaPheContext context)
+        public double LayGiaSanPham(int idsp)
         {
-            return (from sp in context.SanPhams
+            return (from sp in caPheContext.SanPhams
                     where sp.SanPhamId == idsp
                     select sp.DonGia).SingleOrDefault();
         }
-        public List<SanPham> TimSanPham(string Ten,CaPheContext caPheContext)
+        public List<SanPham> TimSanPham(string Ten)
         {
             return (from item in caPheContext.SanPhams
                     where item.TenSanPham.StartsWith(Ten)
                     select item).ToList();
 
         }
+       
     }
 }

@@ -14,7 +14,7 @@ namespace CafeManagement.LinQ
         Query_HoaDon hoaDon = new Query_HoaDon();
         CaPheContext context = Global.context;
     
-        public bool Add_Ban(int soBan)
+        public  bool Add_Ban(int soBan)
         {
             if (!KiemTraBan(soBan))
             {
@@ -25,7 +25,7 @@ namespace CafeManagement.LinQ
             }
             return false;
         }
-        public bool KiemTraBan(int soBan)
+        public  bool KiemTraBan(int soBan)
         {
             var x = (from ban in context.Bans
                      where ban.BanId == soBan
@@ -34,7 +34,7 @@ namespace CafeManagement.LinQ
                 return true;
             return false;
         }
-        public List<int> load_Ban()
+        public  List<int> load_Ban()
         {
 
             var listban = (from ban in context.Bans
@@ -42,7 +42,7 @@ namespace CafeManagement.LinQ
             return listban;
 
         }
-        public bool DemSoLuongBan()
+        public  bool DemSoLuongBan()
         {
             var x = (from ban in context.Bans
                      select ban.BanId).Count();
@@ -50,19 +50,25 @@ namespace CafeManagement.LinQ
                 return true;
             return false;
         }
-        public bool xoaBan(int soBan)
+        public  bool xoaBan(int soBan)
         {
             if (KiemTraBan(soBan))
             {
-                var ban = new Ban() { BanId = soBan };
-                context.Entry(ban).State = EntityState.Deleted;
+                var ban = (from item in context.Bans
+                           where item.BanId.Equals(soBan)
+                           select item).ToList();
+                foreach (var item in ban)
+                {
+                    context.Bans.Remove(item);
+                }
+          
                 context.SaveChanges();
                 return true;
             }
             return false;
 
         }
-        public void Update_Ban(int id_ban)
+        public  void Update_Ban(int id_ban)
         {
             var ban = (from Ban in context.Bans
                        where Ban.BanId == id_ban
@@ -73,7 +79,7 @@ namespace CafeManagement.LinQ
             }
             context.SaveChanges();
         }
-        public void Update_Ban1( int id_ban)
+        public  void Update_Ban1( int id_ban)
         {
             var ban = (from Ban in context.Bans
                        where Ban.BanId == id_ban
@@ -86,7 +92,7 @@ namespace CafeManagement.LinQ
             context.SaveChanges();
 
         }
-        public List<Ban> GetAllTable()
+        public  List<Ban> GetAllTable()
         {
             return (from item in context.Bans
                     select item).ToList();

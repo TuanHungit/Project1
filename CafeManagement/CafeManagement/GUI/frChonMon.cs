@@ -40,7 +40,7 @@ namespace CafeManagement.GUI
         {
             int BillID = hoaDon.LayHoaDonChuaThanhToan(Global.BanID);
             string TenSanPham = lbTenSenPham.Text;
-            int SanPhamID = sanPham.LayIdSanPham(TenSanPham, context);
+            int SanPhamID = sanPham.LayIdSanPham(TenSanPham);
             int SoLuong = int.Parse(cbSoLuong.Text);
             hoaDon.AddChiTietHoaDon(BillID, SanPhamID, SoLuong);
             this.loadBill(Global.BanID);
@@ -71,7 +71,7 @@ namespace CafeManagement.GUI
         {
             int BillID = hoaDon.LayHoaDonChuaThanhToan(Global.BanID);
             string TenSanPham = lbTenSenPham.Text;
-            int SanPhamID = sanPham.LayIdSanPham(TenSanPham, context);
+            int SanPhamID = sanPham.LayIdSanPham(TenSanPham);
           
             hoaDon.AddChiTietHoaDon(BillID, SanPhamID, -100);
             if (!ban.KiemTraBanConMonKhong(Global.BanID))

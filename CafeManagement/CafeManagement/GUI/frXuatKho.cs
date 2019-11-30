@@ -97,7 +97,7 @@ namespace CafeManagement.GUI
             var query = (from hanghoa in Global.context.HangHoas
                          join chitietPhieuXuat in Global.context.ChiTietPhieuXuats on hanghoa.HangHoaId equals chitietPhieuXuat.HangHoaId
                          join phieuXuat in Global.context.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId
-                         where DbFunctions.TruncateTime(phieuXuat.NgayLap) == dateTime.Date
+                         where DbFunctions.TruncateTime(phieuXuat.NgayLap) == dateTime.Date 
                          select new
                          {
                              hanghoa.TenHangHoa,
@@ -124,6 +124,7 @@ namespace CafeManagement.GUI
         private void Load_CbHangHoa()
         {
             cbTenHangHoa.Properties.DataSource = (from item in Global.context.HangHoas
+                                                  where item.TinhTrang=="Đang hoạt động"
                                            select new
                                            {
                                                item.HangHoaId,

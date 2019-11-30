@@ -69,7 +69,7 @@ namespace CafeManagement.GUI
                 SanPhamId = int.Parse(gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[0]).ToString());
                 txtTen.Text = gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[1]).ToString();
                 txtGia.Text = gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[2]).ToString();
-                cbMenu.EditValue =(gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[4])).ToString();
+                cbMenu.Text =danhMuc.LayTenDanhMucTheoId((int)gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[4])).ToString();
             }
         }
 
@@ -95,7 +95,7 @@ namespace CafeManagement.GUI
                     var tenMon = txtTen.Text;
                     var donGia = Convert.ToDouble(txtGia.Text);
                     var DanhMucID = Convert.ToInt32(cbMenu.EditValue);
-                    if (sanPham.Add_Mon(tenMon, caPheContext, donGia, DanhMucID))
+                    if (sanPham.Add_Mon(tenMon, donGia, DanhMucID))
                     {
                         MessageBox.Show("Đã thêm sản phẩm!");
                         Load_Menu();
@@ -129,7 +129,7 @@ namespace CafeManagement.GUI
                     string tenMon = txtTen.Text;
                    double donGia = Convert.ToDouble(txtGia.Text);
                    int LoaiSanPham = (int)cbMenu.EditValue;
-                    if (sanPham.Update_Mon(SanPhamId,tenMon, caPheContext, donGia,LoaiSanPham))
+                    if (sanPham.Update_Mon(SanPhamId,tenMon, donGia,LoaiSanPham))
                     {
                         MessageBox.Show("Đã sửa sản phẩm");
                         Load_Menu();
@@ -155,7 +155,7 @@ namespace CafeManagement.GUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     var tenMon = txtTen.Text;
-                    if (sanPham.Delete_Mon(tenMon, context))
+                    if (sanPham.Delete_Mon(tenMon))
                     {
                         MessageBox.Show("Đã xóa sản phẩm");
                         Load_Menu();

@@ -93,5 +93,11 @@ namespace CafeManagement.LinQ
                 return true;
             return false;
         }
+        public string LayTenDanhMucTheoId(int SanPhamId)
+        {
+            return (from item in caPheContext.LoaiSanPhams
+                    where item.LoaiSanPhamId.Equals(SanPhamId)
+                    select item.TenLoaiSanPham).SingleOrDefault();
+        }
     }
 }

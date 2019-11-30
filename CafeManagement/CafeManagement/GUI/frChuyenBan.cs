@@ -175,7 +175,7 @@ namespace CafeManagement.GUI
         private void gcBill1_Click(object sender, EventArgs e)
         {
             string TenSanPham = gvBill1.GetRowCellValue(gvBill1.FocusedRowHandle, gvBill1.Columns[1]).ToString();
-            SanPhamID = query_SanPham.LayIdSanPham(TenSanPham,context);
+            SanPhamID = query_SanPham.LayIdSanPham(TenSanPham);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

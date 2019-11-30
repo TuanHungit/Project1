@@ -208,10 +208,10 @@ namespace CafeManagement.GUI
         private void listviewMenu_Click(object sender, EventArgs e)
         {
             listviewMenu.FullRowSelect = true;
-            SanphamID = sanPham.LayIdSanPham(listviewMenu.SelectedItems[0].ToString(), Global.context);
+            SanphamID = sanPham.LayIdSanPham(listviewMenu.SelectedItems[0].ToString());
             foreach (ListViewItem items in listviewMenu.SelectedItems)
             {
-                SanphamID = sanPham.LayIdSanPham(items.SubItems[0].Text, Global.context);
+                SanphamID = sanPham.LayIdSanPham(items.SubItems[0].Text);
             }
         }
  
@@ -220,7 +220,7 @@ namespace CafeManagement.GUI
             listviewMenu.Items.Clear();
 
             string TenSanPham = (string)txtTenSanPham.EditValue;
-            List<SanPham> sanPhams = sanPham.TimSanPham(TenSanPham, Global.context);
+            List<SanPham> sanPhams = sanPham.TimSanPham(TenSanPham);
             if (txtTenSanPham.EditValue == null)
             {
                 XtraMessageBox.Show("Bạn chưa nhập tên sản phẩm!");

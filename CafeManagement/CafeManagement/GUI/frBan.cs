@@ -61,6 +61,25 @@ namespace CafeManagement
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (txtBanID.EditValue != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bàn này chứ!", "Xóa bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var Ban = new Query_Ban();
+                int soBan = Convert.ToInt32(txtBanID.EditValue);
+
+                if (Ban.xoaBan(soBan))
+                {
+                    XtraMessageBox.Show("Đã xóa bàn!");
+
+                    Load_Ban();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Bàn không tồn tại!");
+                }
+
+            }
+            else MessageBox.Show("Bạn chưa nhập Số bàn!", "Xóa bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -73,25 +92,7 @@ namespace CafeManagement
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
 
-            if (txtBanID.EditValue != null)
-            {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bàn này chứ!", "Xóa bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                var Ban = new Query_Ban();
-                int soBan = Convert.ToInt32(txtBanID.EditValue);
-            
-                    if (Ban.xoaBan( soBan))
-                    {
-                        XtraMessageBox.Show("Đã xóa bàn!");
-
-                        Load_Ban();
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Bàn không tồn tại!");
-                   }
-                
-            }
-            else MessageBox.Show("Bạn chưa nhập Số bàn!", "Xóa bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+         
         }
         private void Load_Ban()
         {

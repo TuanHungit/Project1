@@ -8,7 +8,7 @@ namespace CafeManagement.LinQ
 {
     class Query_HangHoa
     {
-        CaPheContext caPheContext = new CaPheContext();
+        CaPheContext caPheContext = Global.context;
         HangHoa hangHoa = new HangHoa();
         Query_PhieuNhap phieuNhap = new Query_PhieuNhap();
         Query_PhieuXuat phieuXuat = new Query_PhieuXuat();
@@ -43,7 +43,7 @@ namespace CafeManagement.LinQ
         {
             var query = (from item in caPheContext.HangHoas
                          where item.TenHangHoa.Contains(TenHangHoa)
-                         select item.HangHoaId).SingleOrDefault();
+                         select item.HangHoaId).FirstOrDefault();
             return query;
         }
         public bool XoaHangHoa(int HangHoaId)
