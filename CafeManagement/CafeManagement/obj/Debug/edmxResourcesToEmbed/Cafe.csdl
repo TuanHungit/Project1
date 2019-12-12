@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CafeManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ban">
+    <Key>
+      <PropertyRef Name="BanId" />
+    </Key>
+    <Property Name="BanId" Type="Int32" Nullable="false" />
+    <Property Name="TinhTrang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_dbo_HoaDons_dbo_Bans_BanID" FromRole="Bans" ToRole="HoaDons" />
+  </EntityType>
+  <EntityType Name="ChiTietHoaDon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoaDonID" Type="Int32" Nullable="false" />
+    <Property Name="SanPhamID" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_dbo_ChiTietHoaDons_dbo_HoaDons_HoaDonID" FromRole="ChiTietHoaDons" ToRole="HoaDons" />
+    <NavigationProperty Name="SanPham" Relationship="Self.FK_dbo_ChiTietHoaDons_dbo_SanPhams_SanPhamID" FromRole="ChiTietHoaDons" ToRole="SanPhams" />
+  </EntityType>
+  <EntityType Name="ChiTietPhieuNhap">
+    <Key>
+      <PropertyRef Name="ChiTietPhieuNhapId" />
+    </Key>
+    <Property Name="ChiTietPhieuNhapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhieuNhapId" Type="Int32" Nullable="false" />
+    <Property Name="HangHoaID" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongDat" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HangHoa" Relationship="Self.FK_dbo_ChiTietPhieuNhaps_dbo_HangHoas_HangHoaID" FromRole="ChiTietPhieuNhaps" ToRole="HangHoas" />
+    <NavigationProperty Name="PhieuNhap" Relationship="Self.FK_dbo_ChiTietPhieuNhaps_dbo_PhieuNhaps_PhieuNhapId" FromRole="ChiTietPhieuNhaps" ToRole="PhieuNhaps" />
+  </EntityType>
+  <EntityType Name="ChiTietPhieuXuat">
+    <Key>
+      <PropertyRef Name="ChiTietPhieuXuatId" />
+    </Key>
+    <Property Name="ChiTietPhieuXuatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhieuXuatId" Type="Int32" Nullable="false" />
+    <Property Name="HangHoaId" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongXuat" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HangHoa" Relationship="Self.FK_dbo_ChiTietPhieuXuats_dbo_HangHoas_HangHoaId" FromRole="ChiTietPhieuXuats" ToRole="HangHoas" />
+    <NavigationProperty Name="PhieuXuat" Relationship="Self.FK_dbo_ChiTietPhieuXuats_dbo_PhieuXuats_PhieuXuatId" FromRole="ChiTietPhieuXuats" ToRole="PhieuXuats" />
+  </EntityType>
+  <EntityType Name="HangHoa">
+    <Key>
+      <PropertyRef Name="HangHoaId" />
+    </Key>
+    <Property Name="HangHoaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHangHoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DonViTinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Double" Nullable="false" />
+    <Property Name="SoLuongTon" Type="Int32" Nullable="false" />
+    <Property Name="TinhTrang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChiTietPhieuNhaps" Relationship="Self.FK_dbo_ChiTietPhieuNhaps_dbo_HangHoas_HangHoaID" FromRole="HangHoas" ToRole="ChiTietPhieuNhaps" />
+    <NavigationProperty Name="ChiTietPhieuXuats" Relationship="Self.FK_dbo_ChiTietPhieuXuats_dbo_HangHoas_HangHoaId" FromRole="HangHoas" ToRole="ChiTietPhieuXuats" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="HoaDonId" />
+    </Key>
+    <Property Name="HoaDonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NhanVienId" Type="Int32" Nullable="false" />
+    <Property Name="BanID" Type="Int32" Nullable="false" />
+    <Property Name="TongGia" Type="Double" Nullable="false" />
+    <Property Name="TinhTrang" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ban" Relationship="Self.FK_dbo_HoaDons_dbo_Bans_BanID" FromRole="HoaDons" ToRole="Bans" />
+    <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_dbo_ChiTietHoaDons_dbo_HoaDons_HoaDonID" FromRole="HoaDons" ToRole="ChiTietHoaDons" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_dbo_HoaDons_dbo_NhanViens_NhanVienId" FromRole="HoaDons" ToRole="NhanViens" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="LoaiSanPhamId" />
+    </Key>
+    <Property Name="LoaiSanPhamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiSanPham" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPhams" Relationship="Self.FK_dbo_SanPhams_dbo_LoaiSanPhams_LoaiSanPhamId" FromRole="LoaiSanPhams" ToRole="SanPhams" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="NhaCungCapId" />
+    </Key>
+    <Property Name="NhaCungCapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhaCungCap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhieuNhaps" Relationship="Self.FK_dbo_PhieuNhaps_dbo_NhaCungCaps_NhaCungCapId" FromRole="NhaCungCaps" ToRole="PhieuNhaps" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="NhanVienId" />
+    </Key>
+    <Property Name="NhanVienId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTenNV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QueQuan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ChucVu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SDT_NV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayVaoLam" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_dbo_HoaDons_dbo_NhanViens_NhanVienId" FromRole="NhanViens" ToRole="HoaDons" />
+    <NavigationProperty Name="PhieuNhaps" Relationship="Self.FK_dbo_PhieuNhaps_dbo_NhanViens_NhanVienId" FromRole="NhanViens" ToRole="PhieuNhaps" />
+    <NavigationProperty Name="PhieuXuats" Relationship="Self.FK_dbo_PhieuXuats_dbo_NhanViens_NhanVienId" FromRole="NhanViens" ToRole="PhieuXuats" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_dbo_TaiKhoans_dbo_NhanViens_NhanVienID" FromRole="NhanViens" ToRole="TaiKhoans" />
+  </EntityType>
+  <EntityType Name="PhieuNhap">
+    <Key>
+      <PropertyRef Name="PhieuNhapId" />
+    </Key>
+    <Property Name="PhieuNhapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NhaCungCapId" Type="Int32" Nullable="false" />
+    <Property Name="NhanVienId" Type="Int32" Nullable="false" />
+    <Property Name="NgayDatHang" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ChiTietPhieuNhaps" Relationship="Self.FK_dbo_ChiTietPhieuNhaps_dbo_PhieuNhaps_PhieuNhapId" FromRole="PhieuNhaps" ToRole="ChiTietPhieuNhaps" />
+    <NavigationProperty Name="NhaCungCap" Relationship="Self.FK_dbo_PhieuNhaps_dbo_NhaCungCaps_NhaCungCapId" FromRole="PhieuNhaps" ToRole="NhaCungCaps" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_dbo_PhieuNhaps_dbo_NhanViens_NhanVienId" FromRole="PhieuNhaps" ToRole="NhanViens" />
+  </EntityType>
+  <EntityType Name="PhieuXuat">
+    <Key>
+      <PropertyRef Name="PhieuXuatId" />
+    </Key>
+    <Property Name="PhieuXuatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NhanVienId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChiTietPhieuXuats" Relationship="Self.FK_dbo_ChiTietPhieuXuats_dbo_PhieuXuats_PhieuXuatId" FromRole="PhieuXuats" ToRole="ChiTietPhieuXuats" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_dbo_PhieuXuats_dbo_NhanViens_NhanVienId" FromRole="PhieuXuats" ToRole="NhanViens" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="SanPhamId" />
+    </Key>
+    <Property Name="SanPhamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSanPham" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Double" Nullable="false" />
+    <Property Name="LoaiSanPhamId" Type="Int32" Nullable="false" />
+    <Property Name="TinhTrang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK_dbo_ChiTietHoaDons_dbo_SanPhams_SanPhamID" FromRole="SanPhams" ToRole="ChiTietHoaDons" />
+    <NavigationProperty Name="LoaiSanPham" Relationship="Self.FK_dbo_SanPhams_dbo_LoaiSanPhams_LoaiSanPhamId" FromRole="SanPhams" ToRole="LoaiSanPhams" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="NhanVienID" />
+    </Key>
+    <Property Name="NhanVienID" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoaiTaiKhoan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_dbo_TaiKhoans_dbo_NhanViens_NhanVienID" FromRole="TaiKhoans" ToRole="NhanViens" />
+  </EntityType>
+  <Association Name="FK_dbo_HoaDons_dbo_Bans_BanID">
+    <End Role="Bans" Type="Self.Ban" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HoaDons" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bans">
+        <PropertyRef Name="BanId" />
+      </Principal>
+      <Dependent Role="HoaDons">
+        <PropertyRef Name="BanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietHoaDons_dbo_HoaDons_HoaDonID">
+    <End Role="HoaDons" Type="Self.HoaDon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietHoaDons" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDons">
+        <PropertyRef Name="HoaDonId" />
+      </Principal>
+      <Dependent Role="ChiTietHoaDons">
+        <PropertyRef Name="HoaDonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietHoaDons_dbo_SanPhams_SanPhamID">
+    <End Role="SanPhams" Type="Self.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietHoaDons" Type="Self.ChiTietHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPhams">
+        <PropertyRef Name="SanPhamId" />
+      </Principal>
+      <Dependent Role="ChiTietHoaDons">
+        <PropertyRef Name="SanPhamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietPhieuNhaps_dbo_HangHoas_HangHoaID">
+    <End Role="HangHoas" Type="Self.HangHoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietPhieuNhaps" Type="Self.ChiTietPhieuNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoas">
+        <PropertyRef Name="HangHoaId" />
+      </Principal>
+      <Dependent Role="ChiTietPhieuNhaps">
+        <PropertyRef Name="HangHoaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietPhieuNhaps_dbo_PhieuNhaps_PhieuNhapId">
+    <End Role="PhieuNhaps" Type="Self.PhieuNhap" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietPhieuNhaps" Type="Self.ChiTietPhieuNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuNhaps">
+        <PropertyRef Name="PhieuNhapId" />
+      </Principal>
+      <Dependent Role="ChiTietPhieuNhaps">
+        <PropertyRef Name="PhieuNhapId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietPhieuXuats_dbo_HangHoas_HangHoaId">
+    <End Role="HangHoas" Type="Self.HangHoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietPhieuXuats" Type="Self.ChiTietPhieuXuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoas">
+        <PropertyRef Name="HangHoaId" />
+      </Principal>
+      <Dependent Role="ChiTietPhieuXuats">
+        <PropertyRef Name="HangHoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietPhieuXuats_dbo_PhieuXuats_PhieuXuatId">
+    <End Role="PhieuXuats" Type="Self.PhieuXuat" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietPhieuXuats" Type="Self.ChiTietPhieuXuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuXuats">
+        <PropertyRef Name="PhieuXuatId" />
+      </Principal>
+      <Dependent Role="ChiTietPhieuXuats">
+        <PropertyRef Name="PhieuXuatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_HoaDons_dbo_NhanViens_NhanVienId">
+    <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HoaDons" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanViens">
+        <PropertyRef Name="NhanVienId" />
+      </Principal>
+      <Dependent Role="HoaDons">
+        <PropertyRef Name="NhanVienId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SanPhams_dbo_LoaiSanPhams_LoaiSanPhamId">
+    <End Role="LoaiSanPhams" Type="Self.LoaiSanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanPhams" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSanPhams">
+        <PropertyRef Name="LoaiSanPhamId" />
+      </Principal>
+      <Dependent Role="SanPhams">
+        <PropertyRef Name="LoaiSanPhamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PhieuNhaps_dbo_NhaCungCaps_NhaCungCapId">
+    <End Role="NhaCungCaps" Type="Self.NhaCungCap" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuNhaps" Type="Self.PhieuNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCaps">
+        <PropertyRef Name="NhaCungCapId" />
+      </Principal>
+      <Dependent Role="PhieuNhaps">
+        <PropertyRef Name="NhaCungCapId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PhieuNhaps_dbo_NhanViens_NhanVienId">
+    <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuNhaps" Type="Self.PhieuNhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanViens">
+        <PropertyRef Name="NhanVienId" />
+      </Principal>
+      <Dependent Role="PhieuNhaps">
+        <PropertyRef Name="NhanVienId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PhieuXuats_dbo_NhanViens_NhanVienId">
+    <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhieuXuats" Type="Self.PhieuXuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanViens">
+        <PropertyRef Name="NhanVienId" />
+      </Principal>
+      <Dependent Role="PhieuXuats">
+        <PropertyRef Name="NhanVienId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TaiKhoans_dbo_NhanViens_NhanVienID">
+    <End Role="NhanViens" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="TaiKhoans" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="NhanViens">
+        <PropertyRef Name="NhanVienId" />
+      </Principal>
+      <Dependent Role="TaiKhoans">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CafeManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Bans" EntityType="Self.Ban" />
+    <EntitySet Name="ChiTietHoaDons" EntityType="Self.ChiTietHoaDon" />
+    <EntitySet Name="ChiTietPhieuNhaps" EntityType="Self.ChiTietPhieuNhap" />
+    <EntitySet Name="ChiTietPhieuXuats" EntityType="Self.ChiTietPhieuXuat" />
+    <EntitySet Name="HangHoas" EntityType="Self.HangHoa" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="PhieuNhaps" EntityType="Self.PhieuNhap" />
+    <EntitySet Name="PhieuXuats" EntityType="Self.PhieuXuat" />
+    <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <AssociationSet Name="FK_dbo_HoaDons_dbo_Bans_BanID" Association="Self.FK_dbo_HoaDons_dbo_Bans_BanID">
+      <End Role="Bans" EntitySet="Bans" />
+      <End Role="HoaDons" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietHoaDons_dbo_HoaDons_HoaDonID" Association="Self.FK_dbo_ChiTietHoaDons_dbo_HoaDons_HoaDonID">
+      <End Role="HoaDons" EntitySet="HoaDons" />
+      <End Role="ChiTietHoaDons" EntitySet="ChiTietHoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietHoaDons_dbo_SanPhams_SanPhamID" Association="Self.FK_dbo_ChiTietHoaDons_dbo_SanPhams_SanPhamID">
+      <End Role="SanPhams" EntitySet="SanPhams" />
+      <End Role="ChiTietHoaDons" EntitySet="ChiTietHoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietPhieuNhaps_dbo_HangHoas_HangHoaID" Association="Self.FK_dbo_ChiTietPhieuNhaps_dbo_HangHoas_HangHoaID">
+      <End Role="HangHoas" EntitySet="HangHoas" />
+      <End Role="ChiTietPhieuNhaps" EntitySet="ChiTietPhieuNhaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietPhieuNhaps_dbo_PhieuNhaps_PhieuNhapId" Association="Self.FK_dbo_ChiTietPhieuNhaps_dbo_PhieuNhaps_PhieuNhapId">
+      <End Role="PhieuNhaps" EntitySet="PhieuNhaps" />
+      <End Role="ChiTietPhieuNhaps" EntitySet="ChiTietPhieuNhaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietPhieuXuats_dbo_HangHoas_HangHoaId" Association="Self.FK_dbo_ChiTietPhieuXuats_dbo_HangHoas_HangHoaId">
+      <End Role="HangHoas" EntitySet="HangHoas" />
+      <End Role="ChiTietPhieuXuats" EntitySet="ChiTietPhieuXuats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietPhieuXuats_dbo_PhieuXuats_PhieuXuatId" Association="Self.FK_dbo_ChiTietPhieuXuats_dbo_PhieuXuats_PhieuXuatId">
+      <End Role="PhieuXuats" EntitySet="PhieuXuats" />
+      <End Role="ChiTietPhieuXuats" EntitySet="ChiTietPhieuXuats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_HoaDons_dbo_NhanViens_NhanVienId" Association="Self.FK_dbo_HoaDons_dbo_NhanViens_NhanVienId">
+      <End Role="NhanViens" EntitySet="NhanViens" />
+      <End Role="HoaDons" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SanPhams_dbo_LoaiSanPhams_LoaiSanPhamId" Association="Self.FK_dbo_SanPhams_dbo_LoaiSanPhams_LoaiSanPhamId">
+      <End Role="LoaiSanPhams" EntitySet="LoaiSanPhams" />
+      <End Role="SanPhams" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PhieuNhaps_dbo_NhaCungCaps_NhaCungCapId" Association="Self.FK_dbo_PhieuNhaps_dbo_NhaCungCaps_NhaCungCapId">
+      <End Role="NhaCungCaps" EntitySet="NhaCungCaps" />
+      <End Role="PhieuNhaps" EntitySet="PhieuNhaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PhieuNhaps_dbo_NhanViens_NhanVienId" Association="Self.FK_dbo_PhieuNhaps_dbo_NhanViens_NhanVienId">
+      <End Role="NhanViens" EntitySet="NhanViens" />
+      <End Role="PhieuNhaps" EntitySet="PhieuNhaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PhieuXuats_dbo_NhanViens_NhanVienId" Association="Self.FK_dbo_PhieuXuats_dbo_NhanViens_NhanVienId">
+      <End Role="NhanViens" EntitySet="NhanViens" />
+      <End Role="PhieuXuats" EntitySet="PhieuXuats" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TaiKhoans_dbo_NhanViens_NhanVienID" Association="Self.FK_dbo_TaiKhoans_dbo_NhanViens_NhanVienID">
+      <End Role="NhanViens" EntitySet="NhanViens" />
+      <End Role="TaiKhoans" EntitySet="TaiKhoans" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

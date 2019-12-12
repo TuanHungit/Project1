@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CafeManagementModelStoreContainer" CdmEntityContainer="CafeManagementEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="CafeManagementModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bans">
+      <EntityTypeMapping TypeName="CafeManagementModel.Ban">
+        <MappingFragment StoreEntitySet="Bans">
+          <ScalarProperty Name="BanId" ColumnName="BanId" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietHoaDons">
+      <EntityTypeMapping TypeName="CafeManagementModel.ChiTietHoaDon">
+        <MappingFragment StoreEntitySet="ChiTietHoaDons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HoaDonID" ColumnName="HoaDonID" />
+          <ScalarProperty Name="SanPhamID" ColumnName="SanPhamID" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietPhieuNhaps">
+      <EntityTypeMapping TypeName="CafeManagementModel.ChiTietPhieuNhap">
+        <MappingFragment StoreEntitySet="ChiTietPhieuNhaps">
+          <ScalarProperty Name="ChiTietPhieuNhapId" ColumnName="ChiTietPhieuNhapId" />
+          <ScalarProperty Name="PhieuNhapId" ColumnName="PhieuNhapId" />
+          <ScalarProperty Name="HangHoaID" ColumnName="HangHoaID" />
+          <ScalarProperty Name="SoLuongDat" ColumnName="SoLuongDat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietPhieuXuats">
+      <EntityTypeMapping TypeName="CafeManagementModel.ChiTietPhieuXuat">
+        <MappingFragment StoreEntitySet="ChiTietPhieuXuats">
+          <ScalarProperty Name="ChiTietPhieuXuatId" ColumnName="ChiTietPhieuXuatId" />
+          <ScalarProperty Name="PhieuXuatId" ColumnName="PhieuXuatId" />
+          <ScalarProperty Name="HangHoaId" ColumnName="HangHoaId" />
+          <ScalarProperty Name="SoLuongXuat" ColumnName="SoLuongXuat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HangHoas">
+      <EntityTypeMapping TypeName="CafeManagementModel.HangHoa">
+        <MappingFragment StoreEntitySet="HangHoas">
+          <ScalarProperty Name="HangHoaId" ColumnName="HangHoaId" />
+          <ScalarProperty Name="TenHangHoa" ColumnName="TenHangHoa" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="SoLuongTon" ColumnName="SoLuongTon" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="CafeManagementModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDons">
+          <ScalarProperty Name="HoaDonId" ColumnName="HoaDonId" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NhanVienId" ColumnName="NhanVienId" />
+          <ScalarProperty Name="BanID" ColumnName="BanID" />
+          <ScalarProperty Name="TongGia" ColumnName="TongGia" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSanPhams">
+      <EntityTypeMapping TypeName="CafeManagementModel.LoaiSanPham">
+        <MappingFragment StoreEntitySet="LoaiSanPhams">
+          <ScalarProperty Name="LoaiSanPhamId" ColumnName="LoaiSanPhamId" />
+          <ScalarProperty Name="TenLoaiSanPham" ColumnName="TenLoaiSanPham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCaps">
+      <EntityTypeMapping TypeName="CafeManagementModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCaps">
+          <ScalarProperty Name="NhaCungCapId" ColumnName="NhaCungCapId" />
+          <ScalarProperty Name="TenNhaCungCap" ColumnName="TenNhaCungCap" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="CafeManagementModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanViens">
+          <ScalarProperty Name="NhanVienId" ColumnName="NhanVienId" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+          <ScalarProperty Name="SDT_NV" ColumnName="SDT_NV" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuNhaps">
+      <EntityTypeMapping TypeName="CafeManagementModel.PhieuNhap">
+        <MappingFragment StoreEntitySet="PhieuNhaps">
+          <ScalarProperty Name="PhieuNhapId" ColumnName="PhieuNhapId" />
+          <ScalarProperty Name="NhaCungCapId" ColumnName="NhaCungCapId" />
+          <ScalarProperty Name="NhanVienId" ColumnName="NhanVienId" />
+          <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuXuats">
+      <EntityTypeMapping TypeName="CafeManagementModel.PhieuXuat">
+        <MappingFragment StoreEntitySet="PhieuXuats">
+          <ScalarProperty Name="PhieuXuatId" ColumnName="PhieuXuatId" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="NhanVienId" ColumnName="NhanVienId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="CafeManagementModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPhams">
+          <ScalarProperty Name="SanPhamId" ColumnName="SanPhamId" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="LoaiSanPhamId" ColumnName="LoaiSanPhamId" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="CafeManagementModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoans">
+          <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="LoaiTaiKhoan" ColumnName="LoaiTaiKhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
