@@ -32,12 +32,10 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
-            this.txtNCC = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtSoLuongTon = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,6 +45,7 @@
             this.gvKho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -59,14 +58,13 @@
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelControl1.Controls.Add(this.btnReset);
             this.panelControl1.Controls.Add(this.btnThoat);
             this.panelControl1.Controls.Add(this.btnXoa);
-            this.panelControl1.Controls.Add(this.txtNCC);
             this.panelControl1.Controls.Add(this.txtDonGia);
             this.panelControl1.Controls.Add(this.txtSoLuongTon);
             this.panelControl1.Controls.Add(this.txtDonViTinh);
             this.panelControl1.Controls.Add(this.txtTenSanPham);
-            this.panelControl1.Controls.Add(this.label7);
             this.panelControl1.Controls.Add(this.label6);
             this.panelControl1.Controls.Add(this.label5);
             this.panelControl1.Controls.Add(this.label4);
@@ -80,7 +78,7 @@
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(159, 233);
+            this.btnThoat.Location = new System.Drawing.Point(80, 234);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 43);
             this.btnThoat.TabIndex = 16;
@@ -90,19 +88,12 @@
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(17, 233);
+            this.btnXoa.Location = new System.Drawing.Point(11, 185);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(129, 43);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa hàng hóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // txtNCC
-            // 
-            this.txtNCC.Location = new System.Drawing.Point(140, 186);
-            this.txtNCC.Name = "txtNCC";
-            this.txtNCC.Size = new System.Drawing.Size(123, 23);
-            this.txtNCC.TabIndex = 14;
             // 
             // txtDonGia
             // 
@@ -131,16 +122,6 @@
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.Size = new System.Drawing.Size(123, 23);
             this.txtTenSanPham.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label7.Location = new System.Drawing.Point(13, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 21);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Nhà cung cấp: ";
             // 
             // label6
             // 
@@ -239,6 +220,17 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Danh sách hàng hóa trong kho";
             // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReset.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnReset.Location = new System.Drawing.Point(145, 185);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(118, 43);
+            this.btnReset.TabIndex = 17;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -270,12 +262,10 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnThoat;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
-        private System.Windows.Forms.TextBox txtNCC;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtSoLuongTon;
         private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtTenSanPham;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -283,5 +273,6 @@
         private DevExpress.XtraGrid.GridControl gcKho;
         private DevExpress.XtraGrid.Views.Grid.GridView gvKho;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton btnReset;
     }
 }

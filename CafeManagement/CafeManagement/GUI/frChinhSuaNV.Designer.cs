@@ -225,7 +225,7 @@
             this.Controls.Add(this.txtChucVu);
             this.Controls.Add(this.labelControl6);
             this.Name = "frChinhSuaNV";
-            this.Text = "frChinhSuaNV";
+            this.Text = "Cập nhật thông tin";
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQueQuan.Properties)).EndInit();

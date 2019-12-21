@@ -45,7 +45,7 @@ namespace CafeManagement
             OPF.Filter = "Select Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if ((OPF.ShowDialog() == DialogResult.OK))
             {
-               picImage.Image = Image.FromFile(OPF.FileName);
+               //picImage.Image = Image.FromFile(OPF.FileName);
             }
         }
         byte[] ConvertImageToBinary(Image img)
@@ -105,7 +105,7 @@ namespace CafeManagement
         {
             pnlTaiKhoan.Enabled = false;
             btnSuaTK.Enabled = false;
-            btnUpload.Enabled = false;
+          //  btnUpload.Enabled = false;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             var nhanViens = (from nhanvien in context.NhanViens

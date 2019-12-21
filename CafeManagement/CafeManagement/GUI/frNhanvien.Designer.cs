@@ -30,14 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frNhanvien));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnUpload = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.picImage = new DevExpress.XtraEditors.PictureEdit();
             this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.lbNgayVaoLam = new System.Windows.Forms.Label();
@@ -69,7 +66,6 @@
             this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQueQuan.Properties)).BeginInit();
@@ -90,14 +86,11 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.label6);
-            this.panelControl1.Controls.Add(this.btnUpload);
             this.panelControl1.Controls.Add(this.label5);
             this.panelControl1.Controls.Add(this.label4);
             this.panelControl1.Controls.Add(this.label3);
             this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Controls.Add(this.picImage);
             this.panelControl1.Controls.Add(this.dtpNgayVaoLam);
             this.panelControl1.Controls.Add(this.dtpNgaySinh);
             this.panelControl1.Controls.Add(this.lbNgayVaoLam);
@@ -109,27 +102,8 @@
             this.panelControl1.Controls.Add(this.txtChucVu);
             this.panelControl1.Location = new System.Drawing.Point(12, 18);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(319, 385);
+            this.panelControl1.Size = new System.Drawing.Size(319, 225);
             this.panelControl1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 211);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 17);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Ảnh:";
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpload.ImageOptions.Image")));
-            this.btnUpload.Location = new System.Drawing.Point(157, 343);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(97, 37);
-            this.btnUpload.TabIndex = 6;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // label5
             // 
@@ -175,15 +149,6 @@
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 23;
             this.label1.Text = "Họ tên:";
-            // 
-            // picImage
-            // 
-            this.picImage.Location = new System.Drawing.Point(110, 211);
-            this.picImage.Name = "picImage";
-            this.picImage.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.picImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.picImage.Size = new System.Drawing.Size(187, 126);
-            this.picImage.TabIndex = 22;
             // 
             // dtpNgayVaoLam
             // 
@@ -265,7 +230,7 @@
             this.panelControl2.Controls.Add(this.gcNhanVien);
             this.panelControl2.Location = new System.Drawing.Point(452, 20);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1066, 509);
+            this.panelControl2.Size = new System.Drawing.Size(1048, 533);
             this.panelControl2.TabIndex = 1;
             // 
             // gcNhanVien
@@ -277,7 +242,7 @@
             this.gcNhanVien.Location = new System.Drawing.Point(8, 11);
             this.gcNhanVien.MainView = this.gvNhanVien;
             this.gcNhanVien.Name = "gcNhanVien";
-            this.gcNhanVien.Size = new System.Drawing.Size(1100, 493);
+            this.gcNhanVien.Size = new System.Drawing.Size(1035, 515);
             this.gcNhanVien.TabIndex = 0;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNhanVien});
@@ -300,9 +265,9 @@
             this.pnlTaiKhoan.Controls.Add(this.txtTenTaiKhoan);
             this.pnlTaiKhoan.Controls.Add(this.label12);
             this.pnlTaiKhoan.Controls.Add(this.txtMatKhau);
-            this.pnlTaiKhoan.Location = new System.Drawing.Point(12, 417);
+            this.pnlTaiKhoan.Location = new System.Drawing.Point(12, 257);
             this.pnlTaiKhoan.Name = "pnlTaiKhoan";
-            this.pnlTaiKhoan.Size = new System.Drawing.Size(309, 112);
+            this.pnlTaiKhoan.Size = new System.Drawing.Size(309, 296);
             this.pnlTaiKhoan.TabIndex = 2;
             // 
             // label10
@@ -405,7 +370,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 406);
+            this.label8.Location = new System.Drawing.Point(20, 246);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 17);
             this.label8.TabIndex = 25;
@@ -425,9 +390,9 @@
             // 
             // btnSuaTK
             // 
-            this.btnSuaTK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSuaTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSuaTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaTK.ImageOptions.Image")));
-            this.btnSuaTK.Location = new System.Drawing.Point(6, 405);
+            this.btnSuaTK.Location = new System.Drawing.Point(7, 242);
             this.btnSuaTK.Name = "btnSuaTK";
             this.btnSuaTK.Size = new System.Drawing.Size(94, 48);
             this.btnSuaTK.TabIndex = 29;
@@ -436,9 +401,9 @@
             // 
             // btnThemTK
             // 
-            this.btnThemTK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnThemTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThemTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemTK.ImageOptions.Image")));
-            this.btnThemTK.Location = new System.Drawing.Point(6, 455);
+            this.btnThemTK.Location = new System.Drawing.Point(7, 292);
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.Size = new System.Drawing.Size(94, 48);
             this.btnThemTK.TabIndex = 27;
@@ -456,7 +421,7 @@
             this.panelControl3.Controls.Add(this.btnSua);
             this.panelControl3.Location = new System.Drawing.Point(337, 19);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(106, 510);
+            this.panelControl3.Size = new System.Drawing.Size(106, 534);
             this.panelControl3.TabIndex = 30;
             // 
             // label13
@@ -474,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1529, 536);
+            this.ClientSize = new System.Drawing.Size(1511, 560);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panelControl3);
@@ -489,7 +454,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQueQuan.Properties)).EndInit();
@@ -526,7 +490,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label lbNgayVaoLam;
         private System.Windows.Forms.Label lbNgaySinh;
-        private DevExpress.XtraEditors.PictureEdit picImage;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -534,11 +497,9 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit txtCMND;
         private DevExpress.XtraEditors.ComboBoxEdit txtChucVu;
-        private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnSua;
-        private DevExpress.XtraEditors.SimpleButton btnUpload;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

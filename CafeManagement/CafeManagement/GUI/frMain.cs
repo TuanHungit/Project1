@@ -120,7 +120,7 @@ namespace CafeManagement.GUI
         {
             BonusSkins.Register();
             DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(ribbonGalleryBarItem1, true);
-            defaultLookAndFeel.LookAndFeel.SetSkinStyle("Glass Oceans");
+            defaultLookAndFeel.LookAndFeel.SetSkinStyle("Foggy");
         }
 
         private void btnViewAccount_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

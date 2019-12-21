@@ -71,18 +71,18 @@ namespace CafeManagement.GUI
                     }
                     else
                     {
+                      
+
                         if (phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap) == 0)
                         {
                             phieuxuat.ThemPhieuXuat(Global.NhanVienID, NgayLap);
                         }
                         if (!phieuxuat.KiemTraHangHoaTheoNgay(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), NgayLap))
                         {
-                            hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-
                             chitietphieuxuat.ThemChiTietPhieuXuat(phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap), hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong);
                         }
                         else chitietphieuxuat.CapNhatChiTietPhieuXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-                        hanghoa.CapNhatSoLuongHangHoaKhiXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
+                        hanghoa.CapNhatHangHoa(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
                         Load_gvXuatKho(DateTime.Now);
                     }
                 }
@@ -162,6 +162,21 @@ namespace CafeManagement.GUI
             txtSoLuongXuat.Text = "";
             cbTenHangHoa.Properties.DataSource = null;
             Load_CbHangHoa();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            btnLuuLai.Enabled = true;
+            if (dateEditTimKiem.Text == "")
+            {
+                XtraMessageBox.Show("Xin nhập thêm thông tin!");
+                return;
+            }
+            DateTime dateTime = DateTime.Parse(dateEditTimKiem.Text);
+            if (Convert.ToDateTime(dateEditTimKiem.Text).Date != DateTime.Now.Date)
+                btnLuuLai.Enabled = false;
+
+            Load_gvXuatKho(dateTime);
         }
     }
 }

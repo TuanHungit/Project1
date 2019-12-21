@@ -257,6 +257,10 @@ namespace CafeManagement.GUI
             }
         }
 
-       
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Load_Table();
+            Load_cbDanhMuc();
+        }
     }
 }

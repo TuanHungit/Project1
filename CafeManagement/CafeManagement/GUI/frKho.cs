@@ -25,7 +25,7 @@ namespace CafeManagement.GUI
         {
             txtTenSanPham.Enabled = false;
             txtSoLuongTon.Enabled = false;
-            txtNCC.Enabled = false;
+
             txtDonGia.Enabled = false;
             txtDonViTinh.Enabled = false;
             //load_btn();
@@ -94,6 +94,12 @@ namespace CafeManagement.GUI
             txtSoLuongTon.Text = "";
             txtDonGia.Text = "";
             txtDonViTinh.Text = "";
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            load_btn();
+            Load_gvKho();
         }
     }
 }

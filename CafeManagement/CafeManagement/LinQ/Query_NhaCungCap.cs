@@ -13,7 +13,7 @@ namespace CafeManagement.LinQ
         public bool KiemTraTonTai(string TenNCC)
         {
             var query = (from item in caPheContext.NhaCungCaps
-                         where item.TenNhaCungCap.Contains(TenNCC)
+                         where item.TenNhaCungCap ==(TenNCC)
                          select item).ToList();
             if (query.Count > 0)
                 return false;
@@ -75,7 +75,7 @@ namespace CafeManagement.LinQ
         {
             var query = (from item in caPheContext.NhaCungCaps
                          where item.TenNhaCungCap.Contains(TenNhaCungCap)
-                         select item.NhaCungCapId).SingleOrDefault();
+                         select item.NhaCungCapId).FirstOrDefault();
             return query;
         }
     }

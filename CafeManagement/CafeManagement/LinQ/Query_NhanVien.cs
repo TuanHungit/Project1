@@ -110,7 +110,7 @@ namespace CafeManagement.LinQ
                     NgayVaoLam = ngayvaolam,
                     Picture = image
                 };
-                context.Entry(nhanvien).State = EntityState.Modified;
+              
                 context.SaveChanges();
                 return true;
             }

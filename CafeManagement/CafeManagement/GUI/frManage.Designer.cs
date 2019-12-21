@@ -61,6 +61,7 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelBan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
@@ -112,10 +113,10 @@
             this.gcBill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcBill.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gcBill.Location = new System.Drawing.Point(-5, 8);
+            this.gcBill.Location = new System.Drawing.Point(3, 8);
             this.gcBill.MainView = this.gvBill;
             this.gcBill.Name = "gcBill";
-            this.gcBill.Size = new System.Drawing.Size(496, 642);
+            this.gcBill.Size = new System.Drawing.Size(499, 639);
             this.gcBill.TabIndex = 44;
             this.gcBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBill});
@@ -207,6 +208,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.listviewMenu);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtTenSanPham);
@@ -481,6 +483,20 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Danh mục tác vụ";
             // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Appearance.Options.UseFont = true;
+            this.btnReset.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnReset.Location = new System.Drawing.Point(31, 8);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(108, 31);
+            this.btnReset.TabIndex = 44;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -553,5 +569,6 @@
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.TextEdit txtTenSanPham;
         private System.Windows.Forms.TextBox labelBan;
+        private DevExpress.XtraEditors.SimpleButton btnReset;
     }
 }

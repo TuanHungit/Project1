@@ -16,7 +16,6 @@ namespace CafeManagement.LinQ
             var has = (from item in caPheContext.LoaiSanPhams
                        where item.TenLoaiSanPham.Contains(TenDanhMuc)
                         select item).Count();
-
             if (Convert.ToInt32(has)>0)
                 return true;
             return false;

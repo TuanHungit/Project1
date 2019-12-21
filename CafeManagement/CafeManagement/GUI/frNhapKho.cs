@@ -133,7 +133,13 @@ namespace CafeManagement.GUI
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             btnLuuLai.Enabled = true;
+            if (dateEditTimKiem.Text == "")
+            {
+                XtraMessageBox.Show("Xin nhập thêm thông tin!");
+                return;
+            }
             DateTime dateTime = DateTime.Parse(dateEditTimKiem.Text);
+           
             if (Convert.ToDateTime(dateEditTimKiem.Text).Date!=DateTime.Now.Date)
                 btnLuuLai.Enabled = false;
      
