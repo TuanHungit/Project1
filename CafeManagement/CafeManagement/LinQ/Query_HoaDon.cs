@@ -101,8 +101,7 @@ namespace CafeManagement.LinQ
                          select item).ToList();
             foreach (var item in query)
                 caPheContext.ChiTietHoaDons.Remove(item);
-            caPheContext.SaveChanges();
-            
+            caPheContext.SaveChanges();           
         }
          public void CapNhatTrangThaiHoaDon(int ID_HoaDon , CaPheContext context, double tongtien)
         {
@@ -152,7 +151,6 @@ namespace CafeManagement.LinQ
                     }
                     caPheContext.SaveChanges();
                 }
-                caPheContext.Entry(item).State = EntityState.Modified;
                 caPheContext.SaveChanges();
             }
         }

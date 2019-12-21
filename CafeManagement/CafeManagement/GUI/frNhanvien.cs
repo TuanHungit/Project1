@@ -117,7 +117,8 @@ namespace CafeManagement
                                  nhanvien.SDT_NV,
                                  nhanvien.CMND,
                                  nhanvien.NgaySinh,
-                                 nhanvien.NgayVaoLam
+                                 nhanvien.NgayVaoLam,
+                                 nhanvien.NhanVienId
                              }).ToList();
             gcNhanVien.DataSource = nhanViens;
             gvNhanVien.Columns[0].Caption = "Họ tên";
@@ -127,6 +128,7 @@ namespace CafeManagement
             gvNhanVien.Columns[4].Caption = "CMND";
             gvNhanVien.Columns[5].Caption = "Ngày sinh";
             gvNhanVien.Columns[6].Caption = "Ngày vào làm";
+            gvNhanVien.Columns[7].Visible = false;
          
         }
 
@@ -171,6 +173,7 @@ namespace CafeManagement
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật nhân viên  này chứ!", "Cập nhật nhân viên ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    int id = int.Parse(gvNhanVien.GetRowCellValue(gvNhanVien.FocusedRowHandle, gvNhanVien.Columns[7]).ToString());
                     hoten = txtHoTen.Text;
                      quequan = txtQueQuan.Text;
                    chucvu = txtChucVu.Text;
@@ -179,7 +182,7 @@ namespace CafeManagement
                     ngaysinh = Convert.ToDateTime(dtpNgaySinh.Value);
                    ngayvaolam = Convert.ToDateTime(dtpNgayVaoLam.Value);
                    // hinh = ConvertImageToBinary(picImage.Image);
-                    if (nv.Update_NV(contextt, hoten,quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam,hinh))
+                    if (nv.Update_NV(contextt,id, hoten,quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam,hinh))
                     {
                         MessageBox.Show("Da cap nhat nhan vien");
                     }

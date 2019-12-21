@@ -63,7 +63,6 @@ namespace CafeManagement.LinQ
                 nhanviens.username = Username;
                 nhanviens.password = Password;
                 nhanviens.LoaiTaiKhoan = LoaiTaiKhoan;
-                context.Entry(nhanviens).State = EntityState.Modified;
                 context.SaveChanges();
                 return true;
             }

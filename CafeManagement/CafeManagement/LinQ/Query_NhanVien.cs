@@ -49,34 +49,31 @@ namespace CafeManagement.LinQ
             if (id!=0)
             {
                 taiKhoan.Delete_TaiKhoan(id);
-                var nhanvien = new NhanVien()
-                {
-                    NhanVienId=id                              
-                };
-                context.Entry(nhanvien).State = EntityState.Deleted;
+                var nhanvien = (from item in context.NhanViens
+                                where item.NhanVienId.Equals(id)
+                                select item).FirstOrDefault();
+
+                context.NhanViens.Remove(nhanvien);
                 context.SaveChanges();
                 return true;
             } 
             return false;
         }
-        public bool Update_NV(CaPheContext context, string hoten, string quequan,string chucvu, string cmnd, string sdt, DateTime ngaysinh, DateTime ngayvaolam,byte[] image)
+        public bool Update_NV(CaPheContext context,int id, string hoten, string quequan,string chucvu, string cmnd, string sdt, DateTime ngaysinh, DateTime ngayvaolam,byte[] image)
         {
-            int id = KiemTra(context, cmnd);
             if (id != 0)
             {
-                var nhanvien = new NhanVien()
-                {
-                    NhanVienId = id,
-                    QueQuan = quequan,
-                    HoTenNV = hoten,
-                    ChucVu = chucvu,
-                    SDT_NV = sdt,
-                    CMND = cmnd,
-                    NgaySinh = ngaysinh,
-                    NgayVaoLam = ngayvaolam,
-                    Picture = image
-                };
-                context.Entry(nhanvien).State = EntityState.Modified;
+                var nhanvien = (from item in context.NhanViens
+                                where item.NhanVienId.Equals(id)
+                                select item).FirstOrDefault();
+
+                nhanvien.QueQuan = quequan;
+                nhanvien.HoTenNV = hoten;
+                nhanvien.ChucVu = chucvu;
+                nhanvien.SDT_NV = sdt;
+                nhanvien.CMND = cmnd;
+                nhanvien.NgaySinh = ngaysinh;
+                nhanvien.NgayVaoLam = ngayvaolam;
                 context.SaveChanges();
                 return true;
             }

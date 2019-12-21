@@ -42,7 +42,9 @@ namespace CafeManagement.LinQ
             int DanhmucID = GetIdDanhMuc(TenDanhMuc, caPheContext);
             if (KiemTraDanhMuc(TenDanhMuc))
             {
-                var danhmuc = new LoaiSanPham() { LoaiSanPhamId = DanhmucID };
+                var danhmuc = (from item in caPheContext.LoaiSanPhams
+                               where item.LoaiSanPhamId.Equals(DanhmucID)
+                               select item).FirstOrDefault();
                 if (KiemTraSanPhamTrongDanhMuc(DanhmucID))
                 {
                  
@@ -51,8 +53,9 @@ namespace CafeManagement.LinQ
                     {
                         caPheContext.SanPhams.Remove(sp);
                     }
+                    caPheContext.SaveChanges();
                 }
-                caPheContext.Entry(danhmuc).State = EntityState.Deleted;
+                caPheContext.LoaiSanPhams.Remove(danhmuc);
                 caPheContext.SaveChanges();
                 return true;
             }
@@ -98,6 +101,23 @@ namespace CafeManagement.LinQ
             return (from item in caPheContext.LoaiSanPhams
                     where item.LoaiSanPhamId.Equals(SanPhamId)
                     select item.TenLoaiSanPham).SingleOrDefault();
+        }
+        public bool Update_DanhMuc(int DanhMucId, string tenDanhMuc)
+        {
+            if (DanhMucId != 0)
+            {
+                var query = (from item in caPheContext.LoaiSanPhams
+                             where item.LoaiSanPhamId.Equals(DanhMucId)
+                             select item).ToList();
+                foreach (var item in query)
+                {
+                    item.TenLoaiSanPham = tenDanhMuc;
+                    item.LoaiSanPhamId = DanhMucId;
+                }
+                caPheContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

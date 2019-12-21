@@ -71,6 +71,7 @@ namespace CafeManagement.GUI
                 txtGia.Text = gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[2]).ToString();
                 cbMenu.Text =danhMuc.LayTenDanhMucTheoId((int)gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[4])).ToString();
             }
+
         }
 
         private void ClearInfor()
@@ -155,7 +156,8 @@ namespace CafeManagement.GUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     var tenMon = txtTen.Text;
-                    if (sanPham.Delete_Mon(tenMon))
+                    SanPhamId = int.Parse(gvMenu.GetRowCellValue(gvMenu.FocusedRowHandle, gvMenu.Columns[0]).ToString());
+                    if (sanPham.Delete_Mon(tenMon,SanPhamId))
                     {
                         MessageBox.Show("Đã xóa sản phẩm");
                         Load_Menu();
@@ -228,6 +230,11 @@ namespace CafeManagement.GUI
                 }
                 Load_MenuTheoDanhMuc((int)cbTimKiem.EditValue);
             }
+        }
+
+        private void gcMenu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

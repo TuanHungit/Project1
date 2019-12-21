@@ -127,7 +127,26 @@ namespace CafeManagement.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            if (txtTen1.Text.Replace(" ", "") != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn sửa danh mục này chứ!", "Sửa Danh Mục", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string tenDM = txtTen1.Text;
+                    int LoaiSanPham = int.Parse(gvDanhMuc.GetRowCellValue(gvDanhMuc.FocusedRowHandle, gvDanhMuc.Columns[0]).ToString());
+                    if (danhmuc.Update_DanhMuc(LoaiSanPham, tenDM))
+                    {
+                        MessageBox.Show("Đã sửa sản phẩm");
+                        Load_DanhMuc();
+                    }
+                    else
+                        MessageBox.Show("Sản phẩm không tồn tại");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xin nhập thêm thông tin!", "Thêm bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnXóa_Click(object sender, EventArgs e)

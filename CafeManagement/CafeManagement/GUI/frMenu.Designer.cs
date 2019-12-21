@@ -376,6 +376,7 @@
             this.gcMenu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenu,
             this.gridView1});
+            this.gcMenu.Click += new System.EventHandler(this.gcMenu_Click);
             // 
             // gvMenu
             // 

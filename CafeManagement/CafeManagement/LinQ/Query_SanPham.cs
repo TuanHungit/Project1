@@ -37,13 +37,15 @@ namespace CafeManagement.LinQ
             }
             return false;
         }
-        public bool Delete_Mon(string tenMon)
+        public bool Delete_Mon(string tenMon, int MonId)
         {
             if (!KiemTraMon(tenMon))
             {
 
-                var sanpham = new SanPham() { SanPhamId = LayIdSanPham(tenMon)};
-                caPheContext.Entry(sanpham).State = EntityState.Deleted;
+                var sanpham = (from item in caPheContext.SanPhams
+                              where item.SanPhamId.Equals(MonId)
+                              select item).FirstOrDefault();
+                caPheContext.SanPhams.Remove(sanpham);
                 caPheContext.SaveChanges();
                 return true;
             }
