@@ -75,9 +75,10 @@ namespace CafeManagement.LinQ
                        select Ban).ToList();
             foreach (var b in ban)
             {
-                b.TinhTrang = "Có người"; 
+                b.TinhTrang = "Có người";
+                context.SaveChanges();
             }
-            context.SaveChanges();
+           
         }
         public  void Update_Ban1( int id_ban)
         {
@@ -87,14 +88,16 @@ namespace CafeManagement.LinQ
             foreach (var b in ban)
             {
                 b.TinhTrang = "Trống";
-                
+                context.SaveChanges();
+
             }
-            context.SaveChanges();
+          
 
         }
         public  List<Ban> GetAllTable()
         {
-            return (from item in context.Bans
+
+            return (from item in Global.context.Bans
                     select item).ToList();
         }
 

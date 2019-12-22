@@ -49,9 +49,10 @@ namespace CafeManagement.GUI
        
         private void Load_Table() 
         {
-           panelBan.Controls.Clear();          
-            List<Ban> danhsachban = new List<Ban>(); 
-            danhsachban=ban.GetAllTable();         
+           panelBan.Controls.Clear();
+            CaPheContext caPheContext = new CaPheContext();
+            List<Ban> danhsachban = (from item in caPheContext.Bans
+                                     select item).ToList();        
             foreach (Ban item in danhsachban)
             {
                 SimpleButton button = new SimpleButton() { Width = 85, Height = 85 };
