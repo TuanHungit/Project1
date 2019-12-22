@@ -45,6 +45,7 @@
             this.listviewMenu = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenSanPham = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelBan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTongCong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbDanhMuc
@@ -208,6 +210,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.listviewMenu);
             this.panel2.Controls.Add(this.btnSearch);
@@ -261,6 +264,11 @@
             // 
             this.columnHeader2.Text = "Đơn giá";
             this.columnHeader2.Width = 165;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ghi chú";
+            this.columnHeader3.Width = 165;
             // 
             // btnSearch
             // 
@@ -492,10 +500,15 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Danh mục tác vụ";
             // 
-            // columnHeader3
+            // dataGridView1
             // 
-            this.columnHeader3.Text = "Ghi chú";
-            this.columnHeader3.Width = 165;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 170);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(488, 228);
+            this.dataGridView1.TabIndex = 45;
             // 
             // frManage
             // 
@@ -531,6 +544,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,5 +584,6 @@
         private System.Windows.Forms.TextBox labelBan;
         private DevExpress.XtraEditors.SimpleButton btnReset;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

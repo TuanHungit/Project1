@@ -7,6 +7,10 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CafeManagement.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+
 namespace CafeManagement.LinQ
 {
     public class Query_Ban
@@ -100,7 +104,10 @@ namespace CafeManagement.LinQ
             return (from item in Global.context.Bans
                     select item).ToList();
         }
-
+        public void LoadTable()
+        {
+          
+        }
         public void GopBan(int BanID1, int BanID2)
         {
           

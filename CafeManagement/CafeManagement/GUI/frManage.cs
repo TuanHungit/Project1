@@ -16,6 +16,10 @@ using CafeManagement.LinQ;
 using System.Globalization;
 using DevExpress.XtraReports.UI;
 using DevExpress.LookAndFeel;
+using System.Data.SqlClient;
+using System.Configuration;
+using MySql.Data.MySqlClient.Memcached;
+using TableDependency.SqlClient;
 
 namespace CafeManagement.GUI
 {
@@ -34,17 +38,59 @@ namespace CafeManagement.GUI
        
         Query_HoaDon hoaDon = new Query_HoaDon();
         CultureInfo culture = new CultureInfo("vi-VN");
-        
+        string connectionString = @"data source=.;Initial Catalog=CafeManagement;Integrated Security=true";
+        SqlConnection con = null;
+        public delegate void NewHome();
+        public event NewHome OnNewHome;
         public frManage()
         {
             InitializeComponent();
+            InitializeComponent();
+            try
+            {
+                SqlClientPermission ss = new SqlClientPermission(System.Security.Permissions.PermissionState.Unrestricted);
+                ss.Demand();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
+
+            SqlDependency.Stop(connectionString);
+            SqlDependency.Start(connectionString);
+            con = new SqlConnection(connectionString);
         }
         private void frManage_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            OnNewHome += new NewHome(FrManage_OnNewHome);//tab
             Load_Table();
             Load_cbDanhMuc();
-       
+         
+            //load data vao datagrid
+         
+
+        }
+        public void FrManage_OnNewHome() {
+            ISynchronizeInvoke i = (ISynchronizeInvoke)this;
+            if (i.InvokeRequired)//tab
+            {
+                NewHome dd = new NewHome(FrManage_OnNewHome);
+                i.BeginInvoke(dd, null);
+                return;
+            }
+            Load_Table();
+        }
+        public void de_OnChange(object sender, SqlNotificationEventArgs e)
+        {
+            SqlDependency de = sender as SqlDependency;
+            de.OnChange -= de_OnChange;
+            if (OnNewHome != null)
+            {
+                OnNewHome();
+            }
         }
        
         private void Load_Table() 
@@ -52,7 +98,20 @@ namespace CafeManagement.GUI
            panelBan.Controls.Clear();
             CaPheContext caPheContext = new CaPheContext();
             List<Ban> danhsachban = (from item in caPheContext.Bans
-                                     select item).ToList();        
+                                     select item).ToList();    
+            //DataTable dt = new DataTable();
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
+            //SqlCommand cmd = new SqlCommand("SELECT BanId, TinhTrang FROM Bans", con);
+            //SqlDependency de = new SqlDependency(cmd);
+          
+            //de.OnChange += new OnChangeEventHandler(de_OnChange);
+
+            //dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
+            //dataGridView1.DataSource = dt;
+
             foreach (Ban item in danhsachban)
             {
                 SimpleButton button = new SimpleButton() { Width = 85, Height = 85 };
