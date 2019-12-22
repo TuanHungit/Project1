@@ -246,7 +246,7 @@
             this.panelControl1.Controls.Add(this.gcDanhMuc);
             this.panelControl1.Location = new System.Drawing.Point(278, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1250, 479);
+            this.panelControl1.Size = new System.Drawing.Size(1250, 513);
             this.panelControl1.TabIndex = 40;
             // 
             // gcDanhMuc
@@ -259,7 +259,7 @@
             this.gcDanhMuc.MainView = this.gvDanhMuc;
             this.gcDanhMuc.MenuManager = this.barManager1;
             this.gcDanhMuc.Name = "gcDanhMuc";
-            this.gcDanhMuc.Size = new System.Drawing.Size(1276, 461);
+            this.gcDanhMuc.Size = new System.Drawing.Size(1276, 495);
             this.gcDanhMuc.TabIndex = 35;
             this.gcDanhMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhMuc});
@@ -304,7 +304,7 @@
             this.panelControl2.Controls.Add(this.btnSearch);
             this.panelControl2.Location = new System.Drawing.Point(12, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(260, 479);
+            this.panelControl2.Size = new System.Drawing.Size(260, 513);
             this.panelControl2.TabIndex = 57;
             // 
             // txtTen1

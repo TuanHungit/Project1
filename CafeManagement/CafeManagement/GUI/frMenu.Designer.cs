@@ -371,7 +371,7 @@
             this.gcMenu.Location = new System.Drawing.Point(5, 14);
             this.gcMenu.MainView = this.gvMenu;
             this.gcMenu.Name = "gcMenu";
-            this.gcMenu.Size = new System.Drawing.Size(868, 525);
+            this.gcMenu.Size = new System.Drawing.Size(868, 559);
             this.gcMenu.TabIndex = 26;
             this.gcMenu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMenu,
@@ -398,7 +398,7 @@
             this.panelControl2.Controls.Add(this.gcMenu);
             this.panelControl2.Location = new System.Drawing.Point(289, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(878, 545);
+            this.panelControl2.Size = new System.Drawing.Size(878, 579);
             this.panelControl2.TabIndex = 69;
             // 
             // panelControl3
@@ -417,7 +417,7 @@
             this.panelControl3.Controls.Add(this.txtTen);
             this.panelControl3.Location = new System.Drawing.Point(7, 148);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(276, 409);
+            this.panelControl3.Size = new System.Drawing.Size(276, 443);
             this.panelControl3.TabIndex = 29;
             // 
             // btnSua

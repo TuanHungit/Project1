@@ -53,6 +53,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.gcXuatKhoTrongNgay = new DevExpress.XtraGrid.GridControl();
+            this.gvXuatKhoTrongNgay = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditTimKiem.Properties.CalendarTimeProperties)).BeginInit();
@@ -64,6 +68,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenHangHoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcXuatKhoTrongNgay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvXuatKhoTrongNgay)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -139,8 +147,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -164,25 +171,23 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.gcXuatKho);
             this.panelControl2.Location = new System.Drawing.Point(352, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(938, 567);
+            this.panelControl2.Size = new System.Drawing.Size(938, 280);
             this.panelControl2.TabIndex = 12;
             // 
             // gcXuatKho
             // 
-            this.gcXuatKho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gcXuatKho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcXuatKho.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gcXuatKho.Location = new System.Drawing.Point(5, 15);
             this.gcXuatKho.MainView = this.gvXuatKho;
             this.gcXuatKho.Name = "gcXuatKho";
-            this.gcXuatKho.Size = new System.Drawing.Size(924, 547);
+            this.gcXuatKho.Size = new System.Drawing.Size(924, 260);
             this.gcXuatKho.TabIndex = 0;
             this.gcXuatKho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvXuatKho});
@@ -323,11 +328,57 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên hàng hóa:";
             // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label10.Location = new System.Drawing.Point(361, 300);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(229, 21);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Danh sách hàng hóa xuất kho";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl4.Controls.Add(this.gcXuatKhoTrongNgay);
+            this.panelControl4.Location = new System.Drawing.Point(352, 309);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(938, 270);
+            this.panelControl4.TabIndex = 17;
+            // 
+            // gcXuatKhoTrongNgay
+            // 
+            this.gcXuatKhoTrongNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcXuatKhoTrongNgay.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gcXuatKhoTrongNgay.Location = new System.Drawing.Point(5, 15);
+            this.gcXuatKhoTrongNgay.MainView = this.gvXuatKhoTrongNgay;
+            this.gcXuatKhoTrongNgay.Name = "gcXuatKhoTrongNgay";
+            this.gcXuatKhoTrongNgay.Size = new System.Drawing.Size(924, 250);
+            this.gcXuatKhoTrongNgay.TabIndex = 0;
+            this.gcXuatKhoTrongNgay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvXuatKhoTrongNgay});
+            // 
+            // gvXuatKhoTrongNgay
+            // 
+            this.gvXuatKhoTrongNgay.GridControl = this.gcXuatKhoTrongNgay;
+            this.gvXuatKhoTrongNgay.Name = "gvXuatKhoTrongNgay";
+            this.gvXuatKhoTrongNgay.OptionsView.ShowGroupPanel = false;
+            // 
             // frXuatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1302, 591);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.label2);
@@ -350,6 +401,10 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenHangHoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcXuatKhoTrongNgay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvXuatKhoTrongNgay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +436,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraGrid.GridControl gcXuatKhoTrongNgay;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvXuatKhoTrongNgay;
     }
 }

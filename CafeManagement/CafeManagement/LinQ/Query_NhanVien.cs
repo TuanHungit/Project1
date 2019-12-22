@@ -93,24 +93,23 @@ namespace CafeManagement.LinQ
                       select nhanvien).FirstOrDefault();        
             return nv;        
         }
-        public bool CapNhat_NV(CaPheContext context, string hoten, string quequan, string chucvu, string cmnd, string sdt, DateTime ngaysinh, DateTime ngayvaolam, byte[] image)
+        public bool CapNhat_NV(CaPheContext context,int id, string hoten, string quequan, string chucvu, string cmnd, string sdt, DateTime ngaysinh, DateTime ngayvaolam, byte[] image)
         {
-            int id = Global.NhanVienID;
             if (id != 0)
             {
-                var nhanvien = new NhanVien()
-                {
-                    NhanVienId = id,
-                    QueQuan = quequan,
-                    HoTenNV = hoten,
-                    ChucVu = chucvu,
-                    SDT_NV = sdt,
-                    CMND = cmnd,
-                    NgaySinh = ngaysinh,
-                    NgayVaoLam = ngayvaolam,
-                    Picture = image
-                };
               
+                var nhanvien = (from item in context.NhanViens
+                                where item.NhanVienId.Equals(id)
+                                select item).FirstOrDefault();
+
+                nhanvien.QueQuan = quequan;
+                nhanvien.HoTenNV = hoten;
+                nhanvien.ChucVu = chucvu;
+                nhanvien.SDT_NV = sdt;
+                nhanvien.CMND = cmnd;
+                nhanvien.NgaySinh = ngaysinh;
+                nhanvien.NgayVaoLam = ngayvaolam;
+
                 context.SaveChanges();
                 return true;
             }

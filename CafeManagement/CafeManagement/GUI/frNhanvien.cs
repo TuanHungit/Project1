@@ -86,10 +86,10 @@ namespace CafeManagement
                    
                     if (nv.Add_NV(context, hoten,quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam,hinh))
                     {
-                        MessageBox.Show("Da them nhan vien");
+                        MessageBox.Show("Đã thêm nhân viên!");
                     }
                     else
-                        MessageBox.Show("Nhan Vien chua duoc them vao");
+                        MessageBox.Show("Nhân viên chưa được thêm vào!");
                 }
                 Load_NV();
                 ClearInfo();
@@ -97,7 +97,7 @@ namespace CafeManagement
             }
             else
             {
-                MessageBox.Show("Vui Long dien het thong tin", "Thêm Nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng điền hết thông tin", "Thêm Nhân vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -144,10 +144,10 @@ namespace CafeManagement
                     if (nv.Delete_NV(context,cmnd))
                     {
                        
-                        MessageBox.Show("Da xoa nhan vien");
+                        MessageBox.Show("Đã xóa nhân viên");
                     }
                     else
-                        MessageBox.Show("Nhan Vien chua duoc xoa vao");
+                        MessageBox.Show("Nhân viên chưa được xóa!");
                 }
                 Load_NV();
                 ClearInfo();
@@ -155,7 +155,7 @@ namespace CafeManagement
             }
             else
             {
-                MessageBox.Show("Vui Long dien het thong tin", "Xóa Nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng điền hết thông tin", "Xóa Nhân vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -184,10 +184,10 @@ namespace CafeManagement
                    // hinh = ConvertImageToBinary(picImage.Image);
                     if (nv.Update_NV(contextt,id, hoten,quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam,hinh))
                     {
-                        MessageBox.Show("Da cap nhat nhan vien");
+                        MessageBox.Show("Đã cập nhật nhân viên");
                     }
                     else
-                        MessageBox.Show("Nhan Vien chua duoc cap nhat vao");
+                        MessageBox.Show("Nhân viên chưa được cập nhật!");
                 }
                 Load_NV();
                 ClearInfo();
@@ -195,7 +195,7 @@ namespace CafeManagement
             }
             else
             {
-                MessageBox.Show("Vui Long dien het thong tin", "Cập Nhật  Nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng điền hết thông tin", "Cập Nhật  Nhan vien", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }

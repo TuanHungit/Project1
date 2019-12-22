@@ -41,10 +41,10 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             this.listviewMenu = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenSanPham = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelBan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
@@ -218,6 +218,20 @@
             this.panel2.Size = new System.Drawing.Size(503, 438);
             this.panel2.TabIndex = 4;
             // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Appearance.Options.UseFont = true;
+            this.btnReset.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.ImageOptions.Image")));
+            this.btnReset.Location = new System.Drawing.Point(31, 8);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(108, 31);
+            this.btnReset.TabIndex = 44;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // listviewMenu
             // 
             this.listviewMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -247,11 +261,6 @@
             // 
             this.columnHeader2.Text = "Đơn giá";
             this.columnHeader2.Width = 165;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Số lượng";
-            this.columnHeader3.Width = 165;
             // 
             // btnSearch
             // 
@@ -483,19 +492,10 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Danh mục tác vụ";
             // 
-            // btnReset
+            // columnHeader3
             // 
-            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReset.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Appearance.Options.UseFont = true;
-            this.btnReset.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnReset.Location = new System.Drawing.Point(31, 8);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(108, 31);
-            this.btnReset.TabIndex = 44;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.columnHeader3.Text = "Ghi chú";
+            this.columnHeader3.Width = 165;
             // 
             // frManage
             // 
@@ -564,11 +564,11 @@
         private System.Windows.Forms.ListView listviewMenu;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Panel panelCheckBan;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.TextEdit txtTenSanPham;
         private System.Windows.Forms.TextBox labelBan;
         private DevExpress.XtraEditors.SimpleButton btnReset;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

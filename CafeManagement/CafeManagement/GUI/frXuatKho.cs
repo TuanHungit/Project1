@@ -35,7 +35,8 @@ namespace CafeManagement.GUI
          private void frXuatKho_Load(object sender, EventArgs e)
         {
             Load_CbHangHoa();
-            Load_gvXuatKho(DateTime.Now);
+            Load_gvXuatKho();
+            Load_gvXuatKhoTrongNgay(DateTime.Now);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -71,8 +72,6 @@ namespace CafeManagement.GUI
                     }
                     else
                     {
-                      
-
                         if (phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap) == 0)
                         {
                             phieuxuat.ThemPhieuXuat(Global.NhanVienID, NgayLap);
@@ -82,8 +81,10 @@ namespace CafeManagement.GUI
                             chitietphieuxuat.ThemChiTietPhieuXuat(phieuxuat.LayPhieuXuatIdTheoNgayNhap(NgayLap), hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong);
                         }
                         else chitietphieuxuat.CapNhatChiTietPhieuXuat(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-                        hanghoa.CapNhatHangHoa(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-                        Load_gvXuatKho(DateTime.Now);
+                       
+                        hanghoa.CapNhatHangHoa(hanghoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), -SoLuong, NgayLap);
+                        Load_gvXuatKhoTrongNgay(DateTime.Now);
+                        Load_gvXuatKho();
                     }
                 }
             }
@@ -91,13 +92,11 @@ namespace CafeManagement.GUI
             clearInfo();
             Load_CbHangHoa();
         }
-        private void Load_gvXuatKho(DateTime dateTime)
+        private void Load_gvXuatKho()
         {
-            double totalprice = 0;
             var query = (from hanghoa in Global.context.HangHoas
                          join chitietPhieuXuat in Global.context.ChiTietPhieuXuats on hanghoa.HangHoaId equals chitietPhieuXuat.HangHoaId
-                         join phieuXuat in Global.context.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId
-                         where DbFunctions.TruncateTime(phieuXuat.NgayLap) == dateTime.Date 
+                         join phieuXuat in Global.context.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId 
                          select new
                          {
                              hanghoa.TenHangHoa,
@@ -107,6 +106,28 @@ namespace CafeManagement.GUI
                              phieuXuat.NgayLap
                          }).ToList();
             gcXuatKho.DataSource = query;
+            gvXuatKho.Columns[0].Caption = "Tên hàng hóa";
+            gvXuatKho.Columns[1].Caption = "Số lượng xuất";
+            gvXuatKho.Columns[2].Caption = "Đơn giá";
+            gvXuatKho.Columns[3].Caption = "Đơn vị tính";
+            gvXuatKho.Columns[4].Caption = "Ngày xuất";
+        }
+        private void Load_gvXuatKhoTrongNgay(DateTime dateTime)
+        {
+            double totalprice = 0;
+            var query = (from hanghoa in Global.context.HangHoas
+                         join chitietPhieuXuat in Global.context.ChiTietPhieuXuats on hanghoa.HangHoaId equals chitietPhieuXuat.HangHoaId
+                         join phieuXuat in Global.context.PhieuXuats on chitietPhieuXuat.PhieuXuatId equals phieuXuat.PhieuXuatId
+                         where DbFunctions.TruncateTime(phieuXuat.NgayLap) == dateTime.Date
+                         select new
+                         {
+                             hanghoa.TenHangHoa,
+                             chitietPhieuXuat.SoLuongXuat,
+                             hanghoa.DonGia,
+                             hanghoa.DonViTinh,
+                             phieuXuat.NgayLap
+                         }).ToList();
+            gcXuatKhoTrongNgay.DataSource = query;
             foreach (var item in query)
             {
                 totalprice += item.SoLuongXuat * item.DonGia;
@@ -115,11 +136,11 @@ namespace CafeManagement.GUI
             report.Parameters["CreateDate"].Value = dateTime;
             report.Parameters["NguoiLap"].Value = nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID, Global.context);
             report.Parameters["TotalPrice"].Value = totalprice;
-            gvXuatKho.Columns[0].Caption = "Tên hàng hóa";
-            gvXuatKho.Columns[1].Caption = "Số lượng xuất";
-            gvXuatKho.Columns[2].Caption = "Đơn giá";
-            gvXuatKho.Columns[3].Caption = "Đơn vị tính";
-            gvXuatKho.Columns[4].Caption = "Ngày xuất";
+            gvXuatKhoTrongNgay.Columns[0].Caption = "Tên hàng hóa";
+            gvXuatKhoTrongNgay.Columns[1].Caption = "Số lượng xuất";
+            gvXuatKhoTrongNgay.Columns[2].Caption = "Đơn giá";
+            gvXuatKhoTrongNgay.Columns[3].Caption = "Đơn vị tính";
+            gvXuatKhoTrongNgay.Columns[4].Caption = "Ngày xuất";
         }
         private void Load_CbHangHoa()
         {
@@ -176,7 +197,8 @@ namespace CafeManagement.GUI
             if (Convert.ToDateTime(dateEditTimKiem.Text).Date != DateTime.Now.Date)
                 btnLuuLai.Enabled = false;
 
-            Load_gvXuatKho(dateTime);
+            Load_gvXuatKhoTrongNgay(dateTime);
+            Load_gvXuatKho();
         }
     }
 }

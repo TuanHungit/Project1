@@ -1,6 +1,7 @@
 ﻿using CafeManagement.Data;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,9 @@ namespace CafeManagement.LinQ
         public void CapNhatChiTietPhieuXuat(int HangHoaId, int SoLuong, DateTime NgayLap)
         {
 
-            ChiTietPhieuXuat hangHoa = (from item in caPheContext.ChiTietPhieuXuats
-                                        where item.HangHoaId.Equals(HangHoaId)
+            ChiTietPhieuXuat hangHoa = (from item in caPheContext.ChiTietPhieuXuats join item1 in caPheContext.PhieuXuats
+                                        on item.PhieuXuatId equals item1.PhieuXuatId
+                                        where item.HangHoaId.Equals(HangHoaId) && DbFunctions.TruncateTime(item1.NgayLap) == NgayLap.Date
                                         select item).FirstOrDefault();
 
             hangHoa.SoLuongXuat = hangHoa.SoLuongXuat + SoLuong;

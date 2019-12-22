@@ -71,6 +71,7 @@ namespace CafeManagement.LinQ
                                    select item).FirstOrDefault();
 
                 hangHoa.SoLuongTon = hangHoa.SoLuongTon + SoLuong;
+                hangHoa.TinhTrang = "Đang hoạt động";
                 caPheContext.SaveChanges();
                 return true;
             }

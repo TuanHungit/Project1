@@ -38,7 +38,7 @@ namespace CafeManagement.GUI
                     DateTime ngayvaolam = Convert.ToDateTime(dtpNgayVaoLam.Value);
                     byte[] hinh = null;
                     // hinh = ConvertImageToBinary(picImage.Image);
-                    if (nv.CapNhat_NV(context, hoten, quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam, hinh))
+                    if (nv.Update_NV(context,Global.NhanVienID, hoten, quequan, chucvu, cmnd, sdt, ngaysinh, ngayvaolam, hinh))
                     {
                         MessageBox.Show("Da cap nhat nhan vien");
                     }

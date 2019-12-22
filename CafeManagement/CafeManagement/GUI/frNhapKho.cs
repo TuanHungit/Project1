@@ -60,7 +60,8 @@ namespace CafeManagement.GUI
                     }
                     else chitietphieunhap.CapNhatChiTietPhieuNhap(hangHoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
                     hangHoa.CapNhatHangHoa(hangHoa.LayHangHoaIDTheoTenHangHoa(TenHangHoa), SoLuong, NgayLap);
-                    Load_gvNhapKho(DateTime.Now);
+                    Load_gvNhapKhoTrongNgay(DateTime.Now);
+                    Load_gvNhapKho();
                 }
             }
             else XtraMessageBox.Show("Xin nhập thêm thông tin!","Thông báo");
@@ -82,9 +83,10 @@ namespace CafeManagement.GUI
         private void frNhapKho_Load(object sender, EventArgs e)
         {
             Load_CbNhaCungCap();
-            Load_gvNhapKho(DateTime.Now);
+            Load_gvNhapKhoTrongNgay(DateTime.Now);
+            Load_gvNhapKho();
         }
-        private void Load_gvNhapKho(DateTime dateTime)
+        private void Load_gvNhapKhoTrongNgay(DateTime dateTime)
         {
             int totalprice = 0;
                 var query = (from hanghoa in Global.context.HangHoas
@@ -105,11 +107,34 @@ namespace CafeManagement.GUI
             {
                 totalprice += (int)item.DonGia * item.SoLuongDat;
             }
-            gcNhapKho.DataSource = query;
+            gcNhapKhoTrongNgay.DataSource = query;
             report.DataSource = query;
             report.Parameters["CreateDate"].Value = dateTime;
             report.Parameters["NguoiLap"].Value =nhanvien.LayTenNhanVienbyNhanVienID(Global.NhanVienID,Global.context);
             report.Parameters["TotalPrice"].Value = totalprice;
+            gvNhapKhoTrongNgay.Columns[0].Caption = "Tên hàng hóa";
+            gvNhapKhoTrongNgay.Columns[1].Caption = "Số lượng nhập";
+            gvNhapKhoTrongNgay.Columns[2].Caption = "Đơn giá";
+            gvNhapKhoTrongNgay.Columns[3].Caption = "Đơn vị tính";
+            gvNhapKhoTrongNgay.Columns[4].Caption = "Nhà cung cấp";
+            gvNhapKhoTrongNgay.Columns[5].Caption = "Ngày nhập";
+        }
+        private void Load_gvNhapKho()
+        {
+            var query = (from hanghoa in Global.context.HangHoas
+                         join chitietPhieuNhap in Global.context.ChiTietPhieuNhaps on hanghoa.HangHoaId equals chitietPhieuNhap.HangHoaID
+                         join phieuNhap in Global.context.PhieuNhaps on chitietPhieuNhap.PhieuNhapId equals phieuNhap.PhieuNhapId
+                         join nhacungcap in Global.context.NhaCungCaps on phieuNhap.NhaCungCapId equals nhacungcap.NhaCungCapId
+                         select new
+                         {
+                             hanghoa.TenHangHoa,
+                             chitietPhieuNhap.SoLuongDat,
+                             hanghoa.DonGia,
+                             hanghoa.DonViTinh,
+                             nhacungcap.TenNhaCungCap,
+                             phieuNhap.NgayDatHang
+                         }).ToList();
+            gcNhapKho.DataSource = query;
             gvNhapKho.Columns[0].Caption = "Tên hàng hóa";
             gvNhapKho.Columns[1].Caption = "Số lượng nhập";
             gvNhapKho.Columns[2].Caption = "Đơn giá";
@@ -117,19 +142,7 @@ namespace CafeManagement.GUI
             gvNhapKho.Columns[4].Caption = "Nhà cung cấp";
             gvNhapKho.Columns[5].Caption = "Ngày nhập";
         }
-
-        private void gcNhapKho_Click(object sender, EventArgs e)
-        {
-            if (gvNhapKho.RowCount > 0)
-            {
-                txtTenSanPham.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[0]).ToString();
-                txtSoLuongNhap.Text = "";
-                txtDonGia.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[2]).ToString();
-                txtDonViTinh.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[3]).ToString();
-                cbNCC.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[4]).ToString();
-            }
-        }
-
+     
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             btnLuuLai.Enabled = true;
@@ -142,8 +155,8 @@ namespace CafeManagement.GUI
            
             if (Convert.ToDateTime(dateEditTimKiem.Text).Date!=DateTime.Now.Date)
                 btnLuuLai.Enabled = false;
-     
-            Load_gvNhapKho(dateTime);
+
+            Load_gvNhapKhoTrongNgay(dateTime);
         }
 
         private void btnXuatPhieuNhap_Click(object sender, EventArgs e)
@@ -159,6 +172,18 @@ namespace CafeManagement.GUI
         private void panelControl3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gcNhapKho_Click_1(object sender, EventArgs e)
+        {
+            if (gvNhapKho.RowCount > 0)
+            {
+                txtTenSanPham.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[0]).ToString();
+                txtSoLuongNhap.Text = "";
+                txtDonGia.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[2]).ToString();
+                txtDonViTinh.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[3]).ToString();
+                cbNCC.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[4]).ToString();
+            }
         }
     }
 }
