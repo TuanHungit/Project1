@@ -1203,3 +1203,14 @@ C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\bin\Debug
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\bin\Debug\MySql.Data.xml
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\bin\Debug\Renci.SshNet.xml
 C:\Users\hung1\OneDrive\Documents\GitHub\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frConnectForm.resources
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\BouncyCastle.Crypto.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\Google.Protobuf.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\MySql.Data.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\Renci.SshNet.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\System.ComponentModel.Annotations.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\System.Data.SqlClient.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\TableDependency.SqlClient.dll
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\Google.Protobuf.xml
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\MySql.Data.xml
+D:\GitHub\Project1\CafeManagement\CafeManagement\bin\Debug\Renci.SshNet.xml
+D:\GitHub\Project1\CafeManagement\CafeManagement\obj\Debug\CafeManagement.GUI.frConnectForm.resources

@@ -4,15 +4,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Data.Entity.Core.EntityClient;
+using CafeManagement.GUI;
 
 namespace CafeManagement.Data
 {
     public class CaPheContext : DbContext
     {
-        public CaPheContext() : base("CaPheContext")
+        public CaPheContext(string connect) : base("connectionString")
+        {
+            ConnectToSqlServer();
+        }
+        public CaPheContext() : base()
         {
 
         }
+        //public CaPheContext()
+        //: base(ConnectToSqlServer())
+        //{
+           
+        //}
+
+        public static string ConnectToSqlServer()
+        {
+            SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder
+            {
+                DataSource = Global.connect,
+                InitialCatalog = "CafeManagement",
+                IntegratedSecurity = true,
+            };
+
+            var entityConnectionStringBuilder = new EntityConnectionStringBuilder
+            {
+                Provider = "System.Data.SqlClient",
+                ProviderConnectionString = sqlBuilder.ConnectionString,
+                Metadata = "res://*/DbModel.csdl|res://*/DbModel.ssdl|res://*/DbModel.msl",
+            };
+            Global.connectionstring = sqlBuilder.ConnectionString;
+
+            return sqlBuilder.ConnectionString;
+        }
+       
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<LoaiSanPham> LoaiSanPhams { get; set; }
@@ -34,5 +67,6 @@ namespace CafeManagement.Data
                  .IsRequired();
 
         }
+        
     }
 }

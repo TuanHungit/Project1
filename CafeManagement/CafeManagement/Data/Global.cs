@@ -15,5 +15,7 @@ namespace CafeManagement.Data
         public static double Gia;
         public static string ThanhTien;
         public static int BanID;
+        public static string connect;
+        public static string connectionstring;
     }
 }

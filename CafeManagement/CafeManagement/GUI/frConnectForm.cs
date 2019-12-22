@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Configuration;
 using CafeManagement.GUI;
+using System.Data.SqlClient;
+using CafeManagement.Data;
+using System.Data.Entity.Core.EntityClient;
+
 namespace CafeManagement.GUI
 {
     public partial class frConnectForm : DevExpress.XtraEditors.XtraForm
@@ -25,45 +29,25 @@ namespace CafeManagement.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            Global.connect = textBox1.Text;
+            CaPheContext context = new CaPheContext(Global.connect);
+            using (SqlConnection cnn = new SqlConnection(Global.connectionstring))
             {
-                changeConnectionSettings(textBox1.Text);
-
-                   frLogin login = new frLogin();
-                login.ShowDialog();
-            }
-            catch(Exception E)
-            {
-                XtraMessageBox.Show(E.Message);
-            }
-
-        }
-        private String changeConnStringItem(string connString, string option, string value)
-        {
-            String[] conItems = connString.Split(';');
-            String result = "";
-            foreach (String item in conItems)
-            {
-                if (item.StartsWith(option))
+                try
                 {
-                    result += option + "=" + value + ";";
+                    cnn.Open();
+                    frLogin fr = new frLogin();
+                    fr.ShowDialog();
+                    cnn.Close();
                 }
-                else
+                catch (Exception ex)
                 {
-                    result += item + ";";
+                    MessageBox.Show("Can not  connection ! ");
                 }
+
             }
-            return result;
         }
-        private void changeConnectionSettings(string datasource)
-        {
-            var cnSection = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            String connString = cnSection.ConnectionStrings.ConnectionStrings["connectionString"].ConnectionString;
-            connString = changeConnStringItem(connString, "provider connection string=\"data source", datasource);
-            
-            cnSection.ConnectionStrings.ConnectionStrings["connectionString"].ConnectionString = connString;
-            cnSection.Save();
-            ConfigurationManager.RefreshSection("connectionString");
-        }
+
+       
     }
 }
