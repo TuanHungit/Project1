@@ -25,20 +25,22 @@ namespace CafeManagement.GUI
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
 
-            string Username = txtUserName.Text;
-            string Password = txtPassword.Text;
-            if (txtUserName.EditValue == null || txtPassword.EditValue == null)
+           
+            if (txtUserName.Text == "" || txtPassword.Text == "")
             {
+               
                 XtraMessageBox.Show("Vui lòng nhập Tài Khoản và Mật Khẩu!");
+                SplashScreenManager.CloseForm();
                 return;
             }
+            string Username = txtUserName.Text;
+            string Password = txtPassword.Text;
             if (login.DanhNhap(Username, Password))
             {
                 frMain fr = new frMain();
                 SplashScreenManager.CloseForm();
                 fr.ShowDialog();
-               
-
+            
             }
             else {
                 SplashScreenManager.CloseForm();

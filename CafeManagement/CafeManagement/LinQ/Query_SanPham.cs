@@ -54,7 +54,7 @@ namespace CafeManagement.LinQ
         public int LayIdSanPham(string tenMon)
         {
             var sp = (from sanpham in caPheContext.SanPhams
-                      where sanpham.TenSanPham.ToUpper().Trim().Contains(tenMon.ToUpper())
+                      where sanpham.TenSanPham.ToUpper().Trim() ==(tenMon.ToUpper())
                       select sanpham.SanPhamId).SingleOrDefault();
             return sp;
         }

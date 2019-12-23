@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frChinhSuaNV));
             this.bttThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.bttCapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.txtChucVu = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.bttCapNhat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQueQuan.Properties)).BeginInit();
@@ -62,16 +62,6 @@
             this.bttThoat.TabIndex = 65;
             this.bttThoat.Text = "Thoát";
             this.bttThoat.Click += new System.EventHandler(this.bttThoat_Click);
-            // 
-            // bttCapNhat
-            // 
-            this.bttCapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bttCapNhat.ImageOptions.Image")));
-            this.bttCapNhat.Location = new System.Drawing.Point(12, 264);
-            this.bttCapNhat.Name = "bttCapNhat";
-            this.bttCapNhat.Size = new System.Drawing.Size(186, 36);
-            this.bttCapNhat.TabIndex = 64;
-            this.bttCapNhat.Text = "Cập Nhật Thông Tin";
-            this.bttCapNhat.Click += new System.EventHandler(this.bttCapNhat_Click);
             // 
             // label5
             // 
@@ -202,6 +192,16 @@
             this.labelControl6.TabIndex = 47;
             this.labelControl6.Text = "THÔNG TIN TÀI KHOẢN";
             // 
+            // bttCapNhat
+            // 
+            this.bttCapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bttCapNhat.ImageOptions.Image")));
+            this.bttCapNhat.Location = new System.Drawing.Point(12, 264);
+            this.bttCapNhat.Name = "bttCapNhat";
+            this.bttCapNhat.Size = new System.Drawing.Size(186, 36);
+            this.bttCapNhat.TabIndex = 64;
+            this.bttCapNhat.Text = "Cập Nhật Thông Tin";
+            this.bttCapNhat.Click += new System.EventHandler(this.bttCapNhat_Click);
+            // 
             // frChinhSuaNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,7 +239,6 @@
         #endregion
 
         private DevExpress.XtraEditors.SimpleButton bttThoat;
-        private DevExpress.XtraEditors.SimpleButton bttCapNhat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -255,5 +254,6 @@
         private DevExpress.XtraEditors.TextEdit txtHoTen;
         private DevExpress.XtraEditors.ComboBoxEdit txtChucVu;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.SimpleButton bttCapNhat;
     }
 }

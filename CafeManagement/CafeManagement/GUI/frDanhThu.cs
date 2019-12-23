@@ -110,6 +110,9 @@ namespace CafeManagement.GUI
             deFromDate.Text = "";
         }
 
-       
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

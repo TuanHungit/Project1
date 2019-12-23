@@ -57,6 +57,7 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.gcXuatKhoTrongNgay = new DevExpress.XtraGrid.GridControl();
             this.gvXuatKhoTrongNgay = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditTimKiem.Properties.CalendarTimeProperties)).BeginInit();
@@ -78,7 +79,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label9.Location = new System.Drawing.Point(17, 295);
+            this.label9.Location = new System.Drawing.Point(25, 343);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 21);
             this.label9.TabIndex = 14;
@@ -92,9 +93,9 @@
             this.panelControl3.Controls.Add(this.dateEditTimKiem);
             this.panelControl3.Controls.Add(this.btnTimKiem);
             this.panelControl3.Controls.Add(this.label8);
-            this.panelControl3.Location = new System.Drawing.Point(12, 309);
+            this.panelControl3.Location = new System.Drawing.Point(16, 358);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(325, 270);
+            this.panelControl3.Size = new System.Drawing.Size(325, 220);
             this.panelControl3.TabIndex = 16;
             // 
             // btnXuatPhieuNhap
@@ -196,10 +197,16 @@
             // 
             this.gvXuatKho.GridControl = this.gcXuatKho;
             this.gvXuatKho.Name = "gvXuatKho";
+            this.gvXuatKho.OptionsBehavior.AlignGroupSummaryInGroupRow = DevExpress.Utils.DefaultBoolean.True;
+            this.gvXuatKho.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvXuatKho.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvXuatKho.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.Inplace;
+            this.gvXuatKho.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gvXuatKho.OptionsView.ShowGroupPanel = false;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnReset);
             this.panelControl1.Controls.Add(this.txtDonGia);
             this.panelControl1.Controls.Add(this.label7);
             this.panelControl1.Controls.Add(this.txtSoLuongTon);
@@ -214,7 +221,7 @@
             this.panelControl1.Controls.Add(this.label3);
             this.panelControl1.Location = new System.Drawing.Point(17, 12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(325, 280);
+            this.panelControl1.Size = new System.Drawing.Size(325, 330);
             this.panelControl1.TabIndex = 11;
             // 
             // txtDonGia
@@ -277,7 +284,7 @@
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(166, 222);
+            this.btnThoat.Location = new System.Drawing.Point(114, 273);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(107, 45);
             this.btnThoat.TabIndex = 16;
@@ -372,6 +379,17 @@
             this.gvXuatKhoTrongNgay.Name = "gvXuatKhoTrongNgay";
             this.gvXuatKhoTrongNgay.OptionsView.ShowGroupPanel = false;
             // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReset.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.ImageOptions.Image")));
+            this.btnReset.Location = new System.Drawing.Point(166, 222);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(107, 45);
+            this.btnReset.TabIndex = 23;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // frXuatKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -440,5 +458,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraGrid.GridControl gcXuatKhoTrongNgay;
         private DevExpress.XtraGrid.Views.Grid.GridView gvXuatKhoTrongNgay;
+        private DevExpress.XtraEditors.SimpleButton btnReset;
     }
 }

@@ -85,7 +85,7 @@
             this.btnXuatBaoCao.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuatBaoCao.Appearance.Options.UseFont = true;
             this.btnXuatBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatBaoCao.ImageOptions.Image")));
-            this.btnXuatBaoCao.Location = new System.Drawing.Point(574, 59);
+            this.btnXuatBaoCao.Location = new System.Drawing.Point(559, 58);
             this.btnXuatBaoCao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXuatBaoCao.Name = "btnXuatBaoCao";
             this.btnXuatBaoCao.Size = new System.Drawing.Size(157, 41);
@@ -123,7 +123,7 @@
             this.btnXem.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.Appearance.Options.UseFont = true;
             this.btnXem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.ImageOptions.Image")));
-            this.btnXem.Location = new System.Drawing.Point(464, 59);
+            this.btnXem.Location = new System.Drawing.Point(449, 58);
             this.btnXem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(104, 41);

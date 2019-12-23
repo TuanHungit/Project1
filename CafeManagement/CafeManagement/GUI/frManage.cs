@@ -45,17 +45,17 @@ namespace CafeManagement.GUI
         public frManage()
         {
             InitializeComponent();
-            InitializeComponent();
-            try
-            {
-                SqlClientPermission ss = new SqlClientPermission(System.Security.Permissions.PermissionState.Unrestricted);
-                ss.Demand();
-            }
-            catch (Exception)
-            {
+        
+            //try
+            //{
+            //    SqlClientPermission ss = new SqlClientPermission(System.Security.Permissions.PermissionState.Unrestricted);
+            //    ss.Demand();
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
          
 
             SqlDependency.Stop(connectionString);
@@ -65,7 +65,7 @@ namespace CafeManagement.GUI
         private void frManage_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            OnNewHome += new NewHome(FrManage_OnNewHome);//tab
+            //OnNewHome += new NewHome(FrManage_OnNewHome);//tab
             Load_Table();
             Load_cbDanhMuc();
          
@@ -73,53 +73,38 @@ namespace CafeManagement.GUI
          
 
         }
-        public void FrManage_OnNewHome() {
-            ISynchronizeInvoke i = (ISynchronizeInvoke)this;
-            if (i.InvokeRequired)//tab
-            {
-                NewHome dd = new NewHome(FrManage_OnNewHome);
-                i.BeginInvoke(dd, null);
-                return;
-            }
-            Load_Table();
-        }
-        public void de_OnChange(object sender, SqlNotificationEventArgs e)
-        {
-            SqlDependency de = sender as SqlDependency;
-            de.OnChange -= de_OnChange;
-            if (OnNewHome != null)
-            {
-                OnNewHome();
-            }
-        }
-       
+        //public void FrManage_OnNewHome() {
+        //    ISynchronizeInvoke i = (ISynchronizeInvoke)this;
+        //    if (i.InvokeRequired)//tab
+        //    {
+        //        NewHome dd = new NewHome(FrManage_OnNewHome);
+        //        i.BeginInvoke(dd, null);
+        //        return;
+        //    }
+        //    Load_Table();
+        //}
+        //public void de_OnChange(object sender, SqlNotificationEventArgs e)
+        //{
+        //    SqlDependency de = sender as SqlDependency;
+        //    de.OnChange -= de_OnChange;
+        //    if (OnNewHome != null)
+        //    {
+        //        OnNewHome();
+        //    }
+        //}
+        CaPheContext caPheContext = Global.context;
         private void Load_Table() 
         {
-           panelBan.Controls.Clear();
-            CaPheContext caPheContext = new CaPheContext();
-            List<Ban> danhsachban = (from item in caPheContext.Bans
-                                     select item).ToList();    
-            //DataTable dt = new DataTable();
-            //if (con.State == ConnectionState.Closed)
-            //{
-            //    con.Open();
-            //}
-            //SqlCommand cmd = new SqlCommand("SELECT BanId, TinhTrang FROM Bans", con);
-            //SqlDependency de = new SqlDependency(cmd);
-          
-            //de.OnChange += new OnChangeEventHandler(de_OnChange);
+            
+            panelBan.Controls.Clear();
+            List<Ban> danhsachban  = (from item in caPheContext.Bans
+                                                   select item).ToList();
 
-            //dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
-            //dataGridView1.DataSource = dt;
 
             foreach (Ban item in danhsachban)
             {
+
                 SimpleButton button = new SimpleButton() { Width = 85, Height = 85 };
-                button.Text = item.BanId.ToString() + " "+item.TinhTrang.ToString();
-              button.ImageOptions.Image = global::CafeManagement.Properties.Resources.Household_Table_icon;
-                button.ImageOptions.Location = ImageLocation.TopCenter;
-                button.Tag = item;             
-                button.Click += button_Click;               
                 switch (item.TinhTrang.ToString())
                 {
                     case "Có người":
@@ -130,9 +115,15 @@ namespace CafeManagement.GUI
                         button.Appearance.Options.UseBackColor = true;
                         break;
                     default:
-                     
+
                         break;
                 }
+                button.Text = item.BanId.ToString() + " " + item.TinhTrang.ToString();
+                button.ImageOptions.Image = global::CafeManagement.Properties.Resources.Household_Table_icon;
+                button.ImageOptions.Location = ImageLocation.TopCenter;
+                button.Tag = item;
+                button.Click += button_Click;
+              
                 panelBan.Controls.Add(button);
             }
         }

@@ -19,10 +19,6 @@ namespace CafeManagement.Data
         public int BanId { get; set; }
         public string TinhTrang { get; set; }
         public ICollection<HoaDon> HoaDons { get; set; }
-        CaPheContext caPheContext = new CaPheContext();
-
-       
-
-
+    
     }
 }

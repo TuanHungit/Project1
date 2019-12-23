@@ -78,7 +78,7 @@ namespace CafeManagement.LinQ
         public int GetIdDanhMuc(string TenDanhMuc ,CaPheContext caPheContext)
         {
             int sp = (from item in caPheContext.LoaiSanPhams
-                      where item.TenLoaiSanPham.ToUpper().Trim().Contains(TenDanhMuc.ToUpper())
+                      where item.TenLoaiSanPham.ToUpper().Trim()==(TenDanhMuc.ToUpper())
                       select item.LoaiSanPhamId).SingleOrDefault();
             return sp;
         }

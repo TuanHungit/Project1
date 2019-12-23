@@ -34,13 +34,6 @@ namespace CafeManagement.Data
                 InitialCatalog = "CafeManagement",
                 IntegratedSecurity = true,
             };
-
-            var entityConnectionStringBuilder = new EntityConnectionStringBuilder
-            {
-                Provider = "System.Data.SqlClient",
-                ProviderConnectionString = sqlBuilder.ConnectionString,
-                Metadata = "res://*/DbModel.csdl|res://*/DbModel.ssdl|res://*/DbModel.msl",
-            };
             Global.connectionstring = sqlBuilder.ConnectionString;
 
             return sqlBuilder.ConnectionString;

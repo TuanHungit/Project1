@@ -176,6 +176,21 @@ namespace CafeManagement.GUI
 
         private void gcNhapKho_Click_1(object sender, EventArgs e)
         {
+         
+        }
+
+        private void gcNhapKho_DoubleClick(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gvNhapKho_DoubleClick(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gvNhapKho_Click(object sender, EventArgs e)
+        {
             if (gvNhapKho.RowCount > 0)
             {
                 txtTenSanPham.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[0]).ToString();
@@ -184,6 +199,13 @@ namespace CafeManagement.GUI
                 txtDonViTinh.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[3]).ToString();
                 cbNCC.Text = gvNhapKho.GetRowCellValue(gvNhapKho.FocusedRowHandle, gvNhapKho.Columns[4]).ToString();
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Load_CbNhaCungCap();
+            Load_gvNhapKhoTrongNgay(DateTime.Now);
+            Load_gvNhapKho();
         }
     }
 }

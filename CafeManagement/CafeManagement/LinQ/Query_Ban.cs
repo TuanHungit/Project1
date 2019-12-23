@@ -145,7 +145,7 @@ namespace CafeManagement.LinQ
         {
             var query = (from chitiethoadon in context.ChiTietHoaDons
                          join hoadon in context.HoaDons on chitiethoadon.HoaDonID equals hoadon.HoaDonId
-                         where hoadon.BanID ==BanID
+                         where hoadon.BanID.Equals(BanID)
                          select chitiethoadon
                         ).Count();
             if (query >0)

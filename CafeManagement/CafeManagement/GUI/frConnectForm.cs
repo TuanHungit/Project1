@@ -21,13 +21,9 @@ namespace CafeManagement.GUI
         public frConnectForm()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
-        private void Input()
-        {
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
             Global.connect = textBox1.Text;
             CaPheContext context = new CaPheContext(Global.connect);
@@ -38,16 +34,20 @@ namespace CafeManagement.GUI
                     cnn.Open();
                     frLogin fr = new frLogin();
                     fr.ShowDialog();
+                    this.Close();
                     cnn.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Can not  connection ! ");
+                    MessageBox.Show("Không thể kết nối đến Server! ");
                 }
 
             }
         }
 
-       
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

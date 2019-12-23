@@ -31,7 +31,7 @@ namespace CafeManagement.GUI
         }
         Query_HoaDon hoaDon = new Query_HoaDon();
         Query_SanPham sanPham = new Query_SanPham();
-        CaPheContext context =Global.context;
+       
         
         Query_Ban ban = new Query_Ban();
 
@@ -76,7 +76,7 @@ namespace CafeManagement.GUI
             hoaDon.AddChiTietHoaDon(BillID, SanPhamID, -100);
             if (!ban.KiemTraBanConMonKhong(Global.BanID))
             {
-                ban.Update_Ban1( Global.BanID);
+                ban.Update_Ban1(Global.BanID);
                 hoaDon.XoaHoaDon(BillID);
             }
             this.loadBill(Global.BanID);

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frThongTinNhanVien));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.bttThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.bttCapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.bttThoat);
-            this.panelControl1.Controls.Add(this.bttCapNhat);
             this.panelControl1.Controls.Add(this.label5);
             this.panelControl1.Controls.Add(this.label4);
             this.panelControl1.Controls.Add(this.label3);
@@ -83,22 +81,12 @@
             // bttThoat
             // 
             this.bttThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bttThoat.ImageOptions.Image")));
-            this.bttThoat.Location = new System.Drawing.Point(214, 244);
+            this.bttThoat.Location = new System.Drawing.Point(99, 235);
             this.bttThoat.Name = "bttThoat";
-            this.bttThoat.Size = new System.Drawing.Size(94, 39);
+            this.bttThoat.Size = new System.Drawing.Size(119, 39);
             this.bttThoat.TabIndex = 46;
             this.bttThoat.Text = "Thoát";
             this.bttThoat.Click += new System.EventHandler(this.bttThoat_Click);
-            // 
-            // bttCapNhat
-            // 
-            this.bttCapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bttCapNhat.ImageOptions.Image")));
-            this.bttCapNhat.Location = new System.Drawing.Point(22, 244);
-            this.bttCapNhat.Name = "bttCapNhat";
-            this.bttCapNhat.Size = new System.Drawing.Size(186, 39);
-            this.bttCapNhat.TabIndex = 45;
-            this.bttCapNhat.Text = "Cập Nhật Thông Tin";
-            this.bttCapNhat.Click += new System.EventHandler(this.bttCapNhat_Click);
             // 
             // label5
             // 
@@ -188,21 +176,21 @@
             // 
             this.txtSDT.Location = new System.Drawing.Point(121, 121);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(125, 22);
+            this.txtSDT.Size = new System.Drawing.Size(187, 22);
             this.txtSDT.TabIndex = 32;
             // 
             // txtQueQuan
             // 
             this.txtQueQuan.Location = new System.Drawing.Point(121, 65);
             this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(125, 22);
+            this.txtQueQuan.Size = new System.Drawing.Size(187, 22);
             this.txtQueQuan.TabIndex = 31;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(121, 37);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(125, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(187, 22);
             this.txtHoTen.TabIndex = 29;
             // 
             // txtChucVu
@@ -214,7 +202,7 @@
             this.txtChucVu.Properties.Items.AddRange(new object[] {
             "Nhân viên",
             "Quản lý"});
-            this.txtChucVu.Size = new System.Drawing.Size(125, 22);
+            this.txtChucVu.Size = new System.Drawing.Size(187, 22);
             this.txtChucVu.TabIndex = 30;
             // 
             // labelControl6
@@ -254,7 +242,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton bttThoat;
-        private DevExpress.XtraEditors.SimpleButton bttCapNhat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

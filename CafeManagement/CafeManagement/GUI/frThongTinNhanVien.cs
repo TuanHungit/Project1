@@ -39,7 +39,15 @@ namespace CafeManagement
             txtCMND.Text = nv.CMND;
             txtSDT.Text = nv.CMND;
             dtpNgaySinh.Value = nv.NgaySinh;
-            dtpNgayVaoLam.Value = nv.NgayVaoLam;          
+            dtpNgayVaoLam.Value = nv.NgayVaoLam;
+
+            txtHoTen.Enabled = false;
+            txtChucVu.Enabled = false;
+            txtQueQuan.Enabled = false;
+            txtCMND.Enabled = false;
+            txtSDT.Enabled = false;
+            dtpNgayVaoLam.Enabled = false;
+            dtpNgaySinh.Enabled = false;
         }
         byte[] ConvertImageToBinary(Image img)
         {

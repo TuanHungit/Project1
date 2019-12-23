@@ -200,5 +200,12 @@ namespace CafeManagement.GUI
             Load_gvXuatKhoTrongNgay(dateTime);
             Load_gvXuatKho();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Load_CbHangHoa();
+            Load_gvXuatKho();
+            Load_gvXuatKhoTrongNgay(DateTime.Now);
+        }
     }
 }

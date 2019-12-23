@@ -62,7 +62,6 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.labelBan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.cbDanhMuc.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBill)).BeginInit();
@@ -80,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTongCong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbDanhMuc
@@ -171,7 +169,7 @@
             this.panelBan.Location = new System.Drawing.Point(14, 16);
             this.panelBan.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.panelBan.Name = "panelBan";
-            this.panelBan.Size = new System.Drawing.Size(430, 650);
+            this.panelBan.Size = new System.Drawing.Size(435, 650);
             this.panelBan.TabIndex = 31;
             // 
             // label1
@@ -210,7 +208,6 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Controls.Add(this.listviewMenu);
             this.panel2.Controls.Add(this.btnSearch);
@@ -223,7 +220,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReset.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Appearance.Options.UseFont = true;
             this.btnReset.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.ImageOptions.Image")));
@@ -500,16 +497,6 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Danh mục tác vụ";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 170);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 228);
-            this.dataGridView1.TabIndex = 45;
-            // 
             // frManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -544,7 +531,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,6 +570,5 @@
         private System.Windows.Forms.TextBox labelBan;
         private DevExpress.XtraEditors.SimpleButton btnReset;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
