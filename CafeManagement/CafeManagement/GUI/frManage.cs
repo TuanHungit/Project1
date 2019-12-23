@@ -130,7 +130,7 @@ namespace CafeManagement.GUI
         private void Load_cbDanhMuc()
         {
            cbDanhMuc.Properties.DataSource = (from item in Global.context.LoaiSanPhams
-                                                select new { item.TenLoaiSanPham, item.LoaiSanPhamId }).ToList();
+                                                select new {item.TenLoaiSanPham, item.LoaiSanPhamId }).ToList();
            cbDanhMuc.Properties.DisplayMember = "TenLoaiSanPham";
            cbDanhMuc.Properties.ValueMember = "LoaiSanPhamId";
         }

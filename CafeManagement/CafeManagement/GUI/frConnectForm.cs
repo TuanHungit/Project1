@@ -40,6 +40,7 @@ namespace CafeManagement.GUI
                 catch (Exception ex)
                 {
                     MessageBox.Show("Không thể kết nối đến Server! ");
+                    MessageBox.Show(ex.Message);
                 }
 
             }
