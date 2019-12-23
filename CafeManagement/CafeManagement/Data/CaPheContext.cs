@@ -33,6 +33,8 @@ namespace CafeManagement.Data
                 DataSource = Global.connect,
                 InitialCatalog = "CafeManagement",
                 IntegratedSecurity = true,
+               UserID ="Caphe",
+               Password="caphe123",
             };
             Global.connectionstring = sqlBuilder.ConnectionString;
 
